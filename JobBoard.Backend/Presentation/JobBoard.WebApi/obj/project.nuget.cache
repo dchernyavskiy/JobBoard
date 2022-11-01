@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "u6kYant191W5aILHs127GxhdzyrYHyWmbGElFlUSjEgPXaAbD/ndVv69AHPKY+AUFq7q0TzgeV7genpj7NXI+g==",
+  "dgSpecHash": "RzO1ULmKHiKyqM0ykEqzMOR+tSImlme37GTV8xBVnOvoDZ4KV5IOawpmzcJdhl7sxpNxsVl6Nljb5aMsK9bC1w==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\JobBoard.WebApi.csproj",
+  "projectFilePath": "C:\\Projects\\fff\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\JobBoard.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
