@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\JobBoard.Tests.csproj": {}
+    "C:\\Projects\\fff\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\JobBoard.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\JobBoard.Tests.csproj": {
+    "C:\\Projects\\fff\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\JobBoard.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\JobBoard.Tests.csproj",
+        "projectUniqueName": "C:\\Projects\\fff\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\JobBoard.Tests.csproj",
         "projectName": "JobBoard.Tests",
-        "projectPath": "C:\\Projects\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\JobBoard.Tests.csproj",
+        "projectPath": "C:\\Projects\\fff\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\JobBoard.Tests.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\obj\\",
+        "outputPath": "C:\\Projects\\fff\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

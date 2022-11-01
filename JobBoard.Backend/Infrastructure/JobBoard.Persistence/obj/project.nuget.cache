@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bfdYr1tMBAVKv5JajrcwRzmEfeoFDndw055vmIS7FQXDvC737wbLMyL7Pg2lrpN80Upsa4uhqKSmWYy9mbjyEQ==",
+  "dgSpecHash": "ZYzyZIdTIHNKbYcmNij7hWcvN7Oy9YtR6iuBGnHsIqh25JDArZqnPt8qViJgbNCHg1zKaJku1n9oxxnAe932fw==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj",
+  "projectFilePath": "C:\\Projects\\fff\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

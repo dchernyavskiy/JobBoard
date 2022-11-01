@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj": {}
+    "C:\\Projects\\fff\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj": {
+    "C:\\Projects\\fff\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj",
+        "projectUniqueName": "C:\\Projects\\fff\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj",
         "projectName": "JobBoard.Identity",
-        "projectPath": "C:\\Projects\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj",
+        "projectPath": "C:\\Projects\\fff\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\JobBoard\\JobBoard.Identity\\obj\\",
+        "outputPath": "C:\\Projects\\fff\\JobBoard\\JobBoard.Identity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -45,6 +45,30 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "IdentityServer4": {
+              "target": "Package",
+              "version": "[4.1.2, )"
+            },
+            "IdentityServer4.AspNetIdentity": {
+              "target": "Package",
+              "version": "[4.1.2, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
