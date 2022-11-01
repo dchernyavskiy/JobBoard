@@ -351,3 +351,5 @@ MigrationBackup/
 *.nuget.dgspec.json
 *.nuget.cache
 *.assets.json
+*.assets.cache
+*.editorconfig
