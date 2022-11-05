@@ -30,15 +30,15 @@ namespace JobBoard.Identity
                     RequirePkce = true,
                     RedirectUris =
                     {
-                        "http://localhost:3000/signin-oidc"
+                        "http://localhost:4200"
                     },
                     AllowedCorsOrigins =
                     {
-                        "http://localhost:3000"
+                        "http://localhost:4200"
                     },
                     PostLogoutRedirectUris =
                     {
-                        "http://localhost:3000/signout-oidc"
+                        "http://localhost:4200"
                     },
                     AllowedScopes =
                     {

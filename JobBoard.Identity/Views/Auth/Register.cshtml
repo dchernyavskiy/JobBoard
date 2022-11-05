@@ -27,7 +27,9 @@
                         <small>Or sign up with credentials</small>
                     </div>
                     <form asp-controller="Auth" asp-action="Register" method="post">
-                        <input type="hidden" asp-for="ReturnUrl" value="https://localhost:5002/Auth/Login" />
+                        <input type="hidden" asp-for="ReturnUrl" 
+                        
+                        />
                         <input type="hidden" asp-for="Role" value="Administrator" />
                         <div class="relative w-full mb-3">
                             <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"

@@ -41,15 +41,25 @@ namespace JobBoard.Application.Jobs
                 if (entity == null)
                     throw new NotFoundException(nameof(Job), request.Id);
 
+                var location = _context.Locations.FirstOrDefault(x => x.Name == request.Location);
+                if (location == null)
+                {
+                    location = new Location
+                    {
+                        Id = Guid.NewGuid(),
+                        Name = request.Location
+                    };
+                    await _context.Locations.AddAsync(location);
+                }
+
                 entity.Name = request.Name;
                 entity.Discription = request.Discription;
                 entity.DatePosted = request.DatePosted;
-                entity.Location = request.Location;
+                entity.LocationId = location.Id;
                 entity.Hours = request.Hours;
                 entity.SalaryStart = request.SalaryStart;
                 entity.SalaryEnd = request.SalaryEnd;
                 entity.Experience = request.Experience;
-
 
                 await _context.SaveChangesAsync(cancellationToken);
 

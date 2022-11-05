@@ -8,7 +8,7 @@ namespace JobBoard.Application.Employees
 {
     public class UpdateEmployee
     {
-        public class UpdateJobCommand : IRequest
+        public class UpdateEmployeeCommand : IRequest
         {
             public Guid Id { get; set; }
             public string Name { get; set; }
@@ -23,32 +23,32 @@ namespace JobBoard.Application.Employees
         }
 
 
-        public class UpdateJobCommandHandler : IRequestHandler<UpdateJobCommand>
+        public class UpdateEmployeeCommandHandler : IRequestHandler<UpdateEmployeeCommand>
         {
 
             private readonly IJobBoardDbContext _context;
 
-            public UpdateJobCommandHandler(IJobBoardDbContext context)
+            public UpdateEmployeeCommandHandler(IJobBoardDbContext context)
             {
                 _context = context;
             }
 
-            public async Task<Unit> Handle(UpdateJobCommand request, CancellationToken cancellationToken)
+            public async Task<Unit> Handle(UpdateEmployeeCommand request, CancellationToken cancellationToken)
             {
-                var entity = await _context.Jobs
-                    .FirstOrDefaultAsync(x => x.Id == request.Id && x.EmployerId == request.EmployerId, cancellationToken);
+                var entity = await _context.Employees
+                    .FirstOrDefaultAsync(x => x.Id == request.Id , cancellationToken);
 
                 if (entity == null)
-                    throw new NotFoundException(nameof(Job), request.Id);
+                    throw new NotFoundException(nameof(Employee), request.Id);
 
-                entity.Name = request.Name;
-                entity.Discription = request.Discription;
-                entity.DatePosted = request.DatePosted;
-                entity.Location = request.Location;
-                entity.Hours = request.Hours;
-                entity.SalaryStart = request.SalaryStart;
-                entity.SalaryEnd = request.SalaryEnd;
-                entity.Experience = request.Experience;
+                //entity.Name = request.Name;
+                //entity.Discription = request.Discription;
+                //entity.DatePosted = request.DatePosted;
+                //entity.Location = request.Location;
+                //entity.Hours = request.Hours;
+                //entity.SalaryStart = request.SalaryStart;
+                //entity.SalaryEnd = request.SalaryEnd;
+                //entity.Experience = request.Experience;
 
 
                 await _context.SaveChangesAsync(cancellationToken);

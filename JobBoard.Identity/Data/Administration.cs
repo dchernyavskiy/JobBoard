@@ -35,8 +35,30 @@ namespace JobBoard.Identity.Data
 
                 var systemAdministratorInstance = userManger.FindByNameAsync("system_administrator").Result;
                 var employerInstance = userManger.FindByNameAsync("employer").Result;
+                var employeeInstance = userManger.FindByNameAsync("employee").Result;
 
-                if(employerInstance == null)
+                if (employeeInstance == null)
+                {
+                    employeeInstance = new AppUser
+                    {
+                        FirstName = "John",
+                        LastName = "Smith",
+                        Email = "john.smith@mail.com",
+                        EmailConfirmed = true,
+                        PhoneNumber = "+329813923",
+                        PhoneNumberConfirmed = true,
+                        UserName = "employee"
+                    };
+                    var result = userManger.CreateAsync(employeeInstance, app.Configuration["Passwords:EmployeePassword"]).Result;
+
+                    if (!result.Succeeded)
+                        throw new Exception(result.Errors.First().Description);
+
+                    if (!userManger.IsInRoleAsync(employeeInstance, employer.Name).Result)
+                        _ = userManger.AddToRoleAsync(employeeInstance, employer.Name).Result;
+                }
+
+                if (employerInstance == null)
                 {
                     employerInstance = new AppUser
                     {
@@ -48,7 +70,7 @@ namespace JobBoard.Identity.Data
                         PhoneNumberConfirmed = true,
                         UserName = "employer"
                     };
-                    var result = userManger.CreateAsync(employerInstance, app.Configuration["EmployerPassword"]).Result;
+                    var result = userManger.CreateAsync(employerInstance, app.Configuration["Passwords:EmployerPassword"]).Result;
 
                     if (!result.Succeeded)
                         throw new Exception(result.Errors.First().Description);
@@ -69,7 +91,7 @@ namespace JobBoard.Identity.Data
                         PhoneNumberConfirmed = true,
                         UserName = "system_administrator",
                     };
-                    var result = userManger.CreateAsync(systemAdministratorInstance, app.Configuration["SystemAdministratorPassword"]).Result;
+                    var result = userManger.CreateAsync(systemAdministratorInstance, app.Configuration["Passwords:SystemAdministratorPassword"]).Result;
                     
                     if (!result.Succeeded)
                         throw new Exception(result.Errors.First().Description);
