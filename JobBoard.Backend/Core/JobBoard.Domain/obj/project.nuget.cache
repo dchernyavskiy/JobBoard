@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SxzVcCG8G/G0nyRZ5XwfBQ1ZcZ3m+iLeTXXVu0ittdKCFqLbEq9VN5o6B0AZwrb6VT5FGoyDQuWULR0GLWPU8A==",
+  "dgSpecHash": "gGYaT3jbMdv5MzNYPLQl5VTxzXVpjcQPjxRZjDXYoCIalMQlLsjio96BQiszOFM9liP67xtxxY5hsr8VwLZQ+g==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\fff\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj",
+  "projectFilePath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

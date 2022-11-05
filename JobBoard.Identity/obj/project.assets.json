@@ -2408,11 +2408,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\fff\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj",
+      "projectUniqueName": "C:\\Projects\\University\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj",
       "projectName": "JobBoard.Identity",
-      "projectPath": "C:\\Projects\\fff\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj",
+      "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\fff\\JobBoard\\JobBoard.Identity\\obj\\",
+      "outputPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Identity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

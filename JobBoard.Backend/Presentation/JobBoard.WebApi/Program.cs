@@ -1,15 +1,63 @@
+using JobBoard.Application;
+using JobBoard.Application.Common.Mappings;
+using JobBoard.Application.Interfaces;
+using JobBoard.Persistence;
+using JobBoard.WebApi;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using System.Reflection;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddControllers().AddNewtonsoftJson(opts =>
+{
+    opts.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+});
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddVersionedApiExplorer(opts => opts.GroupNameFormat = "'v'VVV");
+builder.Services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerOptions>();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddAutoMapper(config =>
+{
+    config.AddProfile(new AssemblyMappingProfile(Assembly.GetExecutingAssembly()));
+    config.AddProfile(new AssemblyMappingProfile(typeof(IJobBoardDbContext).Assembly));
+});
+builder.Services.AddApplication();
+builder.Services.AddPersistence(builder.Configuration);
+
+builder.Services.AddCors(opts =>
+{
+    opts.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyHeader();
+        policy.AllowAnyMethod();
+        policy.AllowAnyOrigin();
+    });
+});
+
+builder.Services.AddAuthentication(opts =>
+{
+    opts.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    opts.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer("Bearer", opts =>
+{
+    opts.Authority = builder.Configuration["AuthorityUri"];
+    opts.Audience = "JobBoardWebApi";
+    opts.RequireHttpsMetadata = false;
+});
+
+builder.Services.AddApiVersioning(opts =>
+{
+    opts.AssumeDefaultVersionWhenUnspecified = true;
+    opts.DefaultApiVersion = ApiVersion.Default;
+});
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -17,9 +65,22 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors("AllowAll");
+app.UseAuthentication();
 app.UseAuthorization();
-
+app.UseApiVersioning();
 app.MapControllers();
+
+using (var scope = app.Services.CreateScope())
+{
+    var serviceProvider = scope.ServiceProvider;
+    try
+    {
+        var context = serviceProvider.GetRequiredService<JobBoardDbContext>();
+        DbInitializer.Initialize(context);
+    }
+    catch
+    { }
+}
 
 app.Run();
