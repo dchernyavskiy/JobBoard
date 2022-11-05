@@ -1,13 +1,6 @@
 ﻿using AutoMapper;
 using JobBoard.Application.Common.Mappings;
-using JobBoard.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static JobBoard.Application.Stores.CreateJob;
-using static JobBoard.Application.Stores.GetJob;
+using static JobBoard.Application.Jobs.CreateJob;
 
 namespace JobBoard.WebApi.Models
 {

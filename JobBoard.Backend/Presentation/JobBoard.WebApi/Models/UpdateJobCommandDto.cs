@@ -1,10 +1,5 @@
 ﻿using JobBoard.Application.Common.Mappings;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static JobBoard.Application.Jobs.UpdateJob;
+using static JobBoard.Application.Jobs.UpdateEducation;
 
 namespace JobBoard.WebApi.Models
 {

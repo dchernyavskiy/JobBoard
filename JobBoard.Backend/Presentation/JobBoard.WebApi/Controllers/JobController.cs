@@ -1,12 +1,11 @@
 ﻿using AutoMapper;
 using JobBoard.WebApi.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using static JobBoard.Application.Jobs.CreateJob;
+using static JobBoard.Application.Jobs.DeleteJob;
+using static JobBoard.Application.Jobs.GetJob;
 using static JobBoard.Application.Jobs.GetJobs;
-using static JobBoard.Application.Jobs.UpdateJob;
-using static JobBoard.Application.Stores.CreateJob;
-using static JobBoard.Application.Stores.DeleteJob;
-using static JobBoard.Application.Stores.GetJob;
+using static JobBoard.Application.Jobs.UpdateEducation;
 
 namespace JobBoard.WebApi.Controllers
 {

@@ -4,7 +4,7 @@ using JobBoard.Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace JobBoard.Application.Stores
+namespace JobBoard.Application.Jobs
 {
     public class DeleteJob
     {

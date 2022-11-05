@@ -1,14 +1,8 @@
 ﻿using JobBoard.Application.Interfaces;
 using JobBoard.Domain;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 
-namespace JobBoard.Application.Stores
+namespace JobBoard.Application.Jobs
 {
     public class CreateJob
     {
@@ -40,16 +34,28 @@ namespace JobBoard.Application.Stores
                 {
                     Id = Guid.NewGuid(),
                     Name = request.Name,
-                    Discription = request.Discription ,
-                    DatePosted = request.DatePosted ,
-                    Location = request.Location ,
-                    Hours = request.Hours ,
-                    SalaryStart = request.SalaryStart ,
-                    SalaryEnd = request.SalaryEnd ,
-                    Experience = request.Experience ,
+                    Discription = request.Discription,
+                    DatePosted = request.DatePosted,
+                    //Location = request.Location,
+                    Hours = request.Hours,
+                    SalaryStart = request.SalaryStart,
+                    SalaryEnd = request.SalaryEnd,
+                    Experience = request.Experience,
                     EmployerId = request.EmployerId,
                 };
-                
+
+                var location = _context.Locations.FirstOrDefault(x => x.Name == request.Location);
+                if (location == null)
+                {
+                    location = new Location
+                    {
+                        Id = Guid.NewGuid(),
+                        Name = request.Location
+                    };
+                    await _context.Locations.AddAsync(location);
+                }
+
+                entity.LocationId = location.Id;
                 await _context.Jobs.AddAsync(entity);
                 await _context.SaveChangesAsync(cancellationToken);
 

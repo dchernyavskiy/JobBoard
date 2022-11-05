@@ -1,11 +1,6 @@
 ﻿using JobBoard.Application.Interfaces;
 using JobBoard.Domain;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JobBoard.Persistence
 {
@@ -27,6 +22,8 @@ namespace JobBoard.Persistence
         public DbSet<Qualification> Qualifications => Set<Qualification>();
 
         public DbSet<Responsibility> Responsibilities => Set<Responsibility>();
+
+        public DbSet<Location> Locations => Set<Location>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {              

@@ -7,9 +7,9 @@ using JobBoard.Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace JobBoard.Application.Jobs
+namespace JobBoard.Application.Employees
 {
-    public class GetJobs
+    public class GetEmployees
     {
         public class JobsVm
         {

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace JobBoard.Domain
+﻿namespace JobBoard.Domain
 {
     public class Education
     {
@@ -14,5 +8,7 @@ namespace JobBoard.Domain
         public DateTime? End { get; set; }
         public string University { get; set; }
         public string Discription { get; set; }
+        public Guid EmployeeId { get; set; }
+        public Employee Employee { get; set; }
     }
 }

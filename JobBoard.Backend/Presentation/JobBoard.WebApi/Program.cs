@@ -1,14 +1,14 @@
-using JobBoard.Application.Common.Mappings;
 using JobBoard.Application;
+using JobBoard.Application.Common.Mappings;
+using JobBoard.Application.Interfaces;
 using JobBoard.Persistence;
+using JobBoard.WebApi;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using System.Reflection;
-using JobBoard.Application.Interfaces;
-using JobBoard.WebApi;
-using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 

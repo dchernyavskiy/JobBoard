@@ -5,13 +5,8 @@ using JobBoard.Application.Interfaces;
 using JobBoard.Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace JobBoard.Application.Stores
+namespace JobBoard.Application.Jobs
 {
     public class GetJob
     {
@@ -26,7 +21,7 @@ namespace JobBoard.Application.Stores
             public int SalaryStart { get; set; }
             public int SalaryEnd { get; set; }
             public int Experience { get; set; }
-            public Employer Employer { get; set; }
+            //public Employer Employer { get; set; }
             public ICollection<Responsibility> Responsibilities { get; set; }
             public ICollection<Qualification> Qualifications { get; set; }
 

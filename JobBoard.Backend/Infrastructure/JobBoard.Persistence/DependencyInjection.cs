@@ -2,9 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Azure.Cosmos;
-using System.Net;
-using Microsoft.EntityFrameworkCore.Internal;
 
 namespace JobBoard.Persistence
 {
