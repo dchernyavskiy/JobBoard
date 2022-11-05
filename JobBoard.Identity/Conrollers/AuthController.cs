@@ -48,17 +48,20 @@ namespace JobBoard.Identity.Conrollers
                 return View(vm);
             }
 
-            var user = await _userManager.FindByNameAsync(vm.Username);
+            //var user = await _userManager.FindByNameAsync(vm.Username);
+            var user = await _userManager.FindByEmailAsync(vm.Email);
             if(user == null)
             {
                 ModelState.AddModelError(string.Empty, "User not found");
                 return View(vm);
             }
 
-            var result = await _signInManager.PasswordSignInAsync(vm.Username,
-                                                                  vm.Password,
-                                                                  false,
-                                                                  false);
+            var result = await _signInManager.PasswordSignInAsync(user, vm.Password, false, false);
+            //var result = await _signInManager.PasswordSignInAsync(vm.Username,
+            //                                                      vm.Password,
+            //                                                      false,
+            //                                                      false);
+
             if (result.Succeeded)
             {
                 return Redirect(vm.ReturnUrl);
@@ -85,7 +88,7 @@ namespace JobBoard.Identity.Conrollers
             if (!ModelState.IsValid)
                 return View(viewModel);
 
-            var user = new AppUser { UserName = viewModel.Username };
+            var user = new AppUser { Email = viewModel.Email, EmailConfirmed = true };
 
             var result = await _userManager.CreateAsync(user, viewModel.Password);
             var role = await _roleManager.FindByNameAsync(viewModel.Role);
