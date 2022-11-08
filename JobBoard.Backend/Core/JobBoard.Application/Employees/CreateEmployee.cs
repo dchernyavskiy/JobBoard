@@ -30,11 +30,11 @@ namespace JobBoard.Application.Employees
                 var entity = new Employee
                 {
                     Id = Guid.NewGuid(),
-                    Website = request.Website,
-                    Country = request.Country,
-                    State = request.State,
-                    City = request.City,
-                    Zip = request.Zip
+                    //Website = request.Website,
+                    //Country = request.Country,
+                    //State = request.State,
+                    //City = request.City,
+                    //Zip = request.Zip
                 };
 
                 await _context.Employees.AddAsync(entity);

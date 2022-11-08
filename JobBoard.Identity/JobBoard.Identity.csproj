@@ -15,5 +15,11 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.10" />
+		<PackageReference Include="RabbitMQ.Client" Version="6.4.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\JobBoard.Backend\Core\JobBoard.Application\JobBoard.Application.csproj" />
+	  <ProjectReference Include="..\JobBoard.Backend\Core\JobBoard.Domain\JobBoard.Domain.csproj" />
 	</ItemGroup>
 </Project>

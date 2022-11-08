@@ -80,7 +80,8 @@ namespace JobBoard.Application.Jobs
                     .Where(x => request.Filters.SalaryStart == 0 ? true : x.SalaryStart >= request.Filters.SalaryStart)
                     .Where(x => request.Filters.SalaryEnd == 0 ? true : x.SalaryEnd <= request.Filters.SalaryEnd)
                     .Where(x => request.Filters.EmloyerIds == null ? true : request.Filters.EmloyerIds.Contains(x.EmployerId))
-                    .Where(x => request.Filters.Experiences == null ? true : request.Filters.Experiences.Contains(x.Experience));
+                    .Where(x => request.Filters.Experiences == null ? true : request.Filters.Experiences.Contains(x.Experience))
+                    ;
 
                 if (request != null && request.Sort.IsAscending)
                 {

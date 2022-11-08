@@ -41,8 +41,8 @@ namespace JobBoard.Identity.Data
                 {
                     employeeInstance = new AppUser
                     {
-                        FirstName = "John",
-                        LastName = "Smith",
+                        //FirstName = "John",
+                        //LastName = "Smith",
                         Email = "john.smith@mail.com",
                         EmailConfirmed = true,
                         PhoneNumber = "+329813923",
@@ -62,8 +62,9 @@ namespace JobBoard.Identity.Data
                 {
                     employerInstance = new AppUser
                     {
-                        FirstName = "Tom",
-                        LastName = "Smith",
+                        Id = "041343ea-0f3d-458b-9fb6-7bd6700d69e8",
+                        //FirstName = "Tom",
+                        //LastName = "Smith",
                         Email = "tom.smith@mail.com",
                         EmailConfirmed = true,
                         PhoneNumber = "+329813923",
@@ -83,8 +84,8 @@ namespace JobBoard.Identity.Data
                 {
                     systemAdministratorInstance = new AppUser
                     {
-                        FirstName = "System",
-                        LastName = "Administrator",
+                        //FirstName = "System",
+                        //LastName = "Administrator",
                         Email = "admin@mail.com",
                         EmailConfirmed = true,
                         PhoneNumber = "+12029182132",

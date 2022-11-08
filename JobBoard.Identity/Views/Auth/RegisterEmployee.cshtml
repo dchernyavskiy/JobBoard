@@ -1,0 +1,117 @@
+﻿@model RegisterEmployerViewModel
+
+<section class="h-100 h-custom gradient-custom-2">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12">
+                <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+                    <div class="card-body p-0">
+                        @*<div class="row g-0">*@
+                        <form class="row g-0" asp-controller="Auth" asp-action="RegisterEmployer" method="post">
+                            <input type="hidden" asp-for="ReturnUrl" />
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <h3 class="fw-normal mb-5" style="color: #4835d4;">General Infomation</h3>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4 pb-2">
+
+                                            <div class="form-outline">
+                                                <label class="form-label" for="form3Examplev2">Company name</label>
+                                                <input asp-for="Name" type="text" id="form3Examplev2" class="form-control form-control-lg" />
+                                                <span asp-validation-for="Name" class="alert-danger"></span>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6 mb-4 pb-2">
+
+                                            <div class="form-outline">
+                                                <label class="form-label" for="form3Examplev3">Category</label>
+                                                <input asp-for="Category" type="text" id="form3Examplev3" class="form-control form-control-lg" />
+                                                <span asp-validation-for="Category"></span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6 mb-4 pb-2">
+
+                                            <div class="form-outline">
+                                                <label class="form-label" for="form3Examplev2">Team size</label>
+                                                <input asp-for="TeamSize" type="number" id="form3Examplev2" class="form-control form-control-lg" />
+                                                <span asp-validation-for="TeamSize" class="alert-danger"></span>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6 mb-4 pb-2">
+
+                                            <div class="form-outline">
+                                                <label class="form-label" for="form3Examplev3">Location</label>
+                                                <input asp-for="Location" type="text" id="form3Examplev3" class="form-control form-control-lg" />
+                                                <span asp-validation-for="Location"></span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-4 pb-2">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="form3Examplev4">Responsibilities</label>
+                                            @*<input type="text" asp-for="AboutUs" id="form3Examplev4" class="form-control form-control-lg" />*@
+                                            <textarea asp-for="Responsibilities" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                            <span asp-validation-for="Responsibilities"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4 pb-2">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="form3Examplev4">About Us</label>
+                                            @*<input type="text" asp-for="AboutUs" id="form3Examplev4" class="form-control form-control-lg" />*@
+                                            <textarea asp-for="AboutUs" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                            <span asp-validation-for="AboutUs"></span>
+                                        </div>
+                                    </div>
+                                    
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6 bg-indigo text-white" style="flex-direction: column;display: flex;justify-content: center;">
+                                <div class="p-5" style="display: flex;flex-direction: column;">
+                                    @*<h3 class="fw-normal mb-5"></h3>*@
+
+                                    <div class="mb-4">
+                                        <div class="form-outline form-white">
+                                            <label class="form-label" for="form3Examplea9">Email</label>
+                                            <input type="email" asp-for="Email" id="form3Examplea9" class="form-control form-control-lg" />
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4 pb-2">
+                                        <div class="form-outline form-white">
+                                            <label class="form-label" for="form3Examplea3">Password</label>
+                                            <input type="password" asp-for="Password" id="form3Examplea3" class="form-control form-control-lg" />
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-4 pb-2">
+                                        <div class="form-outline form-white">
+                                            <label class="form-label" for="form3Examplea3">Confirm Password</label>
+                                            <input type="password" asp-for="ConfirmPassword" id="form3Examplea3" class="form-control form-control-lg" />
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-light btn-lg"
+                                            data-mdb-ripple-color="dark">
+                                        Register
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        @*</div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
