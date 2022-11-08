@@ -1,0 +1,2640 @@
+@media only screen and (max-width : 767px) {
+
+    $all-size: 14px;
+
+    /*----- Default CSS -----*/
+    body {
+        font-size: $all-size;
+    }
+    .ptb-100 {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .pt-100 {
+        padding-top: 50px;
+    }
+    .pb-70 {
+        padding-bottom: 20px;
+    }
+    .pb-100 {
+        padding-bottom: 50px;
+    }
+    /*----- End Default CSS -----*/
+
+    /*----- Home Demo One CSS -----*/
+    /*-- Navbar --*/
+    .side-nav {
+        text-align: center;
+        padding-top: 7px;
+        padding-bottom: 8px;
+        background-color: #fff;
+        box-shadow: 0px 8px 15px 0px #dddddd5e;
+        border-top: 1px solid #DBEEFD;
+
+        .login-left {
+            margin-right: 15px;
+
+            i {
+                font-size: 17px;
+                top: 2px;
+            }
+        }
+        .job-right {
+            height: 45px;
+            padding-left: 15px;
+            padding-right: 15px;
+            line-height: 45px;
+        
+            i {
+                display: none;
+            }
+        }
+    }
+    /*-- End Navbar --*/
+
+    /*-- Banner --*/
+    .container-fluid {
+        max-width: 540px !important;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    .banner-area {
+        text-align: center;
+        padding-top: 180px;
+        padding-bottom: 140px;    
+
+        &:before {
+            display: none;
+        }
+        .banner-shape {    
+            img {
+                height: 50px;
+            }
+        }
+    }
+    .banner-content {
+        height: 100%;
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 27px;
+            font-size: 16px;
+        }
+        .banner-form-area {
+            padding-right: 0;
+            margin-bottom: 35px;
+
+            .form-group {
+                .form-control {
+                    border-right: 0;
+                    border-bottom: 1px solid #8d8d8d;
+                    font-size: 14px;
+                }
+                .nice-select {
+                    border-right: 0;
+                    border-bottom: 1px solid #8d8d8d;
+                    font-size: 14px;
+                }
+                &.two {
+                    .form-control {
+                        border-bottom: 0;
+                    }
+                }
+            }
+            .btn {
+                height: 45px;
+                position: relative;
+                top: 0;
+                right: 0;
+                font-size: 14px;
+                padding-left: 15px;
+
+                i {
+                    height: 45px;
+                    font-size: 17px;
+                }
+            }
+        }
+        .banner-key {
+            ul {
+                li {
+                    margin-bottom: 5px;
+
+                    span {
+                        display: block;
+                        color: #221668;
+                        background-color: #e2d3dc;
+                        padding: 6px 8px;
+                        border-radius: 5px;
+                        margin-right: 2px;
+                    }
+                }
+            }
+        }
+    }
+    .banner-img {
+        img {
+            &:nth-child(1) {
+                display: none;
+            }
+            &:nth-child(2) {
+                display: none;
+            }
+            &:nth-child(3) {
+                display: none;
+            }
+            &:nth-child(4){
+                display: none;
+            }
+            &:nth-child(5) {
+                display: none;
+            }
+            &:nth-child(6) {
+                display: none;
+            }
+            &:nth-child(7) {
+                display: none;
+            }
+            &:nth-child(8) {
+                display: none;
+            }
+            &:nth-child(9) {
+                display: none;
+            }
+            &:nth-child(10) {
+                margin-top: 30px;
+                position: relative;
+                top: 0;
+                right: 0;
+                max-width: 100%;
+                animation: border-transform-default 10s linear infinite alternate forwards;
+            }
+            &:nth-child(11) {
+                display: none;
+            }
+            &:nth-child(12) {
+                display: none;
+            }
+            &:nth-child(13) {
+                display: none;
+            }
+        }
+        .inner {
+            display: none;
+        }
+    }
+    /*-- End Banner --*/
+
+    /*-- Work --*/
+    .section-title {
+        margin-bottom: 30px;
+        text-align: center;
+
+        .sub-title {
+            margin-bottom: 5px;
+        }
+        h2 {
+            font-size: 25px;
+        }
+    }
+    .work-item {
+        padding: 30px 15px 28px;
+        text-align: center;
+
+        i {
+            font-size: 35px;
+            top: 15px;
+            right: 15px;
+        }
+    }
+    /*-- End Work --*/
+
+    /*-- Jobs --*/
+    .sorting-menu {
+        text-align: center;
+
+        ul {
+            margin-bottom: 20px;
+
+            li {
+                font-size: 15px;
+                margin-right: 10px;
+                margin-left: 10px;
+                margin-bottom: 10px;
+
+                &:last-child {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    .job-area {
+        .section-title {
+            margin-bottom: 15px;
+        }
+    }
+    .job-browse {
+        p {
+            font-size: 15px;
+        }
+    }
+    .job-item {
+        padding: 25px 15px 30px;
+        text-align: center;
+
+        .job-left {
+            padding-left: 0;
+
+            img {
+                position: relative;
+                top: 0;
+                right: 0;
+                left: 0;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 12px;
+                display: block;
+            }
+            ul {
+                li {
+                    margin-right: 0;
+                    margin-bottom: 7px;
+                }
+            }
+        }
+        .job-right {
+            ul {
+                li {
+                    margin-bottom: 7px;
+                }
+            }
+        }
+    }
+    /*-- End Jobs --*/
+
+    /*-- Explore --*/
+    .explore-area {
+        text-align: center;
+
+        .section-title {
+            margin-bottom: 30px;
+        }
+        .explore-item {
+            margin-right: auto;
+
+            ul {
+                li {
+                    display: block;
+
+                    .left-btn {
+                        height: 45px;
+                        margin-right: 0;
+                        margin-bottom: 15px;
+                
+                        i {
+                            height: 45px;
+                            line-height: 45px;
+                            font-size: 17px;
+                        }
+                    }
+                    span {
+                        position: relative;
+                        top: -1px;                    
+                    }
+                }
+            }
+        }
+    }
+    /*-- End Explore --*/
+
+    /*-- Counter --*/
+    .counter-area {
+        padding-bottom: 70px;
+
+        &:before {
+            display: none;
+        }
+        .counter-shape {
+            img {
+                height: 50px;
+            }
+        }
+    }
+    /*-- End Counter --*/
+
+    /*-- Company --*/
+    .company-area {
+        .section-title {
+            margin-bottom: 10px;
+        }
+        .cmn-link {
+            margin-bottom: 30px;
+        }
+    }
+    .cmn-link {
+        text-align: center;
+
+        a {
+            font-size: 16px;
+
+            .one {
+                top: -3px;
+            }
+            .two {      
+                top: -3px;
+            }
+        }
+    }
+    /*-- End Company --*/
+
+    /*-- Location --*/
+    .location-area {
+        .cmn-link {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            margin-bottom: 10px;
+        }
+        .owl-prev {
+            display: none !important;
+        }
+        .owl-next {
+            display: none !important;
+        }
+    }
+    /*-- End Location --*/
+
+    /*-- Feedback --*/
+    .feedback-area {
+        padding-bottom: 60px;
+
+        &:before {
+            display: none;
+        }
+        .feedback-shape {
+            img {
+                height: 50px;
+            }
+        }
+        .feedback-item {
+            padding: 22px 15px 30px 15px;
+            text-align: center;
+            margin-left: 0;
+            margin-right: 0;
+
+            &:hover {
+                img {
+                    right: 5px;
+                    bottom: 5px;
+                }
+            }
+            p {
+                margin-bottom: 12px;
+            }
+            h4 {
+                font-size: 22px;
+                margin-bottom: 30px;
+            }
+            img {
+                position: relative;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+        .owl-prev {
+            display: none !important;
+        }
+        .owl-next {
+            display: none !important;
+        }
+    }
+    /*-- End Feedback --*/
+
+    /*-- Blog --*/
+    .blog-area {
+
+        .section-title {
+            margin-bottom: 10px;
+        }
+        .cmn-link {
+            margin-bottom: 30px;
+        }
+    }
+    .blog-item {
+        .cmn-link {
+            margin-bottom: 0;
+
+            a {
+                font-size: 15px;
+
+                i {
+                    &.one {
+                        top: -4px;
+                    }
+                    &.two {
+                        top: -4px;
+                    }
+                }
+            }
+        }
+    }
+    /*-- End Blog --*/
+
+    /*-- App --*/
+    .app-area {
+        text-align: center;
+
+        .app-content {
+            .section-title {
+                margin-bottom: 30px;
+            }
+            ul {
+                li {
+                    margin-right: 5px;
+                    margin-left: 5px;
+        
+                    &:last-child {
+                        margin-right: 5px;
+                    }
+                    a {
+                        max-width: 120px;
+                    }
+                }
+            }
+        }
+        .app-img {
+            img {
+                &:nth-child(1) {
+                    margin-top: 30px;
+                    max-width: 240px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                &:nth-child(2) {
+                    display: none;
+                }
+            }
+        }
+    }
+    @keyframes app-ani {
+        50% {
+            transform: rotate(5deg);
+        }
+    }
+    /*-- End App --*/
+
+    /*-- Footer --*/
+    .footer-item {
+        h3 {
+            margin-bottom: 20px;
+        }
+    }
+    /*-- End Footer --*/
+
+    /*-- Copyright --*/
+    .copyright-area {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: center;
+
+        .copyright-item {
+            ul {
+                margin-bottom: 10px;
+
+                li {
+                    margin-right: 5px;
+                    margin-left: 5px;
+                }
+            }
+            p {
+                text-align: center;
+            }
+        }
+    }
+    /*-- End Copyright --*/
+    /*----- End Home Demo One CSS -----*/
+
+    /*----- Back to Top -----*/
+    #toTop {
+        bottom: 70px;
+        right: 10px;
+    }
+    .back-to-top-btn {
+        i {
+            height: 45px;
+            width: 40px;
+            line-height: 45px;
+            font-size: 20px;
+        }
+    }
+    /*----- End Back to Top -----*/
+
+    /*----- Home Demo Two CSS -----*/
+    /*-- Banner --*/
+    .banner-area.two {
+        padding-bottom: 85px;
+
+        .container-fluid {
+            padding-right: 15px;
+        }
+        .banner-shape-two {
+            img {
+                &:nth-child(2) {
+                    display: none;
+                }
+            }
+        }
+    }
+    .banner-content.two {
+        height: 100%;
+
+        h1 {
+            font-size: 25px;
+        }
+    }
+    .banner-img-two {
+        img {
+            &:nth-child(1) {
+                margin-top: 30px;
+            }
+            &:nth-child(2) {
+                display: none;
+            }
+            &:nth-child(3) {
+                display: none;
+            }
+            &:nth-child(4) {
+                display: none;
+            }
+        }
+    }
+    /*-- End Banner --*/
+
+    /*-- Support --*/
+    .support-area {
+        padding-top: 50px;
+
+        p {
+            margin-bottom: 30px;
+        }
+        .support-slider {
+            padding-right: 0;
+
+            .owl-prev {
+                display: none !important;
+            }
+            .owl-next {
+                display: none !important;
+            }
+        }
+    }
+    /*-- End Support --*/
+
+    /*-- Company --*/
+    .company-area.two {
+        .section-title {
+            margin-bottom: 30px;
+        }
+        .owl-prev {
+            display: none !important;
+        }
+        .owl-next {
+            display: none !important;
+        }
+    }
+    /*-- End Company --*/
+
+    /*-- Explore --*/
+    .explore-area.two {
+        .explore-item {
+            margin-left: auto;
+        }
+        .explore-img {
+            position: relative;
+            top: 0;
+            right: 0;
+            max-width: 100%;
+            margin-top: 30px;
+        }
+    }
+    /*-- End Explore --*/
+
+    /*-- Categories --*/
+    .categories-area {
+        padding-top: 35px;
+
+        .nav-pills {
+            a {
+                font-size: 16px;
+                padding: 12px 0;
+
+                .two {
+                    top: 2px;
+                }
+            }
+        }
+    }
+    /*-- End Categories --*/
+
+    /*-- Work --*/
+    .work-item.two {
+        border-right: 0;
+
+        &:after {
+            display: none;
+        }
+    }
+    /*-- End Work --*/
+
+    /*-- Candidate --*/
+    .candidate-area {
+        .owl-prev {
+            display: none !important;
+        }
+        .owl-next {
+            display: none !important;
+        }
+        .candidate-browse {
+            p {
+                margin-top: -15px;
+            }
+        }
+    }
+    .candidate-item {
+        padding: 25px 15px 25px;
+
+        img {
+            position: relative;
+            margin-top: 30px;
+            max-width: 100%;
+        }
+    }
+    /*-- End Candidate --*/
+
+    /*-- Testimonial --*/
+    .testimonial-area {
+        text-align: center;
+        padding-bottom: 0;
+
+        .owl-prev {
+            display: none !important;
+        }
+        .owl-next {
+            display: none !important;
+        }
+        .section-title {
+            margin-right: auto;
+        }
+        .testimonial-item {
+            padding-left: 0;
+
+            img {
+                position: relative;
+                top: 0;
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 20px;
+            }
+            p {
+                font-size: 18px;
+                margin-bottom: 25px;
+            }
+        }
+    }
+    /*-- End Testimonial --*/
+
+    /*-- Register --*/
+    .register-area {
+        .container {
+            .row {
+                padding-right: 0;
+            }
+        }
+        ul {
+            position: relative;
+            margin-bottom: 30px;
+            text-align: center;
+
+            li {
+                margin-right: 5px;
+
+                a {
+                    max-width: 130px;
+                }
+            }
+        }
+    }
+    /*-- End Register --*/
+    /*----- Home Demo Two CSS -----*/
+
+    /*----- Home Demo Three CSS -----*/
+    /*-- Navbar --*/
+    .side-nav.three {
+        .login-left {
+            color: #172f47;
+
+            i {
+                color: #172f47;
+            }
+        }
+    }
+    /*-- End Navbar --*/
+
+    /*-- Banner --*/
+    .banner-area.three {
+        padding-bottom: 65px;
+
+        .banner-shape-three {
+            img {
+                position: relative;
+                bottom: 0;
+                right: 0;
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+    }
+    .banner-content.three {
+        height: 100%;
+        padding-top: 0;
+
+        .register-area {
+            margin-top: 30px;
+        }
+    }
+    /*-- End Banner --*/
+
+    /*-- Employer --*/
+    .employer-area {
+        padding-top: 110px;
+    }
+    .employer-item {
+        padding: 25px 15px 25px 85px;
+        
+        img {
+            left: 15px;
+        }
+        .span-two {
+            top: 0;
+            right: 0;
+        }
+    }
+    /*-- End Employer --*/
+
+    /*-- System --*/
+    .system-area {
+        .system-item {
+            .system-video {
+                li {
+                    .left-btn {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+    /*-- End System --*/
+
+    /*-- Client --*/
+    .client-area {
+        .section-title {
+            margin-bottom: 30px;
+        }
+        .client-item {
+            p {
+                font-size: 16px;
+            }
+        }
+        .client-img {
+            img {
+                &:nth-child(1) {
+                    display: none;
+                }
+                &:nth-child(2) {
+                    display: none;
+                }
+                &:nth-child(3) {
+                    display: none;
+                }
+                &:nth-child(4) {
+                    display: none;
+                }
+                &:nth-child(5) {
+                    display: none;
+                }
+                &:nth-child(6) {
+                    display: none;
+                }
+            }
+        }
+        .owl-prev {
+            display: none !important;
+        }
+        .owl-next {
+            display: none !important;
+        }
+    }
+    /*-- End Client --*/
+    /*----- Home Demo Three CSS -----*/
+
+    /*----- About CSS -----*/
+    .page-title-area {
+        height: 370px;
+
+        .title-item {
+            margin-top: 85px;
+
+            h2 {
+                font-size: 35px;
+            }
+        }
+    }
+    .new-area {
+        .new-img {
+
+            img {
+                &:nth-child(2) {
+                    display: none;
+                }
+            }
+        }
+        .about-content {
+            text-align: center;
+        }
+    }
+    /*----- End About CSS -----*/
+
+    /*----- Jobs CSS -----*/
+    .pagination-area {
+        ul {
+            li {
+                a {
+                    padding: 3px 12px;
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+    .form-check-label {
+        font-size: 13px;
+    }
+    .form-check-input {
+        margin-top: 3px;
+    }
+    .job-area-list {
+        .pagination-area {
+            margin-bottom: 30px;
+        }
+        .job-list-item {
+            li {
+                flex: 0 0 100%;
+                max-width: 100%;
+
+                &:last-child {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    text-align: left;
+                    margin-top: 15px;
+                }
+            }
+        }
+        .job-list-right {
+            .job {
+                padding: 22px 10px 25px;
+
+            }
+            .job-list-all {
+                padding: 22px 10px 25px;
+            }
+            .alzo-contact {
+                img {
+                    max-width: 190px;
+                }
+                .bottom {
+                    h3 {
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+    }
+    /*----- End Jobs CSS -----*/
+
+    /*----- Job Details CSS -----*/
+    .page-title-area.two {
+        text-align: center;
+        height: 520px;
+
+        .d-table-cell {
+            vertical-align: middle;
+        }
+        .left {
+            margin-bottom: 10px;
+            margin-top: 120px;
+
+            img {
+                margin-bottom: 5px;
+            }
+            h2 {
+                margin-bottom: 5px;
+                font-size: 30px;
+            }
+            ul {
+                li {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+    .job-details-area {
+        .details-item {
+            text-align: center;
+
+            .details-inner {
+                &:last-child {
+                    margin-bottom: 30px;
+                }
+                h3 {
+                    font-size: 20px;
+                }
+                .owl-prev {
+                    display: none !important;
+                }
+                .owl-next {
+                    display: none !important;
+                }
+            }
+        }
+    }
+    .video-wrap {
+        a {
+            width: 85px;
+            height: 85px;
+            line-height: 95px;
+
+            &:before {
+                width: 85px;
+                height: 85px;
+            }
+            &:after {
+                width: 85px;
+                height: 85px;
+            }
+        }
+    }
+    .widget-area {
+        .widget-item {
+            padding: 25px 10px 30px;
+        }
+    }
+    .job-details-related {
+        .section-title {
+            margin-top: -5px;
+        }
+    }
+    /*----- End Job Details CSS -----*/
+
+    /*----- Post A Job CSS -----*/
+    .post-job-area {
+        .post-item {
+            padding: 25px 15px 30px;
+
+            .section-title {
+                h2 {
+                    font-size: 25px;
+                }
+            }
+            .btn {
+                padding: 12px 60px;
+            }
+        }
+    }
+    /*----- End Post A Job CSS -----*/
+
+    /*----- Candidates CSS -----*/
+    .job-showing-area {
+        .showing {
+            .left {
+                .form-group {
+                    .nice-select {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+            .right {
+                ul {
+                    text-align: left;
+                }
+            }
+        }
+    }
+    /*----- End Candidates CSS -----*/
+
+    /*----- Candidate Details CSS -----*/
+    .page-title-area.three {
+        height: 545px;
+
+        .left {
+            margin-top: 130px;
+        }
+    }
+    .page-title-area.two {
+        .left.two {
+            padding-left: 0;
+
+            img {
+                position: relative;
+                bottom: 0;
+            }        
+        }
+    }
+    .person-details-area {
+        .details-item {
+            text-align: center;
+
+            .skills {
+                text-align: left;
+            }
+            .client {
+                padding: 20px 15px 20px 15px;
+
+                img {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                }
+                ul {
+                    position: relative;
+                    top: 0;
+                    right: 0;
+                    margin-top: 15px;                
+                }
+            }
+            .review {
+                padding: 28px 15px 35px;
+                text-align: left;
+                margin-bottom: 30px;
+            }
+        }
+    }
+    /*----- End Candidate Details CSS -----*/
+
+    /*----- Blog Details CSS -----*/
+    .blog-details-area {
+        .details-item {
+            .details-img {
+                ul {
+                    margin-bottom: 15px;
+
+                    li {
+                        margin-bottom: 5px;
+                    }
+                }
+                img {
+                    display: block;
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+                h2 {
+                    font-size: 25px;
+                }
+                .d-content {
+                    span {
+                        font-size: 60px;
+                        line-height: 55px;
+                        left: 0;
+                    }
+                    p {
+                        padding-left: 50px;
+                    }
+                }
+                blockquote {
+                    padding: 22px 15px 25px;
+
+                    p {
+                        font-size: 17px;
+                    }
+                }
+                h3 {
+                    font-size: 20px;
+                }
+            }
+            .details-tag {
+                .right {
+                    text-align: left;
+                    margin-top: 15px;
+                }
+            }
+            .details-date {
+                .date-inner {
+                    padding: 15px 50px 15px 15px;
+                    
+                    h4 {
+                        font-size: 16px;
+                    }
+                    a {
+                        padding-left: 5px;
+                        padding-right: 5px;
+                    }
+                }
+            }
+            .details-comment {
+                ul {
+                    li {
+                        padding-left: 115px;
+
+                        &:last-child {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+            .details-form {
+                padding: 28px 15px 35px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+    /*----- End Blog Details CSS -----*/
+
+    /*----- Contact CSS -----*/    
+    .contact-form-area {
+        .form-item {
+            padding: 30px 15px 30px;
+
+            .text-danger {
+                font-size: 16px;
+            }
+            .text-success {
+                font-size: 16px;
+            }
+        }
+    }
+    /*----- End Contact CSS -----*/    
+
+    /*----- User Form CSS -----*/   
+    .user-form-area {
+        height: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+        .user-img {
+            background-image: unset;
+            height: 100%;
+
+            img {
+                display: block;
+                margin-bottom: 30px;
+            }
+        }
+        .user-content {
+            padding-left: 0;
+            text-align: center;
+            margin-left: auto;
+            padding-right: 0;
+
+            .top {
+                h2 {
+                    font-size: 30px;
+                }
+            }
+        }
+    } 
+    /*----- End User Form CSS -----*/    
+
+    /*----- Employer CSS -----*/    
+    .employer-area.two {
+        .employer-item {
+            padding: 25px 10px 25px 80px;
+        }
+    }
+    /*----- End Employer CSS -----*/ 
+
+    /*----- Employer Details CSS -----*/   
+    .employer-details-area {
+        .client {
+            padding: 20px 15px 20px 15px;
+
+            img {
+                position: relative;
+                top: 0;
+                left: 0;
+                margin-bottom: 15px;
+            }
+            ul {
+                position: relative;
+                top: 0;
+                right: 0;
+                margin-top: 15px;
+            }
+        }
+        .review {
+            padding: 28px 15px 35px;
+            margin-bottom: 30px;
+        }
+    } 
+    /*----- End Employer Details CSS -----*/ 
+
+    /*----- Feedback CSS -----*/    
+    .feedback-area.two {
+        padding-bottom: 5px;
+    }
+    /*----- End Feedback CSS -----*/   
+
+    /*----- FAQ CSS -----*/    
+    .faq-area {
+        .faq-content {
+            .accordion { 
+                a {
+                    padding: 15px 25px 15px 18px;
+                    font-size: 16px;
+                }
+            }
+        }
+        .faq-img {
+            background-image: unset;
+            margin-top: 30px;
+
+            img {
+                display: block;
+                border-radius: 5px;
+            }
+        }
+        .faq-bottom {
+
+            h3 {
+                font-size: 24px;
+            }
+        }
+    }
+    /*----- End FAQ CSS -----*/  
+
+    /*----- Coming Soon CSS -----*/
+    .coming-soon-area {
+        .soon-item {
+            h1 {
+                font-size: 40px;
+            }
+        }
+    }
+    /*----- End Coming Soon CSS -----*/
+
+    /*----- Error CSS -----*/
+    .error-area {
+        .error-content {
+            h1 {
+                font-size: 80px;
+            }
+        }
+    }
+    /*----- End Error CSS -----*/
+
+    /*----- Dashboard CSS -----*/
+    .dashboard-area {
+        .profile-item {
+            img {
+                max-width: 200px;
+            }
+        }
+        .nav-pills {
+            margin-bottom: 30px;
+
+            a {
+                font-size: 16px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+        .profile-content {
+            .profile-content-inner {
+                padding: 35px 5px 10px;
+            }
+            h2 {
+                font-size: 30px;
+            }
+        }
+    }
+    /*----- End Dashboard CSS -----*/
+
+    /*----- Resume CSS -----*/
+    .resume-area {
+        .resume-profile {
+
+            img {
+                max-width: 200px;
+            }
+        }
+        .widget-area {
+            .widget-item {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    /*----- End Resume CSS -----*/
+    .explore-area .explore-item ul li .right-btn {
+        top: 0;
+    }
+    .explore-area .explore-item ul li span {
+        top: -4px;
+    }
+    .job-area-list .job-list-right .alzo-contact img {
+        padding-bottom: 20px;
+    }
+    .job-area-list .job-list-right .alzo-contact .bottom {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+}
+
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    $all-size: 14px;
+
+    /*----- Default CSS -----*/
+    body {
+        font-size: $all-size;
+    }
+    .ptb-100 {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    .pt-100 {
+        padding-top: 70px;
+    }
+    .pb-70 {
+        padding-bottom: 40px;
+    }
+    .pb-100 {
+        padding-bottom: 70px;
+    }
+    /*----- End Default CSS -----*/
+
+    /*----- Home Demo One CSS -----*/
+    /*-- Navbar --*/
+    .side-nav {
+        position: absolute;
+        top: 0;
+        right: 75px;
+        padding-top: 5px;
+
+        .login-left {
+            margin-right: 15px;
+            color: #fff;
+
+            i {
+                font-size: 17px;
+                top: 2px;
+            }
+        }
+        .job-right {
+            height: 45px;
+            padding-left: 15px;
+            padding-right: 15px;
+            line-height: 45px;
+            color: #221668;
+            background-color: #fff;
+        
+            i {
+                display: none;
+            }
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+    /*-- End Navbar --*/
+
+    /*-- Banner --*/
+    .container-fluid {
+        max-width: 720px !important;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    .banner-area {
+        text-align: center;
+        padding-top: 130px;
+        padding-bottom: 140px;    
+
+        &:before {
+            display: none;
+        }
+        .banner-shape {    
+            img {
+                height: 70px;
+            }
+        }
+    }
+    .banner-content {
+        height: 100%;
+
+        h1 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        .banner-form-area {
+            padding-right: 0;
+            margin-bottom: 35px;
+
+            .form-group {
+                .form-control {
+                    border-right: 0;
+                    border-bottom: 1px solid #8d8d8d;
+                    font-size: 14px;
+                }
+                .nice-select {
+                    border-right: 0;
+                    border-bottom: 1px solid #8d8d8d;
+                    font-size: 14px;
+                }
+                &.two {
+                    .form-control {
+                        border-bottom: 0;
+                    }
+                }
+            }
+            .btn {
+                height: 45px;
+                position: relative;
+                top: 0;
+                right: 0;
+                font-size: 14px;
+                padding-left: 15px;
+
+                i {
+                    height: 45px;
+                    font-size: 17px;
+                }
+            }
+        }
+        .banner-key {
+            ul {
+                li {
+                    span {
+                        display: block;
+                        color: #221668;
+                        background-color: #e2d3dc;
+                        padding: 6px 8px;
+                        border-radius: 5px;
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+    .banner-img {
+        img {
+            &:nth-child(1) {
+                display: none;
+            }
+            &:nth-child(2) {
+                display: none;
+            }
+            &:nth-child(3) {
+                display: none;
+            }
+            &:nth-child(4){
+                display: none;
+            }
+            &:nth-child(5) {
+                display: none;
+            }
+            &:nth-child(6) {
+                display: none;
+            }
+            &:nth-child(7) {
+                display: none;
+            }
+            &:nth-child(8) {
+                display: none;
+            }
+            &:nth-child(9) {
+                display: none;
+            }
+            &:nth-child(10) {
+                margin-top: 30px;
+                position: relative;
+                top: 0;
+                right: 0;
+                max-width: 100%;
+            }
+            &:nth-child(11) {
+                display: none;
+            }
+            &:nth-child(12) {
+                display: none;
+            }
+            &:nth-child(13) {
+                display: none;
+            }
+        }
+        .inner {
+            display: none;
+        }
+    }
+    /*-- End Banner --*/
+
+    /*-- Work --*/
+    .section-title {
+        margin-bottom: 30px;
+        text-align: center;
+
+        .sub-title {
+            margin-bottom: 5px;
+        }
+        h2 {
+            font-size: 30px;
+        }
+    }
+    /*-- End Work --*/
+
+    /*-- Jobs --*/
+    .sorting-menu {
+        text-align: center;
+
+        ul {
+            margin-bottom: 20px;
+
+            li {
+                font-size: 15px;
+                margin-right: 10px;
+                margin-left: 10px;
+                margin-bottom: 10px;
+
+                &:last-child {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    .job-area {
+        .section-title {
+            margin-bottom: 15px;
+        }
+    }
+    .job-browse {
+        p {
+            font-size: 15px;
+        }
+    }
+    .job-item {
+        padding: 25px 15px 30px;
+        text-align: center;
+
+        .job-left {
+            padding-left: 0;
+
+            img {
+                position: relative;
+                top: 0;
+                right: 0;
+                left: 0;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 12px;
+                display: block;
+            }
+            ul {
+                li {
+                    margin-right: 0;
+                    margin-bottom: 7px;
+                }
+            }
+        }
+        .job-right {
+            ul {
+                li {
+                    margin-bottom: 7px;
+                }
+            }
+        }
+    }
+    /*-- End Jobs --*/
+
+    /*-- Explore --*/
+    .explore-area {
+        text-align: center;
+
+        .section-title {
+            margin-bottom: 30px;
+        }
+        .explore-item {
+            margin-right: auto;
+
+            ul {
+                li {
+                    .left-btn {
+                        height: 45px;
+                        margin-right: 10px;
+                
+                        i {
+                            height: 45px;
+                            line-height: 45px;
+                            font-size: 17px;
+                        }
+                    }
+                    span {
+                        position: relative;
+                        top: -1px;                    
+                    }
+                }
+            }
+        }
+    }
+    /*-- End Explore --*/
+
+    /*-- Counter --*/
+    .counter-area {
+        padding-bottom: 110px;
+
+        &:before {
+            display: none;
+        }
+        .counter-shape {
+            img {
+                height: 70px;
+            }
+        }
+    }
+    /*-- End Counter --*/
+
+    /*-- Company --*/
+    .company-area {
+        .section-title {
+            margin-bottom: 10px;
+        }
+        .cmn-link {
+            margin-bottom: 30px;
+        }
+    }
+    .cmn-link {
+        text-align: center;
+
+        a {
+            font-size: 16px;
+
+            .one {
+                top: -3px;
+            }
+            .two {      
+                top: -3px;
+            }
+        }
+    }
+    /*-- End Company --*/
+
+    /*-- Location --*/
+    .location-area {
+        .cmn-link {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            margin-bottom: 10px;
+        }
+        .owl-prev {
+            display: none !important;
+        }
+        .owl-next {
+            display: none !important;
+        }
+    }
+    /*-- End Location --*/
+
+    /*-- Feedback --*/
+    .feedback-area {
+        padding-bottom: 115px;
+
+        &:before {
+            display: none;
+        }
+        .feedback-shape {
+            img {
+                height: 70px;
+            }
+        }
+        .owl-prev {
+            display: none !important;
+        }
+        .owl-next {
+            display: none !important;
+        }
+    }
+    /*-- End Feedback --*/
+
+    /*-- Blog --*/
+    .blog-area {
+
+        .section-title {
+            margin-bottom: 10px;
+        }
+        .cmn-link {
+            margin-bottom: 30px;
+        }
+    }
+    .blog-item {
+        .cmn-link {
+            margin-bottom: 0;
+
+            a {
+                font-size: 15px;
+
+                i {
+                    &.one {
+                        top: -4px;
+                    }
+                    &.two {
+                        top: -4px;
+                    }
+                }
+            }
+        }
+    }
+    /*-- End Blog --*/
+
+    /*-- App --*/
+    .app-area {
+        text-align: center;
+
+        .app-content {
+            .section-title {
+                margin-bottom: 30px;
+            }
+            ul {
+                li {
+                    margin-right: 5px;
+                    margin-left: 5px;
+        
+                    &:last-child {
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+        .app-img {
+            img {
+                &:nth-child(1) {
+                    margin-top: 30px;
+                }
+                &:nth-child(2) {
+                    display: none;
+                }
+            }
+        }
+    }
+    @keyframes app-ani {
+        50% {
+            transform: rotate(5deg);
+        }
+    }
+    /*-- End App --*/
+
+    /*-- Copyright --*/
+    .copyright-area {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: center;
+
+        .copyright-item {
+            ul {
+                margin-bottom: 10px;
+
+                li {
+                    margin-right: 5px;
+                    margin-left: 5px;
+                }
+            }
+            p {
+                text-align: center;
+            }
+        }
+    }
+    /*-- End Copyright --*/
+    /*----- End Home Demo One CSS -----*/
+
+    /*----- Home Demo Two CSS -----*/
+    /*-- Banner --*/
+    .banner-area.two {
+        padding-bottom: 85px;
+
+        .container-fluid {
+            padding-right: 15px;
+        }
+        .banner-shape-two {
+            img {
+                &:nth-child(2) {
+                    display: none;
+                }
+            }
+        }
+    }
+    .banner-content.two {
+        height: 100%;
+
+        h1 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+    }
+    .banner-img-two {
+        img {
+            &:nth-child(1) {
+                margin-top: 30px;
+            }
+            &:nth-child(2) {
+                display: none;
+            }
+            &:nth-child(3) {
+                display: none;
+            }
+            &:nth-child(4) {
+                display: none;
+            }
+        }
+    }
+    .side-nav.two {
+        .job-right {
+            color: #fff;
+
+            &:hover {
+                background-color: #fe4a55;
+            }
+        }
+    }
+    /*-- End Banner --*/
+
+    /*-- Support --*/
+    .support-area {
+        padding-top: 70px;
+
+        p {
+            margin-bottom: 30px;
+        }
+        .support-slider {
+            padding-right: 0;
+
+            .owl-prev {
+                display: none !important;
+            }
+            .owl-next {
+                display: none !important;
+            }
+        }
+    }
+    /*-- End Support --*/
+
+    /*-- Company --*/
+    .company-area.two {
+        .section-title {
+            margin-bottom: 30px;
+        }
+        .owl-prev {
+            display: none !important;
+        }
+        .owl-next {
+            display: none !important;
+        }
+    }
+    /*-- End Company --*/
+
+    /*-- Explore --*/
+    .explore-area.two {
+        .explore-item {
+            margin-left: auto;
+        }
+        .explore-img {
+            position: relative;
+            top: 0;
+            right: 0;
+            max-width: 100%;
+            margin-top: 30px;
+        }
+    }
+    /*-- End Explore --*/
+
+    /*-- Categories --*/
+    .categories-area {
+        padding-top: 55px;
+    }
+    /*-- End Categories --*/
+
+    /*-- Work --*/
+    .work-item.two {
+        border-right: 0;
+
+        &:after {
+            display: none;
+        }
+    }
+    /*-- End Work --*/
+
+    /*-- Candidate --*/
+    .candidate-area {
+        .owl-prev {
+            display: none !important;
+        }
+        .owl-next {
+            display: none !important;
+        }
+    }
+    .candidate-item {
+        .left {
+            max-width: 365px;
+        }
+    }
+    /*-- End Candidate --*/
+
+    /*-- Testimonial --*/
+    .testimonial-area {
+        text-align: center;
+        padding-bottom: 70px;
+
+        .owl-prev {
+            display: none !important;
+        }
+        .owl-next {
+            display: none !important;
+        }
+        .section-title {
+            margin-right: auto;
+        }
+        .testimonial-item {
+            padding-left: 0;
+
+            img {
+                position: relative;
+                top: 0;
+                left: 0;
+                right: 0;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 20px;
+            }
+            p {
+                font-size: 18px;
+                margin-bottom: 25px;
+            }
+        }
+    }
+    /*-- End Testimonial --*/
+
+    /*-- Register --*/
+    .register-area {
+        .container {
+            .row {
+                padding-right: 0;
+            }
+        }
+        ul {
+            position: relative;
+            margin-bottom: 30px;
+            text-align: center;
+
+            li {
+                margin-right: 5px;
+
+                a {
+                    max-width: 130px;
+                }
+            }
+        }
+    }
+    /*-- End Register --*/
+    /*----- Home Demo Two CSS -----*/
+
+    /*----- Home Demo Three CSS -----*/
+    /*-- Navbar --*/
+    .side-nav.three {
+        .login-left {
+            color: #fff;
+
+            i {
+                color: #fff;
+            }
+        }
+        .job-right {
+            color: #fff;
+        }
+    }
+    /*-- End Navbar --*/
+
+    /*-- Banner --*/
+    .banner-area.three {
+        padding-bottom: 65px;
+
+        .banner-shape-three {
+            img {
+                position: relative;
+                bottom: 0;
+                right: 0;
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+    }
+    .banner-content.three {
+        height: 100%;
+        padding-top: 0;
+
+        h1 {
+            margin-bottom: 25px;
+        }
+        .register-area {
+            margin-top: 30px;
+        }
+    }
+    /*-- End Banner --*/
+
+    /*-- Employer --*/
+    .employer-area {
+        padding-top: 130px;
+    }
+    /*-- End Employer --*/
+
+    /*-- Client --*/
+    .client-area {
+        .section-title {
+            margin-bottom: 30px;
+        }
+        .client-item {
+            p {
+                font-size: 16px;
+            }
+        }
+        .client-img {
+            img {
+                &:nth-child(1) {
+                    display: none;
+                }
+                &:nth-child(2) {
+                    display: none;
+                }
+                &:nth-child(3) {
+                    display: none;
+                }
+                &:nth-child(4) {
+                    display: none;
+                }
+                &:nth-child(5) {
+                    display: none;
+                }
+                &:nth-child(6) {
+                    display: none;
+                }
+            }
+        }
+        .owl-prev {
+            display: none !important;
+        }
+        .owl-next {
+            display: none !important;
+        }
+    }
+    /*-- End Client --*/
+    /*----- Home Demo Three CSS -----*/
+
+    /*----- About CSS -----*/
+    .page-title-area {
+        height: 370px;
+
+        .title-item {
+            margin-top: 30px;
+
+            h2 {
+                font-size: 35px;
+            }
+        }
+    }
+    .new-area {
+        .new-img {
+
+            img {
+                &:nth-child(2) {
+                    display: none;
+                }
+            }
+        }
+        .about-content {
+            text-align: center;
+        }
+    }
+    /*----- End About CSS -----*/
+
+    /*----- Jobs CSS -----*/
+    .job-area-list {
+        .pagination-area {
+            margin-bottom: 30px;
+        }
+        .nice-select .list {
+            left: unset;
+            right: 0;
+        }
+    }
+    /*----- End Jobs CSS -----*/
+
+    /*----- Job Details CSS -----*/
+    .page-title-area.two {
+        text-align: center;
+        height: 520px;
+
+        .d-table-cell {
+            vertical-align: middle;
+        }
+        .left {
+            margin-bottom: 10px;
+            margin-top: 90px;
+
+            ul {
+                margin-bottom: 25px;
+            }
+        }
+    }
+    .job-details-area {
+        .details-item {
+            text-align: center;
+
+            .details-inner {
+                &:last-child {
+                    margin-bottom: 30px;
+                }
+                h3 {
+                    font-size: 20px;
+                }
+                .owl-prev {
+                    display: none !important;
+                }
+                .owl-next {
+                    display: none !important;
+                }
+            }
+        }
+    }
+    .video-wrap {
+        a {
+            width: 85px;
+            height: 85px;
+            line-height: 95px;
+
+            &:before {
+                width: 85px;
+                height: 85px;
+            }
+            &:after {
+                width: 85px;
+                height: 85px;
+            }
+        }
+    }
+    .job-details-related {
+        .section-title {
+            margin-top: -5px;
+        }
+    }
+    /*----- End Job Details CSS -----*/
+
+    /*----- Candidate Details CSS -----*/
+    .page-title-area.three {
+        height: 545px;
+
+        .left {
+            margin-top: 95px;
+        }
+    }
+    .page-title-area.two {
+        .left.two {
+            padding-left: 0;
+
+            img {
+                position: relative;
+                bottom: 0;
+            }        
+        }
+    }
+    .person-details-area {
+        .details-item {
+            text-align: center;
+
+            .skills {
+                text-align: left;
+            }
+            .client {
+                text-align: left;
+            }
+            .review {
+                padding: 28px 15px 35px;
+                text-align: left;
+                margin-bottom: 30px;
+            }
+        }
+        .candidate-item {
+            .left {
+                max-width: 100%;
+            }
+        }
+    }
+    /*----- End Candidate Details CSS -----*/
+
+    /*----- User Form CSS -----*/   
+    .user-form-area {
+        height: 100%;
+        padding-top: 70px;
+        padding-bottom: 70px;
+
+        .user-img {
+            background-image: unset;
+            height: 100%;
+
+            img {
+                display: block;
+                margin-bottom: 30px;
+            }
+        }
+        .user-content {
+            padding-left: 0;
+            text-align: center;
+            margin-left: auto;
+            padding-right: 0;
+
+            .top {
+                h2 {
+                    font-size: 30px;
+                }
+            }
+        }
+    } 
+    /*----- End User Form CSS -----*/   
+
+    /*----- Employer Details CSS -----*/   
+    .employer-details-area {
+        .client {
+            text-align: left;
+        }
+        .review {
+            margin-bottom: 30px;
+        }
+    } 
+    /*----- End Employer Details CSS -----*/ 
+
+    /*----- Feedback CSS -----*/    
+    .feedback-area.two {
+        padding-bottom: 40px;
+    }
+    /*----- End Feedback CSS -----*/   
+
+    /*----- Coming Soon CSS -----*/
+    .coming-soon-area {
+        .soon-item {
+            h1 {
+                font-size: 65px;
+            }
+        }
+    }
+    /*----- End Coming Soon CSS -----*/
+
+    /*----- Dashboard CSS -----*/
+    .dashboard-area {
+        .profile-content {
+            .profile-content-inner {
+                padding: 30px 30px 10px;
+            }
+        }
+    }
+    /*----- End Dashboard CSS -----*/
+
+    /*----- Resume CSS -----*/
+    .resume-area {
+        .widget-area {
+            .widget-item {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    /*----- End Resume CSS -----*/
+
+}
+
+@media only screen and (min-width : 576px) and (max-width : 776px) {
+    .register-area .register-item p {
+        font-size: 13px;
+    }
+    .blog-item {
+        padding: 15px 10px 25px 10px;
+    }
+    .blog-item span {
+        padding-left: 25px;
+    }
+    .blog-item span:before {
+        width: 18px;
+    }
+    .blog-details-area .details-item .details-date .date-inner span {
+        font-size: 13px;
+        padding-left: 30px;
+    }
+    .blog-details-area .details-item .details-date .date-inner span:before {
+        width: 24px;
+    }
+    .job-area-list .job-list-item li {
+        flex: 0 0 60%;
+        max-width: 60%;
+    }
+    .job-area-list .job-list-item li:last-child {
+        flex: 0 0 40%;
+        max-width: 40%;
+        text-align: right;
+        margin-top: 0;
+    }
+    .job-area-list {
+        .nice-select .list {
+            left: unset;
+            right: 0;
+        }
+    }
+}
+
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    .main-nav nav .navbar-nav .nav-item a {
+        font-size: 15px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    .navbar-light .navbar-brand, .navbar-light .navbar-brand:hover {
+        max-width: 115px;
+    }
+    .side-nav .job-right i {
+        display: none;
+    }
+    .side-nav .job-right {
+        height: 45px;
+        padding-left: 15px;
+        padding-right: 15px;
+        line-height: 45px;
+    }
+    .main-nav .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .side-nav .login-left {
+        margin-right: 6px;
+    }
+    .banner-img .inner {
+        display: none;
+    }
+    .banner-img img:nth-child(6) {
+        display: none;
+    }
+    .banner-img img:nth-child(5) {
+        display: none;
+    }
+    .banner-img img:nth-child(13) {
+        display: none;
+    }
+    .banner-area .container-fluid {
+        padding-left: 15px;
+    }
+    .banner-img img:nth-child(2) {
+        display: none;
+    }
+    .banner-img img:nth-child(4) {
+        display: none;
+    }
+    .banner-content h1 {
+        font-size: 60px;
+    }
+    .banner-content .banner-key ul li span {
+        margin-right: 5px;
+    }
+    .banner-content .banner-key ul li {
+        font-size: 14px;
+    }
+    .sorting-menu ul li {
+        font-size: 16px;
+        margin-right: 15px;
+    }
+    .counter-item {
+        padding-left: 80px;
+    }
+    .counter-item p {
+        font-size: 14px;
+    }
+    .company-item .top p {
+        font-size: 11px;
+    }
+    .company-item .top span {
+        padding: 4px 5px;
+        font-size: 12px;
+    }
+    .company-item .top h3 {
+        font-size: 17px;
+    }
+    .company-item {
+        padding: 25px 10px 25px;
+    }
+    .feedback-area .owl-prev {
+        display: none !important;
+    }
+    .feedback-area .owl-next {
+        display: none !important;
+    }
+    .blog-item h3 {
+        font-size: 18px;
+        margin-bottom: 18px;
+    }
+    .banner-content.two h1 {
+        font-size: 50px;
+    }
+    .banner-area.two .container-fluid {
+        padding-right: 15px;
+    }
+    .banner-img-two img:nth-child(3) {
+        left: 35px;
+    }
+    .explore-area.two .explore-img {
+        top: -42px;
+        max-width: 475px;
+    }
+    .categories-area .nav-pills a {
+        font-size: 18px;
+    }
+    .categories-area .cat-item {
+        padding: 20px 10px 20px 50px;
+    }
+    .categories-area .cat-item h3 {
+        font-size: 14px;
+    }
+    .candidate-item img {
+        max-width: 225px;
+    }
+    .candidate-item .left {
+        max-width: 180px;
+    }
+    .candidate-area .owl-prev {
+        display: none !important;
+    }
+    .candidate-area .owl-next {
+        display: none !important;
+    }
+    .testimonial-area .owl-next {
+        display: none !important;
+    }
+    .testimonial-area .owl-prev {
+        display: none !important;
+    }
+    .register-area .container .row {
+        padding-right: 370px;
+    }
+    #toTop {
+        bottom: 55px;
+        right: 20px;
+    }
+    .banner-area.three .banner-shape-three img {
+        right: 10px;
+        max-width: 435px;
+    }
+    .employer-item {
+        padding: 25px 5px 25px 85px;
+
+        p {
+            font-size: 14px;
+        }
+    }
+    .pricing-item {
+        padding: 25px 10px 30px;
+    }
+    .client-area .client-img img:nth-child(5) {
+        top: 295px;
+        max-width: 95px;
+    }
+    .client-area .client-img img:nth-child(2) {
+        top: 295px;
+        max-width: 95px;
+    }
+    .client-area .owl-prev {
+        display: none !important;
+    }
+    .client-area .owl-next {
+        display: none !important;
+    }
+    
+}
+
+@media only screen and (min-width : 1199px) and (max-width : 1300px) {
+
+    .main-nav nav .navbar-nav .nav-item a {
+        font-size: 15px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    .navbar-light .navbar-brand, .navbar-light .navbar-brand:hover {
+        max-width: 115px;
+    }
+    .side-nav .job-right i {
+        display: none;
+    }
+    .side-nav .job-right {
+        height: 45px;
+        padding-left: 15px;
+        padding-right: 15px;
+        line-height: 45px;
+    }
+    .main-nav .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .side-nav .login-left {
+        margin-right: 10px;
+    }
+    .banner-img .inner {
+        display: none;
+    }
+    .banner-img img:nth-child(6) {
+        display: none;
+    }
+    .banner-img img:nth-child(5) {
+        display: none;
+    }
+    .banner-img img:nth-child(13) {
+        display: none;
+    }
+    .banner-area .container-fluid {
+        padding-left: 15px;
+    }
+    .banner-img img:nth-child(2) {
+        display: none;
+    }
+    .banner-img img:nth-child(4) {
+        display: none;
+    }
+    .banner-content h1 {
+        font-size: 60px;
+    }
+    .banner-content .banner-key ul li span {
+        margin-right: 5px;
+    }
+    .banner-content .banner-key ul li {
+        font-size: 14px;
+    }
+
+}
+
+@media only screen and (min-width: 1800px) {
+
+    .main-nav .container-fluid {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+    .banner-area .container-fluid {
+        padding-left: 120px;
+    }
+    .banner-area.two .container-fluid {
+        padding-right: 120px;
+    }
+    .banner-area.three .banner-shape-three img {
+        max-width: 915px;
+    }
+    .feature-item .bottom h3 {
+        font-size: 19px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+
+    .mean-container .mean-bar {
+        background-color: #172f47;
+    }
+    .mobile-nav .logo {
+        top: 10px;
+        max-width: 105px;
+    }
+    .mean-container a.meanmenu-reveal span {
+        margin-top: 30px;
+        position: relative;
+        top: -10px;
+    }
+    .mobile-nav.mean-container .mean-nav ul li a.active {
+        color: #fe4a55;
+    }
+    .tooltip-span {
+        display: none;
+    }
+    .navbar-nav {
+        height: 350px;
+        overflow-y: scroll;
+    }
+
+}
