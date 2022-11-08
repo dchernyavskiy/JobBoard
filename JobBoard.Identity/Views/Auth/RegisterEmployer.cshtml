@@ -1,5 +1,9 @@
 ﻿@model RegisterEmployerViewModel
 
+@{
+    ViewData["Title"] = "Register Employer";
+}
+
 <section class="h-100 h-custom gradient-custom-2">
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -26,48 +30,33 @@
                                         <div class="col-md-6 mb-4 pb-2">
 
                                             <div class="form-outline">
-                                                <label class="form-label" for="form3Examplev3">Category</label>
-                                                <input asp-for="Category" type="text" id="form3Examplev3" class="form-control form-control-lg" />
-                                                <span asp-validation-for="Category"></span>
+                                                <label class="form-label" for="form3Examplev3">Team Size</label>
+                                                <input asp-for="TeamSize" type="number" id="form3Examplev3" class="form-control form-control-lg" />
+                                                <span asp-validation-for="TeamSize"></span>
                                             </div>
 
                                         </div>
                                     </div>
-                                    
-                                    <div class="row">
-                                        <div class="col-md-6 mb-4 pb-2">
-
-                                            <div class="form-outline">
-                                                <label class="form-label" for="form3Examplev2">Team size</label>
-                                                <input asp-for="TeamSize" type="number" id="form3Examplev2" class="form-control form-control-lg" />
-                                                <span asp-validation-for="TeamSize" class="alert-danger"></span>
-                                            </div>
-
-                                        </div>
-                                        <div class="col-md-6 mb-4 pb-2">
-
-                                            <div class="form-outline">
-                                                <label class="form-label" for="form3Examplev3">Location</label>
-                                                <input asp-for="Location" type="text" id="form3Examplev3" class="form-control form-control-lg" />
-                                                <span asp-validation-for="Location"></span>
-                                            </div>
-
+                                                                        
+                                    <div class="mb-4 pb-2">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="form3Examplev4">Location</label>
+                                            <input type="text" asp-for="Location" id="form3Examplev4" class="form-control form-control-lg" />
+                                            <span asp-validation-for="Location"></span>
                                         </div>
                                     </div>
                                     
                                     <div class="mb-4 pb-2">
                                         <div class="form-outline">
-                                            <label class="form-label" for="form3Examplev4">Responsibilities</label>
-                                            @*<input type="text" asp-for="AboutUs" id="form3Examplev4" class="form-control form-control-lg" />*@
-                                            <textarea asp-for="Responsibilities" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                            <span asp-validation-for="Responsibilities"></span>
+                                            <label class="form-label" for="form3Examplev4">Photo Link</label>
+                                            <input type="text" asp-for="PhotoLink" id="form3Examplev4" class="form-control form-control-lg" />
+                                            <span asp-validation-for="PhotoLink" class="alert-danger"></span>
                                         </div>
                                     </div>
 
                                     <div class="mb-4 pb-2">
                                         <div class="form-outline">
                                             <label class="form-label" for="form3Examplev4">About Us</label>
-                                            @*<input type="text" asp-for="AboutUs" id="form3Examplev4" class="form-control form-control-lg" />*@
                                             <textarea asp-for="AboutUs" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                             <span asp-validation-for="AboutUs"></span>
                                         </div>
@@ -78,8 +67,6 @@
                             </div>
                             <div class="col-lg-6 bg-indigo text-white" style="flex-direction: column;display: flex;justify-content: center;">
                                 <div class="p-5" style="display: flex;flex-direction: column;">
-                                    @*<h3 class="fw-normal mb-5"></h3>*@
-
                                     <div class="mb-4">
                                         <div class="form-outline form-white">
                                             <label class="form-label" for="form3Examplea9">Email</label>

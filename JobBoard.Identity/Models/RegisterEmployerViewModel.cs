@@ -1,19 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using JobBoard.Identity.Attributes;
+using System.ComponentModel.DataAnnotations;
 
 namespace JobBoard.Identity.Models
 {
     public class RegisterEmployerViewModel : RegisterViewModel
     {
+        [Required]
         public string Name { get; set; }
+        [Required]
         public string AboutUs { get; set; }
-        public string Responsibilities { get; set; }
+        [Required]
         public int TeamSize { get; set; }
+        [Required]
         public string Location { get; set; }
-        public string Category { get; set; }
-        public DateTime? Foundation { get; set; }
+        [Available]
+        [Required]
+        public string PhotoLink { get; set; }
     }
 }

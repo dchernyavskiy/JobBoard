@@ -1,5 +1,8 @@
-﻿using JobBoard.Application.Interfaces;
+﻿using AutoMapper;
+using JobBoard.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using static JobBoard.Application.Locations.CreateLocation;
+using static JobBoard.Application.Locations.DeleteLocation;
 
 namespace JobBoard.WebApi.Controllers
 {
@@ -7,17 +10,32 @@ namespace JobBoard.WebApi.Controllers
     [Route("api/v{apiVersion}/[controller]/[action]")]
     public class LocationController : BaseController
     {
-        private readonly IJobBoardDbContext _context;
+        private readonly IMapper _mapper;
 
-        public LocationController(IJobBoardDbContext context)
+        public LocationController(IMapper mapper)
         {
-            _context = context;
+            _mapper = mapper;
         }
 
-        [HttpGet]
-        public IActionResult GetAll()
+        [HttpPost]
+        //[Authorize(Roles = "SystemAdministrator")]
+        public async Task<ActionResult<Guid>> Create([FromBody] CreateLocationCommandDto createLocationCommandDto)
         {
-            return Ok(_context.Locations);
+            var command = _mapper.Map<CreateLocationCommand>(createLocationCommandDto);
+            var vm = await Mediator.Send(command);
+            return Ok(vm);
+        }
+
+
+        [HttpDelete]
+        public async Task<ActionResult> Delete(Guid id)
+        {
+            var command = new DeleteLocationCommand
+            {
+                Id = id
+            };
+            await Mediator.Send(command);
+            return NoContent();
         }
     }
 }

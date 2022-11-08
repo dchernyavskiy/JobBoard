@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using JobBoard.WebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using static JobBoard.Application.Jobs.CreateJob;
 using static JobBoard.Application.Jobs.DeleteJob;
@@ -44,7 +45,7 @@ namespace JobBoard.WebApi.Controllers
         public async Task<ActionResult<Guid>> Create([FromBody]CreateJobCommandDto commandDto)
         {
             var command = _mapper.Map<CreateJobCommand>(commandDto);
-            command.EmployerId = UserId == Guid.Empty ? Guid.Parse("041343ea-0f3d-458b-9fb6-7bd6700d69e8") : UserId;
+            command.EmployerId = UserId;
             var vm = await Mediator.Send(command);
             return Ok(vm);
         }

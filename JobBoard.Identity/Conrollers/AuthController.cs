@@ -64,14 +64,48 @@ namespace JobBoard.Identity.Conrollers
             return View(vm);
         }
 
-
         [HttpGet]
-        public IActionResult Register(string returnUrl)
+        public IActionResult RegisterEmployee(string returnUrl = "default")
         {
-            var viewModel = new RegisterViewModel
+            var viewModel = new RegisterEmployeeViewModel { ReturnUrl = returnUrl };
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RegisterEmployee(RegisterEmployeeViewModel viewModel)
+        {
+            if (!ModelState.IsValid) return View(viewModel);
+            var user = new AppUser
             {
-                ReturnUrl = returnUrl
+                Id = Guid.NewGuid().ToString(),
+                UserName = $"{viewModel.FirstName.ToLower()}_{viewModel.LastName.ToLower()}",
+                Email = viewModel.Email,
+                EmailConfirmed = true,
             };
+            _ = await _userManager.CreateAsync(user, viewModel.Password);
+
+            var role = await _roleManager.FindByNameAsync("Employee");
+            if (role == null) throw new Exception("Role was not found");
+            var result = await _userManager.AddToRoleAsync(user, role.Name);
+
+            if (result.Succeeded)
+            {
+                var id = Guid.Parse(user.Id);
+
+                await _context.Employees.AddAsync(new Domain.Employee 
+                {
+                    Id = id,
+                    FirstName = viewModel.FirstName,
+                    LastName = viewModel.LastName,
+                    Email = viewModel.Email,
+                    Phone = viewModel.Phone,
+                    CVLink = viewModel.CVLink
+                });
+
+                await _context.SaveChangesAsync(new CancellationToken());
+                return Redirect(viewModel.ReturnUrl);
+            }
+
             return View(viewModel);
         }
 
@@ -88,12 +122,13 @@ namespace JobBoard.Identity.Conrollers
             if (!ModelState.IsValid) return View(viewModel);
             var user = new AppUser
             {
+                Id = Guid.NewGuid().ToString(),
                 UserName = viewModel.Name,
                 Email = viewModel.Email,
                 EmailConfirmed = true,
             };
             _ = await _userManager.CreateAsync(user, viewModel.Password);
-            
+
             var role = await _roleManager.FindByNameAsync("Employer");
             if (role == null) throw new Exception("Role was not found");
             var result = await _userManager.AddToRoleAsync(user, role.Name);
@@ -106,16 +141,24 @@ namespace JobBoard.Identity.Conrollers
                     Id = id,
                     Name = viewModel.Name,
                     AboutUs = viewModel.AboutUs,
-                    Responsibilities = viewModel.Responsibilities,
                     TeamSize = viewModel.TeamSize,
                     Location = viewModel.Location,
-                    Category = viewModel.Category,
-                    Foundation = viewModel.Foundation
+                    PhotoLink = viewModel.PhotoLink
                 });
                 await _context.SaveChangesAsync(new CancellationToken());
                 return Redirect(viewModel.ReturnUrl);
             }
 
+            return View(viewModel);
+        }
+
+        [HttpGet]
+        public IActionResult Register(string returnUrl)
+        {
+            var viewModel = new RegisterViewModel
+            {
+                ReturnUrl = returnUrl
+            };
             return View(viewModel);
         }
 
@@ -126,8 +169,6 @@ namespace JobBoard.Identity.Conrollers
 
             var user = new AppUser
             {
-                //FirstName = "Mark",
-                //LastName = "Johnson",
                 Email = viewModel.Email,
                 EmailConfirmed = true,
                 UserName = string.Join("", viewModel.Email.TakeWhile(c => c != '@'))
@@ -145,9 +186,9 @@ namespace JobBoard.Identity.Conrollers
             {
                 var id = Guid.Parse(user.Id);
                 if (role.Name == "Employee")
-                    await _context.Employees.AddAsync(new Domain.Employee { Id = id});
+                    await _context.Employees.AddAsync(new Domain.Employee { Id = id });
                 else if (role.Name == "Employer")
-                    await _context.Employers.AddAsync(new Domain.Employer { Id = id});
+                    await _context.Employers.AddAsync(new Domain.Employer { Id = id });
                 await _context.SaveChangesAsync(new CancellationToken());
                 return Redirect(viewModel.ReturnUrl);
             }

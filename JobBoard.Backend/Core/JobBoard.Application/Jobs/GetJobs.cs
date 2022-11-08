@@ -70,6 +70,9 @@ namespace JobBoard.Application.Jobs
 
             public async Task<JobsVm> Handle(GetJobsQuery request, CancellationToken cancellationToken)
             {
+                // 1. sort
+                // 2. filter
+                // 3. pagging
                 var entities = _context.Jobs
                     .Include(x => x.Location)
                     .Skip((request.Pagging.Page - 1) * request.Pagging.Count)

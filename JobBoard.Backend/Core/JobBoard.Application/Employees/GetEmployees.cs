@@ -15,6 +15,7 @@ namespace JobBoard.Application.Employees
         {
             public IList<JobLookupDto> Jobs { get; set; }
         }
+        
         public class JobLookupDto : IMapWith<Job>
         {
             public Guid Id { get; set; }
@@ -70,6 +71,9 @@ namespace JobBoard.Application.Employees
 
             public async Task<JobsVm> Handle(GetJobsQuery request, CancellationToken cancellationToken)
             {
+                // 1. sort
+                // 2. filter
+                // 3. pagging
                 var entities = _context.Jobs
                     .Include(x => x.Location)
                     .Skip((request.Pagging.Page - 1) * request.Pagging.Count)
