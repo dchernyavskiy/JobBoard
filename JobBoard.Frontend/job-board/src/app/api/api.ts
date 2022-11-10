@@ -229,7 +229,7 @@ export class Client extends ClientBase {
         };
 
         return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
-            return this.http.request("get", url_, transformedOptions_);
+            return this.http.request("post", url_, transformedOptions_);
         })).pipe(_observableMergeMap((response_: any) => {
             return this.processGetAll(response_);
         })).pipe(_observableCatch((response_: any) => {
@@ -917,6 +917,7 @@ export interface Job {
     id?: string;
     name?: string | undefined;
     discription?: string | undefined;
+    shortDiscription?: string | undefined;
     datePosted?: Date;
     locationId?: string;
     location?: Location;
@@ -924,6 +925,7 @@ export interface Job {
     salaryStart?: number;
     salaryEnd?: number;
     experience?: number;
+    employment?: string | undefined;
     employerId?: string;
     employer?: Employer;
     employeeId?: string | undefined;
@@ -948,8 +950,10 @@ export interface JobLookupDto {
     id?: string;
     name?: string | undefined;
     location?: Location;
-    salaryStart?: number;
-    salaryEnd?: number;
+    datePosted?: Date;
+    employment?: string | undefined;
+    shortDiscription?: string | undefined;
+    category?: Category;
 }
 
 export interface JobSort {
@@ -979,7 +983,7 @@ export interface JobVm {
 
 export interface Location {
     id?: string;
-    name?: string | undefined;
+    city?: string | undefined;
     jobs?: Job[] | undefined;
 }
 
