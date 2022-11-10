@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationStart, NavigationCancel, NavigationEnd } from '@angular/router';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { filter } from 'rxjs/operators';
+import {OidcSecurityService} from 'angular-auth-oidc-client';
+import {environment} from './../environments/environment';
 declare let $: any;
 
 @Component({
@@ -19,12 +21,26 @@ export class AppComponent implements OnInit {
     location: any;
     routerSubscription: any;
 
-    constructor(private router: Router) {
+    constructor(private router: Router, public oidcSecurityService: OidcSecurityService) {
     }
 
     ngOnInit(){
+        this.oidcSecurityService.checkAuth().subscribe(({ isAuthenticated, userData, accessToken, idToken }) => {
+            console.log('is auth: ' + isAuthenticated);
+            console.log('user data: ' + userData);
+            console.log('access token: ' + accessToken);
+            console.log('id token: ' + idToken);
+          });
         this.recallJsFuntions();
     }
+
+    login(){
+        this.oidcSecurityService.authorize();
+    }
+
+    logout() {
+        this.oidcSecurityService.logoff();
+      }
 
     recallJsFuntions() {
         this.router.events

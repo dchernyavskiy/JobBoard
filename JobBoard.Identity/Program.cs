@@ -1,5 +1,6 @@
 using JobBoard.Identity;
 using JobBoard.Identity.Data;
+using JobBoard.Identity.Interfaces;
 using JobBoard.Identity.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +13,11 @@ builder.Services.AddDbContext<AuthDbContext>(opts =>
     opts.UseSqlServer(builder.Configuration["DbConnection"]);
 });
 
+builder.Services.AddDbContext<IJobDbContext, JobDbContext>(opts =>
+{
+    opts.UseSqlServer(builder.Configuration["JobDbConnection"]);
+});
+
 builder.Services.AddIdentity<AppUser, IdentityRole>(opts =>
 {
     opts.Password.RequiredLength = 8;
@@ -20,9 +26,8 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(opts =>
     opts.Password.RequireLowercase = true;
     opts.Password.RequireUppercase = true;
     opts.User.RequireUniqueEmail = true;
-})
-    .AddEntityFrameworkStores<AuthDbContext>()
-    .AddDefaultTokenProviders();
+}).AddEntityFrameworkStores<AuthDbContext>()
+  .AddDefaultTokenProviders();
 
 builder.Services.AddIdentityServer()
                 .AddAspNetIdentity<AppUser>()

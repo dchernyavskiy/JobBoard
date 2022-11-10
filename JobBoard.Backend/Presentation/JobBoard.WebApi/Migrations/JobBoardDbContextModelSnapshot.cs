@@ -77,22 +77,24 @@ namespace JobBoard.WebApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("City")
+                    b.Property<string>("CVLink")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Country")
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("State")
+                    b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Website")
+                    b.Property<string>("LastName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Zip")
+                    b.Property<string>("Phone")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -110,26 +112,24 @@ namespace JobBoard.WebApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Responsibilities")
+                    b.Property<string>("PhotoLink")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TeamSize")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.ToTable("Employers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("041343ea-0f3d-458b-9fb6-7bd6700d69e8"),
-                            AboutUs = "Super emloyeer",
-                            Name = "Employeer",
-                            Responsibilities = "Some responsilities"
-                        });
                 });
 
             modelBuilder.Entity("JobBoard.Domain.Job", b =>

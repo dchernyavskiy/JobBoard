@@ -7,7 +7,10 @@ namespace JobBoard.Persistence
     public class JobBoardDbContext : DbContext, IJobBoardDbContext
     {
 
-        public JobBoardDbContext(DbContextOptions<JobBoardDbContext> opts) : base(opts) { }
+        public JobBoardDbContext(DbContextOptions<JobBoardDbContext> opts) : base(opts) 
+        {
+            Database.EnsureCreated();
+        }
 
         public DbSet<Category> Categories => Set<Category>();
 
@@ -28,14 +31,6 @@ namespace JobBoard.Persistence
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {              
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Employer>()
-                .HasData(new Employer
-                {
-                    Id = Guid.Parse("041343ea-0f3d-458b-9fb6-7bd6700d69e8"),
-                    Name = "Employeer",
-                    AboutUs = "Super emloyeer",
-                    Responsibilities = "Some responsilities"
-                });
         }
     }
 }

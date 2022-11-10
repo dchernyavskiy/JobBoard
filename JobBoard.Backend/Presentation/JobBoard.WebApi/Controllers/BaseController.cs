@@ -5,7 +5,7 @@ using System.Security.Claims;
 namespace JobBoard.WebApi.Controllers
 {
     [ApiController]
-    [Route("api/[controller]/[action]")]
+    [Route("api/v{apiVersion}/[controller]/[action]")]
     public class BaseController : ControllerBase
     {
         private IMediator _mediator;

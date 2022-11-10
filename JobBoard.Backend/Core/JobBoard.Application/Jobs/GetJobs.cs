@@ -70,6 +70,9 @@ namespace JobBoard.Application.Jobs
 
             public async Task<JobsVm> Handle(GetJobsQuery request, CancellationToken cancellationToken)
             {
+                // 1. sort
+                // 2. filter
+                // 3. pagging
                 var entities = _context.Jobs
                     .Include(x => x.Location)
                     .Skip((request.Pagging.Page - 1) * request.Pagging.Count)
@@ -80,7 +83,8 @@ namespace JobBoard.Application.Jobs
                     .Where(x => request.Filters.SalaryStart == 0 ? true : x.SalaryStart >= request.Filters.SalaryStart)
                     .Where(x => request.Filters.SalaryEnd == 0 ? true : x.SalaryEnd <= request.Filters.SalaryEnd)
                     .Where(x => request.Filters.EmloyerIds == null ? true : request.Filters.EmloyerIds.Contains(x.EmployerId))
-                    .Where(x => request.Filters.Experiences == null ? true : request.Filters.Experiences.Contains(x.Experience));
+                    .Where(x => request.Filters.Experiences == null ? true : request.Filters.Experiences.Contains(x.Experience))
+                    ;
 
                 if (request != null && request.Sort.IsAscending)
                 {
