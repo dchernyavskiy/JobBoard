@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yEOb3chSHFgZvypmQjtY4QmwPYkrM6w79knUg3Gt6RZrYMc+jdnNk2IAOsieQvKsEBUUjKjFdX/PARidbL5ONA==",
+  "dgSpecHash": "dOYuNl5I+3qES81wA+ML7+QSRnJCqDfkXn3+kqexWyk44gZQNZWfvTj4uPDZ9cC7hByvdF/vy2r5qJQ/Tm96kQ==",
   "success": true,
   "projectFilePath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\JobBoard.WebApi.csproj",
   "expectedPackageFiles": [
@@ -48,6 +48,7 @@
     "C:\\Users\\user\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.10.0\\microsoft.identitymodel.tokens.6.10.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",

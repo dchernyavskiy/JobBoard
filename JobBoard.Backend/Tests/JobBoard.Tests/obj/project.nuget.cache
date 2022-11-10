@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xDOcmfPPsCzJJL0//b9xz0ug6i4F898bVs6BQvaBKCDElYX3rKEAQrCwlhxrqu0PyWtUTWEJBgeqDBT5HVQ6Jg==",
+  "dgSpecHash": "fxjaL5p7bLrQo1492n+e6SWsS4whxyQHH5fki/GxIbeZjm+4vmwcnpPhq8hcFI/8FUZW/3UIWjpKqheEpSua1A==",
   "success": true,
   "projectFilePath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\JobBoard.Tests.csproj",
   "expectedPackageFiles": [
@@ -62,6 +62,7 @@
     "C:\\Users\\user\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.1.0\\microsoft.testplatform.objectmodel.17.1.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.testplatform.testhost\\17.1.0\\microsoft.testplatform.testhost.17.1.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",

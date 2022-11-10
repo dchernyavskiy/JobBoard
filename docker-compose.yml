@@ -1,0 +1,34 @@
+version: "3"
+services:
+  api:
+    build:
+      context: JobBoard.Backend
+      dockerfile: ./Dockerfile
+    ports:
+      - "5001:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    depends_on:
+      - sqlserver
+  identity:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "5002:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    depends_on:
+      - sqlserver
+  sqlserver:
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+      SA_PASSWORD: "MyDatabaseSecret123"
+      ACCEPT_EULA: "Y"
+# version: "3"
+# services:
+#   jobboard:
+#     image: "mcr.microsoft.com/mssql/server"
+#     environment:
+#       SA_PASSWORD: "MyDatabaseSecret123"
+#       ACCEPT_EULA: "Y"

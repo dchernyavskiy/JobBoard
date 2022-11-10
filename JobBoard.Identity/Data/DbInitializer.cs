@@ -19,10 +19,10 @@ namespace JobBoard.Identity.Data
                     context.Database.EnsureDeleted();
                     context.Database.EnsureCreated();
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
-                    var logger = serviceProvider.GetService<ILogger>();
-                    logger.LogError(e, "An error occurred with app initialization");
+                    // var logger = serviceProvider.GetService<ILogger>();
+                    // logger.LogError(e, "An error occurred with app initialization");
                 }
             }
         }
