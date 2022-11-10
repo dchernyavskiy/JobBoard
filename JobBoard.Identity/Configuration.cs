@@ -11,6 +11,8 @@ namespace JobBoard.Identity
 {
     public class Configuration
     {
+        public static string WebClientUri = "https://localhost:4200/";
+
         public static IEnumerable<ApiScope> ApiScopes =
             new List<ApiScope> { new ApiScope("JobBoardWebApi", "Web Api") };
 
@@ -28,9 +30,9 @@ namespace JobBoard.Identity
                     AllowedGrantTypes = GrantTypes.Code,
                     RequireClientSecret  = false,
                     RequirePkce = true,
-                    RedirectUris = { "http://localhost:4200" },
-                    AllowedCorsOrigins = { "http://localhost:4200" },
-                    PostLogoutRedirectUris = { "http://localhost:4200" },
+                    RedirectUris = { WebClientUri },
+                    AllowedCorsOrigins = { WebClientUri },
+                    PostLogoutRedirectUris = { WebClientUri },
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,

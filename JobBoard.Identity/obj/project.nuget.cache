@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ar8W0R+T0HAS0qTLaAwFVqPF4CGWv4N9QQOqY5mXwKcFx7RNw5OgDAE1bbVDAToTq4tmzmkWoIlkW/7/6239Dg==",
+  "dgSpecHash": "vp7A6qt9sTr2IK9uZvatxfLYUO3SzDM4PqZMPNZZ+8bAo4qXaax7m2vIPCF3g4z2GiGlyGIIXe60RI6SpRcIPA==",
   "success": true,
   "projectFilePath": "C:\\Projects\\University\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj",
   "expectedPackageFiles": [
@@ -44,6 +44,7 @@
     "C:\\Users\\user\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.8.0\\microsoft.identitymodel.protocols.openidconnect.6.8.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.8.0\\microsoft.identitymodel.tokens.6.8.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",

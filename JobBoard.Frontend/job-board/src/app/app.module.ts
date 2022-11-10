@@ -7,16 +7,17 @@ import { HomeThreeComponent } from "./components/pages/home-three/home-three.com
 import { FooterStyleTwoComponent } from "./components/common/footer-style-two/footer-style-two.component";
 import { environment } from "../environments/environment";
 import { API_BASE_URL } from "./api/api";
-import { JobCardComponent } from './job-card/job-card.component';
+import { JobCardComponent } from "./components/job-card/job-card.component";
+
 
 @NgModule({
-  declarations: [AppComponent, HomeThreeComponent, FooterStyleTwoComponent, JobCardComponent, JobCardComponent],
+  declarations: [AppComponent, HomeThreeComponent, FooterStyleTwoComponent, JobCardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AuthModule.forRoot({
       config: {
-        authority: "https://localhost:5002",
+        authority: environment.authority,
         redirectUrl: window.location.origin,
         postLogoutRedirectUri: window.location.origin,
         clientId: "job-board-web-app",
