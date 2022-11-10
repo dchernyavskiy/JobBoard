@@ -6,8 +6,6 @@ import { JobsComponent } from './components/pages/jobs/jobs.component';
 const routes: Routes = [
     {path: '', component: HomeThreeComponent},
     {path: 'jobs', component: JobsComponent}
-
-
 ];
 
 @NgModule({

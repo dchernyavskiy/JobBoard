@@ -44,13 +44,13 @@ namespace JobBoard.Application.Jobs
                     EmployerId = request.EmployerId,
                 };
 
-                var location = _context.Locations.FirstOrDefault(x => x.Name == request.Location);
+                var location = _context.Locations.FirstOrDefault(x => x.City == request.Location);
                 if (location == null)
                 {
                     location = new Location
                     {
                         Id = Guid.NewGuid(),
-                        Name = request.Location
+                        City = request.Location
                     };
                     await _context.Locations.AddAsync(location);
                 }

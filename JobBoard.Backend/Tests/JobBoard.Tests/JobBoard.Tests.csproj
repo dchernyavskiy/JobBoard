@@ -21,4 +21,12 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\JobBoard.Identity\JobBoard.Identity.csproj" />
+    <ProjectReference Include="..\..\Core\JobBoard.Application\JobBoard.Application.csproj" />
+    <ProjectReference Include="..\..\Core\JobBoard.Domain\JobBoard.Domain.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\JobBoard.Persistence\JobBoard.Persistence.csproj" />
+    <ProjectReference Include="..\..\Presentation\JobBoard.WebApi\JobBoard.WebApi.csproj" />
+  </ItemGroup>
+
 </Project>

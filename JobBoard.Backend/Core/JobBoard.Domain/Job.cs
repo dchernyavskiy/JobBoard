@@ -5,6 +5,7 @@
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string Discription { get; set; }
+        public string ShortDiscription { get; set; }
         public DateTime DatePosted { get; set; }
         public Guid LocationId { get; set; }
         public Location Location { get; set; }
@@ -12,6 +13,7 @@
         public int SalaryStart { get; set; }
         public int SalaryEnd { get; set; }
         public int Experience { get; set; }
+        public string Employment { get; set; }
         public Guid EmployerId { get; set; }
         public Employer Employer { get; set; }
         public Guid? EmployeeId { get; set; }

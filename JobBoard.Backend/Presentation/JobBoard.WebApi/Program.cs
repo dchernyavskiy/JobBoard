@@ -3,6 +3,7 @@ using JobBoard.Application.Common.Mappings;
 using JobBoard.Application.Interfaces;
 using JobBoard.Persistence;
 using JobBoard.WebApi;
+using JobBoard.WebApi.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -78,6 +79,7 @@ using (var scope = app.Services.CreateScope())
     {
         var context = serviceProvider.GetRequiredService<JobBoardDbContext>();
         DbInitializer.Initialize(context);
+        Seed.Initialize(context);
     }
     catch
     { }

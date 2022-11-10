@@ -154,6 +154,10 @@ namespace JobBoard.WebApi.Migrations
                     b.Property<Guid>("EmployerId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Employment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Experience")
                         .HasColumnType("int");
 
@@ -172,6 +176,10 @@ namespace JobBoard.WebApi.Migrations
 
                     b.Property<int>("SalaryStart")
                         .HasColumnType("int");
+
+                    b.Property<string>("ShortDiscription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -192,7 +200,7 @@ namespace JobBoard.WebApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("City")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

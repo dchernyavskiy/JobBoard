@@ -4,6 +4,7 @@
     {
         public static void Initialize(JobBoardDbContext context)
         {
+            context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
         }
     }

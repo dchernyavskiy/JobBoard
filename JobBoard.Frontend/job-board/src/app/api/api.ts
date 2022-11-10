@@ -28,7 +28,7 @@ export class Client extends ClientBase {
     constructor(@Inject(HttpClient) http: HttpClient, @Optional() @Inject(API_BASE_URL) baseUrl?: string) {
         super();
         this.http = http;
-        this.baseUrl = baseUrl !== undefined && baseUrl !== null ? baseUrl : environment.apiUri;
+        this.baseUrl = baseUrl !== undefined && baseUrl !== null ? baseUrl : "";
     }
 
     /**
@@ -206,25 +206,30 @@ export class Client extends ClientBase {
     }
 
     /**
+     * @param body (optional) 
      * @return Success
      */
-    getAll(apiVersion: string): Observable<JobsVm> {
+    getAll(apiVersion: string, body: GetJobsQuery | undefined): Observable<JobsVm> {
         let url_ = this.baseUrl + "/api/v{apiVersion}/Job/GetAll";
         if (apiVersion === undefined || apiVersion === null)
             throw new Error("The parameter 'apiVersion' must be defined.");
         url_ = url_.replace("{apiVersion}", encodeURIComponent("" + apiVersion));
         url_ = url_.replace(/[?&]$/, "");
 
+        const content_ = JSON.stringify(body);
+
         let options_ : any = {
+            body: content_,
             observe: "response",
             responseType: "blob",
             headers: new HttpHeaders({
+                "Content-Type": "application/json-patch+json",
                 "Accept": "text/plain"
             })
         };
 
         return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
-            return this.http.request("get", url_, transformedOptions_);
+            return this.http.request("post", url_, transformedOptions_);
         })).pipe(_observableMergeMap((response_: any) => {
             return this.processGetAll(response_);
         })).pipe(_observableCatch((response_: any) => {
@@ -902,10 +907,17 @@ export interface Employer {
     jobs?: Job[] | undefined;
 }
 
+export interface GetJobsQuery {
+    filters?: JobFilter;
+    pagging?: Pagging;
+    sort?: JobSort;
+}
+
 export interface Job {
     id?: string;
     name?: string | undefined;
     discription?: string | undefined;
+    shortDiscription?: string | undefined;
     datePosted?: Date;
     locationId?: string;
     location?: Location;
@@ -913,6 +925,7 @@ export interface Job {
     salaryStart?: number;
     salaryEnd?: number;
     experience?: number;
+    employment?: string | undefined;
     employerId?: string;
     employer?: Employer;
     employeeId?: string | undefined;
@@ -923,12 +936,31 @@ export interface Job {
     qualifications?: Qualification[] | undefined;
 }
 
+export interface JobFilter {
+    keyWord?: string | undefined;
+    categoryIds?: string[] | undefined;
+    locationIds?: string[] | undefined;
+    salaryStart?: number;
+    salaryEnd?: number;
+    emloyerIds?: string[] | undefined;
+    experiences?: number[] | undefined;
+}
+
 export interface JobLookupDto {
     id?: string;
     name?: string | undefined;
     location?: Location;
-    salaryStart?: number;
-    salaryEnd?: number;
+    datePosted?: Date;
+    employment?: string | undefined;
+    shortDiscription?: string | undefined;
+    category?: Category;
+}
+
+export interface JobSort {
+    sortByName?: boolean;
+    sortBySalary?: boolean;
+    sortByExpirience?: boolean;
+    isAscending?: boolean;
 }
 
 export interface JobsVm {
@@ -951,8 +983,13 @@ export interface JobVm {
 
 export interface Location {
     id?: string;
-    name?: string | undefined;
+    city?: string | undefined;
     jobs?: Job[] | undefined;
+}
+
+export interface Pagging {
+    page?: number;
+    count?: number;
 }
 
 export interface Qualification {
