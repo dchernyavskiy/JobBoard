@@ -3,6 +3,7 @@ import { Router, NavigationStart, NavigationCancel, NavigationEnd } from '@angul
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { filter } from 'rxjs/operators';
 import {OidcSecurityService} from 'angular-auth-oidc-client';
+import {environment} from './../environments/environment';
 declare let $: any;
 
 @Component({
