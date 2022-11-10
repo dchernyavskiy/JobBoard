@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JobBoard.WebApi.Migrations
 {
     [DbContext(typeof(JobBoardDbContext))]
-    [Migration("20221104204816_Initial2")]
-    partial class Initial2
+    [Migration("20221110181000_Initial2.0")]
+    partial class Initial20
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -49,6 +49,9 @@ namespace JobBoard.WebApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("EmployeeId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<DateTime?>("End")
                         .HasColumnType("datetime2");
 
@@ -65,6 +68,8 @@ namespace JobBoard.WebApi.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("EmployeeId");
+
                     b.ToTable("Educations");
                 });
 
@@ -74,22 +79,24 @@ namespace JobBoard.WebApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("City")
+                    b.Property<string>("CVLink")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Country")
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("State")
+                    b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Website")
+                    b.Property<string>("LastName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Zip")
+                    b.Property<string>("Phone")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -107,32 +114,33 @@ namespace JobBoard.WebApi.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Responsibilities")
+                    b.Property<string>("PhotoLink")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TeamSize")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.ToTable("Employers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("041343ea-0f3d-458b-9fb6-7bd6700d69e8"),
-                            AboutUs = "Super emloyeer",
-                            Name = "Employeer",
-                            Responsibilities = "Some responsilities"
-                        });
                 });
 
             modelBuilder.Entity("JobBoard.Domain.Job", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CategoryId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("DatePosted")
@@ -148,15 +156,18 @@ namespace JobBoard.WebApi.Migrations
                     b.Property<Guid>("EmployerId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Employment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Experience")
                         .HasColumnType("int");
 
                     b.Property<int>("Hours")
                         .HasColumnType("int");
 
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid>("LocationId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -168,13 +179,36 @@ namespace JobBoard.WebApi.Migrations
                     b.Property<int>("SalaryStart")
                         .HasColumnType("int");
 
+                    b.Property<string>("ShortDiscription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
 
                     b.HasIndex("EmployeeId");
 
                     b.HasIndex("EmployerId");
 
+                    b.HasIndex("LocationId");
+
                     b.ToTable("Jobs");
+                });
+
+            modelBuilder.Entity("JobBoard.Domain.Location", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Locations");
                 });
 
             modelBuilder.Entity("JobBoard.Domain.Qualification", b =>
@@ -217,8 +251,25 @@ namespace JobBoard.WebApi.Migrations
                     b.ToTable("Responsibilities");
                 });
 
+            modelBuilder.Entity("JobBoard.Domain.Education", b =>
+                {
+                    b.HasOne("JobBoard.Domain.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+                });
+
             modelBuilder.Entity("JobBoard.Domain.Job", b =>
                 {
+                    b.HasOne("JobBoard.Domain.Category", "Category")
+                        .WithMany("Jobs")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("JobBoard.Domain.Employee", "Employee")
                         .WithMany()
                         .HasForeignKey("EmployeeId");
@@ -229,9 +280,19 @@ namespace JobBoard.WebApi.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("JobBoard.Domain.Location", "Location")
+                        .WithMany("Jobs")
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
                     b.Navigation("Employee");
 
                     b.Navigation("Employer");
+
+                    b.Navigation("Location");
                 });
 
             modelBuilder.Entity("JobBoard.Domain.Qualification", b =>
@@ -256,6 +317,11 @@ namespace JobBoard.WebApi.Migrations
                     b.Navigation("Job");
                 });
 
+            modelBuilder.Entity("JobBoard.Domain.Category", b =>
+                {
+                    b.Navigation("Jobs");
+                });
+
             modelBuilder.Entity("JobBoard.Domain.Employer", b =>
                 {
                     b.Navigation("Jobs");
@@ -266,6 +332,11 @@ namespace JobBoard.WebApi.Migrations
                     b.Navigation("Qualifications");
 
                     b.Navigation("Responsibilities");
+                });
+
+            modelBuilder.Entity("JobBoard.Domain.Location", b =>
+                {
+                    b.Navigation("Jobs");
                 });
 #pragma warning restore 612, 618
         }

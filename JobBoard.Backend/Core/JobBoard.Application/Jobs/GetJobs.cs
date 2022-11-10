@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using JobBoard.Application.Common.Extensions;
 using JobBoard.Application.Common.Mappings;
 using JobBoard.Application.Common.Objects;
 using JobBoard.Application.Interfaces;
@@ -20,8 +21,10 @@ namespace JobBoard.Application.Jobs
             public Guid Id { get; set; }
             public string Name { get; set; }
             public Location Location { get; set; }
-            public int SalaryStart { get; set; }
-            public int SalaryEnd { get; set; }
+            public DateTime DatePosted { get; set; }
+            public string Employment { get; set; }
+            public string ShortDiscription { get; set; }
+            public Category Category { get; set; }
 
             public void Mapping(Profile profile)
             {
@@ -70,41 +73,52 @@ namespace JobBoard.Application.Jobs
 
             public async Task<JobsVm> Handle(GetJobsQuery request, CancellationToken cancellationToken)
             {
-                // 1. sort
-                // 2. filter
-                // 3. pagging
                 var entities = _context.Jobs
                     .Include(x => x.Location)
-                    .Skip((request.Pagging.Page - 1) * request.Pagging.Count)
-                    .Take(request.Pagging.Count)
-                    .Where(x => request.Filters.KeyWord == null ? true : request.Filters.KeyWord.Contains(x.Name))
-                    .Where(x => request.Filters.CategoryIds == null ? true : request.Filters.CategoryIds.Contains(x.CategoryId))
-                    .Where(x => request.Filters.LocationIds == null ? true : request.Filters.LocationIds.Contains(x.LocationId))
-                    .Where(x => request.Filters.SalaryStart == 0 ? true : x.SalaryStart >= request.Filters.SalaryStart)
-                    .Where(x => request.Filters.SalaryEnd == 0 ? true : x.SalaryEnd <= request.Filters.SalaryEnd)
-                    .Where(x => request.Filters.EmloyerIds == null ? true : request.Filters.EmloyerIds.Contains(x.EmployerId))
-                    .Where(x => request.Filters.Experiences == null ? true : request.Filters.Experiences.Contains(x.Experience))
-                    ;
+                    .Include(x => x.Category) as IQueryable<Job>;
 
-                if (request != null && request.Sort.IsAscending)
+                var count = entities.Count();
+
+                if(request != null)
                 {
                     if (request.Sort.SortByName)
-                        entities = entities.OrderBy(x => x.Name);
+                        entities = entities.OrderBy(x => x.Name, request.Sort.IsAscending);
                     if (request.Sort.SortBySalary)
-                        entities = entities.OrderBy(x => x.SalaryStart);
+                        entities = entities.OrderBy(x => x.SalaryStart, request.Sort.IsAscending);
                     if (request.Sort.SortByExpirience)
-                        entities = entities.OrderBy(x => x.Experience);
-                }
-                else if (request != null)
-                {
-                    if (request.Sort.SortByName)
-                        entities = entities.OrderByDescending(x => x.Name);
-                    if (request.Sort.SortBySalary)
-                        entities = entities.OrderByDescending(x => x.SalaryStart);
-                    if (request.Sort.SortByExpirience)
-                        entities = entities.OrderByDescending(x => x.Experience);
+                        entities = entities.OrderBy(x => x.Experience, request.Sort.IsAscending);
+
+                    entities = entities
+                           .Where(x => request.Filters.KeyWord == null ? true : request.Filters.KeyWord.Contains(x.Name))
+                           .Where(x => request.Filters.CategoryIds == null ? true : request.Filters.CategoryIds.Contains(x.CategoryId))
+                           .Where(x => request.Filters.LocationIds == null ? true : request.Filters.LocationIds.Contains(x.LocationId))
+                           .Where(x => request.Filters.SalaryStart == 0 ? true : x.SalaryStart >= request.Filters.SalaryStart)
+                           .Where(x => request.Filters.SalaryEnd == 0 ? true : x.SalaryEnd <= request.Filters.SalaryEnd)
+                           .Where(x => request.Filters.EmloyerIds == null ? true : request.Filters.EmloyerIds.Contains(x.EmployerId))
+                           .Where(x => request.Filters.Experiences == null ? true : request.Filters.Experiences.Contains(x.Experience))
+                           .Skip((request.Pagging.Page - 1) * request.Pagging.Count)
+                           .Take(request.Pagging.Count);
                 }
 
+                //if (request != null && request.Sort.IsAscending)
+                //{
+                //    if (request.Sort.SortByName)
+                //        entities = entities.OrderBy(x => x.Name);
+                //    if (request.Sort.SortBySalary)
+                //        entities = entities.OrderBy(x => x.SalaryStart);
+                //    if (request.Sort.SortByExpirience)
+                //        entities = entities.OrderBy(x => x.Experience);
+                //}
+                //else if (request != null)
+                //{
+                //    if (request.Sort.SortByName)
+                //        entities = entities.OrderByDescending(x => x.Name);
+                //    if (request.Sort.SortBySalary)
+                //        entities = entities.OrderByDescending(x => x.SalaryStart);
+                //    if (request.Sort.SortByExpirience)
+                //        entities = entities.OrderByDescending(x => x.Experience);
+                //}
+                             
                 var vms = await entities
                     .ProjectTo<JobLookupDto>(_mapper.ConfigurationProvider)
                     .ToListAsync();

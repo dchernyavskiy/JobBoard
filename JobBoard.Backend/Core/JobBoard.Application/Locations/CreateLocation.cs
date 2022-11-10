@@ -26,7 +26,7 @@ namespace JobBoard.Application.Locations
                 var entity = new Location
                 {
                     Id = Guid.NewGuid(),
-                    Name = request.Name
+                    City = request.Name
                 };
 
                 await _context.Locations.AddAsync(entity);

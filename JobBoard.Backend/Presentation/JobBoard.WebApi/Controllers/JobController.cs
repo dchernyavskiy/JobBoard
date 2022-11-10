@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using JobBoard.Application.Common.Objects;
 using JobBoard.WebApi.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -21,10 +22,9 @@ namespace JobBoard.WebApi.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<JobsVm>> GetAll()
+        [HttpPost]
+        public async Task<ActionResult<JobsVm>> GetAll(GetJobsQuery query)
         {
-            var query = new GetJobsQuery();
             var vm = await Mediator.Send(query);
             return Ok(vm);
         }

@@ -7,9 +7,10 @@ import { HomeThreeComponent } from "./components/pages/home-three/home-three.com
 import { FooterStyleTwoComponent } from "./components/common/footer-style-two/footer-style-two.component";
 import { environment } from "../environments/environment";
 import { API_BASE_URL } from "./api/api";
+import { JobCardComponent } from './job-card/job-card.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeThreeComponent, FooterStyleTwoComponent],
+  declarations: [AppComponent, HomeThreeComponent, FooterStyleTwoComponent, JobCardComponent, JobCardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

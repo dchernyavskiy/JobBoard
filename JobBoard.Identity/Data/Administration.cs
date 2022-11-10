@@ -34,7 +34,7 @@ namespace JobBoard.Identity.Data
                 }
 
                 var systemAdministratorInstance = userManger.FindByNameAsync("system_administrator").Result;
-                var employerInstance = userManger.FindByNameAsync("employer").Result;
+                var employerInstance1 = userManger.FindByNameAsync("employer").Result;
                 var employeeInstance = userManger.FindByNameAsync("employee").Result;
 
                 if (employeeInstance == null)
@@ -58,26 +58,55 @@ namespace JobBoard.Identity.Data
                         _ = userManger.AddToRoleAsync(employeeInstance, employer.Name).Result;
                 }
 
-                if (employerInstance == null)
+                if (employerInstance1 == null)
                 {
-                    employerInstance = new AppUser
+                    employerInstance1 = new AppUser
                     {
                         Id = "041343ea-0f3d-458b-9fb6-7bd6700d69e8",
-                        //FirstName = "Tom",
-                        //LastName = "Smith",
                         Email = "tom.smith@mail.com",
                         EmailConfirmed = true,
                         PhoneNumber = "+329813923",
                         PhoneNumberConfirmed = true,
                         UserName = "employer"
                     };
-                    var result = userManger.CreateAsync(employerInstance, app.Configuration["Passwords:EmployerPassword"]).Result;
+
+                    var employerInstance2 = new AppUser
+                    {
+                        Id = "010c4d66-7268-44a9-a991-e6d5aadea719",
+                        Email = "mark.smith@mail.com",
+                        EmailConfirmed = true,
+                        PhoneNumber = "+329813923",
+                        PhoneNumberConfirmed = true,
+                        UserName = "employer1"
+                    };
+
+                    var employerInstance3 = new AppUser
+                    {
+                        Id = "ad4d1381-49a1-460e-aee8-808a5b8ed2da",
+                        Email = "john.smith@mail.com",
+                        EmailConfirmed = true,
+                        PhoneNumber = "+329813923",
+                        PhoneNumberConfirmed = true,
+                        UserName = "employer2"
+                    };
+
+                    var employerInstance4 = new AppUser
+                    {
+                        Id = "041343ea-0f3d-458b-9fb6-7bd6700d69e8",
+                        Email = "alice.smith@mail.com",
+                        EmailConfirmed = true,
+                        PhoneNumber = "+329813923",
+                        PhoneNumberConfirmed = true,
+                        UserName = "employer3"
+                    };
+
+                    var result = userManger.CreateAsync(employerInstance1, app.Configuration["Passwords:EmployerPassword"]).Result;
 
                     if (!result.Succeeded)
                         throw new Exception(result.Errors.First().Description);
 
-                    if (!userManger.IsInRoleAsync(employerInstance, employer.Name).Result)
-                        _ = userManger.AddToRoleAsync(employerInstance, employer.Name).Result;
+                    if (!userManger.IsInRoleAsync(employerInstance1, employer.Name).Result)
+                        _ = userManger.AddToRoleAsync(employerInstance1, employer.Name).Result;
                 }
 
                 if (systemAdministratorInstance == null)
