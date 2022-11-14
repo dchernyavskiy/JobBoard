@@ -11,7 +11,7 @@ namespace JobBoard.Identity
 {
     public class Configuration
     {
-        public static string WebClientUri = "https://localhost:4200/";
+        public static string WebClientUri = "http://localhost:4200";
 
         public static IEnumerable<ApiScope> ApiScopes =
             new List<ApiScope> { new ApiScope("JobBoardWebApi", "Web Api") };
