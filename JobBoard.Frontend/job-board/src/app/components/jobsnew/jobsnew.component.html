@@ -29,13 +29,16 @@
                         <span class="sort">Sort By:</span>
                         <form>
                             <div class="form-group">
-                                <select  name="sort">
-                                    <option>Name (Asc)</option>
+                                <select name="sort" (change)="sort($event.target.value)">
+                                    <option value="Name">Name</option>
+                                    <option value="Salary">Salary</option>
+                                    <option value="Experience">Experience</option>
+                                    <!-- <option>Name (Asc)</option>
                                     <option>Name (Desc)</option>
                                     <option>Salary (Asc)</option>
                                     <option>Salary (Desc)</option>
                                     <option>Experience (Asc)</option>
-                                    <option>Experience (Desc)</option>
+                                    <option>Experience (Desc)</option> -->
                                 </select>
                             </div>
                         </form>	
