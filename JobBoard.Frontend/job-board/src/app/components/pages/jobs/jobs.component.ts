@@ -16,8 +16,8 @@ export class JobsComponent implements OnInit {
         keyWord : null,
         categoryIds : null,
         locationIds : null,
-        salaryStart : null,
-        salaryEnd : null,
+        salaryStart : 0,
+        salaryEnd : 0,
         emloyerIds : null,
         experiences : null
       },
@@ -36,14 +36,12 @@ export class JobsComponent implements OnInit {
   
 
   ngOnInit(): void {
-    // this.client.getAll('1', this.body).subscribe(result => {
-    //   this.jobs = result.jobs;
-    //   console.log(this.jobs);
-    // });
-    this.client.create3("1", {
-      name: "Detroit"
-    }).subscribe(result => {
-      console.log(result);
+    this.client.getAllPOST('1', this.body).subscribe(result =>{
+        console.log(result);
     });
+
+    // this.client.getAllGET('1').subscribe(result =>{
+    //   console.log(result.categories);
+    // });
   }
 }

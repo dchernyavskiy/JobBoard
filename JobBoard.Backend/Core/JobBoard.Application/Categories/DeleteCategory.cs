@@ -11,7 +11,6 @@ namespace JobBoard.Application.Categories
         public class DeleteCategoryCommand : IRequest
         {
             public Guid Id { get; set; }
-            public Guid EmployerId { get; set; }
         }
 
         public class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategoryCommand>
