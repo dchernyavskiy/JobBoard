@@ -8,6 +8,10 @@ import { FooterStyleTwoComponent } from "./components/common/footer-style-two/fo
 import { environment } from "../environments/environment";
 import { API_BASE_URL } from "./api/api";
 import { JobCardComponent } from "./components/job-card/job-card.component";
+import { FormsModule } from '@angular/forms';  ////////
+import { CommonModule } from '@angular/common'      ///////
+
+
 
 
 @NgModule({
@@ -15,6 +19,9 @@ import { JobCardComponent } from "./components/job-card/job-card.component";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule, ////////
+  //  JobCardComponent, //////////
+    FormsModule, //////
     AuthModule.forRoot({
       config: {
         authority: environment.authority,

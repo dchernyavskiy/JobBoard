@@ -32,7 +32,7 @@
                         <span class="sort">Sort By:</span>
                         <form>
                             <div class="form-group">
-                                <select>
+                                <select  name="sort">
                                     <option>Name (Asc)</option>
                                     <option>Name (Desc)</option>
                                     <option>Salary (Asc)</option>
@@ -44,8 +44,29 @@
                         </form>	
                     </li>
                 </ul>
+                
+                
+                <!--<div>
 
-                <div class="employer-item">
+                    <app-job-card  
+                    jobName="jobs[0].name"
+                    location="jobs[0].location.city"
+                    description="jobs[0].shortDiscription"
+                    category = "jobs[0].Category.name"
+                    employment = "jobs[0].employment"></app-job-card>
+                </div > -->
+
+                <!--<div *ngFor="let job of jobs">
+
+                    <app-job-card  
+                    jobName="job.name"
+                    location="job.location.city"
+                    description="job.shortDiscription"
+                    category = "job.Category.name"
+                    employment = "job.employment"></app-job-card>
+                </div > -->
+
+                <!--<div class="employer-item">
                     <a routerLink="/job-details">
                         <img src="assets/img/home-one/job1.png" alt="Employer">
                         <h3>Product Designer</h3>
@@ -108,9 +129,8 @@
                         <span class="span-one">Accounting</span>
                         <span class="span-two">FULL TIME</span>
                     </a>
-                </div>
-
-
+                </div>-->
+   
 
                 <div class="pagination-area">
                     <ul>
@@ -137,12 +157,12 @@
 
                     <div class="job-list-all">
                         <div class="search">
-                           <!-- <h3>Search Keywords</h3>
+                            <h3>Search Keywords</h3>
 
                             <form>
                                 <input type="text" class="form-control" placeholder="Keyword">
                                 <button type="submit" class="btn"><i class="flaticon-send"></i></button>
-                            </form>-->
+                            </form>
 
                             <h3>Category</h3>
 
