@@ -4,6 +4,8 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 import { filter } from 'rxjs/operators';
 import {OidcSecurityService} from 'angular-auth-oidc-client';
 import {environment} from './../environments/environment';
+import { JobService } from './services/job.service';
+import {JobLookupDto} from './api/api';
 declare let $: any;
 
 @Component({
@@ -32,6 +34,7 @@ export class AppComponent implements OnInit {
             console.log('id token: ' + idToken);
           });
         this.recallJsFuntions();
+
     }
 
     login(){

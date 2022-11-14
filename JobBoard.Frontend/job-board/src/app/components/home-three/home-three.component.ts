@@ -6,6 +6,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./home-three.component.scss"],
 })
 export class HomeThreeComponent implements OnInit {
+  
   constructor() {}
 
   ngOnInit(): void {}
