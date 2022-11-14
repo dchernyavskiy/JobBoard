@@ -1,12 +1,12 @@
 <div class="employer-item">
     <a routerLink="/job-details">
-        <img src="{{imgPath}}" alt="Employer">
-        <h3>{{jobName}}</h3>
+        <!-- <img src="{{job.}}" alt="Employer"> -->
+        <h3>{{job.name}}</h3>
         <ul>
-            <li><i class="flaticon-send"></i> {{location}}</li>
+            <li><i class="flaticon-send"></i> {{job.location.city}}</li>
         </ul>
-        <p>{{description}}</p>
-        <span class="span-one">{{category}}</span>
-        <span class="span-two">{{employment}}</span>
+        <p>{{job.shortDiscription}}</p>
+        <span class="span-one">{{job.category.name}}</span>
+        <span class="span-two">{{job.employment}}</span>
     </a>
 </div>
