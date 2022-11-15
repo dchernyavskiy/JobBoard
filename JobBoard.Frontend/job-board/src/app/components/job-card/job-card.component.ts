@@ -19,7 +19,7 @@ export class JobCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.job);
+    //console.log(this.job);
   }
 
 }
