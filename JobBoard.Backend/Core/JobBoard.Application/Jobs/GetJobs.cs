@@ -15,6 +15,7 @@ namespace JobBoard.Application.Jobs
         public class JobsVm
         {
             public IList<JobLookupDto> Jobs { get; set; }
+            public int PageCount { get; set; }
         }
         public class JobLookupDto : IMapWith<Job>
         {
@@ -79,7 +80,7 @@ namespace JobBoard.Application.Jobs
 
                 var count = entities.Count();
 
-                if(request != null)
+                if (request != null)
                 {
                     if (request.Sort.SortByName)
                         entities = entities.OrderBy(x => x.Name, request.Sort.IsAscending);
@@ -100,30 +101,15 @@ namespace JobBoard.Application.Jobs
                            .Take(request.Pagging.Count);
                 }
 
-                //if (request != null && request.Sort.IsAscending)
-                //{
-                //    if (request.Sort.SortByName)
-                //        entities = entities.OrderBy(x => x.Name);
-                //    if (request.Sort.SortBySalary)
-                //        entities = entities.OrderBy(x => x.SalaryStart);
-                //    if (request.Sort.SortByExpirience)
-                //        entities = entities.OrderBy(x => x.Experience);
-                //}
-                //else if (request != null)
-                //{
-                //    if (request.Sort.SortByName)
-                //        entities = entities.OrderByDescending(x => x.Name);
-                //    if (request.Sort.SortBySalary)
-                //        entities = entities.OrderByDescending(x => x.SalaryStart);
-                //    if (request.Sort.SortByExpirience)
-                //        entities = entities.OrderByDescending(x => x.Experience);
-                //}
-                             
-                var vms = await entities
+                var jobs = await entities
                     .ProjectTo<JobLookupDto>(_mapper.ConfigurationProvider)
                     .ToListAsync();
 
-                return new JobsVm { Jobs = vms };
+                var jobsCount = await _context.Jobs.CountAsync();
+                var requestJobsCount = (double)request.Pagging.Count;
+                var pageCount = (int)Math.Ceiling(jobsCount / requestJobsCount);
+
+                return new JobsVm { Jobs = jobs, PageCount = pageCount };
             }
         }
     }
