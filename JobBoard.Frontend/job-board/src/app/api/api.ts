@@ -20,7 +20,7 @@ export const API_BASE_URL = new InjectionToken<string>('API_BASE_URL');
 @Injectable({
     providedIn: 'root'
 })
-export class Client extends ClientBase {
+export class CategoryClient extends ClientBase {
     private http: HttpClient;
     private baseUrl: string;
     protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
@@ -34,7 +34,7 @@ export class Client extends ClientBase {
     /**
      * @return Success
      */
-    getAllGET(apiVersion: string): Observable<CategoriesVm> {
+    getAll(apiVersion: string): Observable<CategoriesVm> {
         let url_ = this.baseUrl + "/api/v{apiVersion}/Category/GetAll";
         if (apiVersion === undefined || apiVersion === null)
             throw new Error("The parameter 'apiVersion' must be defined.");
@@ -52,11 +52,11 @@ export class Client extends ClientBase {
         return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
             return this.http.request("get", url_, transformedOptions_);
         })).pipe(_observableMergeMap((response_: any) => {
-            return this.processGetAllGET(response_);
+            return this.processGetAll(response_);
         })).pipe(_observableCatch((response_: any) => {
             if (response_ instanceof HttpResponseBase) {
                 try {
-                    return this.processGetAllGET(response_ as any);
+                    return this.processGetAll(response_ as any);
                 } catch (e) {
                     return _observableThrow(e) as any as Observable<CategoriesVm>;
                 }
@@ -65,7 +65,7 @@ export class Client extends ClientBase {
         }));
     }
 
-    protected processGetAllGET(response: HttpResponseBase): Observable<CategoriesVm> {
+    protected processGetAll(response: HttpResponseBase): Observable<CategoriesVm> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -202,12 +202,27 @@ export class Client extends ClientBase {
         }
         return _observableOf<void>(null as any);
     }
+}
+
+@Injectable({
+    providedIn: 'root'
+})
+export class EducationClient extends ClientBase {
+    private http: HttpClient;
+    private baseUrl: string;
+    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
+
+    constructor(@Inject(HttpClient) http: HttpClient, @Optional() @Inject(API_BASE_URL) baseUrl?: string) {
+        super();
+        this.http = http;
+        this.baseUrl = baseUrl !== undefined && baseUrl !== null ? baseUrl : "";
+    }
 
     /**
      * @param body (optional) 
      * @return Success
      */
-    create2(apiVersion: string, body: CreateEducationCommandDto | undefined): Observable<string> {
+    create(apiVersion: string, body: CreateEducationCommandDto | undefined): Observable<string> {
         let url_ = this.baseUrl + "/api/v{apiVersion}/Education/Create";
         if (apiVersion === undefined || apiVersion === null)
             throw new Error("The parameter 'apiVersion' must be defined.");
@@ -229,11 +244,11 @@ export class Client extends ClientBase {
         return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
             return this.http.request("post", url_, transformedOptions_);
         })).pipe(_observableMergeMap((response_: any) => {
-            return this.processCreate2(response_);
+            return this.processCreate(response_);
         })).pipe(_observableCatch((response_: any) => {
             if (response_ instanceof HttpResponseBase) {
                 try {
-                    return this.processCreate2(response_ as any);
+                    return this.processCreate(response_ as any);
                 } catch (e) {
                     return _observableThrow(e) as any as Observable<string>;
                 }
@@ -242,7 +257,7 @@ export class Client extends ClientBase {
         }));
     }
 
-    protected processCreate2(response: HttpResponseBase): Observable<string> {
+    protected processCreate(response: HttpResponseBase): Observable<string> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -267,7 +282,7 @@ export class Client extends ClientBase {
      * @param id (optional) 
      * @return Success
      */
-    delete2(id: string | undefined, apiVersion: string): Observable<void> {
+    delete(id: string | undefined, apiVersion: string): Observable<void> {
         let url_ = this.baseUrl + "/api/v{apiVersion}/Education/Delete?";
         if (apiVersion === undefined || apiVersion === null)
             throw new Error("The parameter 'apiVersion' must be defined.");
@@ -288,11 +303,11 @@ export class Client extends ClientBase {
         return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
             return this.http.request("delete", url_, transformedOptions_);
         })).pipe(_observableMergeMap((response_: any) => {
-            return this.processDelete2(response_);
+            return this.processDelete(response_);
         })).pipe(_observableCatch((response_: any) => {
             if (response_ instanceof HttpResponseBase) {
                 try {
-                    return this.processDelete2(response_ as any);
+                    return this.processDelete(response_ as any);
                 } catch (e) {
                     return _observableThrow(e) as any as Observable<void>;
                 }
@@ -301,7 +316,7 @@ export class Client extends ClientBase {
         }));
     }
 
-    protected processDelete2(response: HttpResponseBase): Observable<void> {
+    protected processDelete(response: HttpResponseBase): Observable<void> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -376,12 +391,27 @@ export class Client extends ClientBase {
         }
         return _observableOf<void>(null as any);
     }
+}
+
+@Injectable({
+    providedIn: 'root'
+})
+export class JobClient extends ClientBase {
+    private http: HttpClient;
+    private baseUrl: string;
+    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
+
+    constructor(@Inject(HttpClient) http: HttpClient, @Optional() @Inject(API_BASE_URL) baseUrl?: string) {
+        super();
+        this.http = http;
+        this.baseUrl = baseUrl !== undefined && baseUrl !== null ? baseUrl : "";
+    }
 
     /**
      * @param body (optional) 
      * @return Success
      */
-    getAllPOST(apiVersion: string, body: GetJobsQuery | undefined): Observable<JobsVm> {
+    getAll(apiVersion: string, body: GetJobsQuery | undefined): Observable<JobsVm> {
         let url_ = this.baseUrl + "/api/v{apiVersion}/Job/GetAll";
         if (apiVersion === undefined || apiVersion === null)
             throw new Error("The parameter 'apiVersion' must be defined.");
@@ -403,11 +433,11 @@ export class Client extends ClientBase {
         return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
             return this.http.request("post", url_, transformedOptions_);
         })).pipe(_observableMergeMap((response_: any) => {
-            return this.processGetAllPOST(response_);
+            return this.processGetAll(response_);
         })).pipe(_observableCatch((response_: any) => {
             if (response_ instanceof HttpResponseBase) {
                 try {
-                    return this.processGetAllPOST(response_ as any);
+                    return this.processGetAll(response_ as any);
                 } catch (e) {
                     return _observableThrow(e) as any as Observable<JobsVm>;
                 }
@@ -416,7 +446,7 @@ export class Client extends ClientBase {
         }));
     }
 
-    protected processGetAllPOST(response: HttpResponseBase): Observable<JobsVm> {
+    protected processGetAll(response: HttpResponseBase): Observable<JobsVm> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -499,7 +529,7 @@ export class Client extends ClientBase {
      * @param body (optional) 
      * @return Success
      */
-    create3(apiVersion: string, body: CreateJobCommandDto | undefined): Observable<string> {
+    create(apiVersion: string, body: CreateJobCommandDto | undefined): Observable<string> {
         let url_ = this.baseUrl + "/api/v{apiVersion}/Job/Create";
         if (apiVersion === undefined || apiVersion === null)
             throw new Error("The parameter 'apiVersion' must be defined.");
@@ -521,11 +551,11 @@ export class Client extends ClientBase {
         return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
             return this.http.request("post", url_, transformedOptions_);
         })).pipe(_observableMergeMap((response_: any) => {
-            return this.processCreate3(response_);
+            return this.processCreate(response_);
         })).pipe(_observableCatch((response_: any) => {
             if (response_ instanceof HttpResponseBase) {
                 try {
-                    return this.processCreate3(response_ as any);
+                    return this.processCreate(response_ as any);
                 } catch (e) {
                     return _observableThrow(e) as any as Observable<string>;
                 }
@@ -534,7 +564,7 @@ export class Client extends ClientBase {
         }));
     }
 
-    protected processCreate3(response: HttpResponseBase): Observable<string> {
+    protected processCreate(response: HttpResponseBase): Observable<string> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -559,7 +589,7 @@ export class Client extends ClientBase {
      * @param id (optional) 
      * @return Success
      */
-    delete3(id: string | undefined, apiVersion: string): Observable<void> {
+    delete(id: string | undefined, apiVersion: string): Observable<void> {
         let url_ = this.baseUrl + "/api/v{apiVersion}/Job/Delete?";
         if (apiVersion === undefined || apiVersion === null)
             throw new Error("The parameter 'apiVersion' must be defined.");
@@ -580,11 +610,11 @@ export class Client extends ClientBase {
         return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
             return this.http.request("delete", url_, transformedOptions_);
         })).pipe(_observableMergeMap((response_: any) => {
-            return this.processDelete3(response_);
+            return this.processDelete(response_);
         })).pipe(_observableCatch((response_: any) => {
             if (response_ instanceof HttpResponseBase) {
                 try {
-                    return this.processDelete3(response_ as any);
+                    return this.processDelete(response_ as any);
                 } catch (e) {
                     return _observableThrow(e) as any as Observable<void>;
                 }
@@ -593,7 +623,7 @@ export class Client extends ClientBase {
         }));
     }
 
-    protected processDelete3(response: HttpResponseBase): Observable<void> {
+    protected processDelete(response: HttpResponseBase): Observable<void> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -616,7 +646,7 @@ export class Client extends ClientBase {
      * @param body (optional) 
      * @return Success
      */
-    update2(apiVersion: string, body: UpdateJobCommandDto | undefined): Observable<void> {
+    update(apiVersion: string, body: UpdateJobCommandDto | undefined): Observable<void> {
         let url_ = this.baseUrl + "/api/v{apiVersion}/Job/Update";
         if (apiVersion === undefined || apiVersion === null)
             throw new Error("The parameter 'apiVersion' must be defined.");
@@ -637,11 +667,11 @@ export class Client extends ClientBase {
         return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
             return this.http.request("put", url_, transformedOptions_);
         })).pipe(_observableMergeMap((response_: any) => {
-            return this.processUpdate2(response_);
+            return this.processUpdate(response_);
         })).pipe(_observableCatch((response_: any) => {
             if (response_ instanceof HttpResponseBase) {
                 try {
-                    return this.processUpdate2(response_ as any);
+                    return this.processUpdate(response_ as any);
                 } catch (e) {
                     return _observableThrow(e) as any as Observable<void>;
                 }
@@ -650,7 +680,7 @@ export class Client extends ClientBase {
         }));
     }
 
-    protected processUpdate2(response: HttpResponseBase): Observable<void> {
+    protected processUpdate(response: HttpResponseBase): Observable<void> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -668,12 +698,27 @@ export class Client extends ClientBase {
         }
         return _observableOf<void>(null as any);
     }
+}
+
+@Injectable({
+    providedIn: 'root'
+})
+export class LocationClient extends ClientBase {
+    private http: HttpClient;
+    private baseUrl: string;
+    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
+
+    constructor(@Inject(HttpClient) http: HttpClient, @Optional() @Inject(API_BASE_URL) baseUrl?: string) {
+        super();
+        this.http = http;
+        this.baseUrl = baseUrl !== undefined && baseUrl !== null ? baseUrl : "";
+    }
 
     /**
      * @param body (optional) 
      * @return Success
      */
-    create4(apiVersion: string, body: CreateLocationCommandDto | undefined): Observable<string> {
+    create(apiVersion: string, body: CreateLocationCommandDto | undefined): Observable<string> {
         let url_ = this.baseUrl + "/api/v{apiVersion}/Location/Create";
         if (apiVersion === undefined || apiVersion === null)
             throw new Error("The parameter 'apiVersion' must be defined.");
@@ -695,11 +740,11 @@ export class Client extends ClientBase {
         return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
             return this.http.request("post", url_, transformedOptions_);
         })).pipe(_observableMergeMap((response_: any) => {
-            return this.processCreate4(response_);
+            return this.processCreate(response_);
         })).pipe(_observableCatch((response_: any) => {
             if (response_ instanceof HttpResponseBase) {
                 try {
-                    return this.processCreate4(response_ as any);
+                    return this.processCreate(response_ as any);
                 } catch (e) {
                     return _observableThrow(e) as any as Observable<string>;
                 }
@@ -708,7 +753,7 @@ export class Client extends ClientBase {
         }));
     }
 
-    protected processCreate4(response: HttpResponseBase): Observable<string> {
+    protected processCreate(response: HttpResponseBase): Observable<string> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -733,7 +778,7 @@ export class Client extends ClientBase {
      * @param id (optional) 
      * @return Success
      */
-    delete4(id: string | undefined, apiVersion: string): Observable<void> {
+    delete(id: string | undefined, apiVersion: string): Observable<void> {
         let url_ = this.baseUrl + "/api/v{apiVersion}/Location/Delete?";
         if (apiVersion === undefined || apiVersion === null)
             throw new Error("The parameter 'apiVersion' must be defined.");
@@ -754,11 +799,11 @@ export class Client extends ClientBase {
         return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
             return this.http.request("delete", url_, transformedOptions_);
         })).pipe(_observableMergeMap((response_: any) => {
-            return this.processDelete4(response_);
+            return this.processDelete(response_);
         })).pipe(_observableCatch((response_: any) => {
             if (response_ instanceof HttpResponseBase) {
                 try {
-                    return this.processDelete4(response_ as any);
+                    return this.processDelete(response_ as any);
                 } catch (e) {
                     return _observableThrow(e) as any as Observable<void>;
                 }
@@ -767,7 +812,7 @@ export class Client extends ClientBase {
         }));
     }
 
-    protected processDelete4(response: HttpResponseBase): Observable<void> {
+    protected processDelete(response: HttpResponseBase): Observable<void> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -785,12 +830,27 @@ export class Client extends ClientBase {
         }
         return _observableOf<void>(null as any);
     }
+}
+
+@Injectable({
+    providedIn: 'root'
+})
+export class QualificationClient extends ClientBase {
+    private http: HttpClient;
+    private baseUrl: string;
+    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
+
+    constructor(@Inject(HttpClient) http: HttpClient, @Optional() @Inject(API_BASE_URL) baseUrl?: string) {
+        super();
+        this.http = http;
+        this.baseUrl = baseUrl !== undefined && baseUrl !== null ? baseUrl : "";
+    }
 
     /**
      * @param body (optional) 
      * @return Success
      */
-    create5(apiVersion: string, body: CreateQualificationCommand | undefined): Observable<string> {
+    create(apiVersion: string, body: CreateQualificationCommand | undefined): Observable<string> {
         let url_ = this.baseUrl + "/api/v{apiVersion}/Qualification/Create";
         if (apiVersion === undefined || apiVersion === null)
             throw new Error("The parameter 'apiVersion' must be defined.");
@@ -812,11 +872,11 @@ export class Client extends ClientBase {
         return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
             return this.http.request("post", url_, transformedOptions_);
         })).pipe(_observableMergeMap((response_: any) => {
-            return this.processCreate5(response_);
+            return this.processCreate(response_);
         })).pipe(_observableCatch((response_: any) => {
             if (response_ instanceof HttpResponseBase) {
                 try {
-                    return this.processCreate5(response_ as any);
+                    return this.processCreate(response_ as any);
                 } catch (e) {
                     return _observableThrow(e) as any as Observable<string>;
                 }
@@ -825,7 +885,7 @@ export class Client extends ClientBase {
         }));
     }
 
-    protected processCreate5(response: HttpResponseBase): Observable<string> {
+    protected processCreate(response: HttpResponseBase): Observable<string> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -850,7 +910,7 @@ export class Client extends ClientBase {
      * @param id (optional) 
      * @return Success
      */
-    delete5(id: string | undefined, apiVersion: string): Observable<void> {
+    delete(id: string | undefined, apiVersion: string): Observable<void> {
         let url_ = this.baseUrl + "/api/v{apiVersion}/Qualification/Delete?";
         if (apiVersion === undefined || apiVersion === null)
             throw new Error("The parameter 'apiVersion' must be defined.");
@@ -871,11 +931,11 @@ export class Client extends ClientBase {
         return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
             return this.http.request("delete", url_, transformedOptions_);
         })).pipe(_observableMergeMap((response_: any) => {
-            return this.processDelete5(response_);
+            return this.processDelete(response_);
         })).pipe(_observableCatch((response_: any) => {
             if (response_ instanceof HttpResponseBase) {
                 try {
-                    return this.processDelete5(response_ as any);
+                    return this.processDelete(response_ as any);
                 } catch (e) {
                     return _observableThrow(e) as any as Observable<void>;
                 }
@@ -884,7 +944,7 @@ export class Client extends ClientBase {
         }));
     }
 
-    protected processDelete5(response: HttpResponseBase): Observable<void> {
+    protected processDelete(response: HttpResponseBase): Observable<void> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -902,12 +962,27 @@ export class Client extends ClientBase {
         }
         return _observableOf<void>(null as any);
     }
+}
+
+@Injectable({
+    providedIn: 'root'
+})
+export class ResponsibilityClient extends ClientBase {
+    private http: HttpClient;
+    private baseUrl: string;
+    protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
+
+    constructor(@Inject(HttpClient) http: HttpClient, @Optional() @Inject(API_BASE_URL) baseUrl?: string) {
+        super();
+        this.http = http;
+        this.baseUrl = baseUrl !== undefined && baseUrl !== null ? baseUrl : "";
+    }
 
     /**
      * @param body (optional) 
      * @return Success
      */
-    create6(apiVersion: string, body: CreateResponsibilityCommand | undefined): Observable<string> {
+    create(apiVersion: string, body: CreateResponsibilityCommand | undefined): Observable<string> {
         let url_ = this.baseUrl + "/api/v{apiVersion}/Responsibility/Create";
         if (apiVersion === undefined || apiVersion === null)
             throw new Error("The parameter 'apiVersion' must be defined.");
@@ -929,11 +1004,11 @@ export class Client extends ClientBase {
         return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
             return this.http.request("post", url_, transformedOptions_);
         })).pipe(_observableMergeMap((response_: any) => {
-            return this.processCreate6(response_);
+            return this.processCreate(response_);
         })).pipe(_observableCatch((response_: any) => {
             if (response_ instanceof HttpResponseBase) {
                 try {
-                    return this.processCreate6(response_ as any);
+                    return this.processCreate(response_ as any);
                 } catch (e) {
                     return _observableThrow(e) as any as Observable<string>;
                 }
@@ -942,7 +1017,7 @@ export class Client extends ClientBase {
         }));
     }
 
-    protected processCreate6(response: HttpResponseBase): Observable<string> {
+    protected processCreate(response: HttpResponseBase): Observable<string> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -967,7 +1042,7 @@ export class Client extends ClientBase {
      * @param id (optional) 
      * @return Success
      */
-    delete6(id: string | undefined, apiVersion: string): Observable<void> {
+    delete(id: string | undefined, apiVersion: string): Observable<void> {
         let url_ = this.baseUrl + "/api/v{apiVersion}/Responsibility/Delete?";
         if (apiVersion === undefined || apiVersion === null)
             throw new Error("The parameter 'apiVersion' must be defined.");
@@ -988,11 +1063,11 @@ export class Client extends ClientBase {
         return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
             return this.http.request("delete", url_, transformedOptions_);
         })).pipe(_observableMergeMap((response_: any) => {
-            return this.processDelete6(response_);
+            return this.processDelete(response_);
         })).pipe(_observableCatch((response_: any) => {
             if (response_ instanceof HttpResponseBase) {
                 try {
-                    return this.processDelete6(response_ as any);
+                    return this.processDelete(response_ as any);
                 } catch (e) {
                     return _observableThrow(e) as any as Observable<void>;
                 }
@@ -1001,7 +1076,7 @@ export class Client extends ClientBase {
         }));
     }
 
-    protected processDelete6(response: HttpResponseBase): Observable<void> {
+    protected processDelete(response: HttpResponseBase): Observable<void> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -1150,6 +1225,7 @@ export interface JobSort {
 
 export interface JobsVm {
     jobs?: JobLookupDto[] | undefined;
+    pageCount?: number;
 }
 
 export interface JobVm {
