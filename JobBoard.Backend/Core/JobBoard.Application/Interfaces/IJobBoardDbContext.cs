@@ -13,6 +13,8 @@ namespace JobBoard.Application.Interfaces
         DbSet<Qualification> Qualifications { get; }
         DbSet<Responsibility> Responsibilities { get; }
         DbSet<Location> Locations { get; }
+        DbSet<JobEmployee> JobEmployees { get; }
+
         Task<int> SaveChangesAsync(CancellationToken token);
     }
 }
