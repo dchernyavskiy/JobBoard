@@ -27,11 +27,18 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(){
-        this.oidcSecurityService.checkAuth().subscribe(({ isAuthenticated, userData, accessToken, idToken }) => {
-            console.log('is auth: ' + isAuthenticated);
-            console.log('user data: ' + userData);
-            console.log('access token: ' + accessToken);
-            console.log('id token: ' + idToken);
+        this.oidcSecurityService.checkAuth().subscribe((result) => {
+            if (!result.isAuthenticated) {
+              this.oidcSecurityService.authorize();
+            }
+            localStorage.setItem('token', result.accessToken);
+      
+            let role = JSON.parse(window.atob(result.accessToken.split('.')[1])).role;
+            localStorage.setItem('role', role);
+            console.log(role);
+      
+            console.log('access token: ' + result.accessToken);
+            console.log(result.userData);
           });
         this.recallJsFuntions();
 

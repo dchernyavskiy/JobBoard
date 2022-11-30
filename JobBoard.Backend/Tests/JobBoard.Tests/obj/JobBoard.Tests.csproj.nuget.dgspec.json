@@ -1,6 +1,19 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
+    "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\JobBoard.Tests.csproj": {}
+  },
+  "projects": {
+    "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj",
+        "projectName": "JobBoard.Application",
+        "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\obj\\",
+=======
     "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\JobBoard.Tests.csproj": {}
   },
   "projects": {
@@ -12,12 +25,17 @@
         "projectPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj",
         "packagesPath": "C:\\Users\\Alena\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\obj\\",
+>>>>>>> develop
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
           "C:\\Users\\Alena\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> develop
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -27,17 +45,26 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
           "C:\\Program Files\\dotnet\\library-packs": {},
 >>>>>>> resolving-conflicts
+=======
+          "C:\\Program Files\\dotnet\\library-packs": {},
+>>>>>>> develop
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+<<<<<<< HEAD
+              "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
+                "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj"
+=======
               "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
                 "projectPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj"
+>>>>>>> develop
               }
             }
           }
@@ -93,6 +120,16 @@
         }
       }
     },
+<<<<<<< HEAD
+    "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj",
+        "projectName": "JobBoard.Domain",
+        "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\obj\\",
+=======
     "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -101,12 +138,17 @@
         "projectPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj",
         "packagesPath": "C:\\Users\\Alena\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\obj\\",
+>>>>>>> develop
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
           "C:\\Users\\Alena\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> develop
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -116,9 +158,13 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
           "C:\\Program Files\\dotnet\\library-packs": {},
 >>>>>>> resolving-conflicts
+=======
+          "C:\\Program Files\\dotnet\\library-packs": {},
+>>>>>>> develop
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -160,6 +206,16 @@
         }
       }
     },
+<<<<<<< HEAD
+    "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj",
+        "projectName": "JobBoard.Persistence",
+        "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\obj\\",
+=======
     "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -168,12 +224,17 @@
         "projectPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj",
         "packagesPath": "C:\\Users\\Alena\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\obj\\",
+>>>>>>> develop
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
           "C:\\Users\\Alena\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> develop
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -183,20 +244,32 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
           "C:\\Program Files\\dotnet\\library-packs": {},
 >>>>>>> resolving-conflicts
+=======
+          "C:\\Program Files\\dotnet\\library-packs": {},
+>>>>>>> develop
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+<<<<<<< HEAD
+              "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj": {
+                "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj"
+              },
+              "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
+                "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj"
+=======
               "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj": {
                 "projectPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj"
               },
               "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
                 "projectPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj"
+>>>>>>> develop
               }
             }
           }
@@ -248,6 +321,16 @@
         }
       }
     },
+<<<<<<< HEAD
+    "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\JobBoard.WebApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\JobBoard.WebApi.csproj",
+        "projectName": "JobBoard.WebApi",
+        "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\JobBoard.WebApi.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\obj\\",
+=======
     "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\JobBoard.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -256,12 +339,17 @@
         "projectPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\JobBoard.WebApi.csproj",
         "packagesPath": "C:\\Users\\Alena\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\obj\\",
+>>>>>>> develop
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
           "C:\\Users\\Alena\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> develop
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -271,15 +359,29 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
           "C:\\Program Files\\dotnet\\library-packs": {},
 >>>>>>> resolving-conflicts
+=======
+          "C:\\Program Files\\dotnet\\library-packs": {},
+>>>>>>> develop
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+<<<<<<< HEAD
+              "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj": {
+                "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj"
+              },
+              "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
+                "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj"
+              },
+              "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj": {
+                "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj"
+=======
               "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj": {
                 "projectPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj"
               },
@@ -288,6 +390,7 @@
               },
               "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj": {
                 "projectPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj"
+>>>>>>> develop
               }
             }
           }
@@ -384,6 +487,16 @@
         }
       }
     },
+<<<<<<< HEAD
+    "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\JobBoard.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\JobBoard.Tests.csproj",
+        "projectName": "JobBoard.Tests",
+        "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\JobBoard.Tests.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\obj\\",
+=======
     "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\JobBoard.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -392,12 +505,17 @@
         "projectPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\JobBoard.Tests.csproj",
         "packagesPath": "C:\\Users\\Alena\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\obj\\",
+>>>>>>> develop
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
           "C:\\Users\\Alena\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> develop
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -407,15 +525,35 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
           "C:\\Program Files\\dotnet\\library-packs": {},
 >>>>>>> resolving-conflicts
+=======
+          "C:\\Program Files\\dotnet\\library-packs": {},
+>>>>>>> develop
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+<<<<<<< HEAD
+              "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj": {
+                "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj"
+              },
+              "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
+                "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj"
+              },
+              "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj": {
+                "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj"
+              },
+              "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\JobBoard.WebApi.csproj": {
+                "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\JobBoard.WebApi.csproj"
+              },
+              "C:\\Projects\\University\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj": {
+                "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj"
+=======
               "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj": {
                 "projectPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj"
               },
@@ -430,6 +568,7 @@
               },
               "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj": {
                 "projectPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj"
+>>>>>>> develop
               }
             }
           }
@@ -489,6 +628,16 @@
         }
       }
     },
+<<<<<<< HEAD
+    "C:\\Projects\\University\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Projects\\University\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj",
+        "projectName": "JobBoard.Identity",
+        "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Identity\\obj\\",
+=======
     "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -497,12 +646,17 @@
         "projectPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj",
         "packagesPath": "C:\\Users\\Alena\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Identity\\obj\\",
+>>>>>>> develop
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
           "C:\\Users\\Alena\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> develop
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -512,20 +666,32 @@
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
           "C:\\Program Files\\dotnet\\library-packs": {},
 >>>>>>> resolving-conflicts
+=======
+          "C:\\Program Files\\dotnet\\library-packs": {},
+>>>>>>> develop
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+<<<<<<< HEAD
+              "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj": {
+                "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj"
+              },
+              "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
+                "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj"
+=======
               "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj": {
                 "projectPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj"
               },
               "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
                 "projectPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj"
+>>>>>>> develop
               }
             }
           }

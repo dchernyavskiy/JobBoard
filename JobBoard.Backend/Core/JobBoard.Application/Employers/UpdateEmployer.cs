@@ -4,7 +4,7 @@ using JobBoard.Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace JobBoard.Application.Employer
+namespace JobBoard.Application.Employers
 {
     public class UpdateEmployer
     {

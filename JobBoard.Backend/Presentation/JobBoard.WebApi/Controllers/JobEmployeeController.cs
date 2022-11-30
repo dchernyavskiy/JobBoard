@@ -1,4 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
+<<<<<<< HEAD
+using static JobBoard.Application.JobEmployees.CreateJobEmployee;
+using static JobBoard.Application.JobEmployees.GetJobEmployee;
+=======
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static JobBoard.Application.Categories.CreateJobEmployee;
 using static JobBoard.Application.Categories.GetJobEmployee;
+>>>>>>> develop
 
 namespace JobBoard.WebApi.Controllers
 {
