@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "vp7A6qt9sTr2IK9uZvatxfLYUO3SzDM4PqZMPNZZ+8bAo4qXaax7m2vIPCF3g4z2GiGlyGIIXe60RI6SpRcIPA==",
+=======
+  "dgSpecHash": "t58R4YfZ4viXjYAbOu4mFPTjXIJC/vkYdGyip5Dqrc63RsOw2n4p6CIfIxGitokEsk1LNyeE6il/t3UNR1Gg2w==",
+>>>>>>> Stashed changes
   "success": true,
   "projectFilePath": "C:\\Projects\\University\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj",
   "expectedPackageFiles": [
