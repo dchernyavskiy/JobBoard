@@ -1,10 +1,6 @@
 {
   "version": 2,
-<<<<<<< Updated upstream
-  "dgSpecHash": "dOYuNl5I+3qES81wA+ML7+QSRnJCqDfkXn3+kqexWyk44gZQNZWfvTj4uPDZ9cC7hByvdF/vy2r5qJQ/Tm96kQ==",
-=======
   "dgSpecHash": "t9W56xkw/R8n29WKRibdxuA52wC11938RUFRswi/oSsFyEL7dqeQ+HmMytDjehHfTHoc3Z1+uO5IhBwsy+A96g==",
->>>>>>> Stashed changes
   "success": true,
   "projectFilePath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\JobBoard.WebApi.csproj",
   "expectedPackageFiles": [
@@ -83,5 +79,12 @@
     "C:\\Users\\user\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

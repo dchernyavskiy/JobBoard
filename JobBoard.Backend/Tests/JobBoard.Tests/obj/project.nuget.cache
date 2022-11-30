@@ -1,10 +1,6 @@
 {
   "version": 2,
-<<<<<<< Updated upstream
-  "dgSpecHash": "fxjaL5p7bLrQo1492n+e6SWsS4whxyQHH5fki/GxIbeZjm+4vmwcnpPhq8hcFI/8FUZW/3UIWjpKqheEpSua1A==",
-=======
   "dgSpecHash": "qgTbgbait1PafvQkpY0ayjoO4wu7ZvN0uv6ts+ZVzBXvtOW25na+mlvR6ZFIcfxVub8AhKQAhFcDBIygulLlEg==",
->>>>>>> Stashed changes
   "success": true,
   "projectFilePath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\JobBoard.Tests.csproj",
   "expectedPackageFiles": [
@@ -175,5 +171,12 @@
     "C:\\Users\\user\\.nuget\\packages\\xunit.extensibility.execution\\2.4.1\\xunit.extensibility.execution.2.4.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.3\\xunit.runner.visualstudio.2.4.3.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
