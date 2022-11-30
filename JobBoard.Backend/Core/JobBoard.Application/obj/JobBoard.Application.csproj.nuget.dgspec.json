@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Anastasia\\Desktop\\joboard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj": {}
+    "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Anastasia\\Desktop\\joboard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj": {
+    "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anastasia\\Desktop\\joboard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj",
         "projectName": "JobBoard.Application",
-        "projectPath": "C:\\Users\\Anastasia\\Desktop\\joboard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj",
-        "packagesPath": "C:\\Users\\Anastasia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anastasia\\Desktop\\joboard\\JobBoard.Backend\\Core\\JobBoard.Application\\obj\\",
+        "projectPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj",
+        "packagesPath": "C:\\Users\\Alena\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Anastasia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alena\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Anastasia\\Desktop\\joboard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
-                "projectPath": "C:\\Users\\Anastasia\\Desktop\\joboard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj"
+              "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
+                "projectPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj"
               }
             }
           }
@@ -81,24 +81,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Anastasia\\Desktop\\joboard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
+    "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anastasia\\Desktop\\joboard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj",
         "projectName": "JobBoard.Domain",
-        "projectPath": "C:\\Users\\Anastasia\\Desktop\\joboard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj",
-        "packagesPath": "C:\\Users\\Anastasia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anastasia\\Desktop\\joboard\\JobBoard.Backend\\Core\\JobBoard.Domain\\obj\\",
+        "projectPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj",
+        "packagesPath": "C:\\Users\\Alena\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Anastasia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alena\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -140,7 +140,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
