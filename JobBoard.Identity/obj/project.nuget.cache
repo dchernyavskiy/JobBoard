@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vp7A6qt9sTr2IK9uZvatxfLYUO3SzDM4PqZMPNZZ+8bAo4qXaax7m2vIPCF3g4z2GiGlyGIIXe60RI6SpRcIPA==",
+  "dgSpecHash": "t58R4YfZ4viXjYAbOu4mFPTjXIJC/vkYdGyip5Dqrc63RsOw2n4p6CIfIxGitokEsk1LNyeE6il/t3UNR1Gg2w==",
   "success": true,
   "projectFilePath": "C:\\Projects\\University\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj",
   "expectedPackageFiles": [
@@ -67,5 +67,12 @@
     "C:\\Users\\user\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Projects\\University\\JobBoard\\JobBoard.Identity\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
