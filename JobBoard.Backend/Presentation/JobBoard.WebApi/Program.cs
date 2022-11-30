@@ -40,9 +40,13 @@ builder.Services.AddAuthentication(opts =>
 {
     opts.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     opts.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    opts.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+    opts.DefaultSignInScheme = JwtBearerDefaults.AuthenticationScheme;
+    opts.DefaultSignOutScheme = JwtBearerDefaults.AuthenticationScheme;
+    opts.DefaultForbidScheme = JwtBearerDefaults.AuthenticationScheme;
 }).AddJwtBearer("Bearer", opts =>
 {
-    opts.Authority = builder.Configuration["AuthorityUri"];
+    opts.Authority = "http://localhost:5002";
     opts.Audience = "JobBoardWebApi";
     opts.RequireHttpsMetadata = false;
 });

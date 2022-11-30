@@ -25,8 +25,8 @@ import { JobsnewComponent } from './components/jobsnew/jobsnew.component'
     AuthModule.forRoot({
       config: {
         authority: environment.authority,
-        redirectUrl: window.location.origin,
-        postLogoutRedirectUri: window.location.origin,
+        redirectUrl: 'http://localhost:4200/signin-oidc',
+        postLogoutRedirectUri: 'http://localhost:4200/signout-oidc',
         clientId: "job-board-web-app",
         scope: "openid profile JobBoardWebApi",
         responseType: "code",
