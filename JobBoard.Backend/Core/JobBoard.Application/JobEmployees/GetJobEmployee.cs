@@ -5,6 +5,7 @@ using JobBoard.Application.Interfaces;
 using JobBoard.Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using static JobBoard.Application.Locations.GetLocation;
 
 namespace JobBoard.Application.JobEmployees
 {
@@ -39,7 +40,7 @@ namespace JobBoard.Application.JobEmployees
                 _mapper = mapper;
             }
 
-            public async Task<LocationVm> Handle(GetJobEmployeeQuery request, CancellationToken cancellationToken)
+            public async Task<JobEmployeeVm> Handle(GetJobEmployeeQuery request, CancellationToken cancellationToken)
             {
                 var entity = await _context.JobEmployees
                     .FirstOrDefaultAsync(x => x.Id == request.Id);

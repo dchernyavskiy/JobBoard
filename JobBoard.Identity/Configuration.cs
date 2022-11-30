@@ -11,8 +11,6 @@ namespace JobBoard.Identity
 {
     public class Configuration
     {
-        public static string WebClientUri = "http://localhost:4200";
-
         public static IEnumerable<ApiScope> ApiScopes =
             new List<ApiScope> { new ApiScope("JobBoardWebApi", "Web Api") };
 
@@ -20,7 +18,9 @@ namespace JobBoard.Identity
             new List<IdentityResource> { new IdentityResources.OpenId(), new IdentityResources.Profile() };
 
         public static IEnumerable<ApiResource> ApiResources =
-            new List<ApiResource> { new ApiResource("JobBoardWebApi", "Web Api", new[] { JwtClaimTypes.Name }) { Scopes = { "JobBoardWebApi" } } };
+            new List<ApiResource> { 
+                new ApiResource("JobBoardWebApi", "Web Api", new[] { JwtClaimTypes.Name, JwtClaimTypes.Role }) { Scopes = { "JobBoardWebApi" } } 
+            };
 
         public static IEnumerable<Client> Clients =
             new List<Client> {
@@ -30,14 +30,22 @@ namespace JobBoard.Identity
                     AllowedGrantTypes = GrantTypes.Code,
                     RequireClientSecret  = false,
                     RequirePkce = true,
-                    RedirectUris = { WebClientUri },
-                    AllowedCorsOrigins = { WebClientUri },
-                    PostLogoutRedirectUris = { WebClientUri },
+                    RedirectUris = 
+                    { 
+                        "http://localhost:4200/signin-oidc"
+                    },
+                    AllowedCorsOrigins = 
+                    {
+                        "http://localhost:4200"    
+                    },
+                    PostLogoutRedirectUris = 
+                    { 
+                        "http://localhost:4200/signout-oidc"
+                    },
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-                        IdentityServerConstants.StandardScopes.OfflineAccess,
                         "JobBoardWebApi"
                     },
                     AllowAccessTokensViaBrowser = true,
@@ -56,7 +64,8 @@ namespace JobBoard.Identity
                         IdentityServerConstants.StandardScopes.Profile,
                         IdentityServerConstants.StandardScopes.OfflineAccess,
                         "JobBoardWebApi"
-                    }
+                    },
+                    AllowAccessTokensViaBrowser = true,
                 },
             };
     }

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using static JobBoard.Application.Employer.UpdateEmployer;
+using static JobBoard.Application.Employers.UpdateEmployer;
 
 namespace JobBoard.WebApi.Controllers
 {
