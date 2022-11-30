@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "2IOSaUQ8CVCjkemJjlwhDheuUcWoMx+V5HMZY3QJlRtMRkai0QbwjKqwz11DJQeq6VYjt01YyH1wZiUjEkjBFg==",
+=======
+  "dgSpecHash": "ah3A7J/vyEdbAvPRY5FWOUkTu6xIrE++Ka1K6uKWJZ5TK7jfhG2tMlKyXiFIjtBnkyZ/8UXL3xcbnZbIlcDWsw==",
+>>>>>>> resolving-conflicts
   "success": true,
   "projectFilePath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj",
   "expectedPackageFiles": [
@@ -136,5 +140,12 @@
     "C:\\Users\\Alena\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Alena\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

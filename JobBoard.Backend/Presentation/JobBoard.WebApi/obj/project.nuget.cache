@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "iaxu/SLG84yyWLfH1c01PQ72zfYqNcFrCSpHCL/lLT38whQUcmOlpoBrwWxwMPQjXUJwD0WSaeA06ukr1J8EBA==",
+=======
+  "dgSpecHash": "t9W56xkw/R8n29WKRibdxuA52wC11938RUFRswi/oSsFyEL7dqeQ+HmMytDjehHfTHoc3Z1+uO5IhBwsy+A96g==",
+>>>>>>> resolving-conflicts
   "success": true,
   "projectFilePath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\JobBoard.WebApi.csproj",
   "expectedPackageFiles": [
@@ -79,5 +83,12 @@
     "C:\\Users\\Alena\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\Alena\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

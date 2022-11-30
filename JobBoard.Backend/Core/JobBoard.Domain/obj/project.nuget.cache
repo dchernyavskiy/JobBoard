@@ -1,8 +1,19 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "ShNj/f+HM5WriF47TUS30cvX/IEJ1eiy5D9lwqPAirPNU5J3RVsJjdYBU3qz5fW1W81zhfcaBTsJA1rKIaQAjw==",
+=======
+  "dgSpecHash": "dXmafGRRTK7mbRHcgWPOVN71CsSeD3xl7Qyuh+ZPCz1d5AtJuuAiyYuAFKm6jRo+Z+D5eR7mIuLLnmAs4xFpiA==",
+>>>>>>> resolving-conflicts
   "success": true,
   "projectFilePath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "P2WhRxdIM9om1XZ2bDFYGpKh+mPgKCjTRR5Ai4C4rZkaYaDIN7/I/0L4qcP1Rg5pHI5TcjxJ67lAxlRDRzybYQ==",
+=======
+  "dgSpecHash": "bzUrX1BGisxAf/r2mJbv+3D4TaolQ9Vr9RYY9EZj1Dn74x7YZWhhaiTdqPAewA8mgYGHfF88/trbtvQuq26aEw==",
+>>>>>>> resolving-conflicts
   "success": true,
   "projectFilePath": "C:\\Users\\Alena\\source\\repos\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj",
   "expectedPackageFiles": [
@@ -24,5 +28,12 @@
     "C:\\Users\\Alena\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\Alena\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
