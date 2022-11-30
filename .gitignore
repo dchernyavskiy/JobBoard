@@ -353,3 +353,5 @@ MigrationBackup/
 *.assets.json
 *.assets.cache
 *.editorconfig
+JobBoard.Backend/Core/JobBoard.Application/obj/Debug/net6.0/JobBoard.Application.assets.cache
+JobBoard.Backend/Core/JobBoard.Application/obj/Debug/net6.0/JobBoard.Application.csproj.AssemblyReference.cache
