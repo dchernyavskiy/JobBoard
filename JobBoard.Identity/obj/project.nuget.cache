@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "t58R4YfZ4viXjYAbOu4mFPTjXIJC/vkYdGyip5Dqrc63RsOw2n4p6CIfIxGitokEsk1LNyeE6il/t3UNR1Gg2w==",
+  "dgSpecHash": "J7hzjihvN6KrzugRMndNcdVMZXCRzhOM170tzdUdK4Z6CKLoKF4KI8QFqPbmRLCkpUdBCH7OPe/Bx3Rp7YQGXg==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\University\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj",
+  "projectFilePath": "c:\\Projects\\University\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

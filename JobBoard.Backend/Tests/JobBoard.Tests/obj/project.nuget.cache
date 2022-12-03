@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "qgTbgbait1PafvQkpY0ayjoO4wu7ZvN0uv6ts+ZVzBXvtOW25na+mlvR6ZFIcfxVub8AhKQAhFcDBIygulLlEg==",
+  "dgSpecHash": "EzRIgT7H9ssRVgT/WYG9Wcqo0rZ55X03on80LVWKkVmlp+OAT//vSUeDdoW/6rYVnApRqpoWT+FqyoCXpK7gTQ==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\JobBoard.Tests.csproj",
+  "projectFilePath": "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\JobBoard.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.core\\1.3.0\\azure.core.1.3.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\identitymodel\\4.4.0\\identitymodel.4.4.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\identityserver4\\4.1.2\\identityserver4.4.1.2.nupkg.sha512",

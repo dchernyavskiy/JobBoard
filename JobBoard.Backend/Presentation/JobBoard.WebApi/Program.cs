@@ -51,22 +51,18 @@ builder.Services.AddAuthentication(opts =>
     opts.RequireHttpsMetadata = false;
 });
 
-builder.Services.AddApiVersioning(opts =>
-{
-    opts.AssumeDefaultVersionWhenUnspecified = true;
-    opts.DefaultApiVersion = ApiVersion.Default;
-});
+builder.Services.AddApiVersioning();
 
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
 }
-    app.UseSwagger();
-    app.UseSwaggerUI();
+app.UseSwagger();
+app.UseSwaggerUI();
 
-app.UseHttpsRedirection();
 app.UseCors("AllowAll");
+app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseApiVersioning();
@@ -81,8 +77,10 @@ using (var scope = app.Services.CreateScope())
         DbInitializer.Initialize(context);
         Seed.Initialize(context);
     }
-    catch
-    { }
+    catch (Exception ex)
+    {
+        var a = 1;
+    }
 }
 
 app.Run();

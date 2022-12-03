@@ -1,8 +1,11 @@
 ﻿using AutoMapper;
 using JobBoard.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
 using static JobBoard.Application.Locations.CreateLocation;
 using static JobBoard.Application.Locations.DeleteLocation;
+using static JobBoard.Application.Locations.GetLocations;
 
 namespace JobBoard.WebApi.Controllers
 {
@@ -17,8 +20,15 @@ namespace JobBoard.WebApi.Controllers
             _mapper = mapper;
         }
 
+        [HttpGet]
+        public async Task<ActionResult<LocationsVm>> GetAll()
+        {
+            var query = new GetLocationsQuery();
+            var result = await Mediator.Send(query);
+            return Ok(result);
+        }
+
         [HttpPost]
-        //[Authorize(Roles = "SystemAdministrator")]
         public async Task<ActionResult<Guid>> Create([FromBody] CreateLocationCommandDto createLocationCommandDto)
         {
             var command = _mapper.Map<CreateLocationCommand>(createLocationCommandDto);
