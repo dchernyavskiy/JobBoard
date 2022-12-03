@@ -15,11 +15,6 @@ import { FavouriteJobsComponent } from './components/favourite-jobs/favourite-jo
 import { EmployersComponent } from './components/employers/employers.component';
 import { EmployerCardComponent } from './components/employer-card/employer-card.component';
 
-
-
-
-
-
 @NgModule({
   declarations: [AppComponent, HomeThreeComponent, FooterStyleTwoComponent, JobCardComponent, JobsnewComponent, FavouriteJobsComponent, EmployersComponent, EmployerCardComponent  ],
   imports: [
@@ -31,8 +26,8 @@ import { EmployerCardComponent } from './components/employer-card/employer-card.
     AuthModule.forRoot({
       config: {
         authority: environment.authority,
-        redirectUrl: 'http://localhost:4200/signin-oidc',
-        postLogoutRedirectUri: 'http://localhost:4200/signout-oidc',
+        redirectUrl: 'http://localhost:4200',
+        postLogoutRedirectUri: 'http://localhost:4200',
         clientId: "job-board-web-app",
         scope: "openid profile JobBoardWebApi",
         responseType: "code",

@@ -3,9 +3,6 @@ import { Router, NavigationStart, NavigationCancel, NavigationEnd } from '@angul
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { filter } from 'rxjs/operators';
 import {OidcSecurityService} from 'angular-auth-oidc-client';
-import {environment} from './../environments/environment';
-import { JobService } from './services/job.service';
-import {JobLookupDto} from './api/api';
 declare let $: any;
 
 @Component({
@@ -22,17 +19,15 @@ declare let $: any;
 export class AppComponent implements OnInit {
     location: any;
     routerSubscription: any;
+    public isAuth: boolean = false;
 
     constructor(private router: Router, public oidcSecurityService: OidcSecurityService) {
     }
 
     ngOnInit(){
         this.oidcSecurityService.checkAuth().subscribe((result) => {
-            if (!result.isAuthenticated) {
-              this.oidcSecurityService.authorize();
-            }
             localStorage.setItem('token', result.accessToken);
-      
+            this.isAuth = result.isAuthenticated;
             let role = JSON.parse(window.atob(result.accessToken.split('.')[1])).role;
             localStorage.setItem('role', role);
             console.log(role);

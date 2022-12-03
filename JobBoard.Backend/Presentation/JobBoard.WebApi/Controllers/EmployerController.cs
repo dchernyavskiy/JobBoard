@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
+using static JobBoard.Application.Employers.GetEmployers;
 using static JobBoard.Application.Employers.UpdateEmployer;
 
 namespace JobBoard.WebApi.Controllers
@@ -13,6 +16,14 @@ namespace JobBoard.WebApi.Controllers
         public EmployerController(IMapper mapper)
         {
             _mapper = mapper;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<EmployersVm>> GetAll()
+        {
+            var query = new GetEmployersQuery();
+            var result = await Mediator.Send(query);
+            return Ok(result);
         }
 
         [HttpPut]

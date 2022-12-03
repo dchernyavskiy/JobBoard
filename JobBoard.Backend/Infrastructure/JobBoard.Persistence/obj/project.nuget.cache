@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ah3A7J/vyEdbAvPRY5FWOUkTu6xIrE++Ka1K6uKWJZ5TK7jfhG2tMlKyXiFIjtBnkyZ/8UXL3xcbnZbIlcDWsw==",
+  "dgSpecHash": "y6ZoRtURO4V+Gk2hkf0lAaDaMY5hESd30ovHTiSpniXfUMDAKerSCefEs0pgWh8Y/lQPOS27yXABPF9b9/nUYQ==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj",
+  "projectFilePath": "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.core\\1.3.0\\azure.core.1.3.0.nupkg.sha512",

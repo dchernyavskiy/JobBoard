@@ -11,10 +11,7 @@ const routes: Routes = [
     {path: '', component: HomeThreeComponent},
     {path: 'jobsnew', component: JobsnewComponent},
     {path: 'favourite-jobs', component: FavouriteJobsComponent},
-    {path: 'employers', component: EmployersComponent}
-
-
-    
+    {path: 'employers', component: EmployersComponent}    
 ];
 
 @NgModule({
