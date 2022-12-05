@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bottom_sheet_background"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/sort"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <RadioButton
+            android:id="@+id/rb_sort_standard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sort_standard" />
+
+        <RadioButton
+            android:id="@+id/rb_sort_by_name_ascending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sort_by_name_ascending" />
+
+        <RadioButton
+            android:id="@+id/rb_sort_by_name_descending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sort_by_name_descending" />
+
+        <RadioButton
+            android:id="@+id/rb_sort_by_salary_ascending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sort_by_salary_ascending" />
+
+        <RadioButton
+            android:id="@+id/rb_sort_by_salary_descending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sort_by_salary_descending" />
+
+        <RadioButton
+            android:id="@+id/rb_sort_by_experience_ascending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sort_by_experience_ascending" />
+
+        <RadioButton
+            android:id="@+id/rb_sort_by_experience_descending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sort_by_experience_descending" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_sort_accepting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/apply" />
+
+</LinearLayout>

@@ -5,4 +5,16 @@
     <string name="register">Register</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
+    <string name="sort_by_name_ascending">Sort by title from A to Z</string>
+    <string name="sort_by_name_descending">Sort by title from Z to A</string>
+    <string name="sort_by_salary_ascending">Sort by salary ascending</string>
+    <string name="sort_by_salary_descending">Sort by salary descending</string>
+    <string name="sort_by_experience_ascending">Sort by experience ascending</string>
+    <string name="sort_by_experience_descending">Sort by experience descending</string>
+    <string name="sort">Sort</string>
+    <string name="apply">Apply</string>
+    <string name="sort_standard">Standard sort</string>
+    <string name="filter">Filter</string>
+    <string name="register_as_employer">Register as employer</string>
+    <string name="register_as_employee">Register as employee</string>
 </resources>

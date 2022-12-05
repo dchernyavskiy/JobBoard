@@ -1,10 +1,12 @@
 package com.example.jobboard.domain.repositories
 
+import com.example.jobboard.data.api.models.JobApiModel
 import com.example.jobboard.domain.models.Job
+import com.example.jobboard.domain.models.api.FilterQuery
 
 interface JobRepository {
 
-    fun getAllJobs(): List<Job>
+    suspend fun getAllJobs(): List<JobApiModel>
 
-    fun findJobs(keyword: String): List<Job>
+    suspend fun getJobsByFilters(filters: FilterQuery): List<JobApiModel>
 }

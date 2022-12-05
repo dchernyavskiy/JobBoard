@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navifation"
-    app:startDestination="@id/jobSearchFragment">
+    app:startDestination="@id/startFragment">
 
     <fragment
         android:id="@+id/startFragment"
-        android:name="com.example.jobboard.ui.auth.start.StartFragment"
+        android:name="com.example.jobboard.ui.auth.StartFragment"
         android:label="StartFragment"
         tools:layout="@layout/fragment_start"/>
 

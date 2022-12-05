@@ -1,4 +1,4 @@
-﻿using IdentityModel;
+﻿воддуusing IdentityModel;
 using IdentityServer4;
 using IdentityServer4.Models;
 using System;
@@ -57,7 +57,7 @@ namespace JobBoard.Identity
                     AllowedGrantTypes = GrantTypes.Code,
                     RequireClientSecret = false,
                     RequirePkce = true,
-                    RedirectUris = { "com.yourcompany.yourapp://oidccallback" },
+                    RedirectUris = { "com.example.jobboard://oidccallback" },
                     AllowedScopes =
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
