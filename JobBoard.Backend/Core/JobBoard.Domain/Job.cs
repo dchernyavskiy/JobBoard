@@ -22,6 +22,7 @@
         public Guid CategoryId { get; set; }
         public ICollection<Responsibility> Responsibilities { get; set; }
         public ICollection<Qualification> Qualifications { get; set; }
-        public ICollection<JobEmployee> AppliedJobs { get; set; }
+        //public ICollection<JobEmployee> AppliedJobs { get; set; }
+        public ICollection<Employee> AppliedByEmployees { get; set; }
     }
 }
