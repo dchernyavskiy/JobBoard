@@ -26,6 +26,8 @@ namespace JobBoard.Application.Jobs
             public string Employment { get; set; }
             public string ShortDiscription { get; set; }
             public Category Category { get; set; }
+            public Employer Employer { get; set; }
+
 
             public void Mapping(Profile profile)
             {
@@ -76,6 +78,7 @@ namespace JobBoard.Application.Jobs
             {
                 var entities = _context.Jobs
                     .Include(x => x.Location)
+                    .Include(x => x.Employer)
                     .Include(x => x.Category) as IQueryable<Job>;
 
                 var count = entities.Count();
