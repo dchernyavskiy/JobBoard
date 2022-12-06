@@ -21,6 +21,7 @@ object AppAuth {
 
     private val serviceRegisterEmployeeConfiguration = AuthorizationServiceConfiguration(
         Uri.parse(AuthConfig.AUTH_URI),
+        Uri.parse(AuthConfig.TOKEN_URI),
         Uri.parse(AuthConfig.REGISTER_EMPLOYEE_URI)
     )
 
@@ -86,7 +87,7 @@ object AppAuth {
         const val AUTH_URI = "http://10.0.2.2:5002/auth/login"
         const val REGISTER_EMPLOYER_URI = "http://10.0.2.2:5002/auth/registeremployer"
         const val REGISTER_EMPLOYEE_URI = "http://10.0.2.2:5002/auth/registeremployee"
-        const val TOKEN_URI = "http://10.0.2.2:5002"
+        const val TOKEN_URI = "http://10.0.2.2:5002/"
         const val RESPONSE_TYPE = ResponseTypeValues.CODE
         const val CLIENT_ID = "job-board-android-app"
 

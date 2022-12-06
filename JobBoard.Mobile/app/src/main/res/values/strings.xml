@@ -17,4 +17,7 @@
     <string name="filter">Filter</string>
     <string name="register_as_employer">Register as employer</string>
     <string name="register_as_employee">Register as employee</string>
+    <string name="categories">Categories</string>
+    <string name="locations">Locations</string>
+    <string name="experiences">Experiences</string>
 </resources>
