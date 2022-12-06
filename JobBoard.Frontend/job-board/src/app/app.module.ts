@@ -14,9 +14,26 @@ import { JobsnewComponent } from './components/jobsnew/jobsnew.component';
 import { FavouriteJobsComponent } from './components/favourite-jobs/favourite-jobs.component';
 import { EmployersComponent } from './components/employers/employers.component';
 import { EmployerCardComponent } from './components/employer-card/employer-card.component';
+import { CandidatesDetailsComponent } from './components/candidates-details/candidates-details.component';
+import { PostAJobComponent } from './components/post-a-job/post-a-job.component';
+import { EmployersDetailsComponent } from './components/employers-details/employers-details.component';
+
+
 
 @NgModule({
-  declarations: [AppComponent, HomeThreeComponent, FooterStyleTwoComponent, JobCardComponent, JobsnewComponent, FavouriteJobsComponent, EmployersComponent, EmployerCardComponent  ],
+  declarations: [
+    AppComponent, 
+    HomeThreeComponent, 
+    FooterStyleTwoComponent, 
+    JobCardComponent, 
+    JobsnewComponent, 
+    FavouriteJobsComponent, 
+    EmployersComponent, 
+    EmployerCardComponent, 
+    CandidatesDetailsComponent,
+    PostAJobComponent,
+    EmployersDetailsComponent
+    ],
   imports: [
     CommonModule,
     BrowserModule,
