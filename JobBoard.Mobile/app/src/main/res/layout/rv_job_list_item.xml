@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:padding="10dp"
+    android:background="@drawable/background_job_item_shape">
+
+    <ImageView
+        android:id="@+id/iv_company_logo"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/random_logo" />
+
+    <TextView
+        android:id="@+id/tv_job_vacation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/vacancy_text_color"
+        app:layout_constraintStart_toEndOf="@id/iv_company_logo"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Android developer" />
+
+    <TextView
+        android:id="@+id/tv_job_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="4dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/iv_company_logo"
+        app:layout_constraintTop_toBottomOf="@id/tv_job_vacation"
+        tools:text="Carolina, USA" />
+
+    <TextView
+        android:id="@+id/tv_job_posted_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
+        android:textSize="14sp"
+        android:textColor="@color/vacancy_posted_date_color"
+        app:layout_constraintStart_toEndOf="@id/tv_job_city"
+        app:layout_constraintTop_toBottomOf="@id/tv_job_vacation"
+        tools:text="2 months ago" />
+
+    <TextView
+        android:id="@+id/tv_job_posted_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:maxWidth="300dp"
+        app:layout_constraintStart_toStartOf="@id/tv_job_city"
+        app:layout_constraintTop_toBottomOf="@id/tv_job_city"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+
+    <TextView
+        android:id="@+id/tv_job_employment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
+        android:textAllCaps="true"
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="fulll time" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

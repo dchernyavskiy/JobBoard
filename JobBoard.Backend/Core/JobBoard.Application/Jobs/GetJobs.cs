@@ -80,8 +80,12 @@ namespace JobBoard.Application.Jobs
 
                 var count = entities.Count();
 
+                var requestJobsCount = 0d;
+                var pageCount = 0;
                 if (request != null)
                 {
+                    requestJobsCount = (double)request.Pagging.Count;
+
                     if (request.Sort.SortByName)
                         entities = entities.OrderBy(x => x.Name, request.Sort.IsAscending);
                     if (request.Sort.SortBySalary)
@@ -90,24 +94,24 @@ namespace JobBoard.Application.Jobs
                         entities = entities.OrderBy(x => x.Experience, request.Sort.IsAscending);
 
                     entities = entities
-                           .Where(x => request.Filters.KeyWord == null ? true : request.Filters.KeyWord.Contains(x.Name))
-                           .Where(x => request.Filters.CategoryIds == null ? true : request.Filters.CategoryIds.Contains(x.CategoryId))
-                           .Where(x => request.Filters.LocationIds == null ? true : request.Filters.LocationIds.Contains(x.LocationId))
+                           .Where(x => string.IsNullOrEmpty(request.Filters.KeyWord) ? true : request.Filters.KeyWord.Contains(x.Name))
+                           .Where(x => request.Filters.CategoryIds == null || request.Filters.CategoryIds.Count == 0 ? true : request.Filters.CategoryIds.Contains(x.CategoryId))
+                           .Where(x => request.Filters.LocationIds == null || request.Filters.LocationIds.Count == 0 ? true : request.Filters.LocationIds.Contains(x.LocationId))
                            .Where(x => request.Filters.SalaryStart == 0 ? true : x.SalaryStart >= request.Filters.SalaryStart)
                            .Where(x => request.Filters.SalaryEnd == 0 ? true : x.SalaryEnd <= request.Filters.SalaryEnd)
-                           .Where(x => request.Filters.EmloyerIds == null ? true : request.Filters.EmloyerIds.Contains(x.EmployerId))
-                           .Where(x => request.Filters.Experiences == null ? true : request.Filters.Experiences.Contains(x.Experience))
-                           .Skip((request.Pagging.Page - 1) * request.Pagging.Count)
-                           .Take(request.Pagging.Count);
+                           .Where(x => request.Filters.EmloyerIds == null || request.Filters.EmloyerIds.Count == 0 ? true : request.Filters.EmloyerIds.Contains(x.EmployerId))
+                           .Where(x => request.Filters.Experiences == null || request.Filters.Experiences.Count == 0 ? true : request.Filters.Experiences.Contains(x.Experience));
+
+                    pageCount = (int)Math.Ceiling(entities.Count() / requestJobsCount);
+
+                    entities = entities
+                               .Skip((request.Pagging.Page - 1) * request.Pagging.Count)
+                               .Take(request.Pagging.Count);
                 }
 
                 var jobs = await entities
                     .ProjectTo<JobLookupDto>(_mapper.ConfigurationProvider)
                     .ToListAsync();
-
-                var jobsCount = await _context.Jobs.CountAsync();
-                var requestJobsCount = (double)request.Pagging.Count;
-                var pageCount = (int)Math.Ceiling(jobsCount / requestJobsCount);
 
                 return new JobsVm { Jobs = jobs, PageCount = pageCount };
             }

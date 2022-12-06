@@ -10,23 +10,24 @@ import { API_BASE_URL } from "./api/api";
 import { JobCardComponent } from "./components/job-card/job-card.component";
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { JobsnewComponent } from './components/jobsnew/jobsnew.component'
-
-
-
+import { JobsnewComponent } from './components/jobsnew/jobsnew.component';
+import { FavouriteJobsComponent } from './components/favourite-jobs/favourite-jobs.component';
+import { EmployersComponent } from './components/employers/employers.component';
+import { EmployerCardComponent } from './components/employer-card/employer-card.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeThreeComponent, FooterStyleTwoComponent, JobCardComponent, JobsnewComponent],
+  declarations: [AppComponent, HomeThreeComponent, FooterStyleTwoComponent, JobCardComponent, JobsnewComponent, FavouriteJobsComponent, EmployersComponent, EmployerCardComponent  ],
   imports: [
     CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    
     AuthModule.forRoot({
       config: {
         authority: environment.authority,
-        redirectUrl: window.location.origin,
-        postLogoutRedirectUri: window.location.origin,
+        redirectUrl: 'http://localhost:4200',
+        postLogoutRedirectUri: 'http://localhost:4200',
         clientId: "job-board-web-app",
         scope: "openid profile JobBoardWebApi",
         responseType: "code",

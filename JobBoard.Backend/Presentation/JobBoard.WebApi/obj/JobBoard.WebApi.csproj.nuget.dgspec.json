@@ -282,6 +282,10 @@
               "target": "Package",
               "version": "[12.0.0, )"
             },
+            "Bogus": {
+              "target": "Package",
+              "version": "[34.0.2, )"
+            },
             "MediatR.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[11.0.0, )"

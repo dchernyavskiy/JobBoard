@@ -41,8 +41,7 @@ namespace JobBoard.Identity.Data
                 {
                     employeeInstance = new AppUser
                     {
-                        //FirstName = "John",
-                        //LastName = "Smith",
+                        Id = "0c207243-5fb9-4a2d-9581-cab3e01b2609",
                         Email = "john.smith@mail.com",
                         EmailConfirmed = true,
                         PhoneNumber = "+329813923",
@@ -92,7 +91,7 @@ namespace JobBoard.Identity.Data
 
                     var employerInstance4 = new AppUser
                     {
-                        Id = "041343ea-0f3d-458b-9fb6-7bd6700d69e8",
+                        Id = "cc653465-e4a0-40fa-99dc-061841fbf76f",
                         Email = "alice.smith@mail.com",
                         EmailConfirmed = true,
                         PhoneNumber = "+329813923",

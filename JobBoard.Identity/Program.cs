@@ -2,6 +2,7 @@ using JobBoard.Identity;
 using JobBoard.Identity.Data;
 using JobBoard.Identity.Interfaces;
 using JobBoard.Identity.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -39,6 +40,9 @@ builder.Services.AddIdentityServer()
 
 builder.Services.ConfigureApplicationCookie(opts =>
 {
+    opts.CookieManager = new ChunkingCookieManager();
+    opts.Cookie.HttpOnly = true;
+    opts.Cookie.SameSite = SameSiteMode.Strict;
     opts.Cookie.Name = "JobBoard.Identity.Cookie";
     opts.LoginPath = "/Auth/Login";
     opts.LogoutPath = "/Auth/Logout";

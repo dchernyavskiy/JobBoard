@@ -28,6 +28,8 @@ namespace JobBoard.Persistence
 
         public DbSet<Location> Locations => Set<Location>();
 
+        public DbSet<JobEmployee> JobEmployees => Set<JobEmployee>();
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {              
             base.OnModelCreating(modelBuilder);
