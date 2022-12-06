@@ -28,7 +28,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(opts =>
     opts.User.RequireUniqueEmail = true;
 }).AddEntityFrameworkStores<AuthDbContext>()
   .AddDefaultTokenProviders();
-Configuration.WebClientUri = builder.Configuration["WebClientUri"];
+
 builder.Services.AddIdentityServer()
                 .AddAspNetIdentity<AppUser>()
                 .AddInMemoryApiResources(Configuration.ApiResources)
