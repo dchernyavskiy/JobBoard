@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kvngzYb5L9DKjLwe3kO6VkkRnmbupFN+zMwDmYkl81C618BuK1lhbvVU+GLHQsRNxiQ4FSzt6QT8yuLt2Ni8aQ==",
+  "dgSpecHash": "4qEjJ9igZ2gANpnRNq8fkJtzzpFVHXmLsjgLaBv+AfHnus6FviI3RAseIkMk2FWisl+HWAOKrEcNLdm8Ju0EiQ==",
   "success": true,
-  "projectFilePath": "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\JobBoard.WebApi.csproj",
+  "projectFilePath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\JobBoard.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

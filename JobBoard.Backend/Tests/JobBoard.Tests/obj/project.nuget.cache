@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EzRIgT7H9ssRVgT/WYG9Wcqo0rZ55X03on80LVWKkVmlp+OAT//vSUeDdoW/6rYVnApRqpoWT+FqyoCXpK7gTQ==",
+  "dgSpecHash": "3Z9McWsZ8BnGZOCJSWk50VJCK29PbtgOVwqDI1ckUCaewv3CATjgln6GI7Y4ZZzaG6YuG+F/Gqbl0eDKy8FHgw==",
   "success": true,
-  "projectFilePath": "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\JobBoard.Tests.csproj",
+  "projectFilePath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Tests\\JobBoard.Tests\\JobBoard.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",

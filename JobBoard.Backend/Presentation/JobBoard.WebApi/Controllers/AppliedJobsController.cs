@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using JobBoard.WebApi.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using static JobBoard.Application.JobEmployees.CreateJobEmployee;
@@ -17,8 +18,13 @@ namespace JobBoard.WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<Guid>> Create(CreateJobEmployeeCommand command)
+        public async Task<ActionResult<Guid>> Create(CreateJobEmployeeCommandDto commandDto)
         {
+            var command = new CreateJobEmployeeCommand
+            {
+                JobId = commandDto.JobId,
+                EmployeeId = UserId
+            };
             var vm = await Mediator.Send(command);
             return Ok(vm);
         }
