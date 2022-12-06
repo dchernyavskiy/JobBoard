@@ -32,7 +32,7 @@ namespace JobBoard.Application.JobEmployees
                 };
 
           
-             //   await _context.JobEmployees.AddAsync(entity);
+                await _context.JobEmployees.AddAsync(entity);
                 await _context.SaveChangesAsync(cancellationToken);
 
                 return entity.Id;
