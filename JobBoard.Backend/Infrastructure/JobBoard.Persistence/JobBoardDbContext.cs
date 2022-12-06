@@ -32,10 +32,6 @@ namespace JobBoard.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Job>()
-                .HasMany(x => x.AppliedByEmployees)
-                .WithMany(x => x.AppliedJobs);
-
             base.OnModelCreating(modelBuilder);
         }
     }

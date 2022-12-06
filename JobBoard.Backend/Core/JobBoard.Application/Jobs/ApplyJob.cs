@@ -41,7 +41,15 @@ namespace JobBoard.Application.Jobs
                 if (job == null)
                     throw new NotFoundException(nameof(Job), request.JobId);
 
-                employee.AppliedJobs.Add(job);
+                //employee.AppliedJobs.Add(job);
+                var jobEmployee = new JobEmployee
+                {
+                    Id = Guid.NewGuid(),
+                    EmployeeId = employee.Id,
+                    JobId = job.Id,
+                };
+
+                _context.JobEmployees.Add(jobEmployee);
                 await _context.SaveChangesAsync(cancellationToken);
 
                 return Unit.Value;
