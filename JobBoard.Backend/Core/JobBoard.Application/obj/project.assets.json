@@ -798,11 +798,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj",
+      "projectUniqueName": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj",
       "projectName": "JobBoard.Application",
-      "projectPath": "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj",
+      "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\obj\\",
+      "outputPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -824,8 +824,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
-              "projectPath": "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj"
+            "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
+              "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj"
             }
           }
         }

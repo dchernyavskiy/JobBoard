@@ -43,7 +43,28 @@ namespace JobBoard.WebApi.Data
                 })
                 .Generate(10);
 
+            var erIds = new List<string>
+            {
+                "041343ea-0f3d-458b-9fb6-7bd6700d69e8",
+                "010c4d66-7268-44a9-a991-e6d5aadea719",
+                "ad4d1381-49a1-460e-aee8-808a5b8ed2da",
+                "cc653465-e4a0-40fa-99dc-061841fbf76f",
+            };
+            var count = 0;
+            var employers2 = new Faker<Employer>()
+                .Rules((f, e) =>
+                {
+                    e.Id = Guid.Parse(erIds[count++]);
+                    e.Name = f.Company.CompanyName();
+                    e.AboutUs = f.Random.Words(100);
+                    e.Location = f.Address.City();
+                    e.PhotoLink = f.Internet.Url();
+                    e.TeamSize = f.Random.Int(100, 1000);
+                })
+                .Generate(4);
+
             context.Employers.AddRange(employers);
+            context.Employers.AddRange(employers2);
             context.SaveChanges();
 
             var jobs = new Faker<Job>()
@@ -68,6 +89,21 @@ namespace JobBoard.WebApi.Data
             var aa = jobs.Where(x => !employers.Select(x => x.Id).Contains(x.EmployerId)).ToList();
 
             context.Jobs.AddRange(jobs);
+
+            var employee = new Faker<Employee>()
+                .Rules((f, e) =>
+                {
+                    e.Id = Guid.Parse("0c207243-5fb9-4a2d-9581-cab3e01b2609");
+                    e.FirstName = f.Name.FirstName();
+                    e.LastName = f.Name.LastName();
+                    e.Email = "john.smith@mail.com";
+                    e.CVLink = f.Internet.Url();
+                    e.Phone = "+329813923";
+                })
+                .Generate(1);
+
+            context.Employees.AddRange(employee);
+
             context.SaveChanges();
         }
     }
