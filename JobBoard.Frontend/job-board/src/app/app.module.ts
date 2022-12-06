@@ -17,6 +17,7 @@ import { EmployerCardComponent } from './components/employer-card/employer-card.
 import { CandidatesDetailsComponent } from './components/candidates-details/candidates-details.component';
 import { PostAJobComponent } from './components/post-a-job/post-a-job.component';
 import { EmployersDetailsComponent } from './components/employers-details/employers-details.component';
+import { CandidatesComponent } from './components/candidates/candidates.component';
 
 
 
@@ -32,7 +33,8 @@ import { EmployersDetailsComponent } from './components/employers-details/employ
     EmployerCardComponent, 
     CandidatesDetailsComponent,
     PostAJobComponent,
-    EmployersDetailsComponent
+    EmployersDetailsComponent,
+    CandidatesComponent
     ],
   imports: [
     CommonModule,

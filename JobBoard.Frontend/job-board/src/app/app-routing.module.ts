@@ -7,6 +7,7 @@ import { EmployersComponent } from './components/employers/employers.component';
 import { CandidatesDetailsComponent } from './components/candidates-details/candidates-details.component';
 import { PostAJobComponent } from './components/post-a-job/post-a-job.component';
 import { EmployersDetailsComponent } from './components/employers-details/employers-details.component';
+import { CandidatesComponent } from './components/candidates/candidates.component';
 
 
 
@@ -18,9 +19,8 @@ const routes: Routes = [
     {path: 'employers', component: EmployersComponent},
     {path: 'candidate-details', component: CandidatesDetailsComponent},
     {path: 'post-a-job', component: PostAJobComponent},
-    {path: 'employer-details', component: EmployersDetailsComponent}
-
-
+    {path: 'employer-details', component: EmployersDetailsComponent},
+    {path: 'candidates', component: CandidatesComponent}
 ];
 
 @NgModule({
