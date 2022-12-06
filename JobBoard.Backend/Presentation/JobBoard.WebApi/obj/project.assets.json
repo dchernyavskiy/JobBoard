@@ -3333,11 +3333,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\JobBoard.WebApi.csproj",
+      "projectUniqueName": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\JobBoard.WebApi.csproj",
       "projectName": "JobBoard.WebApi",
-      "projectPath": "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\JobBoard.WebApi.csproj",
+      "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\JobBoard.WebApi.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\obj\\",
+      "outputPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Presentation\\JobBoard.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3359,14 +3359,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj": {
-              "projectPath": "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj"
+            "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj": {
+              "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj"
             },
-            "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
-              "projectPath": "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj"
+            "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
+              "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj"
             },
-            "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj": {
-              "projectPath": "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj"
+            "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj": {
+              "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj"
             }
           }
         }

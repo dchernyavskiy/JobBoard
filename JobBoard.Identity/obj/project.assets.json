@@ -2754,11 +2754,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Projects\\University\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj",
+      "projectUniqueName": "C:\\Projects\\University\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj",
       "projectName": "JobBoard.Identity",
-      "projectPath": "c:\\Projects\\University\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj",
+      "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Identity\\JobBoard.Identity.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "c:\\Projects\\University\\JobBoard\\JobBoard.Identity\\obj\\",
+      "outputPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Identity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2780,11 +2780,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj": {
-              "projectPath": "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj"
+            "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj": {
+              "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj"
             },
-            "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
-              "projectPath": "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj"
+            "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
+              "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj"
             }
           }
         }

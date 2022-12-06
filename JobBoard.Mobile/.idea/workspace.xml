@@ -4,6 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="7ea0594e-904c-44b3-8cca-16a018bafeca" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jobboard/data/api/ApiUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jobboard/data/api/ApiUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jobboard/data/auth/AppAuth.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jobboard/data/auth/AppAuth.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,7 +115,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="16b191bd-d1c8-4736-b6d0-c371f66832e1" name="Changes" comment="" />
+      <changelist id="7ea0594e-904c-44b3-8cca-16a018bafeca" name="Changes" comment="" />
       <created>1670338754916</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -128,5 +133,29 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-function">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/jobboard/data/auth/AppAuth.kt</url>
+          <line>58</line>
+          <properties class="com.example.jobboard.data.auth.AppAuth" method="performTokenRequestSuspend">
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/jobboard/data/auth/AppAuth.kt</url>
+          <line>63</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/jobboard/data/auth/AppAuth.kt</url>
+          <line>68</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

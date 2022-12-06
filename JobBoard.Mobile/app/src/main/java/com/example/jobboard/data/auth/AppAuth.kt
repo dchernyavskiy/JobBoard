@@ -83,10 +83,11 @@ object AppAuth {
     }
 
     private object AuthConfig {
-        const val AUTH_URI = "http://10.0.2.2:5002/auth/login"
-        const val REGISTER_EMPLOYER_URI = "http://10.0.2.2:5002/auth/registeremployer"
-        const val REGISTER_EMPLOYEE_URI = "http://10.0.2.2:5002/auth/registeremployee"
-        const val TOKEN_URI = "http://10.0.2.2:5002"
+        const val BASE_URL = "http://192.168.1.104:45455";
+        const val AUTH_URI = "$BASE_URL/auth/login"
+        const val REGISTER_EMPLOYER_URI = "$BASE_URL/auth/registeremployer"
+        const val REGISTER_EMPLOYEE_URI = "$BASE_URL/auth/registeremployee"
+        const val TOKEN_URI = "$BASE_URL"
         const val RESPONSE_TYPE = ResponseTypeValues.CODE
         const val CLIENT_ID = "job-board-android-app"
 

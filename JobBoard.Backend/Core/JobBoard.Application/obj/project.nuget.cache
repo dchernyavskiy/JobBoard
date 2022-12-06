@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "U65mn0xN+g2JDyg10CobsuUNfvdczyfNLLUaOuVhEg8jkm4ecgC9v2GyGgoAiezuPGfXvfX9JaGKd0FHNLHm4A==",
+  "dgSpecHash": "bzUrX1BGisxAf/r2mJbv+3D4TaolQ9Vr9RYY9EZj1Dn74x7YZWhhaiTdqPAewA8mgYGHfF88/trbtvQuq26aEw==",
   "success": true,
-  "projectFilePath": "c:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj",
+  "projectFilePath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",

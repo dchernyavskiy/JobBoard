@@ -11,6 +11,6 @@ namespace JobBoard.Domain
         public string Phone { get; set; }
         public string CVLink { get; set; }
         //public ICollection<JobEmployee> AppliedJobs { get; set; }
-        public ICollection<Job> AppliedJobs { get; set; }
+        public ICollection<JobEmployee> AppliedJobs { get; set; }
     }
 }
