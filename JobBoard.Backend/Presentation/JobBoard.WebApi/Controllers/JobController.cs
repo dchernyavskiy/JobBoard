@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
-using JobBoard.Application.Common.Objects;
 using JobBoard.Application.Interfaces;
+using JobBoard.Domain;
 using JobBoard.WebApi.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using static JobBoard.Application.Jobs.ApplyJob;
 using static JobBoard.Application.Jobs.CreateJob;
 using static JobBoard.Application.Jobs.DeleteJob;
 using static JobBoard.Application.Jobs.GetJob;
@@ -19,7 +19,6 @@ namespace JobBoard.WebApi.Controllers
     {
         private readonly IMapper _mapper;
         private readonly IJobBoardDbContext _context;
-
         public JobController(IMapper mapper,
             IJobBoardDbContext context)
         {
@@ -27,20 +26,28 @@ namespace JobBoard.WebApi.Controllers
             _context = context;
         }
 
-        [HttpGet("AppliedJobs")]
-        public async Task<ActionResult> GetAppliedJobs()
+        [HttpGet("GetAppliedJobs")]
+        public async Task<ActionResult<ICollection<Job>>> GetAppliedJobs()
         {
-            var e = await _context.Employees
+            var employee = await _context.Employees
                 .Include(x => x.AppliedJobs)
-                    .ThenInclude(x => x.Job)
-                        .ThenInclude(x => x.AppliedJobs)
                 .FirstOrDefaultAsync(x => x.Id == UserId);
 
-            var j = e.AppliedJobs
-                .Select(x => x.Job)
-                .ToList();
+            var jobs = employee.AppliedJobs;
 
-            return Ok();
+            return Ok(jobs);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> ApplyJob(Guid jobId)
+        {
+            var command = new ApplyJobCommand
+            {
+                EmployeeId = UserId,
+                JobId = jobId
+            };
+            var result = await Mediator.Send(command);
+            return NoContent();
         }
 
         [HttpPost]
@@ -63,7 +70,7 @@ namespace JobBoard.WebApi.Controllers
 
         [HttpPost]
         //[Authorize(Roles = "Employer")]
-        public async Task<ActionResult<Guid>> Create([FromBody]CreateJobCommandDto commandDto)
+        public async Task<ActionResult<Guid>> Create([FromBody] CreateJobCommandDto commandDto)
         {
             var command = _mapper.Map<CreateJobCommand>(commandDto);
             command.EmployerId = UserId;
