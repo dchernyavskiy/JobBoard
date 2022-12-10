@@ -1,6 +1,4 @@
-﻿using JobBoard.Application.Interfaces;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using static JobBoard.Application.Responsibilities.CreateResponsibility;
 using static JobBoard.Application.Responsibilities.DeleteResponsibility;
 
@@ -11,7 +9,6 @@ namespace JobBoard.WebApi.Controllers
     public class ResponsibilityController : BaseController
     {
         [HttpPost]
-        //[Authorize(Roles = "Employer")]
         public async Task<ActionResult<Guid>> Create([FromBody] CreateResponsibilityCommand command)
         {
             var result = await Mediator.Send(command);
@@ -19,7 +16,6 @@ namespace JobBoard.WebApi.Controllers
         }
 
         [HttpDelete]
-        //[Authorize(Roles = "Employer")]
         public async Task<ActionResult> Delete(Guid id)
         {
             var command = new DeleteResponsibilityCommand

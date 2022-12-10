@@ -1,9 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static JobBoard.Application.Categories.CreateCategory;
 using static JobBoard.Application.Categories.DeleteCategory;
 using static JobBoard.Application.Categories.GetCategories;
@@ -21,9 +16,8 @@ namespace JobBoard.WebApi.Controllers
             return Ok(vm);
         }
 
-
         [HttpPost]
-        public async Task<ActionResult<Guid>> Create([FromBody]CreateCategoryCommand command)
+        public async Task<ActionResult<Guid>> Create([FromBody] CreateCategoryCommand command)
         {
             var vm = await Mediator.Send(command);
             return Ok(vm);

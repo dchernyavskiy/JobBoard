@@ -32,7 +32,6 @@ namespace JobBoard.Application.Employees
 
         public class GetEmployeeQueryHandler : IRequestHandler<GetEmployeeQuery, EmployeeVm>
         {
-
             private readonly IJobBoardDbContext _context;
             private readonly IMapper _mapper;
 

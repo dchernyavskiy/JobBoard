@@ -1,8 +1,6 @@
 ﻿using AutoMapper;
 using JobBoard.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Threading.Tasks;
 using static JobBoard.Application.Locations.CreateLocation;
 using static JobBoard.Application.Locations.DeleteLocation;
 using static JobBoard.Application.Locations.GetLocations;
@@ -35,7 +33,6 @@ namespace JobBoard.WebApi.Controllers
             var vm = await Mediator.Send(command);
             return Ok(vm);
         }
-
 
         [HttpDelete]
         public async Task<ActionResult> Delete(Guid id)

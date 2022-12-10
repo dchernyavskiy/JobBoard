@@ -1,7 +1,6 @@
 ﻿using JobBoard.Application.Interfaces;
 using JobBoard.Domain;
 using MediatR;
-using static JobBoard.Application.Jobs.CreateJob;
 
 namespace JobBoard.Application.JobEmployees
 {
@@ -31,7 +30,6 @@ namespace JobBoard.Application.JobEmployees
                     JobId = request.JobId
                 };
 
-          
                 await _context.JobEmployees.AddAsync(entity);
                 await _context.SaveChangesAsync(cancellationToken);
 

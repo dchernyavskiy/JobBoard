@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace JobBoard.Identity.Attributes
 {
     public class AvailableAttribute : ValidationAttribute
     {
-
         protected override ValidationResult IsValid(object? value, ValidationContext validationContext)
         {
             try

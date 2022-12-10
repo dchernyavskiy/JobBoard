@@ -19,6 +19,7 @@ namespace JobBoard.WebApi.Controllers
     {
         private readonly IMapper _mapper;
         private readonly IJobBoardDbContext _context;
+
         public JobController(IMapper mapper,
             IJobBoardDbContext context)
         {
@@ -69,7 +70,6 @@ namespace JobBoard.WebApi.Controllers
         }
 
         [HttpPost]
-        //[Authorize(Roles = "Employer")]
         public async Task<ActionResult<Guid>> Create([FromBody] CreateJobCommandDto commandDto)
         {
             var command = _mapper.Map<CreateJobCommand>(commandDto);
@@ -79,7 +79,6 @@ namespace JobBoard.WebApi.Controllers
         }
 
         [HttpDelete]
-        //[Authorize(Roles = "Employer")]
         public async Task<IActionResult> Delete(Guid id)
         {
             var command = new DeleteJobCommand
@@ -92,7 +91,6 @@ namespace JobBoard.WebApi.Controllers
         }
 
         [HttpPut]
-        //[Authorize(Roles = "Employer")]
         public async Task<IActionResult> Update([FromBody] UpdateJobCommandDto commandDto)
         {
             var command = _mapper.Map<UpdateJobCommand>(commandDto);

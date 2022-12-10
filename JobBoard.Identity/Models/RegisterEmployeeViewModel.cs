@@ -7,10 +7,13 @@ namespace JobBoard.Identity.Models
     {
         [Required]
         public string FirstName { get; set; }
+
         [Required]
         public string LastName { get; set; }
+
         [Required]
         public string Phone { get; set; }
+
         [Available]
         public string CVLink { get; set; }
     }

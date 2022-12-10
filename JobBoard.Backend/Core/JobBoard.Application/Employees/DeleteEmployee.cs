@@ -15,7 +15,6 @@ namespace JobBoard.Application.Employees
 
         public class DeleteEmployeeCommandHandler : IRequestHandler<DeleteEmployeeCommand>
         {
-
             private readonly IJobBoardDbContext _context;
 
             public DeleteEmployeeCommandHandler(IJobBoardDbContext context)

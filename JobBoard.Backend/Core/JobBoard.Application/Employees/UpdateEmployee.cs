@@ -22,10 +22,8 @@ namespace JobBoard.Application.Employees
             public Guid EmployerId { get; set; }
         }
 
-
         public class UpdateEmployeeCommandHandler : IRequestHandler<UpdateEmployeeCommand>
         {
-
             private readonly IJobBoardDbContext _context;
 
             public UpdateEmployeeCommandHandler(IJobBoardDbContext context)
@@ -36,7 +34,7 @@ namespace JobBoard.Application.Employees
             public async Task<Unit> Handle(UpdateEmployeeCommand request, CancellationToken cancellationToken)
             {
                 var entity = await _context.Employees
-                    .FirstOrDefaultAsync(x => x.Id == request.Id , cancellationToken);
+                    .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
 
                 if (entity == null)
                     throw new NotFoundException(nameof(Employee), request.Id);
@@ -49,7 +47,6 @@ namespace JobBoard.Application.Employees
                 //entity.SalaryStart = request.SalaryStart;
                 //entity.SalaryEnd = request.SalaryEnd;
                 //entity.Experience = request.Experience;
-
 
                 await _context.SaveChangesAsync(cancellationToken);
 

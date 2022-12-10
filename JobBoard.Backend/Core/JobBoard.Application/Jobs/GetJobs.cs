@@ -17,6 +17,7 @@ namespace JobBoard.Application.Jobs
             public IList<JobLookupDto> Jobs { get; set; }
             public int PageCount { get; set; }
         }
+
         public class JobLookupDto : IMapWith<Job>
         {
             public Guid Id { get; set; }
@@ -27,7 +28,6 @@ namespace JobBoard.Application.Jobs
             public string ShortDiscription { get; set; }
             public Category Category { get; set; }
             public Employer Employer { get; set; }
-
 
             public void Mapping(Profile profile)
             {
@@ -47,11 +47,13 @@ namespace JobBoard.Application.Jobs
                 KeyWord = null,
                 LocationIds = null
             };
+
             public Pagging Pagging { get; set; } = new Pagging
             {
                 Count = 12,
                 Page = 1
             };
+
             public JobSort Sort { get; set; } = new JobSort
             {
                 IsAscending = true,
@@ -59,12 +61,10 @@ namespace JobBoard.Application.Jobs
                 SortByExpirience = false,
                 SortBySalary = false
             };
-
         }
 
         public class GetJobsQueryHandler : IRequestHandler<GetJobsQuery, JobsVm>
         {
-
             private readonly IJobBoardDbContext _context;
             private readonly IMapper _mapper;
 

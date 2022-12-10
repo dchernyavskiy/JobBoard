@@ -20,7 +20,6 @@ namespace JobBoard.Application.Employers
 
         public class UpdateEmployerCommandHandler : IRequestHandler<UpdateEmployerCommand>
         {
-
             private readonly IJobBoardDbContext _context;
 
             public UpdateEmployerCommandHandler(IJobBoardDbContext context)
@@ -35,7 +34,6 @@ namespace JobBoard.Application.Employers
 
                 if (entity == null)
                     throw new NotFoundException(nameof(Job), request.Id);
-
 
                 entity.Name = request.Name;
                 entity.AboutUs = request.AboutUs;

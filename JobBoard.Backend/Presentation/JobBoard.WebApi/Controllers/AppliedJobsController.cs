@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using JobBoard.WebApi.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using static JobBoard.Application.JobEmployees.CreateJobEmployee;
 

@@ -33,6 +33,8 @@ object AppAuth {
             AuthConfig.RESPONSE_TYPE,
             redirectUri
         )
+            .setScope(AuthConfig.SCOPE)
+            .setRedirectUri(AuthConfig.CALLBACK_URI.toUri())
             .build()
     }
 
@@ -90,7 +92,7 @@ object AppAuth {
         const val TOKEN_URI = "$BASE_URL"
         const val RESPONSE_TYPE = ResponseTypeValues.CODE
         const val CLIENT_ID = "job-board-android-app"
-
+        const val SCOPE = "openid profile offline_access JobBoardWebApi"
         const val CALLBACK_URI = "com.example.jobboard://oidccallback"
     }
 }

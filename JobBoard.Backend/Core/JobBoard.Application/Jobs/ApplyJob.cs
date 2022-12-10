@@ -3,11 +3,6 @@ using JobBoard.Application.Interfaces;
 using JobBoard.Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JobBoard.Application.Jobs
 {
@@ -17,7 +12,6 @@ namespace JobBoard.Application.Jobs
         {
             public Guid EmployeeId { get; set; }
             public Guid JobId { get; set; }
-
         }
 
         public class ApplyJobCommandHandler : IRequestHandler<ApplyJobCommand>
@@ -37,7 +31,7 @@ namespace JobBoard.Application.Jobs
                     throw new NotFoundException(nameof(Employee), request.EmployeeId);
 
                 var job = await _context.Jobs.FirstOrDefaultAsync(x => x.Id == request.JobId);
-                
+
                 if (job == null)
                     throw new NotFoundException(nameof(Job), request.JobId);
 

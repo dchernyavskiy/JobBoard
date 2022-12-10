@@ -34,6 +34,7 @@ namespace JobBoard.Application.Responsibilities
             await _context.Responsibilities.AddAsync(entity);
             await _context.SaveChangesAsync(cancellationToken);
 
-            return entity.Id;        }
+            return entity.Id;
+        }
     }
 }

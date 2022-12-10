@@ -1,7 +1,6 @@
 ﻿using JobBoard.Application.Interfaces;
 using JobBoard.Domain;
 using MediatR;
-using System.Diagnostics.Metrics;
 
 namespace JobBoard.Application.Employees
 {

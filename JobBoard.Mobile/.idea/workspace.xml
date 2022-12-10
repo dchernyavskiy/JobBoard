@@ -1,20 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ea0594e-904c-44b3-8cca-16a018bafeca" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Categories/CreateCategory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Categories/CreateCategory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Categories/DeleteCategory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Categories/DeleteCategory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Categories/GetCategories.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Categories/GetCategories.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Common/Exceptions/NotFoundException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Common/Exceptions/NotFoundException.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Common/Extensions/Extensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Common/Extensions/Extensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Common/Mappings/AssemblyMappingProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Common/Mappings/AssemblyMappingProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Common/Mappings/IMapWith.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Common/Mappings/IMapWith.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Common/Objects/JobFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Common/Objects/JobFilter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Common/Objects/JobSort.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Common/Objects/JobSort.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Common/Objects/Pagging.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Common/Objects/Pagging.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/DependencyInjection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Educations/CreateEducation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Educations/CreateEducation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Educations/DeleteEducation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Educations/DeleteEducation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Educations/UpdateEducation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Educations/UpdateEducation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Employees/CreateEmployee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Employees/CreateEmployee.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Employees/DeleteEmployee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Employees/DeleteEmployee.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Employees/GetEmployee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Employees/GetEmployee.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Employees/GetEmployees.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Employees/GetEmployees.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Employees/UpdateEmployee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Employees/UpdateEmployee.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Employers/GetEmployers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Employers/GetEmployers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Employers/UpdateEmployer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Employers/UpdateEmployer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/JobEmployees/CreateJobEmployee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/JobEmployees/CreateJobEmployee.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/JobEmployees/GetJobEmployee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/JobEmployees/GetJobEmployee.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Jobs/DeleteJob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Jobs/DeleteJob.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Jobs/UpdateJob.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Jobs/UpdateJob.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Locations/CreateLocation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Locations/CreateLocation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Locations/DeleteLocations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Locations/DeleteLocations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Locations/GetLocation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Locations/GetLocation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Locations/GetLocations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Locations/GetLocations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Qualifications/CreateQualification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Qualifications/CreateQualification.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Qualifications/DeleteQualification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Qualifications/DeleteQualification.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Responsibilities/CreateResponsibility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Responsibilities/CreateResponsibility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Responsibilities/DeleteResponsibility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/Responsibilities/DeleteResponsibility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Domain/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Domain/Category.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Domain/Education.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Domain/Education.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Domain/Qualification.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Domain/Qualification.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Domain/Responsibility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Domain/Responsibility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Infrastructure/JobBoard.Persistence/DependencyInjection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Infrastructure/JobBoard.Persistence/DependencyInjection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/Controllers/AppliedJobsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/Controllers/AppliedJobsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/Controllers/BaseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/Controllers/BaseController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/Controllers/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/Controllers/CategoryController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/Controllers/EducationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/Controllers/EducationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/Controllers/QualificationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/Controllers/QualificationController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/Controllers/ResponsibilityController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/Controllers/ResponsibilityController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/Migrations/20221110181000_Initial2.0.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/Migrations/20221110181000_Initial2.0.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/Models/CreateEducationCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/Models/CreateEducationCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/Models/CreateJobCommandDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/Models/CreateJobCommandDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/Models/CreateLocationCommandDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/Models/CreateLocationCommandDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jobboard/data/api/ApiUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jobboard/data/api/ApiUtils.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jobboard/data/auth/AppAuth.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jobboard/data/auth/AppAuth.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jobboard/domain/models/EmployeeLogin.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jobboard/domain/models/EmployeeLogin.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\user\.android\avd\pixel_5_-_api_33.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[4248414957313498]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -34,6 +88,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-32/android.jar!/android/view/View.class" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -137,22 +194,9 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-function">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/jobboard/data/auth/AppAuth.kt</url>
-          <line>58</line>
-          <properties class="com.example.jobboard.data.auth.AppAuth" method="performTokenRequestSuspend">
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/jobboard/data/auth/AppAuth.kt</url>
-          <line>63</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/jobboard/data/auth/AppAuth.kt</url>
-          <line>68</line>
+          <line>70</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
