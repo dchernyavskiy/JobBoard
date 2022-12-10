@@ -2,6 +2,7 @@
 using JobBoard.Application.Interfaces;
 using JobBoard.Domain;
 using JobBoard.WebApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using static JobBoard.Application.Jobs.ApplyJob;
@@ -27,6 +28,18 @@ namespace JobBoard.WebApi.Controllers
             _context = context;
         }
 
+        [HttpGet("UGetAppliedJobs")]
+        public async Task<ActionResult<ICollection<Job>>> UGetAppliedJobs(Guid UserId)
+        {
+            var employee = await _context.Employees
+                .Include(x => x.AppliedJobs)
+                .FirstOrDefaultAsync(x => x.Id == UserId);
+
+            var jobs = employee.AppliedJobs;
+
+            return Ok(jobs);
+        }
+
         [HttpGet("GetAppliedJobs")]
         public async Task<ActionResult<ICollection<Job>>> GetAppliedJobs()
         {
@@ -37,6 +50,18 @@ namespace JobBoard.WebApi.Controllers
             var jobs = employee.AppliedJobs;
 
             return Ok(jobs);
+        }
+
+        [HttpPost("UApplyJob")]
+        public async Task<ActionResult> UApplyJob(Guid jobId, Guid UserId)
+        {
+            var command = new ApplyJobCommand
+            {
+                EmployeeId = UserId,
+                JobId = jobId
+            };
+            var result = await Mediator.Send(command);
+            return NoContent();
         }
 
         [HttpPost]
@@ -69,6 +94,15 @@ namespace JobBoard.WebApi.Controllers
             return Ok(vm);
         }
 
+        [HttpPost("UCreate")]
+        public async Task<ActionResult<Guid>> UCreate([FromBody] CreateJobCommandDto commandDto, Guid UserId)
+        {
+            var command = _mapper.Map<CreateJobCommand>(commandDto);
+            command.EmployerId = UserId;
+            var vm = await Mediator.Send(command);
+            return Ok(vm);
+        }
+
         [HttpPost]
         public async Task<ActionResult<Guid>> Create([FromBody] CreateJobCommandDto commandDto)
         {
@@ -76,6 +110,18 @@ namespace JobBoard.WebApi.Controllers
             command.EmployerId = UserId;
             var vm = await Mediator.Send(command);
             return Ok(vm);
+        }
+
+        [HttpDelete("UDelete")]
+        public async Task<IActionResult> UDelete(Guid id, Guid UserId)
+        {
+            var command = new DeleteJobCommand
+            {
+                Id = id,
+                EmployerId = UserId == Guid.Empty ? Guid.Parse("041343ea-0f3d-458b-9fb6-7bd6700d69e8") : UserId
+            };
+            await Mediator.Send(command);
+            return NoContent();
         }
 
         [HttpDelete]
@@ -87,6 +133,15 @@ namespace JobBoard.WebApi.Controllers
                 EmployerId = UserId == Guid.Empty ? Guid.Parse("041343ea-0f3d-458b-9fb6-7bd6700d69e8") : UserId
             };
             await Mediator.Send(command);
+            return NoContent();
+        }
+
+        [HttpPut("UUpdate")]
+        public async Task<IActionResult> UUpdate([FromBody] UpdateJobCommandDto commandDto, Guid UserId)
+        {
+            var command = _mapper.Map<UpdateJobCommand>(commandDto);
+            command.EmployerId = UserId;
+            var rm = await Mediator.Send(command);
             return NoContent();
         }
 

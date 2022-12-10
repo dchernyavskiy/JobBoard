@@ -13,8 +13,8 @@ namespace JobBoard.Identity
             new List<IdentityResource> { new IdentityResources.OpenId(), new IdentityResources.Profile() };
 
         public static IEnumerable<ApiResource> ApiResources =
-            new List<ApiResource> { 
-                new ApiResource("JobBoardWebApi", "Web Api", new[] { JwtClaimTypes.Name, JwtClaimTypes.Role }) { Scopes = { "JobBoardWebApi" } } 
+            new List<ApiResource> {
+                new ApiResource("JobBoardWebApi", "Web Api", new[] { JwtClaimTypes.Name, JwtClaimTypes.Role }) { Scopes = { "JobBoardWebApi" } }
             };
 
         public static IEnumerable<Client> Clients =
@@ -25,16 +25,16 @@ namespace JobBoard.Identity
                     AllowedGrantTypes = GrantTypes.Code,
                     RequireClientSecret  = false,
                     RequirePkce = true,
-                    RedirectUris = 
-                    { 
+                    RedirectUris =
+                    {
                         "http://localhost:4200"
                     },
-                    AllowedCorsOrigins = 
+                    AllowedCorsOrigins =
                     {
-                        "http://localhost:4200"    
+                        "http://localhost:4200"
                     },
-                    PostLogoutRedirectUris = 
-                    { 
+                    PostLogoutRedirectUris =
+                    {
                         "http://localhost:4200"
                     },
                     AllowedScopes =

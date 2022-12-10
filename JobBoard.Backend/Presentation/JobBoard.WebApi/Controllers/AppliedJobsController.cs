@@ -27,5 +27,17 @@ namespace JobBoard.WebApi.Controllers
             var vm = await Mediator.Send(command);
             return Ok(vm);
         }
+
+        [HttpPost("UCreate")]
+        public async Task<ActionResult<Guid>> UCreate(CreateJobEmployeeCommandDto commandDto, Guid userId)
+        {
+            var command = new CreateJobEmployeeCommand
+            {
+                JobId = commandDto.JobId,
+                EmployeeId = userId
+            };
+            var vm = await Mediator.Send(command);
+            return Ok(vm);
+        }
     }
 }

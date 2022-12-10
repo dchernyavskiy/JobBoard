@@ -1,6 +1,7 @@
 package com.example.jobboard.data.auth
 
 import android.net.Uri
+import android.util.Log
 import androidx.core.net.toUri
 import net.openid.appauth.*
 import java.util.*
@@ -73,6 +74,7 @@ object AppAuth {
                             refreshToken = response.refreshToken.orEmpty(),
                             idToken = response.idToken.orEmpty()
                         )
+                        Log.d("token: ", response.accessToken.toString())
                         continuation.resumeWith(Result.success(tokens))
                     }
                     ex != null -> {
