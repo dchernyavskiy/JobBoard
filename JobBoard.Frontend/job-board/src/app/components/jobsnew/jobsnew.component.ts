@@ -39,7 +39,7 @@ export class JobsnewComponent implements OnInit {
       this.categories = res.categories;
     });
 
-    this.client.getAllGET4("1").subscribe((res) => {
+    this.client.getAllGET3("1").subscribe((res) => {
       this.locations = res.locations;
     });
 
@@ -179,7 +179,6 @@ export class JobsnewComponent implements OnInit {
   }
   
   setSearch(){
-    this.body.filters.keyWord = this.searchString;
     this.getJobs();
   }
 }
