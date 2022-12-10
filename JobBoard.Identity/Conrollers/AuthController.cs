@@ -4,6 +4,10 @@ using JobBoard.Identity.Interfaces;
 using JobBoard.Identity.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace JobBoard.Identity.Conrollers
 {
@@ -15,6 +19,7 @@ namespace JobBoard.Identity.Conrollers
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IIdentityServerInteractionService _interactionService;
         private readonly IJobDbContext _context;
+        private string _secureKey = "a very very very important secure key";
 
         public AuthController(SignInManager<AppUser> signInManager,
                              UserManager<AppUser> userManager,
@@ -27,6 +32,61 @@ namespace JobBoard.Identity.Conrollers
             _roleManager = roleManager;
             _interactionService = interactionService;
             _context = context;
+        }
+
+        public string GenerateEmployeeToken(string name)
+        {
+            List<Claim> claims = new List<Claim>()
+            {
+                new Claim(ClaimTypes.Name, name),
+                new Claim(ClaimTypes.Role, "Employee")
+            };
+
+
+            var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secureKey));
+            var credentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature);
+            var token = new JwtSecurityToken(
+                claims: claims,
+                expires: DateTime.Today.AddDays(1),
+                signingCredentials: credentials
+                );
+            var jwt = new JwtSecurityTokenHandler().WriteToken(token);
+            return jwt;
+        }
+
+        public string GenerateEmployerToken(string name)
+        {
+            List<Claim> claims = new List<Claim>()
+            {
+                new Claim(ClaimTypes.Name, name),
+                new Claim(ClaimTypes.Role, "Employer")
+            };
+
+
+            var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secureKey));
+            var credentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature);
+            var token = new JwtSecurityToken(
+                claims: claims,
+                expires: DateTime.Today.AddDays(1),
+                signingCredentials: credentials
+                );
+            var jwt = new JwtSecurityTokenHandler().WriteToken(token);
+            return jwt;
+        }
+
+        public JwtSecurityToken Verify(string jwt)// this method verifies distinct client by means of extracting a token
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_secureKey);
+            tokenHandler.ValidateToken(jwt, new TokenValidationParameters
+            {
+                IssuerSigningKey = new SymmetricSecurityKey(key),
+                ValidateIssuerSigningKey = true,
+                ValidateIssuer = false,
+                ValidateAudience = false
+            }, out SecurityToken validatedToken);
+
+            return (JwtSecurityToken)validatedToken;
         }
 
         [HttpGet]
