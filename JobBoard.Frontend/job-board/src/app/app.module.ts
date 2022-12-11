@@ -14,15 +14,16 @@ import { JobsnewComponent } from './components/jobsnew/jobsnew.component';
 import { FavouriteJobsComponent } from './components/favourite-jobs/favourite-jobs.component';
 import { EmployersComponent } from './components/employers/employers.component';
 import { EmployerCardComponent } from './components/employer-card/employer-card.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PostAJobComponent } from './components/post-a-job/post-a-job.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeThreeComponent, FooterStyleTwoComponent, JobCardComponent, JobsnewComponent, FavouriteJobsComponent, EmployersComponent, EmployerCardComponent  ],
+  declarations: [AppComponent, HomeThreeComponent, FooterStyleTwoComponent, JobCardComponent, JobsnewComponent, FavouriteJobsComponent, EmployersComponent, EmployerCardComponent, DashboardComponent, PostAJobComponent  ],
   imports: [
     CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    
     AuthModule.forRoot({
       config: {
         authority: environment.authority,
@@ -43,6 +44,6 @@ import { EmployerCardComponent } from './components/employer-card/employer-card.
         useValue: environment.apiUri
     },
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

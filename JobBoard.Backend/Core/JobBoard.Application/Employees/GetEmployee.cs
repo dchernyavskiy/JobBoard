@@ -13,11 +13,11 @@ namespace JobBoard.Application.Employees
         public class EmployeeVm : IMapWith<Employee>
         {
             public Guid Id { get; set; }
-            public string? Website { get; set; }
-            public string Country { get; set; }
-            public string State { get; set; }
-            public string City { get; set; }
-            public string? Zip { get; set; }
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
+            public string Email { get; set; }
+            public string Phone { get; set; }
+            public string CVLink { get; set; }
 
             public void Mapping(Profile profile)
             {

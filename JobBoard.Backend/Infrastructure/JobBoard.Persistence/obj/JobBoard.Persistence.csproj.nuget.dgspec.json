@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Anastasia\\Desktop\\avpz\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj": {}
+    "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Anastasia\\Desktop\\avpz\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj": {
+    "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anastasia\\Desktop\\avpz\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj",
+        "projectUniqueName": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj",
         "projectName": "JobBoard.Application",
-        "projectPath": "C:\\Users\\Anastasia\\Desktop\\avpz\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj",
-        "packagesPath": "C:\\Users\\Anastasia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anastasia\\Desktop\\avpz\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\obj\\",
+        "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Anastasia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,15 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\Anastasia\\Desktop\\five\\git\\sova_api\\Sova\\SovaNuget": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Anastasia\\Desktop\\avpz\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
-                "projectPath": "C:\\Users\\Anastasia\\Desktop\\avpz\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj"
+              "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
+                "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj"
               }
             }
           }
@@ -94,20 +94,20 @@
         }
       }
     },
-    "C:\\Users\\Anastasia\\Desktop\\avpz\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
+    "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anastasia\\Desktop\\avpz\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj",
+        "projectUniqueName": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj",
         "projectName": "JobBoard.Domain",
-        "projectPath": "C:\\Users\\Anastasia\\Desktop\\avpz\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj",
-        "packagesPath": "C:\\Users\\Anastasia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anastasia\\Desktop\\avpz\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\obj\\",
+        "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Anastasia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -116,7 +116,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\Anastasia\\Desktop\\five\\git\\sova_api\\Sova\\SovaNuget": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -154,20 +154,20 @@
         }
       }
     },
-    "C:\\Users\\Anastasia\\Desktop\\avpz\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj": {
+    "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anastasia\\Desktop\\avpz\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj",
+        "projectUniqueName": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj",
         "projectName": "JobBoard.Persistence",
-        "projectPath": "C:\\Users\\Anastasia\\Desktop\\avpz\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj",
-        "packagesPath": "C:\\Users\\Anastasia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anastasia\\Desktop\\avpz\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\obj\\",
+        "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\JobBoard.Persistence.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Infrastructure\\JobBoard.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Anastasia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -176,18 +176,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Users\\Anastasia\\Desktop\\five\\git\\sova_api\\Sova\\SovaNuget": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Anastasia\\Desktop\\avpz\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj": {
-                "projectPath": "C:\\Users\\Anastasia\\Desktop\\avpz\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj"
+              "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj": {
+                "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Application\\JobBoard.Application.csproj"
               },
-              "C:\\Users\\Anastasia\\Desktop\\avpz\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
-                "projectPath": "C:\\Users\\Anastasia\\Desktop\\avpz\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj"
+              "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj": {
+                "projectPath": "C:\\Projects\\University\\JobBoard\\JobBoard.Backend\\Core\\JobBoard.Domain\\JobBoard.Domain.csproj"
               }
             }
           }

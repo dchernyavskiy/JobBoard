@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using JobBoard.Application.Interfaces;
+using JobBoard.Application.Jobs;
 using JobBoard.Domain;
 using JobBoard.WebApi.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -8,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using static JobBoard.Application.Jobs.ApplyJob;
 using static JobBoard.Application.Jobs.CreateJob;
 using static JobBoard.Application.Jobs.DeleteJob;
+using static JobBoard.Application.Jobs.GetAppliedJobs;
 using static JobBoard.Application.Jobs.GetJob;
 using static JobBoard.Application.Jobs.GetJobs;
 using static JobBoard.Application.Jobs.UpdateEducation;
@@ -31,25 +33,23 @@ namespace JobBoard.WebApi.Controllers
         [HttpGet("UGetAppliedJobs")]
         public async Task<ActionResult<ICollection<Job>>> UGetAppliedJobs(Guid UserId)
         {
-            var employee = await _context.Employees
-                .Include(x => x.AppliedJobs)
-                .FirstOrDefaultAsync(x => x.Id == UserId);
-
-            var jobs = employee.AppliedJobs;
-
-            return Ok(jobs);
+            var query = new GetAppliedJobsQuery
+            {
+                EmployeeId = UserId
+            };
+            var result = await Mediator.Send(query);
+            return Ok(result);
         }
 
         [HttpGet("GetAppliedJobs")]
-        public async Task<ActionResult<ICollection<Job>>> GetAppliedJobs()
+        public async Task<ActionResult<AppliedJobsVm>> GetAppliedJobs()
         {
-            var employee = await _context.Employees
-                .Include(x => x.AppliedJobs)
-                .FirstOrDefaultAsync(x => x.Id == UserId);
-
-            var jobs = employee.AppliedJobs;
-
-            return Ok(jobs);
+            var query = new GetAppliedJobsQuery
+            {
+                EmployeeId = UserId
+            };
+            var result = await Mediator.Send(query);
+            return Ok(result);
         }
 
         [HttpPost("UApplyJob")]

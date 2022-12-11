@@ -29,7 +29,7 @@
 
                     <div class="side-nav three">
                         <a class="login-left" *ngIf="!isAuth" (click)="login()" ><i class="flaticon-enter"></i> Sign in</a>
-                        <a class="login-left" *ngIf="isAuth" (click)="logout()" ><i class="flaticon-enter"></i>Sign out</a>
+                        <!-- <a class="login-left" *ngIf="isAuth" (click)="logout()" ><i class="flaticon-enter"></i>Sign out</a> -->
                         <a class="job-right" routerLink="/post-a-job">Post A Job <i class='bx bx-plus'></i></a>
                     </div>
                 </div>
@@ -39,3 +39,5 @@
 </div>
 <!-- End Navbar -->
 <router-outlet></router-outlet>
+
+<app-footer-style-two></app-footer-style-two>

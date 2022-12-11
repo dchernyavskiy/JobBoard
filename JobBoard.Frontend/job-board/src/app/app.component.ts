@@ -43,10 +43,6 @@ export class AppComponent implements OnInit {
         this.oidcSecurityService.authorize();
     }
 
-    logout() {
-        this.oidcSecurityService.logoff();
-      }
-
     recallJsFuntions() {
         this.router.events
         .subscribe((event) => {
