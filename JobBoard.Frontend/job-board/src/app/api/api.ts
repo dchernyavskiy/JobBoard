@@ -504,11 +504,8 @@ export class Client extends ClientBase {
     /**
      * @return Success
      */
-    get(id: string, apiVersion: string): Observable<EmployerVm> {
-        let url_ = this.baseUrl + "/api/v{apiVersion}/Employer/Get/{id}";
-        if (id === undefined || id === null)
-            throw new Error("The parameter 'id' must be defined.");
-        url_ = url_.replace("{id}", encodeURIComponent("" + id));
+    get(apiVersion: string): Observable<EmployeeVm> {
+        let url_ = this.baseUrl + "/api/v{apiVersion}/Employee/Get";
         if (apiVersion === undefined || apiVersion === null)
             throw new Error("The parameter 'apiVersion' must be defined.");
         url_ = url_.replace("{apiVersion}", encodeURIComponent("" + apiVersion));
@@ -531,6 +528,121 @@ export class Client extends ClientBase {
                 try {
                     return this.processGet(response_ as any);
                 } catch (e) {
+                    return _observableThrow(e) as any as Observable<EmployeeVm>;
+                }
+            } else
+                return _observableThrow(response_) as any as Observable<EmployeeVm>;
+        }));
+    }
+
+    protected processGet(response: HttpResponseBase): Observable<EmployeeVm> {
+        const status = response.status;
+        const responseBlob =
+            response instanceof HttpResponse ? response.body :
+            (response as any).error instanceof Blob ? (response as any).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            let result200: any = null;
+            result200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver) as EmployeeVm;
+            return _observableOf(result200);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf<EmployeeVm>(null as any);
+    }
+
+    /**
+     * @param body (optional) 
+     * @return Success
+     */
+    update2(apiVersion: string, body: UpdateEmployeeCommandDto | undefined): Observable<void> {
+        let url_ = this.baseUrl + "/api/v{apiVersion}/Employee/Update";
+        if (apiVersion === undefined || apiVersion === null)
+            throw new Error("The parameter 'apiVersion' must be defined.");
+        url_ = url_.replace("{apiVersion}", encodeURIComponent("" + apiVersion));
+        url_ = url_.replace(/[?&]$/, "");
+
+        const content_ = JSON.stringify(body);
+
+        let options_ : any = {
+            body: content_,
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Content-Type": "application/json-patch+json",
+            })
+        };
+
+        return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
+            return this.http.request("put", url_, transformedOptions_);
+        })).pipe(_observableMergeMap((response_: any) => {
+            return this.processUpdate2(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processUpdate2(response_ as any);
+                } catch (e) {
+                    return _observableThrow(e) as any as Observable<void>;
+                }
+            } else
+                return _observableThrow(response_) as any as Observable<void>;
+        }));
+    }
+
+    protected processUpdate2(response: HttpResponseBase): Observable<void> {
+        const status = response.status;
+        const responseBlob =
+            response instanceof HttpResponse ? response.body :
+            (response as any).error instanceof Blob ? (response as any).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            return _observableOf<void>(null as any);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf<void>(null as any);
+    }
+
+    /**
+     * @return Success
+     */
+    get2(id: string, apiVersion: string): Observable<EmployerVm> {
+        let url_ = this.baseUrl + "/api/v{apiVersion}/Employer/Get/{id}";
+        if (id === undefined || id === null)
+            throw new Error("The parameter 'id' must be defined.");
+        url_ = url_.replace("{id}", encodeURIComponent("" + id));
+        if (apiVersion === undefined || apiVersion === null)
+            throw new Error("The parameter 'apiVersion' must be defined.");
+        url_ = url_.replace("{apiVersion}", encodeURIComponent("" + apiVersion));
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ : any = {
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Accept": "text/plain"
+            })
+        };
+
+        return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
+            return this.http.request("get", url_, transformedOptions_);
+        })).pipe(_observableMergeMap((response_: any) => {
+            return this.processGet2(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processGet2(response_ as any);
+                } catch (e) {
                     return _observableThrow(e) as any as Observable<EmployerVm>;
                 }
             } else
@@ -538,7 +650,7 @@ export class Client extends ClientBase {
         }));
     }
 
-    protected processGet(response: HttpResponseBase): Observable<EmployerVm> {
+    protected processGet2(response: HttpResponseBase): Observable<EmployerVm> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -618,7 +730,7 @@ export class Client extends ClientBase {
      * @param body (optional) 
      * @return Success
      */
-    update2(apiVersion: string, body: UpdateEmployerCommand | undefined): Observable<void> {
+    update3(apiVersion: string, body: UpdateEmployerCommand | undefined): Observable<void> {
         let url_ = this.baseUrl + "/api/v{apiVersion}/Employer/Update";
         if (apiVersion === undefined || apiVersion === null)
             throw new Error("The parameter 'apiVersion' must be defined.");
@@ -639,11 +751,11 @@ export class Client extends ClientBase {
         return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
             return this.http.request("put", url_, transformedOptions_);
         })).pipe(_observableMergeMap((response_: any) => {
-            return this.processUpdate2(response_);
+            return this.processUpdate3(response_);
         })).pipe(_observableCatch((response_: any) => {
             if (response_ instanceof HttpResponseBase) {
                 try {
-                    return this.processUpdate2(response_ as any);
+                    return this.processUpdate3(response_ as any);
                 } catch (e) {
                     return _observableThrow(e) as any as Observable<void>;
                 }
@@ -652,7 +764,7 @@ export class Client extends ClientBase {
         }));
     }
 
-    protected processUpdate2(response: HttpResponseBase): Observable<void> {
+    protected processUpdate3(response: HttpResponseBase): Observable<void> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -968,7 +1080,7 @@ export class Client extends ClientBase {
     /**
      * @return Success
      */
-    get2(id: string, apiVersion: string): Observable<JobVm> {
+    get3(id: string, apiVersion: string): Observable<JobVm> {
         let url_ = this.baseUrl + "/api/v{apiVersion}/Job/Get/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -989,11 +1101,11 @@ export class Client extends ClientBase {
         return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
             return this.http.request("get", url_, transformedOptions_);
         })).pipe(_observableMergeMap((response_: any) => {
-            return this.processGet2(response_);
+            return this.processGet3(response_);
         })).pipe(_observableCatch((response_: any) => {
             if (response_ instanceof HttpResponseBase) {
                 try {
-                    return this.processGet2(response_ as any);
+                    return this.processGet3(response_ as any);
                 } catch (e) {
                     return _observableThrow(e) as any as Observable<JobVm>;
                 }
@@ -1002,7 +1114,7 @@ export class Client extends ClientBase {
         }));
     }
 
-    protected processGet2(response: HttpResponseBase): Observable<JobVm> {
+    protected processGet3(response: HttpResponseBase): Observable<JobVm> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -1333,7 +1445,7 @@ export class Client extends ClientBase {
      * @param body (optional) 
      * @return Success
      */
-    update3(apiVersion: string, body: UpdateJobCommandDto | undefined): Observable<void> {
+    update4(apiVersion: string, body: UpdateJobCommandDto | undefined): Observable<void> {
         let url_ = this.baseUrl + "/api/v{apiVersion}/Job/Update";
         if (apiVersion === undefined || apiVersion === null)
             throw new Error("The parameter 'apiVersion' must be defined.");
@@ -1354,11 +1466,11 @@ export class Client extends ClientBase {
         return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
             return this.http.request("put", url_, transformedOptions_);
         })).pipe(_observableMergeMap((response_: any) => {
-            return this.processUpdate3(response_);
+            return this.processUpdate4(response_);
         })).pipe(_observableCatch((response_: any) => {
             if (response_ instanceof HttpResponseBase) {
                 try {
-                    return this.processUpdate3(response_ as any);
+                    return this.processUpdate4(response_ as any);
                 } catch (e) {
                     return _observableThrow(e) as any as Observable<void>;
                 }
@@ -1367,7 +1479,7 @@ export class Client extends ClientBase {
         }));
     }
 
-    protected processUpdate3(response: HttpResponseBase): Observable<void> {
+    protected processUpdate4(response: HttpResponseBase): Observable<void> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -1859,6 +1971,15 @@ export interface Employee {
     appliedJobs?: JobEmployee[] | undefined;
 }
 
+export interface EmployeeVm {
+    id?: string;
+    website?: string | undefined;
+    country?: string | undefined;
+    state?: string | undefined;
+    city?: string | undefined;
+    zip?: string | undefined;
+}
+
 export interface Employer {
     id?: string;
     name?: string | undefined;
@@ -1872,6 +1993,9 @@ export interface Employer {
 export interface EmployerLookupDto {
     id?: string;
     name?: string | undefined;
+    aboutUs?: string | undefined;
+    location?: string | undefined;
+    photoLink?: string | undefined;
 }
 
 export interface EmployersVm {
@@ -2004,6 +2128,14 @@ export interface Responsibility {
 }
 
 export interface UpdateEducationCommandDto {
+}
+
+export interface UpdateEmployeeCommandDto {
+    firstName?: string | undefined;
+    lastName?: string | undefined;
+    email?: string | undefined;
+    phone?: string | undefined;
+    cvLink?: string | undefined;
 }
 
 export interface UpdateEmployerCommand {
