@@ -261,7 +261,7 @@ namespace JobBoard.Identity.Conrollers
             return Redirect(logoutRequest.PostLogoutRedirectUri);
         }
 
-        [HttpPost("ULogin")]
+        [HttpPost]
         public async Task<IActionResult> ULogin(string email, string password)
         {
             var user = await _userManager.FindByEmailAsync(email);
@@ -270,7 +270,7 @@ namespace JobBoard.Identity.Conrollers
             return Ok(user.Id);
         }
 
-        [HttpPost("URegisterEmployee")]
+        [HttpPost]
         public async Task<IActionResult> URegisterEmployee(RegisterEmployeeViewModel viewModel)
         {
             if (!ModelState.IsValid) throw new Exception("Something was wrong");
@@ -308,7 +308,7 @@ namespace JobBoard.Identity.Conrollers
             throw new Exception("Something was wrong");
         }
 
-        [HttpPost("URegisterEmployer")]
+        [HttpPost]
         public async Task<IActionResult> URegisterEmployer(RegisterEmployerViewModel viewModel)
         {
             if (!ModelState.IsValid) throw new Exception("Something was wrong");
