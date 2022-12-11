@@ -19,6 +19,9 @@ namespace JobBoard.Application.Employers
         {
             public Guid Id { get; set; }
             public string Name { get; set; }
+            public string AboutUs { get; set; }
+            public string Location { get; set; }
+            public string PhotoLink { get; set; }
 
             public void Mapping(Profile profile)
             {

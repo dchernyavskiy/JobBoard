@@ -11,15 +11,11 @@ namespace JobBoard.Application.Employees
         public class UpdateEmployeeCommand : IRequest
         {
             public Guid Id { get; set; }
-            public string Name { get; set; }
-            public string Discription { get; set; }
-            public DateTime DatePosted { get; set; }
-            public string Location { get; set; }
-            public int Hours { get; set; }
-            public int SalaryStart { get; set; }
-            public int SalaryEnd { get; set; }
-            public int Experience { get; set; }
-            public Guid EmployerId { get; set; }
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
+            public string Email { get; set; }
+            public string Phone { get; set; }
+            public string CVLink { get; set; }
         }
 
         public class UpdateEmployeeCommandHandler : IRequestHandler<UpdateEmployeeCommand>
@@ -39,14 +35,11 @@ namespace JobBoard.Application.Employees
                 if (entity == null)
                     throw new NotFoundException(nameof(Employee), request.Id);
 
-                //entity.Name = request.Name;
-                //entity.Discription = request.Discription;
-                //entity.DatePosted = request.DatePosted;
-                //entity.Location = request.Location;
-                //entity.Hours = request.Hours;
-                //entity.SalaryStart = request.SalaryStart;
-                //entity.SalaryEnd = request.SalaryEnd;
-                //entity.Experience = request.Experience;
+                entity.FirstName = request.FirstName;
+                entity.LastName = request.LastName;
+                entity.Email    = request.Email;
+                entity.Phone = request.Phone;
+                entity.CVLink = request.CVLink;
 
                 await _context.SaveChangesAsync(cancellationToken);
 
