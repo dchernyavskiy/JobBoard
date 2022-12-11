@@ -59,7 +59,7 @@ export class JobsnewComponent implements OnInit {
   initializeBody() {
     this.body = {
       filters: {
-        keyWord: null,
+        keyWord: '',
         categoryIds: null,
         locationIds: null,
         salaryStart: 0,
@@ -179,6 +179,7 @@ export class JobsnewComponent implements OnInit {
   }
   
   setSearch(){
+    console.log("keyword: "+this.body.filters.keyWord);
     this.getJobs();
   }
 }
