@@ -1,4 +1,3 @@
-
 using JobBoard.Application.Common.Exceptions;
 using JobBoard.Application.Interfaces;
 using JobBoard.Domain;
@@ -16,7 +15,6 @@ namespace JobBoard.Application.Locations
 
         public class DeleteLocationCommandHandler : IRequestHandler<DeleteLocationCommand>
         {
-
             private readonly IJobBoardDbContext _context;
 
             public DeleteLocationCommandHandler(IJobBoardDbContext context)

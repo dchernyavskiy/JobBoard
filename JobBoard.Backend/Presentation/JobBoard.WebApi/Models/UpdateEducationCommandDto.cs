@@ -5,6 +5,5 @@ namespace JobBoard.WebApi.Models
 {
     public class UpdateEducationCommandDto : IMapWith<UpdateEducationCommand>
     {
-
     }
 }

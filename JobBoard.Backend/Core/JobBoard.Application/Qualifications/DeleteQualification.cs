@@ -16,7 +16,6 @@ namespace JobBoard.Application.Qualifications
 
         public class DeleteQualificationCommandHandler : IRequestHandler<DeleteQualificationCommand>
         {
-
             private readonly IJobBoardDbContext _context;
 
             public DeleteQualificationCommandHandler(IJobBoardDbContext context)
@@ -39,5 +38,4 @@ namespace JobBoard.Application.Qualifications
             }
         }
     }
-
 }

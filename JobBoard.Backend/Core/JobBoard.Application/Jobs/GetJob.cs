@@ -21,8 +21,10 @@ namespace JobBoard.Application.Jobs
             public int SalaryStart { get; set; }
             public int SalaryEnd { get; set; }
             public int Experience { get; set; }
+
             //public Employer Employer { get; set; }
             public ICollection<Responsibility> Responsibilities { get; set; }
+
             public ICollection<Qualification> Qualifications { get; set; }
 
             public void Mapping(Profile profile)
@@ -38,7 +40,6 @@ namespace JobBoard.Application.Jobs
 
         public class GetJobQueryHandler : IRequestHandler<GetJobQuery, JobVm>
         {
-
             private readonly IJobBoardDbContext _context;
             private readonly IMapper _mapper;
 

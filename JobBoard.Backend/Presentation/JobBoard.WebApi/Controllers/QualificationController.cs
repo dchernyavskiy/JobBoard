@@ -9,7 +9,7 @@ namespace JobBoard.WebApi.Controllers
     public class QualificationController : BaseController
     {
         [HttpPost]
-        public async Task<ActionResult<Guid>> Create([FromBody]CreateQualificationCommand command)
+        public async Task<ActionResult<Guid>> Create([FromBody] CreateQualificationCommand command)
         {
             var result = await Mediator.Send(command);
             return Ok(result);

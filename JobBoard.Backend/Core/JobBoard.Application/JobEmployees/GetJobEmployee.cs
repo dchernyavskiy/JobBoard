@@ -5,7 +5,6 @@ using JobBoard.Application.Interfaces;
 using JobBoard.Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using static JobBoard.Application.Locations.GetLocation;
 
 namespace JobBoard.Application.JobEmployees
 {
@@ -30,7 +29,6 @@ namespace JobBoard.Application.JobEmployees
 
         public class GetJobEmployeeQueryHandler : IRequestHandler<GetJobEmployeeQuery, JobEmployeeVm>
         {
-
             private readonly IJobBoardDbContext _context;
             private readonly IMapper _mapper;
 

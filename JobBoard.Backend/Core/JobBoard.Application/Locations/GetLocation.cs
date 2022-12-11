@@ -1,4 +1,3 @@
-
 using AutoMapper;
 using JobBoard.Application.Common.Exceptions;
 using JobBoard.Application.Common.Mappings;
@@ -29,7 +28,6 @@ namespace JobBoard.Application.Locations
 
         public class GetLocationQueryHandler : IRequestHandler<GetLocationQuery, LocationVm>
         {
-
             private readonly IJobBoardDbContext _context;
             private readonly IMapper _mapper;
 

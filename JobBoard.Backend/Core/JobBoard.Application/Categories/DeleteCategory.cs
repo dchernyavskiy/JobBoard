@@ -15,7 +15,6 @@ namespace JobBoard.Application.Categories
 
         public class DeleteCategoryCommandHandler : IRequestHandler<DeleteCategoryCommand>
         {
-
             private readonly IJobBoardDbContext _context;
 
             public DeleteCategoryCommandHandler(IJobBoardDbContext context)
@@ -38,5 +37,4 @@ namespace JobBoard.Application.Categories
             }
         }
     }
-
 }

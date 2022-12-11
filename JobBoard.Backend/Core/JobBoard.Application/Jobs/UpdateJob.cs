@@ -22,10 +22,8 @@ namespace JobBoard.Application.Jobs
             public Guid EmployerId { get; set; }
         }
 
-
         public class UpdateJobCommandHandler : IRequestHandler<UpdateJobCommand>
         {
-
             private readonly IJobBoardDbContext _context;
 
             public UpdateJobCommandHandler(IJobBoardDbContext context)

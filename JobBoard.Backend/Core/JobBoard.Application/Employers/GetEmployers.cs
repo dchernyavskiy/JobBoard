@@ -5,11 +5,6 @@ using JobBoard.Application.Interfaces;
 using JobBoard.Domain;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JobBoard.Application.Employers
 {
@@ -19,23 +14,26 @@ namespace JobBoard.Application.Employers
         {
             public IList<EmployerLookupDto> Employers { get; set; }
         }
+
         public class EmployerLookupDto : IMapWith<Employer>
         {
             public Guid Id { get; set; }
             public string Name { get; set; }
+
             public void Mapping(Profile profile)
             {
                 profile.CreateMap<Employer, EmployerLookupDto>();
             }
         }
+
         public class GetEmployersQuery : IRequest<EmployersVm>
         {
         }
+
         public class GetEmployersQueryhandler : IRequestHandler<GetEmployersQuery, EmployersVm>
         {
             private readonly IJobBoardDbContext _context;
             private readonly IMapper _mapper;
-
 
             public GetEmployersQueryhandler(IJobBoardDbContext context,
                 IMapper mapper)

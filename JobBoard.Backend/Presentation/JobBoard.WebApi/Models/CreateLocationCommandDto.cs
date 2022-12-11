@@ -7,7 +7,7 @@ namespace JobBoard.WebApi.Models
     public class CreateLocationCommandDto : IMapWith<CreateLocationCommand>
     {
         public string Name { get; set; }
-     
+
         public void Mapping(Profile profile)
         {
             profile.CreateMap<CreateLocationCommandDto, CreateLocationCommand>();

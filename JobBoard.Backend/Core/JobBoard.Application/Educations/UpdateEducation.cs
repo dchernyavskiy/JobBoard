@@ -18,10 +18,8 @@ namespace JobBoard.Application.Educations
             public string Discription { get; set; }
         }
 
-
         public class UpdateEducationCommandHandler : IRequestHandler<UpdateEducationCommand>
         {
-
             private readonly IJobBoardDbContext _context;
 
             public UpdateEducationCommandHandler(IJobBoardDbContext context)

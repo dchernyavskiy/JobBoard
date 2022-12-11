@@ -16,7 +16,6 @@ namespace JobBoard.Application.Jobs
 
         public class DeleteJobCommandHandler : IRequestHandler<DeleteJobCommand>
         {
-
             private readonly IJobBoardDbContext _context;
 
             public DeleteJobCommandHandler(IJobBoardDbContext context)
@@ -39,5 +38,4 @@ namespace JobBoard.Application.Jobs
             }
         }
     }
-
 }

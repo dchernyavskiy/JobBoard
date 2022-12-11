@@ -1,12 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7ea0594e-904c-44b3-8cca-16a018bafeca" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/obj/Debug/net6.0/JobBoard.Application.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/obj/Debug/net6.0/JobBoard.Application.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/obj/Debug/net6.0/JobBoard.Application.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/obj/Debug/net6.0/JobBoard.Application.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/obj/Debug/net6.0/JobBoard.Application.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/obj/Debug/net6.0/JobBoard.Application.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/obj/JobBoard.Application.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/obj/JobBoard.Application.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/obj/JobBoard.Application.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/obj/JobBoard.Application.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Application/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Domain/obj/JobBoard.Domain.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Domain/obj/JobBoard.Domain.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Domain/obj/JobBoard.Domain.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Domain/obj/JobBoard.Domain.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Domain/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Domain/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Domain/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Core/JobBoard.Domain/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Infrastructure/JobBoard.Persistence/obj/JobBoard.Persistence.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Infrastructure/JobBoard.Persistence/obj/JobBoard.Persistence.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Infrastructure/JobBoard.Persistence/obj/JobBoard.Persistence.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Infrastructure/JobBoard.Persistence/obj/JobBoard.Persistence.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Infrastructure/JobBoard.Persistence/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Infrastructure/JobBoard.Persistence/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Infrastructure/JobBoard.Persistence/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Infrastructure/JobBoard.Persistence/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/Controllers/JobController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/Controllers/JobController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/obj/JobBoard.WebApi.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/obj/JobBoard.WebApi.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/obj/JobBoard.WebApi.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/obj/JobBoard.WebApi.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Presentation/JobBoard.WebApi/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Tests/JobBoard.Tests/obj/JobBoard.Tests.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Tests/JobBoard.Tests/obj/JobBoard.Tests.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Tests/JobBoard.Tests/obj/JobBoard.Tests.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Tests/JobBoard.Tests/obj/JobBoard.Tests.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Tests/JobBoard.Tests/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Tests/JobBoard.Tests/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Backend/Tests/JobBoard.Tests/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Backend/Tests/JobBoard.Tests/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Identity/Configuration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Identity/Configuration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Identity/Conrollers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Identity/Conrollers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Identity/obj/JobBoard.Identity.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Identity/obj/JobBoard.Identity.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Identity/obj/JobBoard.Identity.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Identity/obj/JobBoard.Identity.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Identity/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Identity/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JobBoard.Identity/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../JobBoard.Identity/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jobboard/data/api/ApiUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jobboard/data/api/ApiUtils.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/jobboard/data/auth/AppAuth.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/jobboard/data/auth/AppAuth.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +55,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\user\.android\avd\pixel_5_-_api_33.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[4248414957313498]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -35,6 +76,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-32/android.jar!/android/view/View.class" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -48,6 +92,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="android-custom-viewC:/Users/user/AppData/Local/Android/Sdk/sources/android-32/android/widget/TextView.java_SELECTED" value="TextView" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -137,23 +182,10 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-function">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/jobboard/data/auth/AppAuth.kt</url>
-          <line>58</line>
-          <properties class="com.example.jobboard.data.auth.AppAuth" method="performTokenRequestSuspend">
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/jobboard/data/auth/AppAuth.kt</url>
-          <line>63</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/jobboard/data/auth/AppAuth.kt</url>
-          <line>68</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/jobboard/ui/auth/StartFragment.kt</url>
+          <line>82</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

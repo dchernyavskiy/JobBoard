@@ -34,8 +34,6 @@ namespace JobBoard.Application.Locations
 
                 return entity.Id;
             }
-
         }
-
     }
 }

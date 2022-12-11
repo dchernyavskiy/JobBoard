@@ -14,6 +14,7 @@ namespace JobBoard.Application.Categories
         {
             public IList<CategoryLookupDto> Categories { get; set; }
         }
+
         public class CategoryLookupDto : IMapWith<Category>
         {
             public Guid Id { get; set; }
@@ -25,11 +26,11 @@ namespace JobBoard.Application.Categories
             }
         }
 
-        public class GetCategorysQuery : IRequest<CategoriesVm> { }
+        public class GetCategorysQuery : IRequest<CategoriesVm>
+        { }
 
         public class GetCategorysQueryHandler : IRequestHandler<GetCategorysQuery, CategoriesVm>
         {
-
             private readonly IJobBoardDbContext _context;
             private readonly IMapper _mapper;
 

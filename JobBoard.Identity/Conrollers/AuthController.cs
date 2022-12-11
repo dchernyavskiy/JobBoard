@@ -1,9 +1,12 @@
 ﻿using IdentityServer4.Services;
-using JobBoard.Application.Interfaces;
 using JobBoard.Identity.Interfaces;
 using JobBoard.Identity.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace JobBoard.Identity.Conrollers
 {
@@ -15,6 +18,7 @@ namespace JobBoard.Identity.Conrollers
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IIdentityServerInteractionService _interactionService;
         private readonly IJobDbContext _context;
+        private string _secureKey = "a very very very important secure key";
 
         public AuthController(SignInManager<AppUser> signInManager,
                              UserManager<AppUser> userManager,
@@ -27,6 +31,59 @@ namespace JobBoard.Identity.Conrollers
             _roleManager = roleManager;
             _interactionService = interactionService;
             _context = context;
+        }
+
+        public string GenerateEmployeeToken(string name)
+        {
+            List<Claim> claims = new List<Claim>()
+            {
+                new Claim(ClaimTypes.Name, name),
+                new Claim(ClaimTypes.Role, "Employee")
+            };
+
+            var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secureKey));
+            var credentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature);
+            var token = new JwtSecurityToken(
+                claims: claims,
+                expires: DateTime.Today.AddDays(1),
+                signingCredentials: credentials
+                );
+            var jwt = new JwtSecurityTokenHandler().WriteToken(token);
+            return jwt;
+        }
+
+        public string GenerateEmployerToken(string name)
+        {
+            List<Claim> claims = new List<Claim>()
+            {
+                new Claim(ClaimTypes.Name, name),
+                new Claim(ClaimTypes.Role, "Employer")
+            };
+
+            var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_secureKey));
+            var credentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature);
+            var token = new JwtSecurityToken(
+                claims: claims,
+                expires: DateTime.Today.AddDays(1),
+                signingCredentials: credentials
+                );
+            var jwt = new JwtSecurityTokenHandler().WriteToken(token);
+            return jwt;
+        }
+
+        public JwtSecurityToken Verify(string jwt)// this method verifies distinct client by means of extracting a token
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_secureKey);
+            tokenHandler.ValidateToken(jwt, new TokenValidationParameters
+            {
+                IssuerSigningKey = new SymmetricSecurityKey(key),
+                ValidateIssuerSigningKey = true,
+                ValidateIssuer = false,
+                ValidateAudience = false
+            }, out SecurityToken validatedToken);
+
+            return (JwtSecurityToken)validatedToken;
         }
 
         [HttpGet]
@@ -42,8 +99,8 @@ namespace JobBoard.Identity.Conrollers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel vm)
         {
-            if (!ModelState.IsValid) return View(vm);
-
+            vm.ReturnUrl = vm.ReturnUrl ?? "com.example.jobboard://oidccallback";
+            //if (!ModelState.IsValid) return View(vm);
 
             var user = await _userManager.FindByEmailAsync(vm.Email);
 
@@ -92,7 +149,7 @@ namespace JobBoard.Identity.Conrollers
             {
                 var id = Guid.Parse(user.Id);
 
-                await _context.Employees.AddAsync(new Domain.Employee 
+                await _context.Employees.AddAsync(new Domain.Employee
                 {
                     Id = id,
                     FirstName = viewModel.FirstName,
@@ -202,6 +259,89 @@ namespace JobBoard.Identity.Conrollers
             await _signInManager.SignOutAsync();
             var logoutRequest = await _interactionService.GetLogoutContextAsync(logoutId);
             return Redirect(logoutRequest.PostLogoutRedirectUri);
+        }
+
+        [HttpPost("ULogin")]
+        public async Task<IActionResult> ULogin(string email, string password)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user == null)
+                throw new Exception("User not found");
+            return Ok(user.Id);
+        }
+
+        [HttpPost("URegisterEmployee")]
+        public async Task<IActionResult> URegisterEmployee(RegisterEmployeeViewModel viewModel)
+        {
+            if (!ModelState.IsValid) throw new Exception("Something was wrong");
+            var user = new AppUser
+            {
+                Id = Guid.NewGuid().ToString(),
+                UserName = $"{viewModel.FirstName.ToLower()}_{viewModel.LastName.ToLower()}",
+                Email = viewModel.Email,
+                EmailConfirmed = true,
+            };
+            _ = await _userManager.CreateAsync(user, viewModel.Password);
+
+            var role = await _roleManager.FindByNameAsync("Employee");
+            if (role == null) throw new Exception("Role was not found");
+            var result = await _userManager.AddToRoleAsync(user, role.Name);
+
+            if (result.Succeeded)
+            {
+                var id = Guid.Parse(user.Id);
+
+                await _context.Employees.AddAsync(new Domain.Employee
+                {
+                    Id = id,
+                    FirstName = viewModel.FirstName,
+                    LastName = viewModel.LastName,
+                    Email = viewModel.Email,
+                    Phone = viewModel.Phone,
+                    CVLink = viewModel.CVLink
+                });
+
+                await _context.SaveChangesAsync(new CancellationToken());
+                return Ok(id);
+            }
+
+            throw new Exception("Something was wrong");
+        }
+
+        [HttpPost("URegisterEmployer")]
+        public async Task<IActionResult> URegisterEmployer(RegisterEmployerViewModel viewModel)
+        {
+            if (!ModelState.IsValid) throw new Exception("Something was wrong");
+            var user = new AppUser
+            {
+                Id = Guid.NewGuid().ToString(),
+                UserName = viewModel.Name,
+                Email = viewModel.Email,
+                EmailConfirmed = true,
+            };
+            _ = await _userManager.CreateAsync(user, viewModel.Password);
+
+            var role = await _roleManager.FindByNameAsync("Employer");
+            if (role == null) throw new Exception("Role was not found");
+            var result = await _userManager.AddToRoleAsync(user, role.Name);
+
+            if (result.Succeeded)
+            {
+                var id = Guid.Parse(user.Id);
+                await _context.Employers.AddAsync(new Domain.Employer
+                {
+                    Id = id,
+                    Name = viewModel.Name,
+                    AboutUs = viewModel.AboutUs,
+                    TeamSize = viewModel.TeamSize,
+                    Location = viewModel.Location,
+                    PhotoLink = viewModel.PhotoLink
+                });
+                await _context.SaveChangesAsync(new CancellationToken());
+                return Ok(id);
+            }
+
+            throw new Exception("Something was wrong");
         }
     }
 }
