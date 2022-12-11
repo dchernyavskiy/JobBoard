@@ -97,13 +97,13 @@ namespace JobBoard.Application.Jobs
                         entities = entities.OrderBy(x => x.Experience, request.Sort.IsAscending);
 
                     entities = entities
-                           .Where(x => string.IsNullOrEmpty(request.Filters.KeyWord) ? true : request.Filters.KeyWord.Contains(x.Name))
-                           .Where(x => request.Filters.CategoryIds == null || request.Filters.CategoryIds.Count == 0 ? true : request.Filters.CategoryIds.Contains(x.CategoryId))
-                           .Where(x => request.Filters.LocationIds == null || request.Filters.LocationIds.Count == 0 ? true : request.Filters.LocationIds.Contains(x.LocationId))
-                           .Where(x => request.Filters.SalaryStart == 0 ? true : x.SalaryStart >= request.Filters.SalaryStart)
-                           .Where(x => request.Filters.SalaryEnd == 0 ? true : x.SalaryEnd <= request.Filters.SalaryEnd)
-                           .Where(x => request.Filters.EmloyerIds == null || request.Filters.EmloyerIds.Count == 0 ? true : request.Filters.EmloyerIds.Contains(x.EmployerId))
-                           .Where(x => request.Filters.Experiences == null || request.Filters.Experiences.Count == 0 ? true : request.Filters.Experiences.Contains(x.Experience));
+                           .Where(x => string.IsNullOrEmpty(request.Filters.KeyWord) || x.Name.ToUpper().Contains(request.Filters.KeyWord.ToUpper()))
+                           .Where(x => request.Filters.CategoryIds == null || request.Filters.CategoryIds.Count == 0 || request.Filters.CategoryIds.Contains(x.CategoryId))
+                           .Where(x => request.Filters.LocationIds == null || request.Filters.LocationIds.Count == 0 || request.Filters.LocationIds.Contains(x.LocationId))
+                           .Where(x => request.Filters.SalaryStart == 0 || x.SalaryStart >= request.Filters.SalaryStart)
+                           .Where(x => request.Filters.SalaryEnd == 0 || x.SalaryEnd <= request.Filters.SalaryEnd)
+                           .Where(x => request.Filters.EmloyerIds == null || request.Filters.EmloyerIds.Count == 0 || request.Filters.EmloyerIds.Contains(x.EmployerId))
+                           .Where(x => request.Filters.Experiences == null || request.Filters.Experiences.Count == 0 || request.Filters.Experiences.Contains(x.Experience));
 
                     pageCount = (int)Math.Ceiling(entities.Count() / requestJobsCount);
 

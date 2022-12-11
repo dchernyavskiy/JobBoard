@@ -23,9 +23,12 @@
       <div class="col-lg-8 col-md-12">
         <ul class="job-list-item align-items-center">
           <li>
-            <a href="#">Results Found <span>
-              <!-- ({{ jobs.length }}) -->
-            </span></a>
+            <a href="#"
+              >Results Found
+              <span>
+                <!-- ({{ jobs.length }}) -->
+              </span></a
+            >
           </li>
           <li>
             <span class="sort">Sort By:</span>
@@ -98,13 +101,15 @@
               <h3>Search Keywords</h3>
 
               <form>
-                <input type="text" class="form-control" placeholder="Keyword" />
-                <button 
-                 class="btn"
-                 name="search"
-                 [ngModel]="this.body.filters.keyWord"
-                 (click)="setSearch()"
-                 >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Keyword"
+                  id="search"
+                  name="search"
+                  [(ngModel)]="body.filters.keyWord"
+                />
+                <button class="btn" (click)="setSearch()">
                   <i class="flaticon-send"></i>
                 </button>
               </form>
