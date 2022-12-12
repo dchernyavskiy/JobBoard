@@ -24,10 +24,7 @@
         <ul class="job-list-item align-items-center">
           <li>
             <a href="#"
-              >Results Found
-              <span>
-                <!-- ({{ jobs.length }}) -->
-              </span></a
+              >Results Found <span> ({{ resultCount }}) </span></a
             >
           </li>
           <li>
@@ -44,14 +41,27 @@
           </li>
         </ul>
 
-        <div *ngFor="let job of jobs">
-          <app-job-card [job]="job"></app-job-card>
+        <div *ngIf="pageCount == 0" class="d-flex justify-content-center flex-column">
+          <h1 class="text-center">Nothing was found</h1>
+          <div class="level text-center mb-4">
+            <button
+              class="btn"
+              (click)="reset()"
+              style="
+                background-color: #fe4a55;
+                color: white;
+              ">
+              Reset Filters
+            </button>
+          </div>
+        </div>
+        <div *ngIf="pageCount != 0">
+          <app-job-card *ngFor="let job of jobs" [job]="job"></app-job-card>
         </div>
 
         <div class="pagination-area">
           <ul>
             <li>
-              <!-- [routerLink]="['/jobsnew', currentPage - 1]" -->
               <a
                 (click)="setPage(currentPage - 1)"
                 [attr.readonly]="currentPage == 1"
@@ -62,7 +72,6 @@
               >
             </li>
             <li>
-              <!-- [routerLink]="['/jobsnew', page]" -->
               <a
                 *ngFor="let page of range(pageCount)"
                 (click)="setPage(page)"
@@ -77,7 +86,6 @@
               >
             </li>
             <li>
-              <!-- [routerLink]="['/jobsnew', currentPage + 1]" -->
               <a
                 [attr.readonly]="currentPage == pageCount"
                 (click)="setPage(currentPage + 1)"
@@ -137,7 +145,7 @@
               </form>
             </div>
 
-            <div class="location-list cmn-padding">
+            <div class="search">
               <h3>Location List</h3>
 
               <form>
@@ -152,9 +160,9 @@
                         name="{{ location.city }}"
                         (change)="filterLocation(location.id)"
                       />
-                      <label class="form-check-label" for="defaultCheck10">
-                        {{ location.city }}
-                      </label>
+                      <label class="form-check-label" for="defaultCheck1">{{
+                        location.city
+                      }}</label>
                     </div>
                   </li>
                 </ul>
@@ -196,7 +204,7 @@
               </form>
             </div>
 
-            <div class="employer cmn-padding">
+            <div class="search">
               <h3>Employer</h3>
 
               <form>
@@ -210,7 +218,7 @@
                         [name]="employer.name"
                         (change)="filterEmployer(employer.id)"
                       />
-                      <label class="form-check-label" for="defaultCheck35">{{
+                      <label class="form-check-label" for="defaultCheck1">{{
                         employer.name
                       }}</label>
                     </div>
@@ -225,76 +233,16 @@
               <form>
                 <div class="job-cmn-cat flex-divide">
                   <ul class="left">
-                    <li>
+                    <li *ngFor="let year of years">
                       <div class="form-check">
                         <input
                           class="form-check-input"
                           type="checkbox"
-                          value=""
                           id="defaultCheck48"
-                          (click)="setExperience(5)"
+                          (click)="setExperience(year)"
                         />
                         <label class="form-check-label" for="defaultCheck48"
-                          >5 Years
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          value=""
-                          id="defaultCheck49"
-                          (click)="setExperience(4)"
-                        />
-                        <label class="form-check-label" for="defaultCheck49"
-                          >4 Years
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          value=""
-                          id="defaultCheck50"
-                          (click)="setExperience(3)"
-                        />
-                        <label class="form-check-label" for="defaultCheck50"
-                          >3 Years
-                        </label>
-                      </div>
-                    </li>
-                  </ul>
-
-                  <ul class="right">
-                    <li>
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          value=""
-                          id="defaultCheck51"
-                          (click)="setExperience(2)"
-                        />
-                        <label class="form-check-label" for="defaultCheck51"
-                          >2 Years
-                        </label>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="form-check">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          value=""
-                          id="defaultCheck52"
-                          (click)="setExperience(1)"
-                        />
-                        <label class="form-check-label" for="defaultCheck52"
-                          >1 Year
+                          >{{ year }} {{ year == 1 ? "Year" : "Years" }}
                         </label>
                       </div>
                     </li>
@@ -305,7 +253,7 @@
 
             <div class="level">
               <form>
-                <button type="submit" class="btn">Filter Now</button>
+                <button class="btn" (click)="reset()">Reset Filters</button>
               </form>
             </div>
           </div>

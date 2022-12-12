@@ -37,7 +37,7 @@ namespace JobBoard.Application.Employees
 
                 entity.FirstName = request.FirstName;
                 entity.LastName = request.LastName;
-                entity.Email    = request.Email;
+                entity.Email = request.Email;
                 entity.Phone = request.Phone;
                 entity.CVLink = request.CVLink;
 

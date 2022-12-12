@@ -16,6 +16,7 @@ namespace JobBoard.Application.Jobs
         {
             public IList<JobLookupDto> Jobs { get; set; }
             public int PageCount { get; set; }
+            public int ResultCount { get; set; }
         }
 
         public class JobLookupDto : IMapWith<Job>
@@ -45,7 +46,7 @@ namespace JobBoard.Application.Jobs
                 SalaryStart = 0,
                 SalaryEnd = 0,
                 KeyWord = null,
-                LocationIds = null
+                LocationIds = null,
             };
 
             public Pagging Pagging { get; set; } = new Pagging
@@ -81,7 +82,7 @@ namespace JobBoard.Application.Jobs
                     .Include(x => x.Employer)
                     .Include(x => x.Category) as IQueryable<Job>;
 
-                var count = entities.Count();
+                var resultCount = 0;
 
                 var requestJobsCount = 0d;
                 var pageCount = 0;
@@ -105,7 +106,9 @@ namespace JobBoard.Application.Jobs
                            .Where(x => request.Filters.EmloyerIds == null || request.Filters.EmloyerIds.Count == 0 || request.Filters.EmloyerIds.Contains(x.EmployerId))
                            .Where(x => request.Filters.Experiences == null || request.Filters.Experiences.Count == 0 || request.Filters.Experiences.Contains(x.Experience));
 
-                    pageCount = (int)Math.Ceiling(entities.Count() / requestJobsCount);
+                    resultCount = entities.Count();
+
+                    pageCount = (int)Math.Ceiling(resultCount / requestJobsCount);
 
                     entities = entities
                                .Skip((request.Pagging.Page - 1) * request.Pagging.Count)
@@ -116,7 +119,7 @@ namespace JobBoard.Application.Jobs
                     .ProjectTo<JobLookupDto>(_mapper.ConfigurationProvider)
                     .ToListAsync();
 
-                return new JobsVm { Jobs = jobs, PageCount = pageCount };
+                return new JobsVm { Jobs = jobs, PageCount = pageCount, ResultCount = resultCount };
             }
         }
     }

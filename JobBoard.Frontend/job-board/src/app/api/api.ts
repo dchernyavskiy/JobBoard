@@ -846,7 +846,7 @@ export class Client extends ClientBase {
     /**
      * @return Success
      */
-    getAppliedJobs(apiVersion: string): Observable<Job[]> {
+    getAppliedJobs(apiVersion: string): Observable<AppliedJobsVm> {
         let url_ = this.baseUrl + "/api/v{apiVersion}/Job/GetAppliedJobs/GetAppliedJobs";
         if (apiVersion === undefined || apiVersion === null)
             throw new Error("The parameter 'apiVersion' must be defined.");
@@ -870,14 +870,14 @@ export class Client extends ClientBase {
                 try {
                     return this.processGetAppliedJobs(response_ as any);
                 } catch (e) {
-                    return _observableThrow(e) as any as Observable<Job[]>;
+                    return _observableThrow(e) as any as Observable<AppliedJobsVm>;
                 }
             } else
-                return _observableThrow(response_) as any as Observable<Job[]>;
+                return _observableThrow(response_) as any as Observable<AppliedJobsVm>;
         }));
     }
 
-    protected processGetAppliedJobs(response: HttpResponseBase): Observable<Job[]> {
+    protected processGetAppliedJobs(response: HttpResponseBase): Observable<AppliedJobsVm> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -887,7 +887,7 @@ export class Client extends ClientBase {
         if (status === 200) {
             return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
             let result200: any = null;
-            result200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver) as Job[];
+            result200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver) as AppliedJobsVm;
             return _observableOf(result200);
             }));
         } else if (status !== 200 && status !== 204) {
@@ -895,7 +895,7 @@ export class Client extends ClientBase {
             return throwException("An unexpected server error occurred.", status, _responseText, _headers);
             }));
         }
-        return _observableOf<Job[]>(null as any);
+        return _observableOf<AppliedJobsVm>(null as any);
     }
 
     /**
@@ -1905,6 +1905,21 @@ export class Client extends ClientBase {
     }
 }
 
+export interface AppliedJobLookupDto {
+    id?: string;
+    name?: string | undefined;
+    location?: Location;
+    datePosted?: Date;
+    employment?: string | undefined;
+    shortDiscription?: string | undefined;
+    category?: Category;
+    employer?: Employer;
+}
+
+export interface AppliedJobsVm {
+    jobs?: AppliedJobLookupDto[] | undefined;
+}
+
 export interface CategoriesVm {
     categories?: CategoryLookupDto[] | undefined;
 }
@@ -1973,11 +1988,11 @@ export interface Employee {
 
 export interface EmployeeVm {
     id?: string;
-    website?: string | undefined;
-    country?: string | undefined;
-    state?: string | undefined;
-    city?: string | undefined;
-    zip?: string | undefined;
+    firstName?: string | undefined;
+    lastName?: string | undefined;
+    email?: string | undefined;
+    phone?: string | undefined;
+    cvLink?: string | undefined;
 }
 
 export interface Employer {
@@ -2082,6 +2097,7 @@ export interface JobSort {
 export interface JobsVm {
     jobs?: JobLookupDto[] | undefined;
     pageCount?: number;
+    resultCount?: number;
 }
 
 export interface JobVm {
