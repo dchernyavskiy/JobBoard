@@ -53,6 +53,8 @@ namespace JobBoard.Application.Jobs
                 smtpClient.Credentials = new NetworkCredential("anastasiaglusenkoo7@gmail.com", "sstnzqgkvirmlook");
                 smtpClient.Send(mail);
 
+                //fdsfasdfa
+
                 return true;
             }
         }
