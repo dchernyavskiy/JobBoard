@@ -9,10 +9,11 @@ import { PostAJobComponent } from "./components/post-a-job/post-a-job.component"
 
 const routes: Routes = [
   { path: "", component: HomeThreeComponent },
-  { path: "jobsnew", component: JobsnewComponent },
+  { path: "jobs", component: JobsnewComponent },
+  { path: "jobs?keyword=:keyword&category=:categoryId&location=:location", component: JobsnewComponent },
   { path: "favourite-jobs", component: FavouriteJobsComponent },
   { path: "employers", component: EmployersComponent },
-  { path: "dashboard", component: DashboardComponent }, 
+  { path: "dashboard", component: DashboardComponent },
   { path: "post-a-job", component: PostAJobComponent },
 ];
 

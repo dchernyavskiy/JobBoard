@@ -2097,6 +2097,7 @@ export interface JobSort {
 export interface JobsVm {
     jobs?: JobLookupDto[] | undefined;
     pageCount?: number;
+    resultCount?: number;
 }
 
 export interface JobVm {

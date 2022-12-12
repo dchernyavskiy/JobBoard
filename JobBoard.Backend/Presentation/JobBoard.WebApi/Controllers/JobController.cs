@@ -1,11 +1,8 @@
 ﻿using AutoMapper;
 using JobBoard.Application.Interfaces;
-using JobBoard.Application.Jobs;
 using JobBoard.Domain;
 using JobBoard.WebApi.Models;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using static JobBoard.Application.Jobs.ApplyJob;
 using static JobBoard.Application.Jobs.CreateJob;
 using static JobBoard.Application.Jobs.DeleteJob;

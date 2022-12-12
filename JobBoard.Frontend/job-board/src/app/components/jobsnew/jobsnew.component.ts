@@ -24,16 +24,27 @@ export class JobsnewComponent implements OnInit {
   public locations: Location[];
   public employers: EmployerLookupDto[];
   public searchString: string;
+  public resultCount: number = 0;
+  public years: number[] = [5, 4, 3, 2, 1];
 
   constructor(
     public client: Client,
     public jobService: JobService,
     public route: ActivatedRoute
-  ) {}
+  ) {
+    this.route.queryParams.subscribe(res =>{
+      this.initializeBody();
+      console.log(res.keyword);
+      console.log(res.locationId);
+      console.log(res.categoryId);
+      // this.body.filters.keyWord = res.keyword;
+      // this.body.filters.locationIds = [res.locationId];
+      // this.body.filters.categoryIds = [res.categoryId];
+      this.getJobs();
+    });
+  }
 
   ngOnInit(): void {
-    this.initializeBody();
-    this.getJobs();
 
     this.client.getAllGET("1").subscribe((res) => {
       this.categories = res.categories;
@@ -52,6 +63,7 @@ export class JobsnewComponent implements OnInit {
   getJobs() {
     this.client.getAllPOST("1", this.body).subscribe((result) => {
       this.jobs = result.jobs;
+      this.resultCount = result.resultCount;
       this.pageCount = result.pageCount;
     });
   }
@@ -59,7 +71,7 @@ export class JobsnewComponent implements OnInit {
   initializeBody() {
     this.body = {
       filters: {
-        keyWord: '',
+        keyWord: "",
         categoryIds: null,
         locationIds: null,
         salaryStart: 0,
@@ -150,7 +162,7 @@ export class JobsnewComponent implements OnInit {
     }
     this.getJobs();
   }
-
+  
   setSalary() {
     console.log("i am typing...");
     return new Promise((res) => {
@@ -172,14 +184,25 @@ export class JobsnewComponent implements OnInit {
     this.getJobs();
   }
 
-  setPage(page: number){
+  setPage(page: number) {
     this.currentPage = page;
     this.body.pagging.page = page;
     this.getJobs();
   }
-  
-  setSearch(){
-    console.log("keyword: "+this.body.filters.keyWord);
+
+  setSearch() {
+    console.log("keyword: " + this.body.filters.keyWord);
+    this.getJobs();
+  }
+
+  reset() {
+    var cbs = document.getElementsByTagName("input");
+    for (let i = 0; i < cbs.length; i++) {
+      if(cbs[i].type == "checkbox") {
+        cbs[i].checked = false; 
+      } 
+    }
+    this.initializeBody();
     this.getJobs();
   }
 }
