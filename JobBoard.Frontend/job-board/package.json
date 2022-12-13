@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {
@@ -20,6 +21,7 @@
     "@angular/platform-browser-dynamic": "^14.0.2",
     "@angular/router": "^14.0.2",
     "angular-auth-oidc-client": "^14.1.5",
+    "angular-sidebar-menu": "^1.5.0",
     "bootstrap": "^5.2.0-beta1",
     "jquery": "^3.6.0",
     "jquery-nice-select": "^1.1.0",
@@ -27,6 +29,7 @@
     "ng-range-slider": "^0.2.0",
     "ngx-owl-carousel": "^2.0.7",
     "popper.js": "^1.16.1",
+    "postcss-loader": "^7.0.2",
     "rxjs": "~6.5.5",
     "zone.js": "~0.11.4"
   },
