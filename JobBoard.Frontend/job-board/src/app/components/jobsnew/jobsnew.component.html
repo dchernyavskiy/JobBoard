@@ -30,8 +30,8 @@
           <li>
             <span class="sort">Sort By:</span>
             <form>
-              <div class="form-group">
-                <select name="sort" (change)="sort($event.target.value)">
+              <div class="form-group" >
+                <select name="sort"   (change)="sort($event.target.value)">
                   <option value="Name">Name</option>
                   <option value="Salary">Salary</option>
                   <option value="Experience">Experience</option>
@@ -40,7 +40,7 @@
             </form>
           </li>
         </ul>
-
+        
         <div *ngIf="pageCount == 0" class="d-flex justify-content-center flex-column">
           <h1 class="text-center">Nothing was found</h1>
           <div class="level text-center mb-4">

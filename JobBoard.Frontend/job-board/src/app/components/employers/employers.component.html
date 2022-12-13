@@ -122,7 +122,7 @@
         <div class="row">
             <div class="col-lg-6 col-md-12" *ngFor="let employer of employers">
                 <div class="employer-item">
-                    <a routerLink="/job-details">
+                    <a routerLink="/employer-details" [queryParams] = "{id: employer.id}">
                         <h3>{{ employer.name }}</h3>
                         <ul>
                             <li><i class="flaticon-send"></i> {{employer.location}}</li>
