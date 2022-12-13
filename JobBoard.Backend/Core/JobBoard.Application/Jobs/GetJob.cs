@@ -22,10 +22,7 @@ namespace JobBoard.Application.Jobs
             public int SalaryEnd { get; set; }
             public int Experience { get; set; }
 
-            //public Employer Employer { get; set; }
-            public ICollection<Responsibility> Responsibilities { get; set; }
-
-            public ICollection<Qualification> Qualifications { get; set; }
+            public Employer Employer { get; set; }
 
             public void Mapping(Profile profile)
             {
