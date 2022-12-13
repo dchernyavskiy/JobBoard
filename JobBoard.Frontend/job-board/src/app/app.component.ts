@@ -28,15 +28,13 @@ export class AppComponent implements OnInit {
         this.oidcSecurityService.checkAuth().subscribe((result) => {
             localStorage.setItem('token', result.accessToken);
             this.isAuth = result.isAuthenticated;
+            
             let role = JSON.parse(window.atob(result.accessToken.split('.')[1])).role;
-            localStorage.setItem('role', role);
-            console.log(role);
-      
+            localStorage.setItem('role', role);     
+            
             console.log('access token: ' + result.accessToken);
-            console.log(result.userData);
           });
         this.recallJsFuntions();
-
     }
 
     login(){
