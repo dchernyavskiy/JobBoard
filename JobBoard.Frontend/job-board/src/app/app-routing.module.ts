@@ -6,6 +6,7 @@ import { FavouriteJobsComponent } from "./components/favourite-jobs/favourite-jo
 import { EmployersComponent } from "./components/employers/employers.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { PostAJobComponent } from "./components/post-a-job/post-a-job.component";
+import { EmployersDetailsComponent } from './components/employers-details/employers-details.component';
 
 const routes: Routes = [
   { path: "", component: HomeThreeComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: "employers", component: EmployersComponent },
   { path: "dashboard", component: DashboardComponent },
   { path: "post-a-job", component: PostAJobComponent },
+  { path: 'employer-details', component: EmployersDetailsComponent}
 ];
 
 @NgModule({
