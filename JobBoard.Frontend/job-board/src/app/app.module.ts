@@ -18,9 +18,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PostAJobComponent } from './components/post-a-job/post-a-job.component';
 import { JobDetailsComponent } from './components/job-details/job-details.component';
 
-
+import { EmployersDetailsComponent } from './components/employers-details/employers-details.component'
 @NgModule({
-  declarations: [AppComponent, HomeThreeComponent, JobDetailsComponent, FooterStyleTwoComponent, JobCardComponent, JobsnewComponent, FavouriteJobsComponent, EmployersComponent, EmployerCardComponent, DashboardComponent, PostAJobComponent  ],
+  declarations: [AppComponent, HomeThreeComponent, JobDetailsComponent, FooterStyleTwoComponent, JobCardComponent, JobsnewComponent, FavouriteJobsComponent, EmployersComponent, EmployerCardComponent, DashboardComponent, PostAJobComponent, EmployersDetailsComponent  ],
   imports: [
     CommonModule,
     BrowserModule,

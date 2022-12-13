@@ -91,7 +91,6 @@ export class JobsnewComponent implements OnInit {
       },
     };
   }
-
   sort(sortBy: string) {
     switch (sortBy) {
       case "Name":
