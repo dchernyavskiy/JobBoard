@@ -7,8 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "postinstall": "ngcc"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -20,10 +19,8 @@
     "@angular/platform-browser": "^14.2.12",
     "@angular/platform-browser-dynamic": "^14.0.2",
     "@angular/router": "^14.0.2",
-    "angular-admin-lte": "^4.0.0",
     "angular-auth-oidc-client": "^14.1.5",
     "bootstrap": "^5.2.0-beta1",
-    "font-awesome": "^4.7.0",
     "jquery": "^3.6.0",
     "jquery-nice-select": "^1.1.0",
     "magnific-popup": "^1.1.0",
