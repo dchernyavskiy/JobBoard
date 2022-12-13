@@ -1,0 +1,41 @@
+<div class="control-section" id="sidelistwrapper">
+    <!-- sample level element  -->
+    <!-- main content declaration -->
+    <div>
+        <ejs-toolbar id="listToolbar" (clicked)="toolbarCliked($event)">
+            <e-items>
+                <e-item prefixIcon="e-tbar-menu-icon tb-icons" tooltipText="Menu"></e-item>
+                <e-item>
+                    <ng-template #template>
+                        <div class="e-folder">
+                            <div class="e-folder-name">Language</div>
+                        </div>
+                    </ng-template>
+                </e-item>
+            </e-items>
+        </ejs-toolbar>
+    </div>
+    <div class="listmaincontent">
+        <div>
+            <div id="listContent" class="listcontent">
+                Before getting into any programming language, one should have basic knowledge about HTML, CSS, and
+                JavaScript. These are the basic building blocks of web designing. HTML describes the structure of a web
+                page whereas CSS describes the presentation of the web page.
+            </div>
+        </div>
+    </div>
+    <!-- end of main content declaration -->
+    <!-- sidebar element declaration -->
+    <ejs-sidebar #sidebarInstance id="listSidebar" class="sidebar-list" #sidebarTreeviewInstance width="250px"
+        target=".listmaincontent" type="Auto" [isOpen]='true'>
+        <ejs-listview id="listSidebarList" [dataSource]='ListData' cssClass="e-template-list"
+            template={this.listTemplate} [fields]='listFields' (select)="OnSelect($event)">
+            <ng-template #template let-dataSource="">
+                <div class="list-wrapper">
+                    <span class="{{dataSource.pic}} e-avatar e-avatar-xsmall e-avatar-circle"></span>
+                    <span class="text e-text-content">{{dataSource.text}}</span>
+                </div>
+            </ng-template>
+        </ejs-listview>
+    </ejs-sidebar>
+</div>
