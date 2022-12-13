@@ -44,18 +44,8 @@
 
                     <div class="details-inner">
                         <h3>Our Company</h3>
-                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here.</p>
-                    </div>
-
-        
-
-                    <div class="details-inner">
-                        <h3>Job Responsibilities</h3>
-                            <p>{{job.responsibilities}}</p>
-     
-                    </div>
-
-    
+                        <p>{{employerInfo.aboutUs}}</p>
+                    </div>    
                 </div>
             </div>
 
@@ -71,15 +61,11 @@
                                 <h4>Salary</h4>
                                 <span>${{job.salaryStart}} - ${{job.salaryEnd}}</span>
                             </li>
-                            <li>
-                                <img src="assets/img/job-details-icon.png" alt="Details">
-                                <h4>Category</h4>
-                                <span>Sales & Marketing</span>
-                            </li>
+
                             <li>
                                 <img src="assets/img/job-details-icon.png" alt="Details">
                                 <h4>Location</h4>
-                                <span>{{job.location}}</span>
+                                <span>{{employerInfo.location}}</span>
                             </li>
 
                             <li>
@@ -92,16 +78,6 @@
                                 <h4>Industry</h4>
                                 <span>Development</span>
                             </li>
-                            <li>
-                                <img src="assets/img/job-details-icon.png" alt="Details">
-                                <h4>Level</h4>
-                                <span>{{job.qualifications}}</span>
-                            </li>
-                            <li>
-                                <img src="assets/img/job-details-icon.png" alt="Details">
-                                <h4>Applied</h4>
-                                <span>01</span>
-                            </li>
                         </ul>
                     </div>
 
@@ -110,25 +86,21 @@
                             <img src="assets/img/home-one/job4.png" alt="Owner">
                             <h3>Owner Info</h3>
                             <i class="flaticon-send"></i>
-                            <span>Los Angeles, CA, USA</span>
+                            <span>{{employerInfo.name}}</span>
                         </div>
 
                         <div class="information widget-item">
                             <ul>
-                                <li>
-                                    <img src="assets/img/job-details-icon.png" alt="Details">
-                                    <h4>Phone</h4>
-                                    <a href="tel:+34561232349987">+3456 123 234 9987</a>
-                                </li>
+            
                                 <li>
                                     <img src="assets/img/job-details-icon.png" alt="Details">
                                     <h4>Email</h4>
-                                    <a href="mailto:hello@alzo.com">hello@alzo.com</a>
+                                    <a href="mailto:hello@alzo.com">{{employerInfo.photoLink}}</a>
                                 </li>
                                 <li>
                                     <img src="assets/img/job-details-icon.png" alt="Details">
-                                    <h4>Location</h4>
-                                    <a href="#" target="_blank">www.alzothemes.com</a>
+                                    <h4>Team Size</h4>
+                                    <span>{{employerInfo.teamSize}}</span>
                                 </li>
                             </ul>
                         </div>

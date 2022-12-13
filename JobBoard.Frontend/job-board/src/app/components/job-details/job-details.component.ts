@@ -10,13 +10,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class JobDetailsComponent implements OnInit {
   public job : JobVm = {}
+  public employerInfo : any
   constructor(private route: ActivatedRoute, private client: Client) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(res => {
-      console.log();
       this.client.get3(res.get("id"), '1').subscribe(res => {
         this.job = res;
+        this.employerInfo = res;
+        this.employerInfo = this.employerInfo.employer
+        console.log(res)
       });
     })
   }
