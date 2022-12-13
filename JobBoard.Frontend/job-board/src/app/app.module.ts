@@ -19,13 +19,10 @@ import { PostAJobComponent } from './components/post-a-job/post-a-job.component'
 import { JobDetailsComponent } from './components/job-details/job-details.component';
 
 import { EmployersDetailsComponent } from './components/employers-details/employers-details.component';
-import { DefaultLayoutComponent } from './components/layouts/default-layout/default-layout.component';
-import { AdminLayoutComponent } from './components/layouts/admin-layout/admin-layout.component'
-import { SidebarMenuModule } from "angular-sidebar-menu";
+import { DefaultLayoutComponent } from './components/layouts/default-layout/default-layout.component'
 @NgModule({
-  declarations: [AppComponent, HomeThreeComponent, JobDetailsComponent, FooterStyleTwoComponent, JobCardComponent, JobsnewComponent, FavouriteJobsComponent, EmployersComponent, EmployerCardComponent, DashboardComponent, PostAJobComponent, EmployersDetailsComponent, DefaultLayoutComponent, AdminLayoutComponent  ],
+  declarations: [AppComponent, HomeThreeComponent, JobDetailsComponent, FooterStyleTwoComponent, JobCardComponent, JobsnewComponent, FavouriteJobsComponent, EmployersComponent, EmployerCardComponent, DashboardComponent, PostAJobComponent, EmployersDetailsComponent, DefaultLayoutComponent  ],
   imports: [
-    SidebarMenuModule,
     CommonModule,
     BrowserModule,
     AppRoutingModule,
