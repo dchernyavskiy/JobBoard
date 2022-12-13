@@ -19,6 +19,8 @@ const routes: Routes = [
   { path: "employers", component: EmployersComponent },
   { path: "dashboard", component: DashboardComponent },
   { path: "post-a-job", component: PostAJobComponent, canActivate: [AuthGuard, EmployerGuard] },
+  { path: 'jobs/:id', component: JobDetailsComponent },
+  { path: 'employer-details', component: EmployersDetailsComponent}
 ];
 
 @NgModule({

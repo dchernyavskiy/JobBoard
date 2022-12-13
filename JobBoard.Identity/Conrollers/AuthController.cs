@@ -99,8 +99,7 @@ namespace JobBoard.Identity.Conrollers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel vm)
         {
-            vm.ReturnUrl = vm.ReturnUrl ?? "com.example.jobboard://oidccallback";
-            //if (!ModelState.IsValid) return View(vm);
+            if (!ModelState.IsValid) return View(vm);
 
             var user = await _userManager.FindByEmailAsync(vm.Email);
 
