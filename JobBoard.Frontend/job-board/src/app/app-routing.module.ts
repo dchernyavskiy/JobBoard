@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: "favourite-jobs", component: FavouriteJobsComponent },
   { path: "employers", component: EmployersComponent },
   { path: "dashboard", component: DashboardComponent },
+  { path: 'jobs/:id', component: JobDetailsComponent },
   { path: "post-a-job", component: PostAJobComponent },
   { path: 'jobs/:id', component: JobDetailsComponent },
   { path: 'employer-details', component: EmployersDetailsComponent}
