@@ -12,7 +12,6 @@ export class EmployersComponent implements OnInit {
   public count: number = 12;
   public pageCount: number;
   public keyWord: string = '';
-
   constructor(public client: Client) { }
 
   ngOnInit(): void {
