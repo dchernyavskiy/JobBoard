@@ -62,6 +62,20 @@
                 Applied Jobs
               </div>
             </a>
+            <a
+              class="nav-link"
+              id="v-pills-favourites-tab"
+              data-bs-toggle="pill"
+              href="#v-pills-favourites"
+              role="tab"
+              aria-controls="v-pills-favourites"
+              aria-selected="false"
+            >
+              <div class="profile-list">
+                <i class="bx bxs-inbox"></i>
+                Favourite Jobs
+              </div>
+            </a>
             <a routerLink="/login">
               <!-- <div class="profile-list"><i class="bx bx-log-out"></i> Logout</div> -->
               <a class="login-left" (click)="logout()" ><i class="flaticon-enter"></i>Sign out</a>
@@ -186,6 +200,18 @@
             </div>
           </div>
         </div>
+
+        <div class="col-lg-8 col-md-12">
+          <div class="tab-content" id="v-pills-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="v-pills-favourites"
+              role="tabpanel"
+              aria-labelledby="v-pills-favourites-tab"
+            ></div>
+          </div>
+        </div>
+        
       </div>
     </div>
   </div>

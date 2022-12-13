@@ -399,3 +399,11 @@ FodyWeavers.xsd
 
 *.g.props
 JobBoard.Backend/Core/JobBoard.Application/obj/
+
+JobBoard.Backend/Core/JobBoard.Domain/obj/
+
+JobBoard.Backend/Infrastructure/JobBoard.Persistence/obj/
+
+JobBoard.Backend/Presentation/JobBoard.WebApi/obj/
+
+JobBoard.Identity/obj/

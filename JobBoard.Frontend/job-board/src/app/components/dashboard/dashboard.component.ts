@@ -15,6 +15,7 @@ export class DashboardComponent implements OnInit {
   constructor(public client: Client, public oidcSecurityService: OidcSecurityService) {}
 
   ngOnInit(): void {
+    
     this.client.get("1").subscribe((res) => {
       this.employee = res as EmployeeVm;
     });
