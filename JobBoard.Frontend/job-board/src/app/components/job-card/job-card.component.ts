@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { JobLookupDto } from 'src/app/api/api';
+import { Router } from '@angular/router'; 
 
 @Component({
   selector: 'app-job-card',
@@ -9,17 +10,22 @@ import { JobLookupDto } from 'src/app/api/api';
 
 export class JobCardComponent implements OnInit {
   @Input() public job : JobLookupDto;
-  // @Input() public imgPath : string;
-  // @Input() public jobName : string;
-  // @Input() public location : string;
-  // @Input() public description : string;
-  // @Input() public category : string;
-  // @Input() public employment : string;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {
-    //console.log(this.job);
+  ngOnInit(): void { }
+
+  openJobDetails() {
+    this.router.navigate(['/jobs/:id', {id : this.job.id}]); 
+    console.log(this.job)
   }
 
+  applyJob() {
+
+  }
+
+  addtoFavourites() {
+    
+  }
 }
+ 
