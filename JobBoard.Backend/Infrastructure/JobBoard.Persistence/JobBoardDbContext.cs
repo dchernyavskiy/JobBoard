@@ -6,8 +6,7 @@ namespace JobBoard.Persistence
 {
     public class JobBoardDbContext : DbContext, IJobBoardDbContext
     {
-
-        public JobBoardDbContext(DbContextOptions<JobBoardDbContext> opts) : base(opts) 
+        public JobBoardDbContext(DbContextOptions<JobBoardDbContext> opts) : base(opts)
         {
             Database.EnsureCreated();
         }
