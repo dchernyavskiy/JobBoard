@@ -11,6 +11,7 @@ import {
   PathLocationStrategy,
 } from "@angular/common";
 import { filter } from "rxjs/operators";
+import { OidcSecurityService } from "angular-auth-oidc-client";
 declare let $: any;
 
 @Component({
@@ -28,10 +29,27 @@ declare let $: any;
 export class AppComponent implements OnInit {
   routerSubscription: any;
   location: any;
+  public isAuth: boolean = false;
+  public isSysAdmin: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    public oidcSecurityService: OidcSecurityService
+  ) {}
 
   ngOnInit() {
+    this.oidcSecurityService.checkAuth().subscribe((result) => {
+      localStorage.setItem("token", result.accessToken);
+      this.isAuth = result.isAuthenticated;
+
+      let role = JSON.parse(window.atob(result.accessToken.split(".")[1])).role;
+      localStorage.setItem("role", role);
+      this.isSysAdmin = role == "SystemAdministrator";
+      console.log('role: ' + role);
+      console.log(this.isSysAdmin);
+
+      console.log("access token: " + result.accessToken);
+    });
     this.recallJsFuntions();
   }
 
@@ -57,5 +75,13 @@ export class AppComponent implements OnInit {
         }
         window.scrollTo(0, 0);
       });
+  }
+
+  login() {
+    this.oidcSecurityService.authorize();
+  }
+
+  logout() {
+    this.oidcSecurityService.logoff();
   }
 }
