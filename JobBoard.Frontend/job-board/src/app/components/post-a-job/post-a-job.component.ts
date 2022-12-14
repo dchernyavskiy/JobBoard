@@ -19,9 +19,10 @@ export class PostAJobComponent implements OnInit {
   }
   
   createJob(){
-    // this.client.create4("1", this.job).subscribe((response) => {
-    //   console.log(response);
-    // });
+    console.log(this.job);
+    this.client.create4("1", this.job).subscribe((response) => {
+       console.log(response);
+    });
   }
 
   selectExp(exp){

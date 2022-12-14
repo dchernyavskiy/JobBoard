@@ -2661,6 +2661,7 @@ export interface CreateJobCommandDto {
     salaryStart?: number;
     salaryEnd?: number;
     experience?: number;
+    categoryId?: string;
 }
 
 export interface CreateJobEmployeeCommandDto {
@@ -2818,6 +2819,8 @@ export interface JobVm {
     salaryEnd?: number;
     experience?: number;
     employer?: Employer;
+    employment?: string | undefined;
+    category?: Category;
 }
 
 export interface LikedJobLookupDto {
