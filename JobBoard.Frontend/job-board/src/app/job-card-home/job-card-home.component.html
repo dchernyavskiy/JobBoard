@@ -1,0 +1,20 @@
+    <div class="company-item">
+        <div class="feature-top-right">
+            <span>Watch</span>
+        </div>
+
+        <div class="top">
+            <h3><a [routerLink]="['/jobs', job.id]">{{job.name}}</a></h3>
+            <p><i class="flaticon-appointment"></i> {{job.datePosted}} / {{job.location.city}}</p>
+        </div>
+
+        <div class="bottom">
+            <ul>
+                <li>{{job.category.name}}</li>
+                <li>{{job.employment}}</li>
+            </ul>
+            <span>Employer</span>
+            <h4>{{job.employer.name}}</h4>
+            <a [routerLink]="['/jobs', job.id]"><i class="flaticon-right-arrow"></i></a>
+        </div>
+    </div>
