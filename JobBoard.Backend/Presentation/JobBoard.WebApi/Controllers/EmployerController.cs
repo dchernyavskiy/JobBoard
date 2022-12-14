@@ -17,8 +17,8 @@ namespace JobBoard.WebApi.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet("GetProfileEmployer")]
-        public async Task<ActionResult<EmployerVm>> Get()
+        [HttpGet]
+        public async Task<ActionResult<EmployerVm>> GetProfile()
         {
             var query = new GetEmployerQuery
             {
