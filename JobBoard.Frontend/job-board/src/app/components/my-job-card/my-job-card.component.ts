@@ -29,6 +29,7 @@ export class MyJobCardComponent implements OnInit {
     this.client.delete3(this.job.id, "1").subscribe(res => {
       console.log(res);
     });
+    location.reload();
   }
 }
  
