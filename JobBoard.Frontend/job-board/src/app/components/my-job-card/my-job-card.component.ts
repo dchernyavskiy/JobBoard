@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Job } from 'src/app/api/api';
+import { Client, Job } from 'src/app/api/api';
 import { Router } from '@angular/router'; 
+import { JobCardComponent } from '../job-card/job-card.component';
 
 @Component({
   selector: 'app-my-job-card',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class MyJobCardComponent implements OnInit {
   @Input() public job : Job;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private client: Client) { }
 
   ngOnInit(): void { }
 
@@ -25,7 +26,9 @@ export class MyJobCardComponent implements OnInit {
   }
 
   delete() {
-    
+    this.client.delete3(this.job.id, "1").subscribe(res => {
+      console.log(res);
+    });
   }
 }
  

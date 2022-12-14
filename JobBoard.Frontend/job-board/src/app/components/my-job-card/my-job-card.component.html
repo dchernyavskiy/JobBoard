@@ -1,5 +1,10 @@
 <div class="employer-item">
     
     <h3><a [routerLink]="['/jobs', job.id]">{{job.name}}</a></h3>
-
+    <ul>
+        <li><a style="color: rgb(139, 30, 30);" (click)="update()">Update</a></li>
+        <li><a style="color: rgb(139, 30, 30);" (click)="delete()">Delete</a></li>
+    </ul>
+    <p>{{job.shortDiscription}}</p>
+    <span class="span-two">{{job.employment}}</span>
 </div>
