@@ -9,6 +9,7 @@ import {
   EmployerLookupDto,
 } from "src/app/api/api";
 import { ActivatedRoute, ParamMap } from "@angular/router";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: "app-jobsnew",
@@ -26,26 +27,22 @@ export class JobsnewComponent implements OnInit {
   public searchString: string;
   public resultCount: number = 0;
   public years: number[] = [5, 4, 3, 2, 1];
+  public sortString: string;
+  public sortBy: string[] = ["Name", "Salary", "Experience"];
+  public selected = this.sortBy[2];
 
   constructor(
     public client: Client,
     public jobService: JobService,
     public route: ActivatedRoute
   ) {
-    this.route.queryParams.subscribe(res =>{
+    this.route.queryParams.subscribe((res) => {
       this.initializeBody();
-      console.log(res.keyword);
-      console.log(res.locationId);
-      console.log(res.categoryId);
-      // this.body.filters.keyWord = res.keyword;
-      // this.body.filters.locationIds = [res.locationId];
-      // this.body.filters.categoryIds = [res.categoryId];
       this.getJobs();
     });
   }
 
   ngOnInit(): void {
-
     this.client.getAllGET("1").subscribe((res) => {
       this.categories = res.categories;
     });
@@ -56,7 +53,6 @@ export class JobsnewComponent implements OnInit {
 
     this.client.getAllGET2("1").subscribe((res) => {
       this.employers = res.employers;
-      console.log(res);
     });
   }
 
@@ -91,7 +87,9 @@ export class JobsnewComponent implements OnInit {
       },
     };
   }
+
   sort(sortBy: string) {
+    console.log(sortBy);
     switch (sortBy) {
       case "Name":
         this.body.sort.sortByName = true;
@@ -123,7 +121,6 @@ export class JobsnewComponent implements OnInit {
   }
 
   categoryFilter(id: string) {
-    console.log("id: " + id);
     if (this.body.filters.categoryIds == null) {
       this.body.filters.categoryIds = [];
       this.body.filters.categoryIds.push(id);
@@ -161,9 +158,8 @@ export class JobsnewComponent implements OnInit {
     }
     this.getJobs();
   }
-  
+
   setSalary() {
-    console.log("i am typing...");
     return new Promise((res) => {
       setTimeout(res, 3000);
       this.getJobs();
@@ -190,16 +186,15 @@ export class JobsnewComponent implements OnInit {
   }
 
   setSearch() {
-    console.log("keyword: " + this.body.filters.keyWord);
     this.getJobs();
   }
 
   reset() {
     var cbs = document.getElementsByTagName("input");
     for (let i = 0; i < cbs.length; i++) {
-      if(cbs[i].type == "checkbox") {
-        cbs[i].checked = false; 
-      } 
+      if (cbs[i].type == "checkbox") {
+        cbs[i].checked = false;
+      }
     }
     this.initializeBody();
     this.getJobs();

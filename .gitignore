@@ -409,3 +409,5 @@ JobBoard.Backend/Presentation/JobBoard.WebApi/obj/
 JobBoard.Identity/obj/
 
 JobBoard.Backend/Tests/JobBoard.Tests/obj/
+
+.idea/

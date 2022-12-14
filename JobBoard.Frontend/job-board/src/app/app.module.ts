@@ -8,31 +8,50 @@ import { FooterStyleTwoComponent } from "./components/common/footer-style-two/fo
 import { environment } from "../environments/environment";
 import { API_BASE_URL } from "./api/api";
 import { JobCardComponent } from "./components/job-card/job-card.component";
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { JobsnewComponent } from './components/jobsnew/jobsnew.component';
-import { FavouriteJobsComponent } from './components/favourite-jobs/favourite-jobs.component';
-import { EmployersComponent } from './components/employers/employers.component';
-import { EmployerCardComponent } from './components/employer-card/employer-card.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { PostAJobComponent } from './components/post-a-job/post-a-job.component';
-import { JobDetailsComponent } from './components/job-details/job-details.component';
+import { MyJobCardComponent } from "./components/my-job-card/my-job-card.component";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { CommonModule } from "@angular/common";
+import { JobsnewComponent } from "./components/jobsnew/jobsnew.component";
+import { FavouriteJobsComponent } from "./components/favourite-jobs/favourite-jobs.component";
+import { EmployersComponent } from "./components/employers/employers.component";
+import { EmployerCardComponent } from "./components/employer-card/employer-card.component";
+import { DashboardComponent } from "./components/dashboard/dashboard.component";
+import { PostAJobComponent } from "./components/post-a-job/post-a-job.component";
+import { JobDetailsComponent } from "./components/job-details/job-details.component";
 
-import { EmployersDetailsComponent } from './components/employers-details/employers-details.component';
-import { DefaultLayoutComponent } from './components/layouts/default-layout/default-layout.component';
-import { AdminLayoutComponent } from './components/layouts/admin-layout/admin-layout.component'
+import { EmployersDetailsComponent } from "./components/employers-details/employers-details.component";
+import { AdminLayoutComponent } from "./components/layouts/admin-layout/admin-layout.component";
+import { EmployerComponent } from "./components/admin/employer/employer.component";
+import { EmployeeComponent } from "./components/admin/employee/employee.component";
 @NgModule({
-  declarations: [AppComponent, HomeThreeComponent, JobDetailsComponent, FooterStyleTwoComponent, JobCardComponent, JobsnewComponent, FavouriteJobsComponent, EmployersComponent, EmployerCardComponent, DashboardComponent, PostAJobComponent, EmployersDetailsComponent, DefaultLayoutComponent, AdminLayoutComponent  ],
+  declarations: [
+    AppComponent,
+    HomeThreeComponent,
+    JobDetailsComponent,
+    FooterStyleTwoComponent,
+    JobCardComponent,
+    JobsnewComponent,
+    FavouriteJobsComponent,
+    EmployersComponent,
+    EmployerCardComponent,
+    DashboardComponent,
+    PostAJobComponent,
+    EmployersDetailsComponent,
+    AdminLayoutComponent,
+    EmployerComponent,
+    EmployeeComponent,
+  ],
   imports: [
     CommonModule,
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     FormsModule,
     AuthModule.forRoot({
       config: {
         authority: environment.authority,
-        redirectUrl: 'http://localhost:4200',
-        postLogoutRedirectUri: 'http://localhost:4200',
+        redirectUrl: "http://localhost:4200",
+        postLogoutRedirectUri: "http://localhost:4200",
         clientId: "job-board-web-app",
         scope: "openid profile JobBoardWebApi",
         responseType: "code",
@@ -44,10 +63,10 @@ import { AdminLayoutComponent } from './components/layouts/admin-layout/admin-la
   ],
   providers: [
     {
-        provide: API_BASE_URL,
-        useValue: environment.apiUri
+      provide: API_BASE_URL,
+      useValue: environment.apiUri,
     },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

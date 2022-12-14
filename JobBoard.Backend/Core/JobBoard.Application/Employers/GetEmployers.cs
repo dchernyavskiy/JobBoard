@@ -48,6 +48,7 @@ namespace JobBoard.Application.Employers
             public async Task<EmployersVm> Handle(GetEmployersQuery request, CancellationToken cancellationToken)
             {
                 var employers = await _context.Employers
+                    .Where(x => !x.IsBan)
                     .ProjectTo<EmployerLookupDto>(_mapper.ConfigurationProvider)
                     .ToListAsync();
 

@@ -14,6 +14,7 @@ namespace JobBoard.Application.Interfaces
         DbSet<Responsibility> Responsibilities { get; }
         DbSet<Location> Locations { get; }
         DbSet<JobEmployee> JobEmployees { get; }
+        DbSet<EmployeeLikeJob> EmployeeLikeJobs { get; }
 
         Task<int> SaveChangesAsync(CancellationToken token);
     }

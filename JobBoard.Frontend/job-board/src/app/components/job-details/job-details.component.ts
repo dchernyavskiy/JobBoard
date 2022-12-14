@@ -15,7 +15,6 @@ export class JobDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(res => {
-      console.log();
       this.client.get3(res.get("id"), '1').subscribe(res => {
         this.job = res;
       });

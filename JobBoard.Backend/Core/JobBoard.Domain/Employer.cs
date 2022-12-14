@@ -9,5 +9,6 @@
         public string Location { get; set; }
         public string PhotoLink { get; set; }
         public ICollection<Job> Jobs { get; set; }
+        public bool IsBan { get; set; }
     }
 }

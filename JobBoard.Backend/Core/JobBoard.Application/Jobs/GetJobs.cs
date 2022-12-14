@@ -80,7 +80,8 @@ namespace JobBoard.Application.Jobs
                 var entities = _context.Jobs
                     .Include(x => x.Location)
                     .Include(x => x.Employer)
-                    .Include(x => x.Category) as IQueryable<Job>;
+                    .Include(x => x.Category)
+                    .Where(x => !x.Employer.IsBan);
 
                 var resultCount = 0;
 
