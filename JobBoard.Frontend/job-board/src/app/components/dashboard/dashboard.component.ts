@@ -12,7 +12,6 @@ export class DashboardComponent implements OnInit {
   public employee: EmployeeVm = {};
   public employer: EmployerVm = {};
   public appliedJobs: AppliedJobLookupDto[] = [];
-
   constructor(public client: Client, public oidcSecurityService: OidcSecurityService) {}
 
   ngOnInit(): void {
