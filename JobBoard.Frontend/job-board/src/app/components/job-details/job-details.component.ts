@@ -40,4 +40,7 @@ export class JobDetailsComponent implements OnInit {
       }
     }
   }
+  setfavourite(){
+    
+  }
 }
