@@ -29,7 +29,7 @@ namespace JobBoard.Persistence
 
         public DbSet<JobEmployee> JobEmployees => Set<JobEmployee>();
 
-        public DbSet<EmployeeLikeJob> EmployeeLikeJobs => throw new NotImplementedException();
+        public DbSet<EmployeeLikeJob> EmployeeLikeJobs => Set< EmployeeLikeJob>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
