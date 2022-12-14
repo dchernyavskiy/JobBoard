@@ -2656,7 +2656,6 @@ export interface CreateEducationCommandDto {
 export interface CreateJobCommandDto {
     name?: string | undefined;
     discription?: string | undefined;
-    datePosted?: Date;
     location?: string | undefined;
     hours?: number;
     salaryStart?: number;

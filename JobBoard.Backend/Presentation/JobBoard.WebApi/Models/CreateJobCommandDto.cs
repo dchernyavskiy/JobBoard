@@ -8,7 +8,6 @@ namespace JobBoard.WebApi.Models
     {
         public string Name { get; set; }
         public string Discription { get; set; }
-        public DateTime DatePosted { get; set; }
         public string Location { get; set; }
         public int Hours { get; set; }
         public int SalaryStart { get; set; }

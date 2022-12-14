@@ -169,6 +169,7 @@ namespace JobBoard.WebApi.Controllers
         public async Task<ActionResult<Guid>> UCreate([FromBody] CreateJobCommandDto commandDto, Guid UserId)
         {
             var command = _mapper.Map<CreateJobCommand>(commandDto);
+            command.DatePosted = DateTime.Now;
             command.EmployerId = UserId;
             var vm = await Mediator.Send(command);
             return Ok(vm);
@@ -178,6 +179,7 @@ namespace JobBoard.WebApi.Controllers
         public async Task<ActionResult<Guid>> Create([FromBody] CreateJobCommandDto commandDto)
         {
             var command = _mapper.Map<CreateJobCommand>(commandDto);
+            command.DatePosted = DateTime.Now;
             command.EmployerId = UserId;
             var vm = await Mediator.Send(command);
             return Ok(vm);
