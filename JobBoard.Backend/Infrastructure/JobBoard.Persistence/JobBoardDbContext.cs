@@ -6,8 +6,7 @@ namespace JobBoard.Persistence
 {
     public class JobBoardDbContext : DbContext, IJobBoardDbContext
     {
-
-        public JobBoardDbContext(DbContextOptions<JobBoardDbContext> opts) : base(opts) 
+        public JobBoardDbContext(DbContextOptions<JobBoardDbContext> opts) : base(opts)
         {
             Database.EnsureCreated();
         }
@@ -29,6 +28,8 @@ namespace JobBoard.Persistence
         public DbSet<Location> Locations => Set<Location>();
 
         public DbSet<JobEmployee> JobEmployees => Set<JobEmployee>();
+
+        public DbSet<EmployeeLikeJob> EmployeeLikeJobs => throw new NotImplementedException();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

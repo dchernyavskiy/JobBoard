@@ -24,14 +24,14 @@
         <ul class="job-list-item align-items-center">
           <li>
             <a href="#"
-              >Results Found <span> ({{ resultCount }}) </span></a
+              >Results Found <span> ({{ selected }}) </span></a
             >
           </li>
           <li>
             <span class="sort">Sort By:</span>
             <form>
               <div class="form-group" >
-                <select name="sort"   (change)="sort($event.target.value)">
+                <select name="sort" (change)="sort($event.target.value)">
                   <option value="Name">Name</option>
                   <option value="Salary">Salary</option>
                   <option value="Experience">Experience</option>

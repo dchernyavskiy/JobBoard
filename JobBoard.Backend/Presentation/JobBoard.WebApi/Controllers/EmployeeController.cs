@@ -12,6 +12,17 @@ namespace JobBoard.WebApi.Controllers;
 [Route("api/v{apiVersion}/[controller]/[action]")]
 public class EmployeeController : BaseController
 {
+    [HttpGet("{id}")]
+    public async Task<ActionResult<EmployeeVm>> Get(Guid UserId)
+    {
+        var query = new GetEmployeeQuery
+        {
+            Id = UserId,
+        };
+        var result = await Mediator.Send(query);
+        return Ok(result);
+    }
+
     [HttpGet]
     public async Task<ActionResult<EmployeeVm>> Get()
     {
@@ -22,7 +33,6 @@ public class EmployeeController : BaseController
         var result = await Mediator.Send(query);
         return Ok(result);
     }
-
 
     [HttpPut]
     public async Task<ActionResult> Update([FromBody] UpdateEmployeeCommandDto command)

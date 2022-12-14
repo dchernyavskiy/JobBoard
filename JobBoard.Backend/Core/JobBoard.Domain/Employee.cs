@@ -8,8 +8,7 @@ namespace JobBoard.Domain
         public string Email { get; set; }
         public string Phone { get; set; }
         public string CVLink { get; set; }
-
-        //public ICollection<JobEmployee> AppliedJobs { get; set; }
+        public bool IsBan { get; set; }
         public ICollection<JobEmployee> AppliedJobs { get; set; }
     }
 }

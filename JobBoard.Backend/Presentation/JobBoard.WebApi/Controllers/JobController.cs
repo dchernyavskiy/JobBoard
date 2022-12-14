@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using JobBoard.Application.Interfaces;
+using JobBoard.Application.Jobs;
 using JobBoard.Domain;
 using JobBoard.WebApi.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -9,6 +10,8 @@ using static JobBoard.Application.Jobs.DeleteJob;
 using static JobBoard.Application.Jobs.GetAppliedJobs;
 using static JobBoard.Application.Jobs.GetJob;
 using static JobBoard.Application.Jobs.GetJobs;
+using static JobBoard.Application.Jobs.GetLikedJobs;
+using static JobBoard.Application.Jobs.LikeJob;
 using static JobBoard.Application.Jobs.UpdateEducation;
 
 namespace JobBoard.WebApi.Controllers
@@ -25,6 +28,52 @@ namespace JobBoard.WebApi.Controllers
         {
             _mapper = mapper;
             _context = context;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<GetLikedJobs.LikedJobsVm>> UGetLikedJobs(Guid UserId)
+        {
+            var query = new GetLikedJobsQuery
+            {
+                EmployeeId = UserId
+            };
+            var result = await Mediator.Send(query);
+            return Ok(result);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<GetLikedJobs.LikedJobsVm>> GetLikedJobs()
+        {
+            var query = new GetLikedJobsQuery
+            {
+                EmployeeId = UserId
+            };
+            var result = await Mediator.Send(query);
+            return Ok(result);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Guid>> LikeJob(Guid jobId)
+        {
+            var command = new LikeJobCommand
+            {
+                EmployeeId = UserId,
+                JobId = jobId
+            };
+            var result = await Mediator.Send(command);
+            return Ok(result);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<Guid>> ULikeJob(Guid UserId, Guid jobId)
+        {
+            var command = new LikeJobCommand
+            {
+                EmployeeId = UserId,
+                JobId = jobId
+            };
+            var result = await Mediator.Send(command);
+            return Ok(result);
         }
 
         [HttpGet("UGetAppliedJobs")]
@@ -74,7 +123,7 @@ namespace JobBoard.WebApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<JobsVm>> GetAll(GetJobsQuery query)
+        public async Task<ActionResult<GetJobs.JobsVm>> GetAll(GetJobsQuery query)
         {
             var vm = await Mediator.Send(query);
             return Ok(vm);

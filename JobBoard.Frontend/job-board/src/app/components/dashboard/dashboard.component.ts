@@ -17,8 +17,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     
-    // for employee
-    this.client.get("1").subscribe((res) => {
+    this.client.get2("1").subscribe((res) => {
       this.employee = res as EmployeeVm;
     });
 
@@ -36,7 +35,6 @@ export class DashboardComponent implements OnInit {
 
   updateEmployee() {
     this.client.update2("1", this.employee).subscribe((res) => {
-      console.log("succesfuly employee updated");
     });
   }
 

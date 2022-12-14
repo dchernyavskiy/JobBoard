@@ -23,7 +23,6 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-      console.log('i am in guard');
     return this.oidcSecurityService.isAuthenticated();
   }
 }

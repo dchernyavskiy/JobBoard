@@ -10,10 +10,8 @@ export class JobService {
   getAll(body: GetJobsQuery) : JobLookupDto[] {
     let jobs : JobLookupDto[];
     this.client.getAllPOST('1', body).subscribe(result =>{
-      console.log(result);
       jobs = result.jobs;  
     });
-    console.log("before return: " + jobs);
     return jobs;
   }
 }
