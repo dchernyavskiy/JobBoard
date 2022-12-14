@@ -16,7 +16,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.client.get("1").subscribe((res) => {
+    this.client.get2("1").subscribe((res) => {
       this.employee = res as EmployeeVm;
     });
     this.client.getAppliedJobs("1").subscribe((res) => {

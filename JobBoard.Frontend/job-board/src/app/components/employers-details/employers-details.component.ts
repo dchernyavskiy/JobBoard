@@ -15,7 +15,7 @@ export class EmployersDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params =>{
-      this.client.get2(params.id,'1').subscribe(res =>{
+      this.client.get3(params.id,'1').subscribe(res =>{
         this.employer = res;
     (this.employer);
       })
