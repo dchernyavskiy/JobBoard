@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { OidcSecurityService } from "angular-auth-oidc-client";
-import { AppliedJobLookupDto, Client, EmployeeVm } from "src/app/api/api";
+import { AppliedJobLookupDto, JobLookupDto, Client, EmployeeVm, EmployerVm } from "src/app/api/api";
 
 @Component({
   selector: "app-dashboard",
@@ -10,22 +10,38 @@ import { AppliedJobLookupDto, Client, EmployeeVm } from "src/app/api/api";
 })
 export class DashboardComponent implements OnInit {
   public employee: EmployeeVm = {};
+  public employer: EmployerVm = {};
   public appliedJobs: AppliedJobLookupDto[] = [];
   constructor(public client: Client, public oidcSecurityService: OidcSecurityService) {}
 
   ngOnInit(): void {
     
+    // for employee
     this.client.get("1").subscribe((res) => {
       this.employee = res as EmployeeVm;
     });
+
     this.client.getAppliedJobs("1").subscribe((res) => {
       this.appliedJobs = res.jobs as AppliedJobLookupDto[];
+    });
+
+    // for employer
+    this.oidcSecurityService.checkAuth().subscribe(res => {
+      this.client.get2(res.userData.sub, "1").subscribe((res) => {
+        this.employer = res as EmployerVm;
+      });
     });
   }
 
   updateEmployee() {
     this.client.update2("1", this.employee).subscribe((res) => {
       console.log("succesfuly employee updated");
+    });
+  }
+
+  updateEmployer() {
+    this.client.update3("1", this.employer).subscribe((res) => {
+      console.log("succesfuly employer updated");
     });
   }
 
