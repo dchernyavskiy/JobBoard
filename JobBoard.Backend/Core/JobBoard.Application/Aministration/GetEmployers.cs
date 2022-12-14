@@ -12,16 +12,16 @@ namespace JobBoard.Application.Aministration
 {
     public class GetEmployers
     {
-        public class EmployersVm
+        public class AdminEmployersVm
         {
             public IList<Employer> Employers { get; set; }
         }
 
-        public class GetEmployersQuery : IRequest<EmployersVm>
+        public class GetEmployersQuery : IRequest<AdminEmployersVm>
         {
         }
 
-        public class GetEmployersQueryHandler : IRequestHandler<GetEmployersQuery, EmployersVm>
+        public class GetEmployersQueryHandler : IRequestHandler<GetEmployersQuery, AdminEmployersVm>
         {
             private readonly IJobBoardDbContext _context;
 
@@ -30,9 +30,9 @@ namespace JobBoard.Application.Aministration
                 _context = context;
             }
 
-            public async Task<EmployersVm> Handle(GetEmployersQuery request, CancellationToken cancellationToken)
+            public async Task<AdminEmployersVm> Handle(GetEmployersQuery request, CancellationToken cancellationToken)
             {
-                return new EmployersVm { Employers = await _context.Employers.ToListAsync() };
+                return new AdminEmployersVm { Employers = await _context.Employers.ToListAsync() };
             }
         }
     }
