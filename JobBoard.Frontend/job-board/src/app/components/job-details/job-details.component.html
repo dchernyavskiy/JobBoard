@@ -6,7 +6,6 @@
         <div class="row align-items-end">
           <div class="col-lg-8 col-md-12">
             <div class="left">
-              <!-- <img src="assets/img/job-details1.png" alt="Details" /> -->
               <h2>{{ job.name }}</h2>
               <ul>
                 <li><i class="bx bx-pie-chart-alt-2"></i> Sales & Marketing</li>
@@ -51,11 +50,6 @@
               content here.
             </p>
           </div>
-
-          <div class="details-inner">
-            <h3>Job Responsibilities</h3>
-            <!-- <p>{{ job.responsibilities }}</p> -->
-          </div>
         </div>
       </div>
 
@@ -73,7 +67,7 @@
               <li>
                 <img src="assets/img/job-details-icon.png" alt="Details" />
                 <h4>Category</h4>
-                <span>Sales & Marketing</span>
+                <span>{{job}}</span>
               </li>
               <li>
                 <img src="assets/img/job-details-icon.png" alt="Details" />
@@ -138,7 +132,3 @@
   </div>
 </div>
 <!-- End Job Details -->
-
-<!-- Footer -->
-<app-footer-style-two></app-footer-style-two>
-<!-- End Footer -->

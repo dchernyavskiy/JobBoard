@@ -51,16 +51,11 @@ namespace JobBoard.Application.Jobs
 
             public async Task<AppliedJobsVm> Handle(GetAppliedJobsQuery request, CancellationToken cancellationToken)
             {
-                var a = await _context.JobEmployees
-                    .Include(x => x.Job)
-                        .ThenInclude(x => x.Category)
-                    .Where(x => x.EmployeeId == request.EmployeeId)
-                    .Select(x => x.Job)
-                    .ToListAsync();
-
                 var jobs = await _context.JobEmployees
                     .Include(x => x.Job)
                         .ThenInclude(x => x.Category)
+                    .Include(x => x.Job)
+                        .ThenInclude(x => x.Location)
                     .Where(x => x.EmployeeId == request.EmployeeId)
                     .Select(x => x.Job)
                     .ProjectTo<AppliedJobLookupDto>(_mapper.ConfigurationProvider)

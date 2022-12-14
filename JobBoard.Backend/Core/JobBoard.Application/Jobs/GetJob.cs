@@ -21,8 +21,9 @@ namespace JobBoard.Application.Jobs
             public int SalaryStart { get; set; }
             public int SalaryEnd { get; set; }
             public int Experience { get; set; }
-
             public Employer Employer { get; set; }
+            public string Employment { get; set; }
+            public Category Category { get; set; }
 
             public void Mapping(Profile profile)
             {
