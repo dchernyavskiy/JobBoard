@@ -17,6 +17,17 @@ namespace JobBoard.WebApi.Controllers
             _mapper = mapper;
         }
 
+        [HttpGet("GetProfileEmployer")]
+        public async Task<ActionResult<EmployerVm>> Get()
+        {
+            var query = new GetEmployerQuery
+            {
+                EmployerId = UserId
+            };
+            var result = await Mediator.Send(query);
+            return Ok(result);
+        }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<EmployerVm>> Get(Guid id)
         {

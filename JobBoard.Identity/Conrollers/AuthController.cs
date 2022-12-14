@@ -342,5 +342,23 @@ namespace JobBoard.Identity.Conrollers
 
             throw new Exception("Something was wrong");
         }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) throw new Exception("User not found");
+            await _userManager.DeleteAsync(user);
+            return Ok();
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> UDelete(Guid id)
+        {
+            var user = await _userManager.FindByIdAsync(id.ToString());
+            if (user == null) throw new Exception("User not found");
+            await _userManager.DeleteAsync(user);
+            return Ok();
+        }
     }
 }
