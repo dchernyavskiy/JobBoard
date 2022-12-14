@@ -8,7 +8,7 @@ import { FooterStyleTwoComponent } from "./components/common/footer-style-two/fo
 import { environment } from "../environments/environment";
 import { API_BASE_URL } from "./api/api";
 import { JobCardComponent } from "./components/job-card/job-card.component";
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { JobsnewComponent } from './components/jobsnew/jobsnew.component';
 import { FavouriteJobsComponent } from './components/favourite-jobs/favourite-jobs.component';
@@ -27,6 +27,7 @@ import { AdminLayoutComponent } from './components/layouts/admin-layout/admin-la
     CommonModule,
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     FormsModule,
     AuthModule.forRoot({
       config: {

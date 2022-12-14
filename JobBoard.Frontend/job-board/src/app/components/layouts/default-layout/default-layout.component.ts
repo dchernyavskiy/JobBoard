@@ -12,6 +12,9 @@ export class DefaultLayoutComponent implements OnInit {
   constructor(public oidcSecurityService: OidcSecurityService) {}
 
   ngOnInit(): void {
+    this.oidcSecurityService.checkAuth().subscribe(res =>{
+      console.log(res.userData);
+    });
     this.oidcSecurityService.checkAuth().subscribe((result) => {
       localStorage.setItem("token", result.accessToken);
       this.isAuth = result.isAuthenticated;

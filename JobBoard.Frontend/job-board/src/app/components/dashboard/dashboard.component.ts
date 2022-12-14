@@ -26,7 +26,6 @@ export class DashboardComponent implements OnInit {
 
   updateEmployee() {
     this.client.update2("1", this.employee).subscribe((res) => {
-      console.log("succesfuly employee updated");
     });
   }
 

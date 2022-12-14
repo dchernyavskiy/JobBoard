@@ -17,7 +17,6 @@ export class JobCardComponent implements OnInit {
 
   openJobDetails() {
     this.router.navigate(['/jobs/:id', {id : this.job.id}]); 
-    console.log(this.job)
   }
 
   applyJob() {

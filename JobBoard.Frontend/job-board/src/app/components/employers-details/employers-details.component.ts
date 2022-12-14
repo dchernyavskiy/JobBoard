@@ -17,7 +17,7 @@ export class EmployersDetailsComponent implements OnInit {
     this.route.queryParams.subscribe(params =>{
       this.client.get2(params.id,'1').subscribe(res =>{
         this.employer = res;
-        console.log(this.employer);
+    (this.employer);
       })
     })
   }
