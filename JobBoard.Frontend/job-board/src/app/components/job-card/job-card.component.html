@@ -5,7 +5,7 @@
             <li><i class="flaticon-send"></i> {{job.location.city}}</li>
             <li><a><i class='bx bx-heart' (click)="addtoFavourites"></i>Save</a></li>
             <li><input type="checkbox"><i class="flaticon-add133"></i>
-            <a style="color: rgb(139, 30, 30);" (click)="applyJob">Apply Now</a></li>
+            <a style="color: rgb(139, 30, 30);" (click)="applyJob()">Apply Now</a></li>
         </ul>
         <p>{{job.shortDiscription}}</p>
         <span class="span-one">{{job.category.name}}</span>

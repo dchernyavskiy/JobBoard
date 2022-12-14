@@ -11,7 +11,6 @@ import { AppliedJobLookupDto, Client, EmployeeVm } from "src/app/api/api";
 export class DashboardComponent implements OnInit {
   public employee: EmployeeVm = {};
   public appliedJobs: AppliedJobLookupDto[] = [];
-
   constructor(public client: Client, public oidcSecurityService: OidcSecurityService) {}
 
   ngOnInit(): void {
