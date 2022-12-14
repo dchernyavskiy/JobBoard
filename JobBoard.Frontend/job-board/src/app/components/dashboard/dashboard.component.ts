@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit {
 
     // for employer
     this.oidcSecurityService.checkAuth().subscribe(res => {
-      this.client.get2(res.userData.sub, "1").subscribe((res) => {
+      this.client.get3(res.userData.sub, "1").subscribe((res) => {
         this.employer = res as EmployerVm;
       });
     });
