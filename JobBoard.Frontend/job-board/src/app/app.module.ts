@@ -8,6 +8,7 @@ import { FooterStyleTwoComponent } from "./components/common/footer-style-two/fo
 import { environment } from "../environments/environment";
 import { API_BASE_URL } from "./api/api";
 import { JobCardComponent } from "./components/job-card/job-card.component";
+import { MyJobCardComponent } from "./components/my-job-card/my-job-card.component";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { JobsnewComponent } from './components/jobsnew/jobsnew.component';
@@ -22,7 +23,7 @@ import { EmployersDetailsComponent } from './components/employers-details/employ
 import { DefaultLayoutComponent } from './components/layouts/default-layout/default-layout.component';
 import { AdminLayoutComponent } from './components/layouts/admin-layout/admin-layout.component'
 @NgModule({
-  declarations: [AppComponent, HomeThreeComponent, JobDetailsComponent, FooterStyleTwoComponent, JobCardComponent, JobsnewComponent, FavouriteJobsComponent, EmployersComponent, EmployerCardComponent, DashboardComponent, PostAJobComponent, EmployersDetailsComponent, DefaultLayoutComponent, AdminLayoutComponent  ],
+  declarations: [AppComponent, HomeThreeComponent, JobDetailsComponent, FooterStyleTwoComponent, JobCardComponent, MyJobCardComponent, JobsnewComponent, FavouriteJobsComponent, EmployersComponent, EmployerCardComponent, DashboardComponent, PostAJobComponent, EmployersDetailsComponent, DefaultLayoutComponent, AdminLayoutComponent  ],
   imports: [
     CommonModule,
     BrowserModule,
