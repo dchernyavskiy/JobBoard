@@ -12,8 +12,8 @@ namespace JobBoard.WebApi.Controllers;
 [Route("api/v{apiVersion}/[controller]/[action]")]
 public class EmployeeController : BaseController
 {
-    [HttpGet("{id}")]
-    public async Task<ActionResult<EmployeeVm>> Get(Guid UserId)
+    [HttpGet]
+    public async Task<ActionResult<EmployeeVm>> UGet(Guid UserId)
     {
         var query = new GetEmployeeQuery
         {

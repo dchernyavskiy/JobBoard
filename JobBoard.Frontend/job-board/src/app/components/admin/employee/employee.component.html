@@ -1,0 +1,62 @@
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Job Board</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+                <a [routerLink]="['../../admin/employers']">Employers</a>
+            </li>
+            <li>
+                <a [routerLink]="['../../admin/employees']">Employees</a>
+            </li>
+        </ul>
+        
+        <ul class="list-unstyled CTAs">
+            <li>
+                <a class="download">Exit</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <h3>Employees</h3>
+            </div>
+        </nav>
+                
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of employees">
+                    <td>{{e.firstName}}</td>
+                    <td>{{e.lastName}}</td>
+                    <td>{{e.email}}</td>
+                    <td>{{e.phone}}</td>
+                    <td>
+                        <button 
+                        class="btn "
+                        [ngClass]="e.isBan ? 'btn-info' : 'btn-danger' "
+                        (click)="ban(e)">
+                        {{e.isBan ? "Unban" : "Ban"}}
+                    </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    
+    </div>
+</div>
