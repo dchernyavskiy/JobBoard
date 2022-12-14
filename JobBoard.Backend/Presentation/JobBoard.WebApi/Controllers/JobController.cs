@@ -12,6 +12,7 @@ using static JobBoard.Application.Jobs.GetJob;
 using static JobBoard.Application.Jobs.GetJobs;
 using static JobBoard.Application.Jobs.GetLikedJobs;
 using static JobBoard.Application.Jobs.LikeJob;
+using static JobBoard.Application.Jobs.UnlikeJob;
 using static JobBoard.Application.Jobs.UpdateEducation;
 
 namespace JobBoard.WebApi.Controllers
@@ -28,6 +29,30 @@ namespace JobBoard.WebApi.Controllers
         {
             _mapper = mapper;
             _context = context;
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> UUnlikeJob(Guid jobId, Guid UserId)
+        {
+            var command = new UnlikeJobCommand
+            {
+                EmployeeId = UserId,
+                JobId = jobId
+            };
+            await Mediator.Send(command);
+            return NoContent();
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> UnlikeJob(Guid jobId)
+        {
+            var command = new UnlikeJobCommand
+            {
+                EmployeeId = UserId,
+                JobId = jobId
+            };
+            await Mediator.Send(command);
+            return NoContent();
         }
 
         [HttpGet]
