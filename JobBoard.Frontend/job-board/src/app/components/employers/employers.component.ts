@@ -21,11 +21,13 @@ export class EmployersComponent implements OnInit {
   getEmployers(){
     this.client.getAllGET2('1').subscribe(res =>{
       this.employers = (res.employers as EmployerLookupDto[])
+      
       .filter((u, i) => i >= (this.page-1)*this.count &&
        i <= ((this.page-1)*this.count) + this.count);
 
        this.pageCount  = res.employers.length;
     });
+    
   }
 
 
