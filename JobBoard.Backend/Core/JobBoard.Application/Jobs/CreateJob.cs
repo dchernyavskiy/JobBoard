@@ -17,6 +17,7 @@ namespace JobBoard.Application.Jobs
             public int SalaryEnd { get; set; }
             public int Experience { get; set; }
             public Guid EmployerId { get; set; }
+            public string Employment { get; set; }
         }
 
         public class CreateJobCommandHandler : IRequestHandler<CreateJobCommand, Guid>
