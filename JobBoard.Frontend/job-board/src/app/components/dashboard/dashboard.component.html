@@ -305,9 +305,8 @@
             id="v-pills-messages"
             role="tabpanel"
             aria-labelledby="v-pills-messages-tab"
-            *ngFor="let job of appliedJobs"
           >
-            <div class="employer-item">
+            <div class="employer-item"  *ngFor="let job of appliedJobs" [routerLink]="['/jobs', job.id]">
               <a routerLink="/job-details">
                 <img src="assets/img/home-one/job1.png" alt="Employer" />
                 <h3>{{job.name}}</h3>
