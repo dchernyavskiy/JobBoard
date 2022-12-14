@@ -17,7 +17,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.client.get2("1").subscribe((res) => {
+    this.client.get("1").subscribe((res) => {
       this.employee = res as EmployeeVm;
     });
 
@@ -26,10 +26,9 @@ export class DashboardComponent implements OnInit {
     });
 
     // for employer
-    this.oidcSecurityService.checkAuth().subscribe(res => {
-      this.client.get3(res.userData.sub, "1").subscribe((res) => {
-        this.employer = res as EmployerVm;
-      });
+    this.client.getProfile("1").subscribe((res) => {
+      this.employer = res as EmployerVm;
+      console.log((res as EmployerVm).jobs);
     });
   }
 

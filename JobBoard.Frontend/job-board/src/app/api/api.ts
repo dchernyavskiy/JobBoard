@@ -729,18 +729,70 @@ export class Client extends ClientBase {
      * @param userId (optional) 
      * @return Success
      */
-    get(userId: string | undefined, apiVersion: string, id: string): Observable<EmployeeVm> {
-        let url_ = this.baseUrl + "/api/v{apiVersion}/Employee/Get/{id}?";
+    uGet(userId: string | undefined, apiVersion: string): Observable<EmployeeVm> {
+        let url_ = this.baseUrl + "/api/v{apiVersion}/Employee/UGet?";
         if (apiVersion === undefined || apiVersion === null)
             throw new Error("The parameter 'apiVersion' must be defined.");
         url_ = url_.replace("{apiVersion}", encodeURIComponent("" + apiVersion));
-        if (id === undefined || id === null)
-            throw new Error("The parameter 'id' must be defined.");
-        url_ = url_.replace("{id}", encodeURIComponent("" + id));
         if (userId === null)
             throw new Error("The parameter 'userId' cannot be null.");
         else if (userId !== undefined)
             url_ += "UserId=" + encodeURIComponent("" + userId) + "&";
+        url_ = url_.replace(/[?&]$/, "");
+
+        let options_ : any = {
+            observe: "response",
+            responseType: "blob",
+            headers: new HttpHeaders({
+                "Accept": "text/plain"
+            })
+        };
+
+        return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
+            return this.http.request("get", url_, transformedOptions_);
+        })).pipe(_observableMergeMap((response_: any) => {
+            return this.processUGet(response_);
+        })).pipe(_observableCatch((response_: any) => {
+            if (response_ instanceof HttpResponseBase) {
+                try {
+                    return this.processUGet(response_ as any);
+                } catch (e) {
+                    return _observableThrow(e) as any as Observable<EmployeeVm>;
+                }
+            } else
+                return _observableThrow(response_) as any as Observable<EmployeeVm>;
+        }));
+    }
+
+    protected processUGet(response: HttpResponseBase): Observable<EmployeeVm> {
+        const status = response.status;
+        const responseBlob =
+            response instanceof HttpResponse ? response.body :
+            (response as any).error instanceof Blob ? (response as any).error : undefined;
+
+        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
+        if (status === 200) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            let result200: any = null;
+            result200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver) as EmployeeVm;
+            return _observableOf(result200);
+            }));
+        } else if (status !== 200 && status !== 204) {
+            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
+            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+            }));
+        }
+        return _observableOf<EmployeeVm>(null as any);
+    }
+
+    /**
+     * @return Success
+     */
+    get(apiVersion: string): Observable<EmployeeVm> {
+        let url_ = this.baseUrl + "/api/v{apiVersion}/Employee/Get";
+        if (apiVersion === undefined || apiVersion === null)
+            throw new Error("The parameter 'apiVersion' must be defined.");
+        url_ = url_.replace("{apiVersion}", encodeURIComponent("" + apiVersion));
         url_ = url_.replace(/[?&]$/, "");
 
         let options_ : any = {
@@ -768,61 +820,6 @@ export class Client extends ClientBase {
     }
 
     protected processGet(response: HttpResponseBase): Observable<EmployeeVm> {
-        const status = response.status;
-        const responseBlob =
-            response instanceof HttpResponse ? response.body :
-            (response as any).error instanceof Blob ? (response as any).error : undefined;
-
-        let _headers: any = {}; if (response.headers) { for (let key of response.headers.keys()) { _headers[key] = response.headers.get(key); }}
-        if (status === 200) {
-            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
-            let result200: any = null;
-            result200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver) as EmployeeVm;
-            return _observableOf(result200);
-            }));
-        } else if (status !== 200 && status !== 204) {
-            return blobToText(responseBlob).pipe(_observableMergeMap(_responseText => {
-            return throwException("An unexpected server error occurred.", status, _responseText, _headers);
-            }));
-        }
-        return _observableOf<EmployeeVm>(null as any);
-    }
-
-    /**
-     * @return Success
-     */
-    get2(apiVersion: string): Observable<EmployeeVm> {
-        let url_ = this.baseUrl + "/api/v{apiVersion}/Employee/Get";
-        if (apiVersion === undefined || apiVersion === null)
-            throw new Error("The parameter 'apiVersion' must be defined.");
-        url_ = url_.replace("{apiVersion}", encodeURIComponent("" + apiVersion));
-        url_ = url_.replace(/[?&]$/, "");
-
-        let options_ : any = {
-            observe: "response",
-            responseType: "blob",
-            headers: new HttpHeaders({
-                "Accept": "text/plain"
-            })
-        };
-
-        return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
-            return this.http.request("get", url_, transformedOptions_);
-        })).pipe(_observableMergeMap((response_: any) => {
-            return this.processGet2(response_);
-        })).pipe(_observableCatch((response_: any) => {
-            if (response_ instanceof HttpResponseBase) {
-                try {
-                    return this.processGet2(response_ as any);
-                } catch (e) {
-                    return _observableThrow(e) as any as Observable<EmployeeVm>;
-                }
-            } else
-                return _observableThrow(response_) as any as Observable<EmployeeVm>;
-        }));
-    }
-
-    protected processGet2(response: HttpResponseBase): Observable<EmployeeVm> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -958,7 +955,7 @@ export class Client extends ClientBase {
     /**
      * @return Success
      */
-    get3(id: string, apiVersion: string): Observable<EmployerVm> {
+    get2(id: string, apiVersion: string): Observable<EmployerVm> {
         let url_ = this.baseUrl + "/api/v{apiVersion}/Employer/Get/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -979,11 +976,11 @@ export class Client extends ClientBase {
         return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
             return this.http.request("get", url_, transformedOptions_);
         })).pipe(_observableMergeMap((response_: any) => {
-            return this.processGet3(response_);
+            return this.processGet2(response_);
         })).pipe(_observableCatch((response_: any) => {
             if (response_ instanceof HttpResponseBase) {
                 try {
-                    return this.processGet3(response_ as any);
+                    return this.processGet2(response_ as any);
                 } catch (e) {
                     return _observableThrow(e) as any as Observable<EmployerVm>;
                 }
@@ -992,7 +989,7 @@ export class Client extends ClientBase {
         }));
     }
 
-    protected processGet3(response: HttpResponseBase): Observable<EmployerVm> {
+    protected processGet2(response: HttpResponseBase): Observable<EmployerVm> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :
@@ -1662,7 +1659,7 @@ export class Client extends ClientBase {
     /**
      * @return Success
      */
-    get4(id: string, apiVersion: string): Observable<JobVm> {
+    get3(id: string, apiVersion: string): Observable<JobVm> {
         let url_ = this.baseUrl + "/api/v{apiVersion}/Job/Get/{id}";
         if (id === undefined || id === null)
             throw new Error("The parameter 'id' must be defined.");
@@ -1683,11 +1680,11 @@ export class Client extends ClientBase {
         return _observableFrom(this.transformOptions(options_)).pipe(_observableMergeMap(transformedOptions_ => {
             return this.http.request("get", url_, transformedOptions_);
         })).pipe(_observableMergeMap((response_: any) => {
-            return this.processGet4(response_);
+            return this.processGet3(response_);
         })).pipe(_observableCatch((response_: any) => {
             if (response_ instanceof HttpResponseBase) {
                 try {
-                    return this.processGet4(response_ as any);
+                    return this.processGet3(response_ as any);
                 } catch (e) {
                     return _observableThrow(e) as any as Observable<JobVm>;
                 }
@@ -1696,7 +1693,7 @@ export class Client extends ClientBase {
         }));
     }
 
-    protected processGet4(response: HttpResponseBase): Observable<JobVm> {
+    protected processGet3(response: HttpResponseBase): Observable<JobVm> {
         const status = response.status;
         const responseBlob =
             response instanceof HttpResponse ? response.body :

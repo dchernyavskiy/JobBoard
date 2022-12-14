@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OidcSecurityService } from 'angular-auth-oidc-client';
 import { Client, Employee } from 'src/app/api/api';
 
 @Component({
@@ -7,9 +8,10 @@ import { Client, Employee } from 'src/app/api/api';
   styleUrls: ['./employee.component.scss']
 })
 export class EmployeeComponent implements OnInit {
+  public count = 1;
   public employees: Employee[];
 
-  constructor(private client: Client) { }
+  constructor(private client: Client, public oidcSecurityService: OidcSecurityService) { }
 
   ngOnInit(): void {
     this.client.getEmployees('1').subscribe(res =>{
@@ -24,4 +26,7 @@ export class EmployeeComponent implements OnInit {
     });
   }
 
+  exit() {
+    this.oidcSecurityService.logoff();
+  }
 }
