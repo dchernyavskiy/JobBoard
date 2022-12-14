@@ -1545,7 +1545,7 @@ export class Client extends ClientBase {
      * @return Success
      */
     getAppliedJobs(apiVersion: string): Observable<AppliedJobsVm> {
-        let url_ = this.baseUrl + "/api/v{apiVersion}/Job/GetAppliedJobs/GetAppliedJobs";
+        let url_ = this.baseUrl + "/api/v{apiVersion}/Job/GetAppliedJobs";
         if (apiVersion === undefined || apiVersion === null)
             throw new Error("The parameter 'apiVersion' must be defined.");
         url_ = url_.replace("{apiVersion}", encodeURIComponent("" + apiVersion));
