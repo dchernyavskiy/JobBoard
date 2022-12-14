@@ -51,13 +51,6 @@ namespace JobBoard.Application.Jobs
 
             public async Task<LikedJobsVm> Handle(GetLikedJobsQuery request, CancellationToken cancellationToken)
             {
-                var a = await _context.EmployeeLikeJobs
-                    .Include(x => x.Job)
-                        .ThenInclude(x => x.Employer)
-                    .Where(x => x.EmployeeId == request.EmployeeId)
-                    .Select(x => x.Job)
-                    .ToListAsync();
-
                 var jobs = await _context.EmployeeLikeJobs
                     .Include(x => x.Job)
                         .ThenInclude(x => x.Employer)

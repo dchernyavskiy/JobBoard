@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using JobBoard.Application.Common.Mappings;
 using JobBoard.Application.Interfaces;
 using JobBoard.Domain;
 using MediatR;
@@ -14,7 +15,7 @@ namespace JobBoard.Application.Jobs
             public IList<AppliedJobLookupDto> Jobs { get; set; }
         }
 
-        public class AppliedJobLookupDto
+        public class AppliedJobLookupDto : IMapWith<Job>
         {
             public Guid Id { get; set; }
             public string Name { get; set; }
@@ -50,7 +51,12 @@ namespace JobBoard.Application.Jobs
 
             public async Task<AppliedJobsVm> Handle(GetAppliedJobsQuery request, CancellationToken cancellationToken)
             {
-                var e = await _context.Employees.FirstAsync(x => x.Id == request.EmployeeId);
+                var a = await _context.JobEmployees
+                    .Include(x => x.Job)
+                        .ThenInclude(x => x.Category)
+                    .Where(x => x.EmployeeId == request.EmployeeId)
+                    .Select(x => x.Job)
+                    .ToListAsync();
 
                 var jobs = await _context.JobEmployees
                     .Include(x => x.Job)

@@ -112,7 +112,7 @@ namespace JobBoard.WebApi.Controllers
             return Ok(result);
         }
 
-        [HttpGet("GetAppliedJobs")]
+        [HttpGet]
         public async Task<ActionResult<AppliedJobsVm>> GetAppliedJobs()
         {
             var query = new GetAppliedJobsQuery
