@@ -21,7 +21,7 @@ const routes: Routes = [
   {
     path: "",
     component: HomeThreeComponent,
-    canActivate: [AdminRedirectGuard],
+    // canActivate: [AdminRedirectGuard],
   },
   { path: "jobs", component: JobsnewComponent },
   {

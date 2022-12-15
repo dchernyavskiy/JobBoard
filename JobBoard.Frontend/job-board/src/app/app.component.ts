@@ -47,6 +47,9 @@ export class AppComponent implements OnInit {
       } catch (error) { }
       localStorage.setItem("role", role);
       this.isSysAdmin = role == "SystemAdministrator";
+      if(role == 'SystemAdministrator'){
+        this.router.navigateByUrl('/admin');
+      }
       console.log('role: ' + role);
       console.log(this.isSysAdmin);
 
