@@ -40,26 +40,27 @@
           role="tablist"
           aria-orientation="vertical"
         >
-         <!-- Employer profile -->
-         <a
-         class="nav-link "
-         id="v-pills-home-employer-tab"
-         data-bs-toggle="pill"
-         href="#v-pills-employer-home"
-         role="tab"
-         aria-controls="v-pills-employer-home"
-         aria-selected="true"
-         ><i class="bx bx-user"></i> My Profile</a
-       >
-       <!-- End Employer profile -->
+         
           <!-- Employee profile -->
-          <a
+        <a [hidden]="!isEmployee"
             class="nav-link active"
             id="v-pills-home-tab"
             data-bs-toggle="pill"
             href="#v-pills-home"
             role="tab"
             aria-controls="v-pills-home"
+            aria-selected="true"
+            ><i class="bx bx-user"></i> My Profile</a
+          >
+          <!-- End Employee profile -->
+        <!-- Employer profile -->
+        <a [hidden]="isEmployee"
+            class="nav-link"
+            id="v-pills-home-employer-tab"
+            data-bs-toggle="pill"
+            href="#v-pills-employer-home"
+            role="tab"
+            aria-controls="v-pills-employer-home"
             aria-selected="false"
             ><i class="bx bx-user"></i> My Profile</a
           >
