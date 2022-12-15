@@ -58,7 +58,10 @@ namespace JobBoard.Application.Jobs
                 if (entity == null)
                     throw new NotFoundException(nameof(Job), request.Id);
 
-                return _mapper.Map<JobVm>(entity);
+                var job = _mapper.Map<JobVm>(entity);
+                job.Location = entity.Location.City;
+
+                return job;
             }
         }
     }
