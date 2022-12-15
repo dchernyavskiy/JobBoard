@@ -1,6 +1,7 @@
 ﻿using JobBoard.Application.Interfaces;
 using JobBoard.Domain;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 
 namespace JobBoard.Application.Jobs
 {
@@ -38,12 +39,13 @@ namespace JobBoard.Application.Jobs
                     Name = request.Name,
                     Discription = request.Discription,
                     DatePosted = request.DatePosted,
-                    //Location = request.Location,
                     Hours = request.Hours,
                     SalaryStart = request.SalaryStart,
                     SalaryEnd = request.SalaryEnd,
                     Experience = request.Experience,
                     EmployerId = request.EmployerId,
+                    Employment = request.Employment,
+                    CategoryId = request.CategoryId
                 };
 
                 var location = _context.Locations.FirstOrDefault(x => x.City == request.Location);
@@ -55,10 +57,14 @@ namespace JobBoard.Application.Jobs
                         City = request.Location
                     };
                     await _context.Locations.AddAsync(location);
+                    await _context.SaveChangesAsync(cancellationToken);
                 }
 
                 entity.LocationId = location.Id;
                 await _context.Jobs.AddAsync(entity);
+
+                var e = await _context.Employers.FirstOrDefaultAsync(x => x.Id == request.EmployerId);
+                var es = await _context.Employers.ToListAsync();
                 await _context.SaveChangesAsync(cancellationToken);
 
                 return entity.Id;

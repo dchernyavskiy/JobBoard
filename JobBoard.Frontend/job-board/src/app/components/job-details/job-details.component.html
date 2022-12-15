@@ -43,12 +43,10 @@
           <div class="details-inner">
             <h3>Our Company</h3>
             <p>
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of using Lorem Ipsum is that it has a more-or-less normal
-              distribution of letters, as opposed to using 'Content here,
-              content here.
+              {{job.employer.aboutUs}}
             </p>
+            
+            <p> {{job.employer.teamSize}}</p>
           </div>
         </div>
       </div>
@@ -67,7 +65,7 @@
               <li>
                 <img src="assets/img/job-details-icon.png" alt="Details" />
                 <h4>Category</h4>
-                <span>{{job}}</span>
+                <span>{{job.category?.name}}</span>
               </li>
               <li>
                 <img src="assets/img/job-details-icon.png" alt="Details" />
@@ -80,51 +78,7 @@
                 <h4>Experience</h4>
                 <span>{{ job.experience }} years</span>
               </li>
-              <li>
-                <img src="assets/img/job-details-icon.png" alt="Details" />
-                <h4>Industry</h4>
-                <span>Development</span>
-              </li>
-              <li>
-                <img src="assets/img/job-details-icon.png" alt="Details" />
-                <h4>Level</h4>
-                <!-- <span>{{ job.qualifications }}</span> -->
-              </li>
-              <li>
-                <img src="assets/img/job-details-icon.png" alt="Details" />
-                <h4>Applied</h4>
-                <span>01</span>
-              </li>
             </ul>
-          </div>
-
-          <div class="owner">
-            <div class="top">
-              <img src="assets/img/home-one/job4.png" alt="Owner" />
-              <h3>Owner Info</h3>
-              <i class="flaticon-send"></i>
-              <span>Los Angeles, CA, USA</span>
-            </div>
-
-            <div class="information widget-item">
-              <ul>
-                <li>
-                  <img src="assets/img/job-details-icon.png" alt="Details" />
-                  <h4>Phone</h4>
-                  <a href="tel:+34561232349987">+3456 123 234 9987</a>
-                </li>
-                <li>
-                  <img src="assets/img/job-details-icon.png" alt="Details" />
-                  <h4>Email</h4>
-                  <a href="mailto:hello@alzo.com">hello@alzo.com</a>
-                </li>
-                <li>
-                  <img src="assets/img/job-details-icon.png" alt="Details" />
-                  <h4>Location</h4>
-                  <a href="#" target="_blank">www.alzothemes.com</a>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>

@@ -41,8 +41,10 @@ export class AppComponent implements OnInit {
     this.oidcSecurityService.checkAuth().subscribe((result) => {
       localStorage.setItem("token", result.accessToken);
       this.isAuth = result.isAuthenticated;
-
-      let role = JSON.parse(window.atob(result.accessToken.split(".")[1])).role;
+      let role = undefined;
+      try {
+        role = JSON.parse(window.atob(result.accessToken.split(".")[1])).role;
+      } catch (error) { }
       localStorage.setItem("role", role);
       this.isSysAdmin = role == "SystemAdministrator";
       console.log('role: ' + role);

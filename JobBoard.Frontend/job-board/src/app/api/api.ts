@@ -2617,7 +2617,6 @@ export interface AppliedJobLookupDto {
     location?: Location;
     datePosted?: Date;
     employment?: string | undefined;
-    shortDiscription?: string | undefined;
     category?: Category;
     employer?: Employer;
 }
@@ -2661,6 +2660,7 @@ export interface CreateJobCommandDto {
     salaryStart?: number;
     salaryEnd?: number;
     experience?: number;
+    employment?: string | undefined;
     categoryId?: string;
 }
 
@@ -2745,7 +2745,6 @@ export interface Job {
     id?: string;
     name?: string | undefined;
     discription?: string | undefined;
-    shortDiscription?: string | undefined;
     datePosted?: Date;
     locationId?: string;
     location?: Location;
@@ -2790,7 +2789,6 @@ export interface JobLookupDto {
     location?: Location;
     datePosted?: Date;
     employment?: string | undefined;
-    shortDiscription?: string | undefined;
     category?: Category;
     employer?: Employer;
 }
@@ -2829,7 +2827,6 @@ export interface LikedJobLookupDto {
     location?: Location;
     datePosted?: Date;
     employment?: string | undefined;
-    shortDiscription?: string | undefined;
     category?: Category;
     employer?: Employer;
 }
