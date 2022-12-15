@@ -1,6 +1,44 @@
+<div class="page-title-area two">
+  <div class="d-table">
+    <div class="d-table-cell">
+      <div class="container">
+        <div class="title-item">
+          <h2>Dashboard</h2>
+          <ul>
+            <li>
+              <img src="assets/img/home-three/title-img-two.png" alt="Image" />
+              <a routerLink="/">Home</a>
+            </li>
+            <li><span>/</span></li>
+            <li>Dashboard</li>
+          </ul>
+        </div>
+        <div class="row align-items-end">
+          <div class="col-lg-8 col-md-12">
+            <div class="left">
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-12">
+            <div class="right">
+              <a
+                class="cmn-btn"
+                [routerLink]="['/post-a-job']"
+                routerLinkActive="active"
+              >
+                Post a Job
+                <i class="bx bx-plus"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Page Title -->
 <!-- Page Title -->
-<div class="page-title-area">
+<!-- <div class="page-title-area">
   <div class="d-table">
     <div class="d-table-cell">
       <div class="container">
@@ -16,9 +54,19 @@
           </ul>
         </div>
       </div>
+      <div class="col-lg-4 col-md-12">
+        <div class="right">
+          <a
+            class="cmn-btn"
+            [routerLink]="['/post-a-job']"
+            routerLinkActive="active"
+            >Post a Job<i class="bx bx-plus"></i
+          ></a>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- End Page Title -->
 
 <!-- Dashboard -->
@@ -40,9 +88,9 @@
           role="tablist"
           aria-orientation="vertical"
         >
-         
           <!-- Employee profile -->
-        <a [hidden]="!isEmployee"
+          <a
+            [hidden]="!isEmployee"
             class="nav-link active"
             id="v-pills-home-tab"
             data-bs-toggle="pill"
@@ -53,8 +101,9 @@
             ><i class="bx bx-user"></i> My Profile</a
           >
           <!-- End Employee profile -->
-        <!-- Employer profile -->
-        <a [hidden]="isEmployee"
+          <!-- Employer profile -->
+          <a
+            [hidden]="isEmployee"
             class="nav-link"
             id="v-pills-home-employer-tab"
             data-bs-toggle="pill"
@@ -65,7 +114,7 @@
             ><i class="bx bx-user"></i> My Profile</a
           >
           <!-- End Employee profile -->
-         
+
           <!-- Employee's Applied Jobs -->
           <a
             *ngIf="isEmployee"
@@ -320,13 +369,17 @@
             role="tabpanel"
             aria-labelledby="v-pills-messages-tab"
           >
-            <div class="employer-item"  *ngFor="let job of appliedJobs" [routerLink]="['/jobs', job.id]">
+            <div
+              class="employer-item"
+              *ngFor="let job of appliedJobs"
+              [routerLink]="['/jobs', job.id]"
+            >
               <a routerLink="/job-details">
                 <img src="assets/img/home-one/job1.png" alt="Employer" />
                 <h3>{{ job.name }}</h3>
                 <ul>
-                  <li><i class="flaticon-send"></i> {{job.location.city}}</li>
-                  <li>{{job.datePosted | date}}</li>
+                  <li><i class="flaticon-send"></i> {{ job.location.city }}</li>
+                  <li>{{ job.datePosted | date }}</li>
                 </ul>
                 <p>
                   {{ job.discription }}
@@ -340,26 +393,29 @@
 
           <!-- Employee's saved jobs start-->
           <div
-          class="tab-pane fade"
-          id="v-pills-favourites"
-          role="tabpanel"
-          aria-labelledby="v-pills-favourites-tab"
-        >
-        <div class="employer-item"  *ngFor="let job of likedJobs" [routerLink]="['/jobs', job.id]">
-          <a routerLink="/job-details">
-            <img src="assets/img/home-one/job1.png" alt="Employer" />
-            <h3>{{job.name}}</h3>
-            <ul>
-              <li><i class="flaticon-send"></i> {{job.location.city}}</li>
-              <li>{{job.datePosted | date}}</li>
-            </ul>
-            <span class="span-one">{{job.category.name}}</span>
-            <span class="span-two">{{job.employment}}</span>
-          </a>
-        </div>
-
-        </div>
-        <!-- Employee's saved jobs end-->
+            class="tab-pane fade"
+            id="v-pills-favourites"
+            role="tabpanel"
+            aria-labelledby="v-pills-favourites-tab"
+          >
+            <div
+              class="employer-item"
+              *ngFor="let job of likedJobs"
+              [routerLink]="['/jobs', job.id]"
+            >
+              <a routerLink="/job-details">
+                <img src="assets/img/home-one/job1.png" alt="Employer" />
+                <h3>{{ job.name }}</h3>
+                <ul>
+                  <li><i class="flaticon-send"></i> {{ job.location.city }}</li>
+                  <li>{{ job.datePosted | date }}</li>
+                </ul>
+                <span class="span-one">{{ job.category.name }}</span>
+                <span class="span-two">{{ job.employment }}</span>
+              </a>
+            </div>
+          </div>
+          <!-- Employee's saved jobs end-->
           <!-- Employer's Jobs -->
           <div
             class="tab-pane fade"

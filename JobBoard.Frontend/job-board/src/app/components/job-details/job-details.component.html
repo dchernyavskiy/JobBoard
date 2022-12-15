@@ -9,23 +9,28 @@
               <h2>{{ job.name }}</h2>
               <ul>
                 <li><i class="bx bx-pie-chart-alt-2"></i> Sales & Marketing</li>
-                <li><i class="bx bx-time"></i> {{ job.datePosted |  date}}</li>
+                <li><i class="bx bx-time"></i> {{ job.datePosted | date }}</li>
               </ul>
             </div>
           </div>
-
-                    <div class="col-lg-4 col-md-12">
-                        <div class="right">
-                            <a class="cmn-btn" (click)="applyJob()">Apply Now <i class='bx bx-plus'></i></a>
-                            <ul>
-                                <li><a routerLink="/job-details" (click)="setFavourite()"><i class='bx bx-heart'></i> Save</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+          <div class="col-lg-4 col-md-12">
+            <div class="right">
+              <a class="cmn-btn" (click)="applyJob()"
+                >Apply Now <i class="bx bx-plus"></i
+              ></a>
+              <ul>
+                <li>
+                  <a routerLink="/job-details" (click)="setFavourite()"
+                    ><i class="bx bx-heart"></i> Save</a
+                  >
+                </li>
+              </ul>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 <!-- End Page Title -->
 
@@ -43,7 +48,7 @@
           <div class="details-inner">
             <h3>Our Company</h3>
             <p>
-              {{job.employer.aboutUs}}
+              {{ job.employer.aboutUs }}
             </p>
           </div>
         </div>
@@ -63,7 +68,7 @@
               <li>
                 <img src="assets/img/job-details-icon.png" alt="Details" />
                 <h4>Category</h4>
-                <span>{{job.category?.name}}</span>
+                <span>{{ job.category?.name }}</span>
               </li>
               <li>
                 <img src="assets/img/job-details-icon.png" alt="Details" />
