@@ -12,6 +12,8 @@ export class EmployersComponent implements OnInit {
   public count: number = 12;
   public pageCount: number;
   public keyWord: string = '';
+  public currentPage: number = 1;
+
   constructor(public client: Client) { }
 
   ngOnInit(): void {
@@ -22,12 +24,23 @@ export class EmployersComponent implements OnInit {
     this.client.getAllGET2('1').subscribe(res =>{
       this.employers = (res.employers as EmployerLookupDto[])
       
-      .filter((u, i) => i >= (this.page-1)*this.count &&
-       i <= ((this.page-1)*this.count) + this.count);
-
-       this.pageCount  = res.employers.length;
+      .filter((u, i) => i >= (this.currentPage-1)*this.count &&
+       i < ((this.currentPage-1)*this.count) + this.count);
+       this.pageCount  = Math.ceil(res.employers.length / this.count);
     });
-    
+  }
+
+  setPage(page: number) {
+    this.currentPage = page;
+    this.getEmployers();
+  }
+
+  range(count: number): number[] {
+    let arr = [];
+    for (let i = 1; i <= count; i++) {
+      arr.push(i);
+    }
+    return arr;
   }
 
 

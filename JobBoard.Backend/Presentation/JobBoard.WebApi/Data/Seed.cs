@@ -71,7 +71,7 @@ namespace JobBoard.WebApi.Data
                 {
                     j.Id = Guid.NewGuid();
                     j.Name = f.Commerce.Product();
-                    j.Discription = f.Commerce.ProductDescription();
+                    j.Discription = f.Random.Words(100);
                     j.DatePosted = f.Date.Past(1);
                     j.LocationId = f.Random.CollectionItem(locations.Select(x => x.Id).ToList());
                     j.Hours = f.Random.Int(8, 16);
@@ -102,6 +102,21 @@ namespace JobBoard.WebApi.Data
 
             context.Employers.AddRange(employer);
 
+            context.SaveChanges();
+
+            var employee = new Faker<Employee>()
+                .Rules((f, e) =>
+                {
+                    e.Id = Guid.Parse("041343ea-0f3d-458b-9fb6-7bd6700d69e8");
+                    e.Email = "tom.smith@mail.com";
+                    e.FirstName = "Tom";
+                    e.LastName = "Smith";
+                    e.CVLink = f.Internet.Url();
+                    e.Phone = "+329813923";
+                    e.IsBan = false;
+                })
+                .Generate(1);
+            context.Employees.AddRange(employee);
             context.SaveChanges();
         }
     }
