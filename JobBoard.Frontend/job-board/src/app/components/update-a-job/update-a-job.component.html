@@ -1,0 +1,147 @@
+<!-- Page Title -->
+<div class="page-title-area">
+  <div class="d-table">
+    <div class="d-table-cell">
+      <div class="container">
+        <div class="title-item">
+          <h2>Update A Job</h2>
+          <ul>
+            <li>
+              <img src="assets/img/home-three/title-img-two.png" alt="Image" />
+              <a routerLink="/">Home</a>
+            </li>
+            <li><span>/</span></li>
+            <li>Update A Job</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Page Title -->
+
+<!-- Post A Job -->
+<div class="post-job-area ptb-100">
+  <div class="container">
+    <form>
+      <div class="post-item">
+        <div class="section-title">
+          <h2>Update A Job</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
+            placeat totam laboriosam ut labore aliquid veniam repellendus
+            similique? Id molestiae pariatur molestias, alias quia sint autem
+            nemo architecto facere asperiores.
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 col-md-12">
+            <div class="form-group">
+              <label>Name:</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="example@gmail.com"
+                id="name"
+                name="name"
+                [(ngModel)]="job.name"
+                placeholder="Job name"
+              />
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12">
+            <div class="form-group">
+              <label>Location:</label>
+              <input
+                id="location"
+                name="location"
+                type="text"
+                [(ngModel)]="job.location"
+                class="form-control"
+                placeholder="Location"
+              />
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12">
+            <div class="form-group">
+              <label>Hours:</label>
+              <input
+                id="hours"
+                name="hours"
+                type="number"
+                [(ngModel)]="job.hours"
+                class="form-control"
+                placeholder="Hours"
+              />
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12">
+            <div class="form-group">
+              <label>Experience:</label>
+              <input
+                id="experience"
+                name="experience"
+                type="number"
+                [(ngModel)]="job.experience"
+                class="form-control"
+                placeholder="Experience"
+              />
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12">
+            <div class="form-group">
+              <label>Salary Start:</label>
+              <input
+                id="salaryStart"
+                name="salaryStart"
+                type="number"
+                [(ngModel)]="job.salaryStart"
+                class="form-control"
+                placeholder="Salary Start"
+              />
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-12">
+            <div class="form-group">
+              <label>Salary End:</label>
+              <input
+                id="salaryEnd"
+                name="salaryEnd"
+                type="number"
+                [(ngModel)]="job.salaryEnd"
+                class="form-control"
+                placeholder="Salary end"
+              />
+            </div>
+          </div>
+
+          <div class="col-lg-12 col-md-12">
+            <div class="form-group">
+              <label>Description:</label>
+              <textarea
+                id="discription"
+                name="discription"
+                type="text"
+                [(ngModel)]="job.discription"
+                class="form-control"
+                placeholder="Description"
+              >
+              </textarea>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn" (click)="createJob()">
+          Update A Job
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- End Post A Job -->

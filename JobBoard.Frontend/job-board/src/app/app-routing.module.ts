@@ -6,6 +6,7 @@ import { FavouriteJobsComponent } from "./components/favourite-jobs/favourite-jo
 import { EmployersComponent } from "./components/employers/employers.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { PostAJobComponent } from "./components/post-a-job/post-a-job.component";
+import { UpdateAJobComponent } from "./components/update-a-job/update-a-job.component";
 import { JobDetailsComponent } from "./components/job-details/job-details.component";
 import { EmployersDetailsComponent } from "./components/employers-details/employers-details.component";
 import { AuthGuard } from "./services/auth/auth.guard";
@@ -33,6 +34,11 @@ const routes: Routes = [
   {
     path: "post-a-job",
     component: PostAJobComponent,
+    canActivate: [AuthGuard, EmployerGuard],
+  },
+  {
+    path: "update-a-job",
+    component: UpdateAJobComponent,
     canActivate: [AuthGuard, EmployerGuard],
   },
   { path: "jobs/:id", component: JobDetailsComponent },
