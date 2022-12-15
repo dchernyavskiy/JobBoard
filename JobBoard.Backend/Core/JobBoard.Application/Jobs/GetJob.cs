@@ -51,8 +51,8 @@ namespace JobBoard.Application.Jobs
             {
                 var entity = await _context.Jobs
                     .Include(x => x.Employer)
-                    .Include(x => x.Responsibilities)
-                    .Include(x => x.Qualifications)
+                    .Include(x => x.Category)
+                    .Include(x => x.Location)
                     .FirstOrDefaultAsync(x => x.Id == request.Id);
 
                 if (entity == null)

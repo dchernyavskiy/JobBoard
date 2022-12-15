@@ -13,6 +13,7 @@ namespace JobBoard.WebApi.Models
         public int SalaryStart { get; set; }
         public int SalaryEnd { get; set; }
         public int Experience { get; set; }
+        public string Employment { get; set; }
         public Guid CategoryId { get; set; }
 
 

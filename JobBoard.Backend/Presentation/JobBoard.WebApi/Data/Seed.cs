@@ -19,7 +19,6 @@ namespace JobBoard.WebApi.Data
                 .Generate(10);
             context.Categories.AddRange(categories);
 
-
             var locations = new Faker<Location>()
                 .Rules((f, l) =>
                 {
@@ -72,7 +71,6 @@ namespace JobBoard.WebApi.Data
                 {
                     j.Id = Guid.NewGuid();
                     j.Name = f.Commerce.Product();
-                    j.ShortDiscription = f.Commerce.ProductDescription();
                     j.Discription = f.Commerce.ProductDescription();
                     j.DatePosted = f.Date.Past(1);
                     j.LocationId = f.Random.CollectionItem(locations.Select(x => x.Id).ToList());
@@ -90,19 +88,19 @@ namespace JobBoard.WebApi.Data
 
             context.Jobs.AddRange(jobs);
 
-            var employee = new Faker<Employee>()
+            var employer = new Faker<Employer>()
                 .Rules((f, e) =>
                 {
                     e.Id = Guid.Parse("0c207243-5fb9-4a2d-9581-cab3e01b2609");
-                    e.FirstName = f.Name.FirstName();
-                    e.LastName = f.Name.LastName();
-                    e.Email = "john.smith@mail.com";
-                    e.CVLink = f.Internet.Url();
-                    e.Phone = "+329813923";
+                    e.Name = f.Company.CompanyName();
+                    e.AboutUs = f.Random.Words(100);
+                    e.Location = f.Address.City();
+                    e.PhotoLink = f.Internet.Url();
+                    e.TeamSize = f.Random.Int(100, 1000);
                 })
                 .Generate(1);
 
-            context.Employees.AddRange(employee);
+            context.Employers.AddRange(employer);
 
             context.SaveChanges();
         }
