@@ -17,9 +17,7 @@ export class JobCardComponent implements OnInit {
   }
 
   ngOnInit(): void { 
-    this.client.get("1").subscribe((res) => {
-      this.employee = res as EmployeeVm;
-    });
+    
   }
 
   openJobDetails() {
