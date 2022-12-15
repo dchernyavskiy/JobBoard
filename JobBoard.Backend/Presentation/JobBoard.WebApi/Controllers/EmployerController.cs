@@ -42,7 +42,7 @@ namespace JobBoard.WebApi.Controllers
         [HttpGet]
         public async Task<ActionResult<EmployersVm>> GetAll()
         {
-            var query = new GetEmployersQuery();
+            var query = new GetEmployersQuery { };
             var result = await Mediator.Send(query);
             return Ok(result);
         }

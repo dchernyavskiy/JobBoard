@@ -69,43 +69,13 @@ namespace JobBoard.Identity.Data
                         UserName = "employee"
                     };
 
-                    var employerInstance2 = new AppUser
-                    {
-                        Id = "010c4d66-7268-44a9-a991-e6d5aadea719",
-                        Email = "mark.smith@mail.com",
-                        EmailConfirmed = true,
-                        PhoneNumber = "+329813923",
-                        PhoneNumberConfirmed = true,
-                        UserName = "employer1"
-                    };
-
-                    var employerInstance3 = new AppUser
-                    {
-                        Id = "ad4d1381-49a1-460e-aee8-808a5b8ed2da",
-                        Email = "john.smith@mail.com",
-                        EmailConfirmed = true,
-                        PhoneNumber = "+329813923",
-                        PhoneNumberConfirmed = true,
-                        UserName = "employer2"
-                    };
-
-                    var employerInstance4 = new AppUser
-                    {
-                        Id = "cc653465-e4a0-40fa-99dc-061841fbf76f",
-                        Email = "alice.smith@mail.com",
-                        EmailConfirmed = true,
-                        PhoneNumber = "+329813923",
-                        PhoneNumberConfirmed = true,
-                        UserName = "employer3"
-                    };
-
                     var result = userManger.CreateAsync(employerInstance1, app.Configuration["Passwords:EmployerPassword"]).Result;
 
                     if (!result.Succeeded)
                         throw new Exception(result.Errors.First().Description);
 
-                    if (!userManger.IsInRoleAsync(employerInstance1, employer.Name).Result)
-                        _ = userManger.AddToRoleAsync(employerInstance1, employer.Name).Result;
+                    if (!userManger.IsInRoleAsync(employerInstance1, employee.Name).Result)
+                        _ = userManger.AddToRoleAsync(employerInstance1, employee.Name).Result;
                 }
 
                 if (systemAdministratorInstance == null)
