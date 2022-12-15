@@ -17,6 +17,7 @@ import { EmployersComponent } from "./components/employers/employers.component";
 import { EmployerCardComponent } from "./components/employer-card/employer-card.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { PostAJobComponent } from "./components/post-a-job/post-a-job.component";
+import { UpdateAJobComponent } from "./components/update-a-job/update-a-job.component";
 import { JobDetailsComponent } from "./components/job-details/job-details.component";
 
 import { EmployersDetailsComponent } from "./components/employers-details/employers-details.component";
@@ -37,6 +38,7 @@ import { EmployeeComponent } from "./components/admin/employee/employee.componen
     EmployerCardComponent,
     DashboardComponent,
     PostAJobComponent,
+    UpdateAJobComponent,
     EmployersDetailsComponent,
     AdminLayoutComponent,
     EmployerComponent,
