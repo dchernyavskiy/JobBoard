@@ -21,10 +21,6 @@ export class MyJobCardComponent implements OnInit {
     console.log(this.job)
   }
 
-  update() {
-
-  }
-
   delete() {
     this.client.delete3(this.job.id, "1").subscribe(res => {
       console.log(res);
