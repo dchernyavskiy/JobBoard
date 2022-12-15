@@ -28,7 +28,9 @@
       <div class="col-lg-4 col-md-12">
         <div class="profile-item mb-5">
           <!-- <img src="assets/img/dashboard1.jpg" alt="Dashboard" /> -->
-          <h2 *ngIf="isEmployee">{{ employee.firstName + " " + employee.lastName }}</h2>
+          <h2 *ngIf="isEmployee">
+            {{ employee.firstName + " " + employee.lastName }}
+          </h2>
           <h2 *ngIf="!isEmployee">{{ employer.name }}</h2>
         </div>
 
@@ -38,30 +40,31 @@
           role="tablist"
           aria-orientation="vertical"
         >
+         <!-- Employer profile -->
+         <a
+         class="nav-link "
+         id="v-pills-home-employer-tab"
+         data-bs-toggle="pill"
+         href="#v-pills-employer-home"
+         role="tab"
+         aria-controls="v-pills-employer-home"
+         aria-selected="true"
+         ><i class="bx bx-user"></i> My Profile</a
+       >
+       <!-- End Employer profile -->
           <!-- Employee profile -->
-        <a
+          <a
             class="nav-link active"
             id="v-pills-home-tab"
             data-bs-toggle="pill"
             href="#v-pills-home"
             role="tab"
             aria-controls="v-pills-home"
-            aria-selected="true"
-            ><i class="bx bx-user"></i> My Profile</a
-          >
-          <!-- End Employee profile -->
-        <!-- Employer profile -->
-        <a
-            class="nav-link"
-            id="v-pills-home-employer-tab"
-            data-bs-toggle="pill"
-            href="#v-pills-employer-home"
-            role="tab"
-            aria-controls="v-pills-employer-home"
             aria-selected="false"
             ><i class="bx bx-user"></i> My Profile</a
           >
-          <!-- End Employer profile -->
+          <!-- End Employee profile -->
+         
           <!-- Employee's Applied Jobs -->
           <a
             *ngIf="isEmployee"
@@ -98,20 +101,22 @@
           <!-- End Employee's Favorite Jobs -->
           <!-- Employer's Jobs -->
           <a
-              *ngIf="!isEmployee"
-              class="nav-link"
-              id="v-pills-jobs-employer-tab"
-              data-bs-toggle="pill"
-              href="#v-pills-employer-jobs"
-              role="tab"
-              aria-controls="v-pills-employer-jobs"
-              aria-selected="false"
-              ><i class="bx bxs-inbox"></i> My Jobs</a
-           >
+            *ngIf="!isEmployee"
+            class="nav-link"
+            id="v-pills-jobs-employer-tab"
+            data-bs-toggle="pill"
+            href="#v-pills-employer-jobs"
+            role="tab"
+            aria-controls="v-pills-employer-jobs"
+            aria-selected="false"
+            ><i class="bx bxs-inbox"></i> My Jobs</a
+          >
           <!-- End Employer's Jobs -->
           <!-- Logout -->
           <a routerLink="/login">
-            <a class="login-left" (click)="logout()" ><i class="flaticon-enter"></i>Sign out</a>
+            <a class="login-left" (click)="logout()"
+              ><i class="flaticon-enter"></i>Sign out</a
+            >
           </a>
           <!-- End Logout -->
         </div>
@@ -119,7 +124,6 @@
 
       <div class="col-lg-8 col-md-12">
         <div class="tab-content" id="v-pills-tabContent">
-
           <!-- Employee profile -->
           <div
             class="tab-pane fade show active"
@@ -191,19 +195,22 @@
                     <div class="col-lg-6 col-md-12">
                       <div class="form-group">
                         <label>CVLink:</label>
-                        <input 
-                          type="text" 
-                          class="form-control" 
+                        <input
+                          type="text"
+                          class="form-control"
                           id="date-of-birth"
                           name="date-of-birth"
-                          [value]="employee.cvLink" />
+                          [value]="employee.cvLink"
+                        />
                       </div>
                     </div>
-
-          
                   </div>
                 </div>
-                <button type="submit" class="btn dashboard-btn" (click)="updateEmployee()">
+                <button
+                  type="submit"
+                  class="btn dashboard-btn"
+                  (click)="updateEmployee()"
+                >
                   Save Your Information
                 </button>
               </form>
@@ -268,13 +275,14 @@
                     <div class="col-lg-6 col-md-12">
                       <div class="form-group">
                         <label>Your Photo Link:</label>
-                        <input 
-                          type="text" 
-                          class="form-control" 
+                        <input
+                          type="text"
+                          class="form-control"
                           id="photoLink"
                           name="photoLink"
                           [(ngModel)]="employer.photoLink"
-                          [value]="employer.photoLink" />
+                          [value]="employer.photoLink"
+                        />
                       </div>
                     </div>
 
@@ -291,11 +299,13 @@
                         ></textarea>
                       </div>
                     </div>
-
-          
                   </div>
                 </div>
-                <button type="submit" class="btn dashboard-btn" (click)="updateEmployer()">
+                <button
+                  type="submit"
+                  class="btn dashboard-btn"
+                  (click)="updateEmployer()"
+                >
                   Save Your Information
                 </button>
               </form>
@@ -313,19 +323,18 @@
             <div class="employer-item">
               <a routerLink="/job-details">
                 <img src="assets/img/home-one/job1.png" alt="Employer" />
-                <h3>{{job.name}}</h3>
+                <h3>{{ job.name }}</h3>
                 <ul>
-                  <li><i class="flaticon-send"></i> {{job.location}}</li>
-                  <li>{{job.datePosted}}</li>
+                  <li><i class="flaticon-send"></i> {{ job.location }}</li>
+                  <li>{{ job.datePosted }}</li>
                 </ul>
                 <p>
-                  {{job.discription}}
+                  {{ job.discription }}
                 </p>
-                <span class="span-one">{{job.shortDiscription}}</span>
-                <span class="span-two">{{job.employment}}</span>
+                <span class="span-one">{{ job.shortDiscription }}</span>
+                <span class="span-two">{{ job.employment }}</span>
               </a>
             </div>
-
           </div>
           <!-- Employee's Applied Jobs End -->
           <!-- Employer's Jobs -->
@@ -335,7 +344,10 @@
             role="tabpanel"
             aria-labelledby="v-pills-jobs-employer-tab"
           >
-          <app-my-job-card *ngFor="let job of employer.jobs" [job]="job"></app-my-job-card>
+            <app-my-job-card
+              *ngFor="let job of employer.jobs"
+              [job]="job"
+            ></app-my-job-card>
           </div>
           <!-- Employer's Jobs End -->
         </div>
@@ -351,7 +363,6 @@
           ></div>
         </div>
       </div>
-      
     </div>
   </div>
 </div>
