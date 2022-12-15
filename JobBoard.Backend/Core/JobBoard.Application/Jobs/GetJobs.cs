@@ -28,6 +28,7 @@ namespace JobBoard.Application.Jobs
             public string Employment { get; set; }
             public Category Category { get; set; }
             public Employer Employer { get; set; }
+            public string Discription { get; set; }
 
             public void Mapping(Profile profile)
             {
