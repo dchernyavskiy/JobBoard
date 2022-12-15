@@ -26,7 +26,6 @@ namespace JobBoard.Application.Jobs
             public Location Location { get; set; }
             public DateTime DatePosted { get; set; }
             public string Employment { get; set; }
-            public string ShortDiscription { get; set; }
             public Category Category { get; set; }
             public Employer Employer { get; set; }
 

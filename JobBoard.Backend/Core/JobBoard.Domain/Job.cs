@@ -5,7 +5,6 @@
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string Discription { get; set; }
-        public string ShortDiscription { get; set; }
         public DateTime DatePosted { get; set; }
         public Guid LocationId { get; set; }
         public Location Location { get; set; }

@@ -46,7 +46,7 @@ namespace JobBoard.Identity.Data
                         EmailConfirmed = true,
                         PhoneNumber = "+329813923",
                         PhoneNumberConfirmed = true,
-                        UserName = "employee"
+                        UserName = "employer"
                     };
                     var result = userManger.CreateAsync(employeeInstance, app.Configuration["Passwords:EmployeePassword"]).Result;
 
@@ -66,7 +66,7 @@ namespace JobBoard.Identity.Data
                         EmailConfirmed = true,
                         PhoneNumber = "+329813923",
                         PhoneNumberConfirmed = true,
-                        UserName = "employer"
+                        UserName = "employee"
                     };
 
                     var employerInstance2 = new AppUser
