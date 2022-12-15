@@ -30,6 +30,7 @@ import { EmployeeComponent } from "./components/admin/employee/employee.componen
     JobDetailsComponent,
     FooterStyleTwoComponent,
     JobCardComponent,
+    MyJobCardComponent,
     JobsnewComponent,
     FavouriteJobsComponent,
     EmployersComponent,
