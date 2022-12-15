@@ -14,6 +14,6 @@
         <p>
           {{job.discription}}
         </p>
-        <span class="span-one">{{job.shortDiscription}}</span>
+        <span class="span-one">{{job.discription | slice:0:250}}</span>
         <span class="span-two">{{job.employment}}</span>
 </div>
