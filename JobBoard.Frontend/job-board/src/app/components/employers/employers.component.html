@@ -22,96 +22,10 @@
 </div>
 <!-- End Page Title -->
 
-<!-- Filter -->
-<div class="job-filter-area pt-100">
-    <div class="container">
-        <form>
-            <div class="row">
-    
-
-                <div class="col-sm-6 col-lg-3">
-                    <div class="form-group">
-                        <select>
-                            <option>Filter By Category</option>
-                            <option>Another option</option>
-                            <option>A option</option>
-                            <option>Potato</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-lg-3">
-                    <div class="form-group">
-                        <select>
-                            <option>Filter By Location</option>
-                            <option>Another option</option>
-                            <option>A option</option>
-                            <option>Potato</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-lg-3">
-                    <div class="form-group">
-                        <select>
-                            <option>Filter By Languages</option>
-                            <option>Another option</option>
-                            <option>A option</option>
-                            <option>Potato</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-lg-3">
-                    <div class="form-group">
-                        <select>
-                            <option>Filter By Qualifications</option>
-                            <option>Another option</option>
-                            <option>A option</option>
-                            <option>Potato</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-lg-3">
-                    <button type="submit" class="btn cmn-btn">Search By Filter <i class='bx bx-plus'></i></button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-<!-- End Filter -->
-
 <!-- Showing -->
-<div class="job-showing-area">
+<div class="job-showing-area mt-5 mb-5">
     <div class="container">
         <h4>Showing 1 - 8 of 11 results</h4>
-
-        <div class="showing">
-            <div class="row">
-                <div class="col-sm-6 col-lg-6">
-                    <div class="left">
-                        <div class="form-group">
-                            <select>
-                                <option>Newest</option>
-                                <option>Another option</option>
-                                <option>A option</option>
-                                <option>Potato</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-lg-6">
-                    <div class="right">
-                        <ul>
-                            <li><a routerLink="/"><i class='bx bx-dots-horizontal'></i></a></li>
-                            <li><a routerLink="/"><i class='bx bx-menu'></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 <!-- End Showing -->
@@ -128,7 +42,7 @@
                             <li><i class="flaticon-send"></i> {{employer.location}}</li>
                             <li><span>{{ employer.teamSize }}</span></li>
                         </ul>
-                        <p>{{employer.aboutUs | slice:0:250}}...</p>
+                        <p>{{employer.aboutUs | slice:0:200}}...</p>
                     </a>
                 </div>
             </div>
@@ -136,17 +50,45 @@
 
         <div class="pagination-area">
             <ul>
-                <li><a routerLink="/employers">Prev</a></li>
-                <li><a routerLink="/employers">1</a></li>
-                <li><a routerLink="/employers">2</a></li>
-                <li><a routerLink="/employers">3</a></li>
-                <li><a routerLink="/employers">Next</a></li>
+              <li>
+                <a
+                  (click)="setPage(currentPage - 1)"
+                  [attr.readonly]="currentPage == 1"
+                  [ngStyle]="
+                    currentPage == 1 && { background: '#fe4a55', color: 'white' }
+                  "
+                  >Prev.</a
+                >
+              </li>
+              <li>
+                <a
+                  *ngFor="let page of range(pageCount)"
+                  (click)="setPage(page)"
+                  [attr.readonly]="page == currentPage"
+                  [ngStyle]="
+                    currentPage == page && {
+                      background: '#fe4a55',
+                      color: 'white'
+                    }
+                  "
+                  >{{ page }}</a
+                >
+              </li>
+              <li>
+                <a
+                  [attr.readonly]="currentPage == pageCount"
+                  (click)="setPage(currentPage + 1)"
+                  [ngStyle]="
+                    currentPage == pageCount && {
+                      background: '#fe4a55',
+                      color: 'white'
+                    }
+                  "
+                  >Next</a
+                >
+              </li>
             </ul>
-        </div>
+          </div>
     </div>
 </div>
 <!-- End Employer -->
-
-<!-- Footer -->
-<app-footer-style-two></app-footer-style-two>
-<!-- End Footer -->

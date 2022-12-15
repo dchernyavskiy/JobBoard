@@ -71,7 +71,7 @@ namespace JobBoard.WebApi.Data
                 {
                     j.Id = Guid.NewGuid();
                     j.Name = f.Commerce.Product();
-                    j.Discription = f.Random.Words(500);
+                    j.Discription = f.Random.Words(100);
                     j.DatePosted = f.Date.Past(1);
                     j.LocationId = f.Random.CollectionItem(locations.Select(x => x.Id).ToList());
                     j.Hours = f.Random.Int(8, 16);
