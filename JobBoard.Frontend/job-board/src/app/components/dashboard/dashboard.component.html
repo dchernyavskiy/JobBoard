@@ -26,9 +26,10 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-4 col-md-12">
-        <div class="profile-item">
+        <div class="profile-item mb-5">
           <!-- <img src="assets/img/dashboard1.jpg" alt="Dashboard" /> -->
-          <h2>{{ employee.firstName + " " + employee.lastName }}</h2>
+          <h2 *ngIf="isEmployee">{{ employee.firstName + " " + employee.lastName }}</h2>
+          <h2 *ngIf="!isEmployee">{{ employer.name }}</h2>
         </div>
 
         <div
@@ -63,6 +64,7 @@
           <!-- End Employer profile -->
           <!-- Employee's Applied Jobs -->
           <a
+            *ngIf="isEmployee"
             class="nav-link"
             id="v-pills-messages-tab"
             data-bs-toggle="pill"
@@ -79,6 +81,7 @@
           <!-- End Employee's Applied Jobs -->
           <!-- Employee's Favorite Jobs -->
           <a
+            *ngIf="isEmployee"
             class="nav-link"
             id="v-pills-favourites-tab"
             data-bs-toggle="pill"
@@ -95,6 +98,7 @@
           <!-- End Employee's Favorite Jobs -->
           <!-- Employer's Jobs -->
           <a
+              *ngIf="!isEmployee"
               class="nav-link"
               id="v-pills-jobs-employer-tab"
               data-bs-toggle="pill"
@@ -107,7 +111,6 @@
           <!-- End Employer's Jobs -->
           <!-- Logout -->
           <a routerLink="/login">
-            <!-- <div class="profile-list"><i class="bx bx-log-out"></i> Logout</div> -->
             <a class="login-left" (click)="logout()" ><i class="flaticon-enter"></i>Sign out</a>
           </a>
           <!-- End Logout -->
