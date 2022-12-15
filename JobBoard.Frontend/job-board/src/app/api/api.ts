@@ -2791,6 +2791,7 @@ export interface JobLookupDto {
     employment?: string | undefined;
     category?: Category;
     employer?: Employer;
+    discription?: string | undefined;
 }
 
 export interface JobSort {
