@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { OidcSecurityService } from "angular-auth-oidc-client";
-import { AppliedJobLookupDto, JobLookupDto, Client, EmployeeVm, EmployerVm } from "src/app/api/api";
+import { AppliedJobLookupDto, JobLookupDto, Client, EmployeeVm, EmployerVm, LikedJobLookupDto } from "src/app/api/api";
 
 @Component({
   selector: "app-dashboard",
@@ -12,6 +12,7 @@ export class DashboardComponent implements OnInit {
   public employee: EmployeeVm = {};
   public employer: EmployerVm = {};
   public appliedJobs: AppliedJobLookupDto[] = [];
+  public likedJobs: LikedJobLookupDto[] = [];
   public isEmployee: boolean = false;
   constructor(public client: Client, public oidcSecurityService: OidcSecurityService) {}
 
@@ -24,6 +25,9 @@ export class DashboardComponent implements OnInit {
     this.client.getAppliedJobs("1").subscribe((res) => {
       this.appliedJobs = res.jobs as AppliedJobLookupDto[];
     });
+    this.client.getLikedJobs("1").subscribe(res =>{
+      this.likedJobs = res.jobs as LikedJobLookupDto[];
+    })
 
     // for employer
     this.client.getProfile("1").subscribe((res) => {
