@@ -39,7 +39,7 @@
           aria-orientation="vertical"
         >
           <!-- Employee profile -->
-        <a
+        <a [hidden]="!isEmployee"
             class="nav-link active"
             id="v-pills-home-tab"
             data-bs-toggle="pill"
@@ -51,7 +51,7 @@
           >
           <!-- End Employee profile -->
         <!-- Employer profile -->
-        <a
+        <a [hidden]="isEmployee"
             class="nav-link"
             id="v-pills-home-employer-tab"
             data-bs-toggle="pill"
