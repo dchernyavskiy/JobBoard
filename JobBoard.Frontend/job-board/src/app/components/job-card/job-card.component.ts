@@ -10,14 +10,12 @@ import { Router } from '@angular/router';
 
 export class JobCardComponent implements OnInit {
   @Input() public job : JobLookupDto;
-  public employee: EmployeeVm;
 
   constructor(private router: Router, private client: Client) { 
     
   }
 
   ngOnInit(): void { 
-    
   }
 
   openJobDetails() {
@@ -25,27 +23,21 @@ export class JobCardComponent implements OnInit {
   }
 
   applyJob() {
-    if(this.employee!=null){ //НЕ ЗАБЫТЬ ИЗМЕНИТЬ, Я НЕ ВИНОВАТ ЧТО ЛОКАЛ СТОРЕДЖ НЕ МЕНЯЕТ РОЛЬ ПОСЛЕ АВТОРИЗАЦИИ
-      localStorage.setItem("role","Employee");
-    }
     if(localStorage.getItem("role") == "Employer" || localStorage.getItem("role") == "SystemAdministrator"){
       window.alert("You have to be employee");
     }
-    else if(localStorage.getItem("role") == null){
+    else if(localStorage.getItem("role") == 'undefined'){
       window.alert("You have to sign in");
     }
     else{
       if(window.confirm("Do you really want to apply to this job?")){
-        this.client.uCreate(this.employee.id,'1',{jobId:this.job.id}).subscribe(res =>{
+        this.client.create('1',{jobId:this.job.id}).subscribe(res =>{
         });
       }
     }
   }
 
   setFavourite(){
-    if(this.employee!=null){ //НЕ ЗАБЫТЬ ИЗМЕНИТЬ, Я НЕ ВИНОВАТ ЧТО ЛОКАЛ СТОРЕДЖ НЕ МЕНЯЕТ РОЛЬ ПОСЛЕ АВТОРИЗАЦИИ
-      localStorage.setItem("role","Employee");
-    }
     if(localStorage.getItem("role") == "Employer" || localStorage.getItem("role") == "SystemAdministrator"){
       window.alert("You have to be employee");
     }
