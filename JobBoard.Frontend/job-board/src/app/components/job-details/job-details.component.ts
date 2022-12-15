@@ -40,7 +40,21 @@ export class JobDetailsComponent implements OnInit {
       }
     }
   }
-  setfavourite(){
-    
+  setFavourite(){
+    if(this.employee!=null){ //НЕ ЗАБЫТЬ ИЗМЕНИТЬ, Я НЕ ВИНОВАТ ЧТО ЛОКАЛ СТОРЕДЖ НЕ МЕНЯЕТ РОЛЬ ПОСЛЕ АВТОРИЗАЦИИ
+      localStorage.setItem("role","Employee");
+    }
+    if(localStorage.getItem("role") == "Employer" || localStorage.getItem("role") == "SystemAdministrator"){
+      window.alert("You have to be employee");
+    }
+    else if(localStorage.getItem("role") == null){
+      window.alert("You have to sign in");
+    }
+    else{
+      if(window.confirm("Do you really want to save this job?")){
+        this.client.likeJob(this.job.id,'1').subscribe(res =>{
+        });
+      }
+    }
   }
 }
